@@ -34,6 +34,23 @@ export type Interest = {
   }>;
 };
 
+export type SoftwareTool = {
+  name: string;
+  category: string;
+  icon: string;
+};
+
+export type DocumentSection = {
+  title: string;
+  eyebrow: string;
+  text: string;
+  href: string;
+  action: string;
+  preview: string;
+  highlights: string[];
+  gallery?: string[];
+};
+
 export const profile = {
   name: "Sumin (Chloe) Lee",
   shortName: "Sumin Lee",
@@ -286,6 +303,105 @@ export const skills = [
   "Generative AI Asset Production",
   "Community Building",
   "Merchandising",
+];
+
+export const softwareTools: SoftwareTool[] = [
+  {
+    name: "R / Data Analysis",
+    category: "Data Analysis",
+    icon: "https://static.wixstatic.com/media/df8dea_0520e81272434275bf8dc73cd64ad657~mv2.jpeg/v1/fill/w_304,h_296,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/df8dea_0520e81272434275bf8dc73cd64ad657~mv2.jpeg",
+  },
+  {
+    name: "SQL",
+    category: "Data Analysis",
+    icon: "https://static.wixstatic.com/media/df8dea_9d64b724f20341c4abfc0c3da5edbc77~mv2.png/v1/fill/w_304,h_296,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C%20(1)_edited.png",
+  },
+  {
+    name: "Figma",
+    category: "Design",
+    icon: "https://static.wixstatic.com/media/df8dea_8bc5f0c945764beeb5a13fe3bc4dda4d~mv2.jpeg/v1/fill/w_356,h_348,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/_%20(6).jpeg",
+  },
+  {
+    name: "Photoshop",
+    category: "Design",
+    icon: "https://static.wixstatic.com/media/df8dea_67adb15d60544f35bd32de7d82948e2a~mv2.jpeg/v1/fill/w_304,h_296,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Adobe%20Photoshop.jpeg",
+  },
+  {
+    name: "Illustrator",
+    category: "Design",
+    icon: "https://static.wixstatic.com/media/df8dea_27ffb8f5669649dcbed5f9aa59206da1~mv2.jpeg/v1/fill/w_304,h_296,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Illustrator%20free%20icons%20designed%20by%20Maniprasanth.jpeg",
+  },
+  {
+    name: "Premiere Pro",
+    category: "Design",
+    icon: "https://static.wixstatic.com/media/df8dea_84b30157d1c94391a2c2b1b52620cc24~mv2.jpeg/v1/fill/w_304,h_296,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/My%20Travel%20Gear%20-.jpeg",
+  },
+  {
+    name: "Slack",
+    category: "Collaboration",
+    icon: "https://static.wixstatic.com/media/df8dea_0a16a44408ee42e08ba1edf4b83ce218~mv2.jpeg/v1/fill/w_356,h_348,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Slack.jpeg",
+  },
+  {
+    name: "Notion",
+    category: "Productivity",
+    icon: "https://static.wixstatic.com/media/df8dea_ae175660f6174a1b96ca57c3504a32b5~mv2.jpeg/v1/fill/w_304,h_296,al_c,q_80,enc_avif,quality_auto/How%20to%20Build%20a%20Second%20Brain%20in%20Notion%2C%20by%20Maria%20Aldrey%20-%20Forte%20Labs.jpeg",
+  },
+  {
+    name: "Excel",
+    category: "Productivity",
+    icon: "https://static.wixstatic.com/media/df8dea_2c32193cbff54861851ce6e8870f9623~mv2.jpeg/v1/fill/w_304,h_296,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/_%20(7).jpeg",
+  },
+  {
+    name: "PowerPoint",
+    category: "Productivity",
+    icon: "https://static.wixstatic.com/media/df8dea_34e91ffb08cc4911bc578a920376a2d1~mv2.jpeg/v1/fill/w_304,h_296,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Microsoft%20Powerpoint%20Logo%20PNG%20Vector%20(SVG)%20Free%20Download.jpeg",
+  },
+];
+
+export const documentSections: DocumentSection[] = [
+  {
+    title: "Resume",
+    eyebrow: "Career snapshot",
+    text:
+      "A concise overview of academic background, professional experiences, and project-based achievements across brand strategy, marketing planning, data analysis, and collaboration.",
+    href: "https://50e217fb-c32f-4fb0-a6a1-228397b343ae.filesusr.com/ugd/df8dea_f28ccd40b1564612b437039aba384d6f.pdf",
+    action: "Download Resume",
+    preview:
+      "https://static.wixstatic.com/media/df8dea_02c9d4f1949a476191cb60a6e93826d8~mv2.png/v1/crop/x_5,y_0,w_1233,h_1747/fill/w_980,h_1390,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2018_22_27.png",
+    highlights: ["Brand strategy", "Marketing planning", "Data-driven analysis"],
+  },
+  {
+    title: "Certificate",
+    eyebrow: "Learning archive",
+    text:
+      "Certificates from UX/HCI, digital marketing, beauty brand management, design, content creation, and related programs that support both strategic and creative practice.",
+    href: "https://leesm5088.wixsite.com/suminleeportfolio/certificate",
+    action: "View Original",
+    preview:
+      "https://static.wixstatic.com/media/df8dea_6544e03da14c478fa75977ce91499f27~mv2.jpeg/v1/fill/w_592,h_784,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/KakaoTalk_Photo_2026-06-07-18-44-26.jpeg",
+    highlights: ["UX / HCI", "Digital marketing", "Beauty brand management"],
+    gallery: [
+      "https://static.wixstatic.com/media/df8dea_e72f899ec7354337938ae868815a9068~mv2.jpeg/v1/fill/w_592,h_836,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/KakaoTalk_Photo_2026-06-07-18-44-40.jpeg",
+      "https://static.wixstatic.com/media/df8dea_f32636c5db9e49f6ada29aafc025b2b3~mv2.png/v1/fill/w_592,h_866,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2018_36_21.png",
+      "https://static.wixstatic.com/media/df8dea_d018506c23f746dea3d91ff65fd949ce~mv2.png/v1/crop/x_0,y_10,w_2098,h_1474/fill/w_826,h_580,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2018_38_37.png",
+    ],
+  },
+  {
+    title: "License",
+    eyebrow: "Verified capability",
+    text:
+      "Licenses and certifications that demonstrate practical capability across structured data, AI prompt workflows, accounting, digital design, and content production.",
+    href: "https://leesm5088.wixsite.com/suminleeportfolio/license",
+    action: "View Original",
+    preview:
+      "https://static.wixstatic.com/media/df8dea_a53630cf541d4de491cd5ec5d8c5e1c4~mv2.png/v1/fill/w_642,h_904,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2019_01_03.png",
+    highlights: ["SQLD / AI-POT", "Accounting management", "Adobe Photoshop / After Effects"],
+    gallery: [
+      "https://static.wixstatic.com/media/df8dea_4a84c69cf5834f1f809adb67d044ae5d~mv2.png/v1/fill/w_642,h_904,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2019_01_30.png",
+      "https://static.wixstatic.com/media/df8dea_6a5f59b0c67d407ebab8c3345013371c~mv2.png/v1/crop/x_0,y_21,w_1412,h_1035/fill/w_910,h_668,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2018_57_28.png",
+      "https://static.wixstatic.com/media/df8dea_bc4252d60d474491a2d1c8ff3fbb750e~mv2.png/v1/crop/x_0,y_40,w_1412,h_1038/fill/w_910,h_668,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2018_57_22.png",
+    ],
+  },
 ];
 
 export const interests: Interest[] = [

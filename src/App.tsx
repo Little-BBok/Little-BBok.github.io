@@ -5,6 +5,8 @@ import {
   ChartNoAxesCombined,
   ChevronRight,
   CircleUserRound,
+  Download,
+  FileText,
   FolderKanban,
   GraduationCap,
   Mail,
@@ -16,12 +18,14 @@ import {
 import { useEffect, useMemo, useState } from "react";
 import {
   aboutKeywords,
+  documentSections,
   experiences,
   interests,
   keywords,
   profile,
   projects,
   skills,
+  softwareTools,
   type Project,
 } from "./data/portfolio";
 
@@ -386,26 +390,114 @@ function ProjectDetail({ project }: { project: Project }) {
 }
 
 function SkillsPage() {
+  const [activeTab, setActiveTab] = useState<"skills" | "documents">("skills");
+
   return (
     <PageFrame eyebrow="Capabilities" title="Skills & Documents">
-      <div className="skills-layout">
-        <section className="skill-cloud">
-          {skills.map((skill) => (
-            <span key={skill}>{skill}</span>
-          ))}
-        </section>
-        <section className="document-panel">
-          <h3>Document Archive</h3>
-          <p>
-            Resume, certificates, licenses, project documents, and guidebooks
-            are represented through the source portfolio's document section and
-            project case links.
-          </p>
-          <a className="button ghost" href={profile.links[0].href} target="_blank">
-            Original Archive <ArrowUpRight size={18} />
-          </a>
-        </section>
+      <div className="content-tabs" role="tablist" aria-label="Skills and documents">
+        <button
+          className={activeTab === "skills" ? "active" : ""}
+          type="button"
+          role="tab"
+          aria-selected={activeTab === "skills"}
+          onClick={() => setActiveTab("skills")}
+        >
+          Skills
+        </button>
+        <button
+          className={activeTab === "documents" ? "active" : ""}
+          type="button"
+          role="tab"
+          aria-selected={activeTab === "documents"}
+          onClick={() => setActiveTab("documents")}
+        >
+          Documents
+        </button>
       </div>
+
+      {activeTab === "skills" ? (
+        <div className="skills-stack" role="tabpanel">
+          <section className="tool-section">
+            <div className="section-title">
+              <Sparkles />
+              <h3>Tools I Use</h3>
+            </div>
+            <div className="tool-grid">
+              {softwareTools.map((tool) => (
+                <article className="tool-card" key={tool.name}>
+                  <div className="tool-logo">
+                    <img src={tool.icon} alt={`${tool.name} logo`} />
+                  </div>
+                  <div>
+                    <span>{tool.category}</span>
+                    <h4>{tool.name}</h4>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="skill-panel">
+            <div className="section-title">
+              <FolderKanban />
+              <h3>Developed Skills</h3>
+            </div>
+            <div className="skill-cloud">
+              {skills.map((skill) => (
+                <span key={skill}>{skill}</span>
+              ))}
+            </div>
+          </section>
+        </div>
+      ) : (
+        <div className="document-stack" role="tabpanel">
+          {documentSections.map((section) => (
+            <article className="document-card" key={section.title}>
+              <div className="document-preview">
+                <img
+                  src={section.preview}
+                  alt={`${section.title} preview`}
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div className="document-copy">
+                <span>{section.eyebrow}</span>
+                <h3>{section.title}</h3>
+                <p>{section.text}</p>
+                <div className="chip-row">
+                  {section.highlights.map((item) => (
+                    <span className="chip" key={item}>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                {section.gallery ? (
+                  <div className="document-mini-gallery">
+                    {section.gallery.map((image, index) => (
+                      <img
+                        src={image}
+                        alt={`${section.title} supporting document ${index + 1}`}
+                        loading="eager"
+                        decoding="async"
+                        key={image}
+                      />
+                    ))}
+                  </div>
+                ) : null}
+                <a className="button ghost" href={section.href} target="_blank">
+                  {section.action}
+                  {section.title === "Resume" ? (
+                    <Download size={18} />
+                  ) : (
+                    <FileText size={18} />
+                  )}
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
     </PageFrame>
   );
 }
