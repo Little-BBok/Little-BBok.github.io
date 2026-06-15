@@ -139,3 +139,14 @@ Build and deploy a React + Vite personal portfolio for Sumin (Chloe) Lee on the 
 - `style: refine responsive portfolio design`
 - `chore: configure github pages deployment`
 
+## QA Tooling Added During Build
+
+- A reusable Codex skill was created at `~/.codex/skills/chrome-headless-qa`.
+- Global Playwright was installed and the skill runs the system Google Chrome in headless mode.
+- Command used for this portfolio:
+
+```bash
+node ~/.codex/skills/chrome-headless-qa/scripts/chrome_headless_qa.mjs http://127.0.0.1:5173/ --out /tmp/portfolio-qa-2 --viewports desktop=1440x1000,mobile=390x844
+```
+
+- Latest local QA result: passed with desktop and mobile screenshots, zero console errors, zero page errors, zero failed requests, and no horizontal overflow.
