@@ -586,7 +586,7 @@ export const documentSections: DocumentSection[] = [
       "A dedicated archive of licenses and verified capability documents from the original portfolio, kept inside this portfolio for a smoother review flow.",
     href: "#/document/license",
     action: "View Licenses",
-    preview: "/documents/license-sqld.png",
+    preview: "/documents/license-photoshop.png",
     highlights: ["SQLD / AI-POT", "Accounting management", "Adobe Photoshop / After Effects"],
     gallery: [
       "/documents/license-accounting.png",

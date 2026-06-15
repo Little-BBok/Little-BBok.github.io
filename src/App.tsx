@@ -9,6 +9,7 @@ import {
   FileText,
   FolderKanban,
   GraduationCap,
+  Linkedin,
   Mail,
   MapPin,
   Menu,
@@ -19,7 +20,6 @@ import { useEffect, useMemo, useState } from "react";
 import {
   aboutNarrative,
   aboutKeywords,
-  contactHighlights,
   documentSections,
   experiences,
   interests,
@@ -177,9 +177,8 @@ function HomePage() {
         <div className="hero-copy">
           <p className="kicker">Portfolio 2026</p>
           <h1>
-            Creative
-            <span>{profile.name}</span>
-            Portfolio
+            Who is
+            <span>Sumin?</span>
           </h1>
           <p>{profile.tagline}</p>
           <div className="hero-actions">
@@ -254,29 +253,58 @@ function HomePage() {
 
 function AboutPage() {
   return (
-    <PageFrame eyebrow="Introduction" title="About Sumin">
-      <div className="about-layout">
-        <div className="portrait-card">
-          <img src={profile.portrait} alt="Sumin Lee portrait" />
+    <PageFrame eyebrow="Introduction" title="About Me">
+      <section className="about-wix-layout">
+        <div className="about-profile-panel">
+          <div className="portrait-card">
+            <img src={profile.portrait} alt="Sumin Lee portrait" />
+          </div>
+          <div className="about-socials" aria-label="Sumin Lee profile links">
+            <a href="mailto:leesm5088@naver.com?subject=Portfolio%20Contact">
+              <Mail size={17} />
+              Email
+            </a>
+            <a href="https://www.linkedin.com/in/sumin-lee-0270a8292/" target="_blank">
+              <Linkedin size={17} />
+              LinkedIn
+            </a>
+          </div>
         </div>
-        <div className="rich-copy">
-          <h3>{profile.title}</h3>
-          <div className="about-narrative">
-            {aboutNarrative.map((paragraph) => (
+        <div className="about-main-copy">
+          <h2>{profile.title}</h2>
+          <p className="about-opening">{aboutNarrative[0]}</p>
+          <section className="about-story-block">
+            <h3>My Story</h3>
+            {aboutNarrative.slice(1).map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-          </div>
-          <div className="keyword-grid">
-            {aboutKeywords.map((keyword) => (
-              <article className="keyword-card" key={keyword.title}>
-                <Sparkles size={18} />
-                <h4>{keyword.title}</h4>
-                <p>{keyword.text}</p>
-              </article>
-            ))}
-          </div>
+          </section>
+          <section className="about-contact-block">
+            <h3>Contact</h3>
+            <p>I'm always looking for new and exciting opportunities. Let's connect.</p>
+            <div className="about-contact-list">
+              {profile.emails.map((email) => (
+                <a href={`mailto:${email}?subject=Portfolio%20Contact`} key={email}>
+                  {email}
+                </a>
+              ))}
+            </div>
+          </section>
         </div>
-      </div>
+      </section>
+
+      <section className="about-keyword-section">
+        <p className="kicker">Three Keywords</p>
+        <div className="keyword-grid">
+          {aboutKeywords.map((keyword) => (
+            <article className="keyword-card" key={keyword.title}>
+              <Sparkles size={18} />
+              <h4>{keyword.title}</h4>
+              <p>{keyword.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
     </PageFrame>
   );
 }
@@ -539,25 +567,16 @@ function DocumentsPage() {
 
 function DocumentCard({ section }: { section: DocumentSection }) {
   const isExternal = !section.href.startsWith("#/");
-  const documentCount = 1 + (section.gallery?.length ?? 0);
 
   return (
     <article className="document-card">
       <div className="document-preview">
-        {section.id === "resume" ? (
-          <img
-            src={section.preview}
-            alt={`${section.title} preview`}
-            loading="eager"
-            decoding="async"
-          />
-        ) : (
-          <div className="document-preview-placeholder">
-            <FileText size={42} />
-            <strong>{documentCount} files</strong>
-            <span>{section.title} archive</span>
-          </div>
-        )}
+        <img
+          src={section.preview}
+          alt={`${section.title} preview`}
+          loading="eager"
+          decoding="async"
+        />
       </div>
       <div className="document-copy">
         <span>{section.eyebrow}</span>
@@ -701,12 +720,11 @@ function ContactPage() {
     <PageFrame eyebrow="Contact" title="Contact Me">
       <section className="contact-hero">
         <div className="contact-intro">
-          <CircleUserRound size={34} />
+          <CircleUserRound size={30} />
           <h3>{profile.name}</h3>
           <p>
-            I am open to conversations around brand strategy, UX planning,
-            beauty and wellness brands, data-informed research, and joyful
-            user experiences.
+            Curious about my projects, work experience, travel stories, or a
+            casual coffee chat? Feel free to reach out.
           </p>
           <span>
             <MapPin size={18} />
@@ -722,7 +740,7 @@ function ContactPage() {
           ))}
           {profile.links.map((link) => (
             <a href={link.href} target="_blank" key={link.label}>
-              <ArrowUpRight size={18} />
+              {link.label === "LinkedIn" ? <Linkedin size={18} /> : <ArrowUpRight size={18} />}
               {link.label}
             </a>
           ))}
@@ -732,14 +750,22 @@ function ContactPage() {
           </span>
         </div>
       </section>
-      <section className="contact-highlight-grid">
-        {contactHighlights.map((item, index) => (
-          <article className="contact-highlight-card" key={item.title}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
-          </article>
-        ))}
+      <section className="contact-reachout-panel">
+        <div>
+          <p className="kicker">Reach out for</p>
+          <h3>Open conversation, clear next steps.</h3>
+        </div>
+        <p>
+          More portfolio details, project collaboration, work experience questions,
+          travel-inspired stories, career conversations, or coffee chats are all welcome.
+        </p>
+        <div className="contact-topic-list">
+          <span>More projects</span>
+          <span>Work experience</span>
+          <span>Travel stories</span>
+          <span>Coffee chat</span>
+          <span>Collaboration</span>
+        </div>
       </section>
     </PageFrame>
   );

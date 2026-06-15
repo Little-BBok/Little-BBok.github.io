@@ -460,6 +460,110 @@ img {
   object-fit: cover;
 }
 
+.about-wix-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 360px) minmax(0, 1fr);
+  gap: clamp(28px, 6vw, 88px);
+  align-items: start;
+}
+
+.about-profile-panel {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.about-profile-panel .portrait-card {
+  max-width: 360px;
+  aspect-ratio: 4 / 5;
+}
+
+.about-profile-panel .portrait-card img {
+  min-height: 0;
+  object-fit: cover;
+}
+
+.about-socials,
+.about-contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about-socials a,
+.about-contact-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 10px 14px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.56);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.about-main-copy {
+  display: grid;
+  gap: clamp(22px, 4vw, 36px);
+}
+
+.about-main-copy h2 {
+  max-width: 860px;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(36px, 6vw, 84px);
+  font-weight: 950;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.about-opening {
+  max-width: 900px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.6;
+}
+
+.about-story-block,
+.about-contact-block {
+  display: grid;
+  gap: 14px;
+  max-width: 880px;
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+}
+
+.about-story-block h3,
+.about-contact-block h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(28px, 3.5vw, 46px);
+  line-height: 0.95;
+}
+
+.about-story-block p,
+.about-contact-block p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.about-keyword-section {
+  margin-top: clamp(42px, 7vw, 86px);
+  border-top: 1px solid var(--line);
+  padding-top: clamp(28px, 4vw, 46px);
+}
+
+.about-keyword-section > .kicker {
+  margin-bottom: 18px;
+}
+
 .rich-copy h3,
 .section-title h3,
 .document-panel h3,
@@ -1232,15 +1336,15 @@ img {
 .contact-highlight-card h3 {
   margin: 0;
   color: var(--ink);
-  font-size: clamp(28px, 4vw, 56px);
+  font-size: clamp(26px, 3.2vw, 44px);
   line-height: 0.95;
 }
 
 .contact-intro p {
   max-width: 640px;
   margin: 0;
-  font-size: clamp(18px, 2vw, 24px);
-  line-height: 1.45;
+  font-size: clamp(17px, 1.6vw, 21px);
+  line-height: 1.55;
 }
 
 .contact-intro span {
@@ -1301,6 +1405,54 @@ img {
   margin-bottom: 0;
 }
 
+.contact-reachout-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.5fr) minmax(280px, 1fr);
+  gap: clamp(18px, 4vw, 46px);
+  align-items: start;
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: clamp(22px, 4vw, 34px);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.contact-reachout-panel h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1;
+}
+
+.contact-reachout-panel p:not(.kicker) {
+  max-width: 780px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.contact-topic-list {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: 2;
+  gap: 10px;
+}
+
+.contact-topic-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .site-footer {
   display: flex;
   flex-wrap: wrap;
@@ -1331,9 +1483,11 @@ img {
   .hero-section,
   .toc-section,
   .about-layout,
+  .about-wix-layout,
   .case-hero,
   .case-story-card,
   .contact-hero,
+  .contact-reachout-panel,
   .document-card,
   .document-detail-hero,
   .timeline-item {
@@ -1379,6 +1533,10 @@ img {
 
   .document-detail-actions {
     justify-content: flex-start;
+  }
+
+  .contact-topic-list {
+    grid-column: 1;
   }
 }
 
@@ -1465,8 +1623,15 @@ img {
   }
 
   .document-preview {
-    min-height: 280px;
-    max-height: 380px;
+    display: grid;
+    min-height: 0;
+    max-height: none;
+    place-items: center;
+  }
+
+  .document-preview img {
+    height: auto;
+    max-height: 340px;
   }
 
   .document-copy {
@@ -1497,8 +1662,19 @@ img {
   .timeline-item,
   .case-hero,
   .contact-hero,
+  .contact-reachout-panel,
   .document-detail-hero {
     padding: 18px;
+  }
+
+  .about-main-copy h2 {
+    font-size: clamp(34px, 10vw, 48px);
+  }
+
+  .about-story-block p,
+  .about-contact-block p,
+  .contact-reachout-panel p:not(.kicker) {
+    font-size: 15px;
   }
 
   .interest-card {
