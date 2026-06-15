@@ -55,9 +55,11 @@ export type SoftwareTool = {
 };
 
 export type DocumentSection = {
+  id: string;
   title: string;
   eyebrow: string;
   text: string;
+  detailIntro?: string;
   href: string;
   action: string;
   preview: string;
@@ -122,6 +124,30 @@ export const aboutKeywords = [
   {
     title: "Warm Visual Storyteller",
     text: "I shape brand and product narratives so complex ideas feel approachable, memorable, and human.",
+  },
+];
+
+export const aboutNarrative = [
+  "I am an experience planner who blends data-driven insights with human-centered empathy. Driven by a curiosity to explore the world, my mission is to design seamless user experiences that leave joyful and lasting brand memories in people's lives.",
+  "My journey began by exploring the world, capturing unique global inspirations that broadened my perspective. I transform these raw insights into structured brand, product, and service strategies deeply rooted in data analysis and cognitive science.",
+  "Beyond numbers, my ultimate goal is to architect seamless user experiences that touch people's lives with joy and warmth, scaling this positive impact outwards. Driven by this vision, I continuously push my boundaries by actively leading diverse service development, data analytics, and branding projects to grow as a multi-dimensional planner.",
+];
+
+export const contactHighlights = [
+  {
+    title: "Project Collaboration",
+    text:
+      "Brand strategy, UX planning, service design, CRM, growth marketing, and beauty or wellness projects are the best starting points for a conversation.",
+  },
+  {
+    title: "Research & Insight",
+    text:
+      "I enjoy translating interviews, market signals, cultural references, and quantitative analysis into clear business and product directions.",
+  },
+  {
+    title: "Open Conversation",
+    text:
+      "Portfolio reviews, career conversations, student association work, and global brand experience discussions are always welcome.",
   },
 ];
 
@@ -543,6 +569,7 @@ export const softwareTools: SoftwareTool[] = [
 
 export const documentSections: DocumentSection[] = [
   {
+    id: "resume",
     title: "Resume",
     eyebrow: "Career snapshot",
     text:
@@ -554,35 +581,43 @@ export const documentSections: DocumentSection[] = [
     highlights: ["Brand strategy", "Marketing planning", "Data-driven analysis"],
   },
   {
+    id: "certificate",
     title: "Certificate",
     eyebrow: "Learning archive",
     text:
       "Certificates from UX/HCI, digital marketing, beauty brand management, design, content creation, and related programs that support both strategic and creative practice.",
-    href: "https://leesm5088.wixsite.com/suminleeportfolio/certificate",
-    action: "View Original",
-    preview:
-      "https://static.wixstatic.com/media/df8dea_6544e03da14c478fa75977ce91499f27~mv2.jpeg/v1/fill/w_592,h_784,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/KakaoTalk_Photo_2026-06-07-18-44-26.jpeg",
+    detailIntro:
+      "A dedicated archive of completion certificates from the original portfolio, gathered here so the materials can be reviewed without leaving this site.",
+    href: "#/document/certificate",
+    action: "View Certificates",
+    preview: "/documents/cert-uxim.png",
     highlights: ["UX / HCI", "Digital marketing", "Beauty brand management"],
     gallery: [
-      "https://static.wixstatic.com/media/df8dea_e72f899ec7354337938ae868815a9068~mv2.jpeg/v1/fill/w_592,h_836,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/KakaoTalk_Photo_2026-06-07-18-44-40.jpeg",
-      "https://static.wixstatic.com/media/df8dea_f32636c5db9e49f6ada29aafc025b2b3~mv2.png/v1/fill/w_592,h_866,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2018_36_21.png",
-      "https://static.wixstatic.com/media/df8dea_d018506c23f746dea3d91ff65fd949ce~mv2.png/v1/crop/x_0,y_10,w_2098,h_1474/fill/w_826,h_580,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2018_38_37.png",
+      "/documents/cert-ycc.png",
+      "/documents/cert-ydec.png",
+      "/documents/cert-buddy-2023.png",
+      "/documents/cert-buddy-2024.png",
+      "/documents/cert-aiffel.png",
+      "/documents/cert-comento.png",
     ],
   },
   {
+    id: "license",
     title: "License",
     eyebrow: "Verified capability",
     text:
       "Licenses and certifications that demonstrate practical capability across structured data, AI prompt workflows, accounting, digital design, and content production.",
-    href: "https://leesm5088.wixsite.com/suminleeportfolio/license",
-    action: "View Original",
-    preview:
-      "https://static.wixstatic.com/media/df8dea_a53630cf541d4de491cd5ec5d8c5e1c4~mv2.png/v1/fill/w_642,h_904,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2019_01_03.png",
+    detailIntro:
+      "A dedicated archive of licenses and verified capability documents from the original portfolio, kept inside this portfolio for a smoother review flow.",
+    href: "#/document/license",
+    action: "View Licenses",
+    preview: "/documents/license-sqld.png",
     highlights: ["SQLD / AI-POT", "Accounting management", "Adobe Photoshop / After Effects"],
     gallery: [
-      "https://static.wixstatic.com/media/df8dea_4a84c69cf5834f1f809adb67d044ae5d~mv2.png/v1/fill/w_642,h_904,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2019_01_30.png",
-      "https://static.wixstatic.com/media/df8dea_6a5f59b0c67d407ebab8c3345013371c~mv2.png/v1/crop/x_0,y_21,w_1412,h_1035/fill/w_910,h_668,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2018_57_28.png",
-      "https://static.wixstatic.com/media/df8dea_bc4252d60d474491a2d1c8ff3fbb750e~mv2.png/v1/crop/x_0,y_40,w_1412,h_1038/fill/w_910,h_668,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2018_57_22.png",
+      "/documents/license-accounting.png",
+      "/documents/license-aipot.png",
+      "/documents/license-photoshop.png",
+      "/documents/license-after-effects.png",
     ],
   },
 ];

@@ -17,7 +17,9 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import {
+  aboutNarrative,
   aboutKeywords,
+  contactHighlights,
   documentSections,
   experiences,
   interests,
@@ -28,6 +30,7 @@ import {
   skills,
   softwareTools,
   type Interest,
+  type DocumentSection,
   type Project,
 } from "./data/portfolio";
 
@@ -37,6 +40,7 @@ const routes = [
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
+  { id: "documents", label: "Documents" },
   { id: "interests", label: "Interests" },
   { id: "contact", label: "Contact" },
 ];
@@ -68,6 +72,11 @@ function App() {
     return interests.find((interest) => interest.id === route.split("/")[1]);
   }, [route]);
 
+  const activeDocument = useMemo(() => {
+    if (!route.startsWith("document/")) return undefined;
+    return documentSections.find((section) => section.id === route.split("/")[1]);
+  }, [route]);
+
   return (
     <div className="site-shell">
       <Header route={route} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
@@ -78,13 +87,16 @@ function App() {
         {route === "experience" ? <ExperiencePage /> : null}
         {route === "projects" ? <ProjectsPage /> : null}
         {route === "skills" ? <SkillsPage /> : null}
+        {route === "documents" ? <DocumentsPage /> : null}
         {route === "interests" ? <InterestsPage /> : null}
         {route === "contact" ? <ContactPage /> : null}
         {activeProject ? <ProjectDetail project={activeProject} /> : null}
         {activeInterest ? <InterestDetail interest={activeInterest} /> : null}
+        {activeDocument ? <DocumentDetail section={activeDocument} /> : null}
         {!routes.some((item) => item.id === route) &&
         !activeProject &&
-        !activeInterest ? (
+        !activeInterest &&
+        !activeDocument ? (
           <NotFoundPage />
         ) : null}
       </main>
@@ -112,7 +124,8 @@ function Header({
           <a
             className={
               route === item.id ||
-              (item.id === "interests" && route.startsWith("interest/"))
+              (item.id === "interests" && route.startsWith("interest/")) ||
+              (item.id === "documents" && route.startsWith("document/"))
                 ? "active"
                 : ""
             }
@@ -141,7 +154,9 @@ function MobileMenu({ route }: { route: string }) {
       {routes.map((item) => (
         <a
           className={
-            route === item.id || (item.id === "interests" && route.startsWith("interest/"))
+            route === item.id ||
+            (item.id === "interests" && route.startsWith("interest/")) ||
+            (item.id === "documents" && route.startsWith("document/"))
               ? "active"
               : ""
           }
@@ -246,8 +261,11 @@ function AboutPage() {
         </div>
         <div className="rich-copy">
           <h3>{profile.title}</h3>
-          <p>{profile.intro}</p>
-          <p>{profile.story}</p>
+          <div className="about-narrative">
+            {aboutNarrative.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
           <div className="keyword-grid">
             {aboutKeywords.map((keyword) => (
               <article className="keyword-card" key={keyword.title}>
@@ -459,114 +477,152 @@ function ProjectDetail({ project }: { project: Project }) {
 }
 
 function SkillsPage() {
-  const [activeTab, setActiveTab] = useState<"skills" | "documents">("skills");
+  return (
+    <PageFrame eyebrow="Capabilities" title="Skills">
+      <div className="skills-stack">
+        <section className="tool-section">
+          <div className="section-title">
+            <Sparkles />
+            <h3>Tools I Use</h3>
+          </div>
+          <div className="tool-grid">
+            {softwareTools.map((tool) => (
+              <article className="tool-card" key={tool.name}>
+                <div className="tool-logo">
+                  <img src={tool.icon} alt={`${tool.name} logo`} />
+                </div>
+                <div>
+                  <span>{tool.category}</span>
+                  <h4>{tool.name}</h4>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="skill-panel">
+          <div className="section-title">
+            <FolderKanban />
+            <h3>Developed Skills</h3>
+          </div>
+          <div className="skill-cloud">
+            {skills.map((skill) => (
+              <span key={skill}>{skill}</span>
+            ))}
+          </div>
+        </section>
+      </div>
+    </PageFrame>
+  );
+}
+
+function DocumentsPage() {
+  return (
+    <PageFrame eyebrow="Archive" title="Documents">
+      <p className="page-lede">
+        Resume, completion certificates, and licenses are organized as separate
+        review pages so the supporting materials can be checked inside this
+        portfolio.
+      </p>
+      <div className="document-stack">
+        {documentSections.map((section) => (
+          <DocumentCard section={section} key={section.id} />
+        ))}
+      </div>
+    </PageFrame>
+  );
+}
+
+function DocumentCard({ section }: { section: DocumentSection }) {
+  const isExternal = !section.href.startsWith("#/");
+  const documentCount = 1 + (section.gallery?.length ?? 0);
 
   return (
-    <PageFrame eyebrow="Capabilities" title="Skills & Documents">
-      <div className="content-tabs" role="tablist" aria-label="Skills and documents">
-        <button
-          className={activeTab === "skills" ? "active" : ""}
-          type="button"
-          role="tab"
-          aria-selected={activeTab === "skills"}
-          onClick={() => setActiveTab("skills")}
-        >
-          Skills
-        </button>
-        <button
-          className={activeTab === "documents" ? "active" : ""}
-          type="button"
-          role="tab"
-          aria-selected={activeTab === "documents"}
-          onClick={() => setActiveTab("documents")}
-        >
-          Documents
-        </button>
+    <article className="document-card">
+      <div className="document-preview">
+        {section.id === "resume" ? (
+          <img
+            src={section.preview}
+            alt={`${section.title} preview`}
+            loading="eager"
+            decoding="async"
+          />
+        ) : (
+          <div className="document-preview-placeholder">
+            <FileText size={42} />
+            <strong>{documentCount} files</strong>
+            <span>{section.title} archive</span>
+          </div>
+        )}
       </div>
-
-      {activeTab === "skills" ? (
-        <div className="skills-stack" role="tabpanel">
-          <section className="tool-section">
-            <div className="section-title">
-              <Sparkles />
-              <h3>Tools I Use</h3>
-            </div>
-            <div className="tool-grid">
-              {softwareTools.map((tool) => (
-                <article className="tool-card" key={tool.name}>
-                  <div className="tool-logo">
-                    <img src={tool.icon} alt={`${tool.name} logo`} />
-                  </div>
-                  <div>
-                    <span>{tool.category}</span>
-                    <h4>{tool.name}</h4>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className="skill-panel">
-            <div className="section-title">
-              <FolderKanban />
-              <h3>Developed Skills</h3>
-            </div>
-            <div className="skill-cloud">
-              {skills.map((skill) => (
-                <span key={skill}>{skill}</span>
-              ))}
-            </div>
-          </section>
-        </div>
-      ) : (
-        <div className="document-stack" role="tabpanel">
-          {documentSections.map((section) => (
-            <article className="document-card" key={section.title}>
-              <div className="document-preview">
-                <img
-                  src={section.preview}
-                  alt={`${section.title} preview`}
-                  loading="eager"
-                  decoding="async"
-                />
-              </div>
-              <div className="document-copy">
-                <span>{section.eyebrow}</span>
-                <h3>{section.title}</h3>
-                <p>{section.text}</p>
-                <div className="chip-row">
-                  {section.highlights.map((item) => (
-                    <span className="chip" key={item}>
-                      {item}
-                    </span>
-                  ))}
-                </div>
-                {section.gallery ? (
-                  <div className="document-mini-gallery">
-                    {section.gallery.map((image, index) => (
-                      <img
-                        src={image}
-                        alt={`${section.title} supporting document ${index + 1}`}
-                        loading="eager"
-                        decoding="async"
-                        key={image}
-                      />
-                    ))}
-                  </div>
-                ) : null}
-                <a className="button ghost" href={section.href} target="_blank">
-                  {section.action}
-                  {section.title === "Resume" ? (
-                    <Download size={18} />
-                  ) : (
-                    <FileText size={18} />
-                  )}
-                </a>
-              </div>
-            </article>
+      <div className="document-copy">
+        <span>{section.eyebrow}</span>
+        <h3>{section.title}</h3>
+        <p>{section.text}</p>
+        <div className="chip-row">
+          {section.highlights.map((item) => (
+            <span className="chip" key={item}>
+              {item}
+            </span>
           ))}
         </div>
-      )}
+        <a
+          className={`button ${isExternal ? "ghost" : "primary"}`}
+          href={section.href}
+          target={isExternal ? "_blank" : undefined}
+        >
+          {section.action}
+          {section.title === "Resume" ? <Download size={18} /> : <FileText size={18} />}
+        </a>
+      </div>
+    </article>
+  );
+}
+
+function DocumentDetail({ section }: { section: DocumentSection }) {
+  const images = Array.from(new Set([section.preview, ...(section.gallery ?? [])]));
+  const isResume = section.id === "resume";
+
+  return (
+    <PageFrame eyebrow={section.eyebrow} title={section.title}>
+      <section className="document-detail-hero">
+        <div>
+          <p className="page-lede">{section.detailIntro ?? section.text}</p>
+          <div className="chip-row">
+            {section.highlights.map((item) => (
+              <span className="chip" key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="document-detail-actions">
+          <a className="button ghost" href="#/documents">
+            Back to Documents
+          </a>
+          {isResume ? (
+            <a className="button primary" href={section.href} target="_blank">
+              Download Resume <Download size={18} />
+            </a>
+          ) : null}
+        </div>
+      </section>
+
+      <section className="document-detail-gallery" aria-label={`${section.title} materials`}>
+        {images.map((image, index) => (
+          <figure className="document-detail-image" key={image}>
+            <img
+              src={image}
+              alt={`${section.title} document ${index + 1}`}
+              loading="eager"
+              decoding="async"
+            />
+            <figcaption>
+              {section.title} {String(index + 1).padStart(2, "0")}
+            </figcaption>
+          </figure>
+        ))}
+      </section>
     </PageFrame>
   );
 }
@@ -643,16 +699,24 @@ function InterestDetail({ interest }: { interest: Interest }) {
 
 function ContactPage() {
   return (
-    <PageFrame eyebrow="Contact" title="Let's connect">
-      <section className="contact-panel">
-        <div>
+    <PageFrame eyebrow="Contact" title="Contact Me">
+      <section className="contact-hero">
+        <div className="contact-intro">
           <CircleUserRound size={34} />
           <h3>{profile.name}</h3>
-          <p>{profile.school}</p>
+          <p>
+            I am open to conversations around brand strategy, UX planning,
+            beauty and wellness brands, data-informed research, and joyful
+            user experiences.
+          </p>
+          <span>
+            <MapPin size={18} />
+            {profile.school}
+          </span>
         </div>
         <div className="contact-links">
           {profile.emails.map((email) => (
-            <a href={`mailto:${email}`} key={email}>
+            <a href={`mailto:${email}?subject=Portfolio%20Contact`} key={email}>
               <Mail size={18} />
               {email}
             </a>
@@ -668,6 +732,15 @@ function ContactPage() {
             Seoul, Korea
           </span>
         </div>
+      </section>
+      <section className="contact-highlight-grid">
+        {contactHighlights.map((item, index) => (
+          <article className="contact-highlight-card" key={item.title}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
       </section>
     </PageFrame>
   );
