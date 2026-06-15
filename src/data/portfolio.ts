@@ -32,6 +32,7 @@ export type Experience = {
   role: string;
   period: string;
   category: "Work" | "Association";
+  description?: string;
   highlights: string[];
 };
 
@@ -195,6 +196,7 @@ export const experiences: Experience[] = [
     role: "Product Manager",
     period: "Mar 2025 - Jun 2026",
     category: "Association",
+    description: "HCI/UX Society",
     highlights: [
       "Led Began product planning through user interviews, IA, user flows, and business model definition.",
       "Won 1st place at the UXIM x YCC Final Project Showcase.",
@@ -207,6 +209,7 @@ export const experiences: Experience[] = [
     role: "Head of PR & MD Team",
     period: "Mar 2024 - Dec 2024",
     category: "Association",
+    description: "Cognitive Science Society",
     highlights: [
       "Designed and executed neuromarketing research with Muse EEG to study olfactory visualization and purchase intent in omni-channel retail.",
       "Managed the full research lifecycle from experimental design to data analysis, with findings published in a peer-reviewed academic journal.",
@@ -218,6 +221,7 @@ export const experiences: Experience[] = [
     role: "Member",
     period: "Mar 2024 - Dec 2024",
     category: "Association",
+    description: "Commerce & Strategy Society",
     highlights: [
       "Strategized B2C market expansion for a B2B NFT business through a location-based camera app concept and UI/UX framework.",
       "Won 1st place in the final idea pitching, contributing to commercialization and launch by the partnering corporation.",
@@ -236,7 +240,7 @@ export const projects: Project[] = [
       "Lead Product Planner responsible for ideation, IDI, IA, user flows, business model, and end-to-end UI/UX.",
     outcome:
       "Won 1st place at the UXIM x YCC Final Project Showcase for a user-centered approach to real dining accessibility challenges.",
-    accent: "#7ba86f",
+    accent: "#8d93cb",
     external: "https://began-map.vercel.app/ko",
     image:
       "https://static.wixstatic.com/media/df8dea_b4166153dda44015841c8d757c843d28~mv2.png/v1/crop/x_26,y_1,w_3291,h_1803/fill/w_1906,h_1044,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2002_38_29.png",
@@ -283,7 +287,7 @@ export const projects: Project[] = [
       "Strategist and UX planner developing the consumer-facing idea, user flow, and market expansion proposal.",
     outcome:
       "Won 1st place in the final idea pitching and moved toward commercialization and launch by the partner corporation.",
-    accent: "#3385c6",
+    accent: "#8d93cb",
     image:
       "https://static.wixstatic.com/media/df8dea_b364d89cad604cc7a393e9faa4304fa1~mv2.png/v1/fill/w_1235,h_486,al_c,q_90,enc_avif,quality_auto/NFT%20%ED%94%BC%EA%B7%B8%EB%A7%88%20%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85.png",
     sections: [
@@ -327,7 +331,7 @@ export const projects: Project[] = [
       "UX/UI designer translating complex e-commerce data into an intuitive, action-oriented interface for CS agents.",
     outcome:
       "Reduced cognitive load through clearer hierarchy, task-centric workflows, and a scalable SaaS component system.",
-    accent: "#c44c4c",
+    accent: "#f7769b",
     external: "https://cafe24.cs.leviosa.ai.kr",
     image:
       "https://static.wixstatic.com/media/df8dea_f551a8e7576d46ada41881d17c9158e9~mv2.png/v1/fill/w_1960,h_1022,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2003_15_27.png",
@@ -373,7 +377,7 @@ export const projects: Project[] = [
       "Data analyst testing nonlinear price effects and moderating effects of Sephora exclusivity and vegan positioning.",
     outcome:
       "Found that premium beauty success depends on distribution trust and value signals that make consumers perceive price as justified.",
-    accent: "#b9bed0",
+    accent: "#8d93cb",
     image:
       "https://static.wixstatic.com/media/df8dea_b225d5375cfa445bbddbcda2cb4f0431~mv2.png/v1/crop/x_0,y_3,w_3389,h_1836/fill/w_1960,h_1060,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2003_36_58.png",
     actions: [
@@ -400,34 +404,40 @@ export const projects: Project[] = [
     ],
     gallery: [
       {
-        title: "Modeling Process 01",
-        image:
-          "https://static.wixstatic.com/media/df8dea_6f1a477a5b034d57b9a20a22071516e1~mv2.png/v1/crop/x_0,y_15,w_1672,h_911/fill/w_980,h_534,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%EC%9A%A9%20%EC%9D%B4%EB%AF%B8%EC%A7%801.png",
+        title: "Cover Question",
+        image: "/projects/sephora-r/cover.png",
       },
       {
-        title: "Modeling Process 02",
-        image:
-          "https://static.wixstatic.com/media/df8dea_93f977a2c0864d6b944f713398fa5887~mv2.png/v1/crop/x_0,y_15,w_1672,h_911/fill/w_980,h_534,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%EC%9A%A9%20%EC%9D%B4%EB%AF%B8%EC%A7%802.png",
+        title: "Research Background",
+        image: "/projects/sephora-r/background.png",
       },
       {
-        title: "Modeling Process 03",
-        image:
-          "https://static.wixstatic.com/media/df8dea_c234d4215cdd473093c0657273d8f71e~mv2.png/v1/crop/x_0,y_18,w_1672,h_904/fill/w_980,h_534,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%EC%9A%A9%20%EC%9D%B4%EB%AF%B8%EC%A7%803.png",
+        title: "Questions & Objectives",
+        image: "/projects/sephora-r/objectives.png",
       },
       {
-        title: "Modeling Process 04",
-        image:
-          "https://static.wixstatic.com/media/df8dea_e5b3e742748e4d1ab1382d841da5854a~mv2.png/v1/crop/x_0,y_15,w_1672,h_911/fill/w_980,h_534,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%EC%9A%A9%20%EC%9D%B4%EB%AF%B8%EC%A7%804.png",
+        title: "Data Overview",
+        image: "/projects/sephora-r/data-overview.png",
       },
       {
-        title: "Modeling Process 05",
-        image:
-          "https://static.wixstatic.com/media/df8dea_5f1c5664d16d4c3f9f33ead0c9f74512~mv2.png/v1/crop/x_0,y_15,w_1672,h_911/fill/w_980,h_534,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%EC%9A%A9%20%EC%9D%B4%EB%AF%B8%EC%A7%805.png",
+        title: "Conceptual Model",
+        image: "/projects/sephora-r/conceptual-model.png",
       },
       {
-        title: "Modeling Process 06",
-        image:
-          "https://static.wixstatic.com/media/df8dea_38146bd8f85045ab8625cf06e4adf732~mv2.png/v1/crop/x_0,y_15,w_1672,h_911/fill/w_980,h_534,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%EC%9A%A9%20%EC%9D%B4%EB%AF%B8%EC%A7%806.png",
+        title: "Hypotheses",
+        image: "/projects/sephora-r/hypotheses.png",
+      },
+      {
+        title: "Analysis Design",
+        image: "/projects/sephora-r/analysis-design.png",
+      },
+      {
+        title: "Price Distribution",
+        image: "/projects/sephora-r/price-distribution.png",
+      },
+      {
+        title: "Price-Rating Trend",
+        image: "/projects/sephora-r/price-rating-trend.png",
       },
     ],
     details: [
@@ -447,7 +457,7 @@ export const projects: Project[] = [
       "Researcher mapping industry structure, business model, market position, job functions, recruitment, and career progression.",
     outcome:
       "Developed an actionable guidebook for students exploring practical career paths in Sephora and the LVMH network.",
-    accent: "#d6cbb7",
+    accent: "#ffdbed",
     image:
       "https://static.wixstatic.com/media/df8dea_b6fafbd4c98342908d236927c1147c52~mv2.png/v1/crop/x_0,y_88,w_1200,h_1576/fill/w_540,h_710,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2002_03_04.png",
     actions: [
@@ -463,6 +473,18 @@ export const projects: Project[] = [
           "Created a career guidebook project focused on entry strategies into Sephora/LVMH in Europe by analyzing the beauty and luxury industry structure and Sephora's business model. I researched Sephora's European market position, job functions, recruitment process, and career progression pathways, while incorporating insights from interviews with industry professionals.",
         image:
           "https://static.wixstatic.com/media/df8dea_b6fafbd4c98342908d236927c1147c52~mv2.png/v1/crop/x_0,y_88,w_1200,h_1576/fill/w_540,h_710,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2002_03_04.png",
+      },
+      {
+        title: "Why Our Guidebook?",
+        text:
+          "The guidebook was designed to offer uncommon retail insights, a gateway into Sephora/LVMH career paths, and honest, actionable advice that students cannot easily find through surface-level online search.",
+        image: "/projects/sephora-guide/why-guidebook.png",
+      },
+      {
+        title: "Guidebook Structure",
+        text:
+          "The contents move from Sephora business and industry context to career paths, recruitment preparation, and interviews with professionals across Sephora and the LVMH network.",
+        image: "/projects/sephora-guide/table-of-contents.png",
       },
     ],
     details: [
@@ -568,6 +590,7 @@ export const documentSections: DocumentSection[] = [
     preview: "/documents/cert-uxim.png",
     highlights: ["UX / HCI", "Digital marketing", "Beauty brand management"],
     gallery: [
+      "/documents/cert-uxim.png",
       "/documents/cert-ycc.png",
       "/documents/cert-ydec.png",
       "/documents/cert-buddy-2023.png",
@@ -586,9 +609,10 @@ export const documentSections: DocumentSection[] = [
       "A dedicated archive of licenses and verified capability documents from the original portfolio, kept inside this portfolio for a smoother review flow.",
     href: "#/document/license",
     action: "View Licenses",
-    preview: "/documents/license-photoshop.png",
+    preview: "/documents/license-sqld.png",
     highlights: ["SQLD / AI-POT", "Accounting management", "Adobe Photoshop / After Effects"],
     gallery: [
+      "/documents/license-sqld.png",
       "/documents/license-accounting.png",
       "/documents/license-aipot.png",
       "/documents/license-photoshop.png",

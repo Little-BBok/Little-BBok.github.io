@@ -181,6 +181,11 @@ function HomePage() {
             <span>Sumin?</span>
           </h1>
           <p>{profile.tagline}</p>
+          <div className="hero-proof-row" aria-label="Sumin Lee focus areas">
+            <span>Brand Strategy</span>
+            <span>UX Planning</span>
+            <span>Data Insight</span>
+          </div>
           <div className="hero-actions">
             <a className="button primary" href="#/projects">
               View Projects <ArrowUpRight size={18} />
@@ -192,10 +197,6 @@ function HomePage() {
         </div>
         <div className="hero-visual" aria-label="Sumin Lee portfolio portrait">
           <img src={profile.heroImage} alt="Sumin Lee smiling outdoors" />
-          <div className="visual-badge">
-            <Sparkles size={18} />
-            Brand Strategy / UX / Data
-          </div>
         </div>
       </section>
 
@@ -233,19 +234,27 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="featured-strip">
-        {projects.slice(0, 5).map((project, index) => (
-          <a
-            className="project-tile"
-            href={`#/project/${project.id}`}
-            key={project.id}
-            style={{ "--accent": project.accent } as React.CSSProperties}
-          >
-            <span>{index + 1}</span>
-            <strong>{project.title}</strong>
-            <small>{project.eyebrow}</small>
-          </a>
-        ))}
+      <section className="featured-project-section">
+        <div className="section-title">
+          <FolderKanban />
+          <h3>Project Highlights</h3>
+        </div>
+        <div className="featured-strip">
+          {projects.slice(0, 5).map((project, index) => (
+            <a
+              className={`project-tile ${
+                project.accent.toLowerCase() === "#ffdbed" ? "project-tile-light" : ""
+              }`}
+              href={`#/project/${project.id}`}
+              key={project.id}
+              style={{ "--accent": project.accent } as React.CSSProperties}
+            >
+              <span>{index + 1}</span>
+              <strong>{project.title}</strong>
+              <small>{project.eyebrow}</small>
+            </a>
+          ))}
+        </div>
       </section>
     </>
   );
@@ -290,19 +299,18 @@ function AboutPage() {
               ))}
             </div>
           </section>
-        </div>
-      </section>
-
-      <section className="about-keyword-section">
-        <p className="kicker">Three Keywords</p>
-        <div className="keyword-grid">
-          {aboutKeywords.map((keyword) => (
-            <article className="keyword-card" key={keyword.title}>
-              <Sparkles size={18} />
-              <h4>{keyword.title}</h4>
-              <p>{keyword.text}</p>
-            </article>
-          ))}
+          <section className="about-keyword-section">
+            <p className="kicker">Three Keywords</p>
+            <div className="keyword-grid about-keyword-grid">
+              {aboutKeywords.map((keyword) => (
+                <article className="keyword-card" key={keyword.title}>
+                  <Sparkles size={18} />
+                  <h4>{keyword.title}</h4>
+                  <p>{keyword.text}</p>
+                </article>
+              ))}
+            </div>
+          </section>
         </div>
       </section>
     </PageFrame>
@@ -347,6 +355,9 @@ function Timeline({
             <div>
               <span>{item.period}</span>
               <h4>{item.organization}</h4>
+              {item.description ? (
+                <p className="timeline-description">{item.description}</p>
+              ) : null}
               <p>{item.role}</p>
             </div>
             <ul>
@@ -363,7 +374,7 @@ function Timeline({
 
 function ProjectsPage() {
   return (
-    <PageFrame eyebrow="Selected Work" title="Project Portfolio">
+    <PageFrame eyebrow="Selected Work" title="Project">
       <div className="project-grid">
         {projects.map((project, index) => (
           <ProjectCard project={project} index={index} key={project.id} />
@@ -376,13 +387,17 @@ function ProjectsPage() {
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <a
-      className="project-card"
+      className={`project-card ${
+        project.accent.toLowerCase() === "#ffdbed" ? "project-card-light" : ""
+      }`}
       href={`#/project/${project.id}`}
       style={{ "--accent": project.accent } as React.CSSProperties}
     >
       <div className="project-number">{String(index + 1).padStart(2, "0")}</div>
       <div
-        className={`project-media ${project.id === "nft-camera" ? "project-media-contain" : ""}`}
+        className={`project-media ${project.id === "nft-camera" ? "project-media-contain" : ""} ${
+          project.id === "sephora-guide" ? "project-media-document" : ""
+        }`}
       >
         {project.image ? (
           <img
@@ -432,7 +447,9 @@ function ProjectDetail({ project }: { project: Project }) {
           ) : null}
         </div>
         <div
-          className={`case-image ${project.id === "nft-camera" ? "case-image-contain" : ""}`}
+          className={`case-image ${project.id === "nft-camera" ? "case-image-contain" : ""} ${
+            project.id === "sephora-guide" ? "case-image-document" : ""
+          } ${project.id === "leviosa" ? "case-image-leviosa" : ""}`}
         >
           {project.image ? <img src={project.image} alt={`${project.title} interface`} /> : null}
         </div>
@@ -469,7 +486,18 @@ function ProjectDetail({ project }: { project: Project }) {
       {project.sections?.length ? (
         <section className="case-story-grid">
           {project.sections.map((section) => (
-            <article className="case-story-card" key={section.title}>
+            <article
+              className={`case-story-card ${
+                project.id === "sephora-guide" && section.title === "Why Our Guidebook?"
+                  ? "guidebook-why-card"
+                  : ""
+              } ${
+                project.id === "sephora-guide" && section.title === "Guidebook Structure"
+                  ? "guidebook-toc-card"
+                  : ""
+              }`}
+              key={section.title}
+            >
               {section.image ? (
                 <div className="case-story-media">
                   <img src={section.image} alt={`${project.title} ${section.title}`} />
@@ -685,6 +713,8 @@ function InterestsPage() {
 }
 
 function InterestDetail({ interest }: { interest: Interest }) {
+  const galleryColumns = getInterestGalleryColumns(interest);
+
   return (
     <PageFrame eyebrow="Interests" title={interest.title}>
       <div className="interest-detail-head">
@@ -699,20 +729,47 @@ function InterestDetail({ interest }: { interest: Interest }) {
           <h3>Works</h3>
         </div>
         <div className="interest-gallery">
-          {interest.gallery.map((item) => (
-            <article className="interest-gallery-item" key={item.title}>
-              <img
-                src={item.image}
-                alt={`${item.title} ${item.type}`}
-                loading="eager"
-                decoding="async"
-              />
-            </article>
+          {galleryColumns.map((column, columnIndex) => (
+            <div className="interest-gallery-column" key={`${interest.id}-${columnIndex}`}>
+              {column.map((item) => (
+                <article className="interest-gallery-item" key={item.title}>
+                  <img
+                    src={item.image}
+                    alt={`${item.title} ${item.type}`}
+                    loading="eager"
+                    decoding="async"
+                  />
+                </article>
+              ))}
+            </div>
           ))}
         </div>
       </section>
     </PageFrame>
   );
+}
+
+function getInterestGalleryColumns(interest: Interest) {
+  if (interest.id === "traveling-photography") {
+    const leftIndexes = new Set([0, 3, 6, 7]);
+    return [
+      interest.gallery.filter((_, index) => leftIndexes.has(index)),
+      interest.gallery.filter((_, index) => !leftIndexes.has(index)),
+    ];
+  }
+
+  if (interest.id === "design") {
+    const leftIndexes = new Set([0, 3, 5, 6]);
+    return [
+      interest.gallery.filter((_, index) => leftIndexes.has(index)),
+      interest.gallery.filter((_, index) => !leftIndexes.has(index)),
+    ];
+  }
+
+  return [
+    interest.gallery.filter((_, index) => index % 2 === 0),
+    interest.gallery.filter((_, index) => index % 2 === 1),
+  ];
 }
 
 function ContactPage() {
