@@ -242,10 +242,6 @@ export const projects: Project[] = [
       "https://static.wixstatic.com/media/df8dea_b4166153dda44015841c8d757c843d28~mv2.png/v1/crop/x_26,y_1,w_3291,h_1803/fill/w_1906,h_1044,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2002_38_29.png",
     actions: [
       { label: "Began Website", href: "https://began-map.vercel.app/ko" },
-      {
-        label: "Original Case",
-        href: "https://leesm5088.wixsite.com/suminleeportfolio/began-project",
-      },
     ],
     sections: [
       {
@@ -290,12 +286,6 @@ export const projects: Project[] = [
     accent: "#3385c6",
     image:
       "https://static.wixstatic.com/media/df8dea_b364d89cad604cc7a393e9faa4304fa1~mv2.png/v1/fill/w_1235,h_486,al_c,q_90,enc_avif,quality_auto/NFT%20%ED%94%BC%EA%B7%B8%EB%A7%88%20%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85.png",
-    actions: [
-      {
-        label: "Service Prototype",
-        href: "https://leesm5088.wixsite.com/suminleeportfolio/b2c-nft-project",
-      },
-    ],
     sections: [
       {
         title: "Project Overview",
@@ -343,10 +333,6 @@ export const projects: Project[] = [
       "https://static.wixstatic.com/media/df8dea_f551a8e7576d46ada41881d17c9158e9~mv2.png/v1/fill/w_1960,h_1022,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2003_15_27.png",
     actions: [
       { label: "UX Sample", href: "https://cafe24.cs.leviosa.ai.kr" },
-      {
-        label: "Original Case",
-        href: "https://leesm5088.wixsite.com/suminleeportfolio/leviosa-ai-ux-project",
-      },
     ],
     sections: [
       {
@@ -392,12 +378,12 @@ export const projects: Project[] = [
       "https://static.wixstatic.com/media/df8dea_b225d5375cfa445bbddbcda2cb4f0431~mv2.png/v1/crop/x_0,y_3,w_3389,h_1836/fill/w_1960,h_1060,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2003_36_58.png",
     actions: [
       {
-        label: "Project Process",
-        href: "https://www.miricanvas.com/v2/ko/design2/v/bcbf6459-b3cc-42fb-aae0-0cdf6c58ab30",
+        label: "English Version",
+        href: "https://www.miricanvas.com/v2/ko/design2/v/d02089ca-ef51-4e6f-ade6-11baf139db32",
       },
       {
-        label: "Original Case",
-        href: "https://leesm5088.wixsite.com/suminleeportfolio/sephora-r-data-analysis-project",
+        label: "Korean Version",
+        href: "https://www.miricanvas.com/v2/ko/design2/v/bcbf6459-b3cc-42fb-aae0-0cdf6c58ab30",
       },
     ],
     sections: [
@@ -469,10 +455,6 @@ export const projects: Project[] = [
         label: "View Guidebook",
         href: "https://50e217fb-c32f-4fb0-a6a1-228397b343ae.filesusr.com/ugd/df8dea_7e881145adb148dc978708f53a532950.pdf",
       },
-      {
-        label: "Original Case",
-        href: "https://leesm5088.wixsite.com/suminleeportfolio/sephora-guide-book-project",
-      },
     ],
     sections: [
       {
@@ -481,13 +463,6 @@ export const projects: Project[] = [
           "Created a career guidebook project focused on entry strategies into Sephora/LVMH in Europe by analyzing the beauty and luxury industry structure and Sephora's business model. I researched Sephora's European market position, job functions, recruitment process, and career progression pathways, while incorporating insights from interviews with industry professionals.",
         image:
           "https://static.wixstatic.com/media/df8dea_b6fafbd4c98342908d236927c1147c52~mv2.png/v1/crop/x_0,y_88,w_1200,h_1576/fill/w_540,h_710,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2002_03_04.png",
-      },
-      {
-        title: "Career Content Strategy",
-        text:
-          "The final output was an actionable career guidebook designed to help students explore practical career opportunities within Sephora and the LVMH network.",
-        image:
-          "https://static.wixstatic.com/media/df8dea_c6a4ec971f6e43a9822ddfdf58c7734e~mv2.png/v1/crop/x_35,y_0,w_1131,h_1696/fill/w_508,h_744,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2003_56_27.png",
       },
     ],
     details: [
@@ -635,66 +610,51 @@ export const interests: Interest[] = [
       "https://static.wixstatic.com/media/df8dea_8352e2fe23334b8192d9813e5a899b8c~mv2.jpg/v1/fill/w_1200,h_900,al_c,q_90,enc_avif,quality_auto/df8dea_8352e2fe23334b8192d9813e5a899b8c~mv2.jpg",
     gallery: [
       {
-        title: "Hong Kong Color Study",
-        type: "Travel Photo",
-        image:
-          "https://static.wixstatic.com/media/df8dea_8352e2fe23334b8192d9813e5a899b8c~mv2.jpg/v1/fill/w_1200,h_900,al_c,q_90,enc_avif,quality_auto/df8dea_8352e2fe23334b8192d9813e5a899b8c~mv2.jpg",
-        note: "Street color, repetition, and small visual details collected through travel.",
-      },
-      {
         title: "Urban Texture",
         type: "Photography",
-        image:
-          "https://static.wixstatic.com/media/df8dea_4ca345d29e914f6cb6c3ab5fbb4605d6~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_90,enc_avif,quality_auto/df8dea_4ca345d29e914f6cb6c3ab5fbb4605d6~mv2.jpg",
+        image: "/interests/travel/urban-texture.jpg",
         note: "Observation-led photography focused on place, light, and cultural texture.",
       },
       {
         title: "Memory Frame",
         type: "Photography",
-        image:
-          "https://static.wixstatic.com/media/df8dea_e1040cd17b0d497c8de5dfc2d1cb7a32~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_90,enc_avif,quality_auto/df8dea_e1040cd17b0d497c8de5dfc2d1cb7a32~mv2.jpg",
+        image: "/interests/travel/memory-frame.jpg",
         note: "Travel moments translated into visual references for brand mood and storytelling.",
       },
       {
         title: "Perspective Archive",
         type: "Travel Photo",
-        image:
-          "https://static.wixstatic.com/media/df8dea_edce9942f9e6408d9a311b32cf3ad887~mv2.jpeg/v1/fill/w_164,h_246,al_c,q_80,usm_0.66_1.00_0.01,blur_3,enc_avif,quality_auto/df8dea_edce9942f9e6408d9a311b32cf3ad887~mv2.jpeg",
+        image: "/interests/travel/perspective-archive.jpeg",
         note: "A personal image archive that keeps global inspiration close to strategy work.",
       },
       {
         title: "Travel Light Study",
         type: "Travel Photo",
-        image:
-          "https://static.wixstatic.com/media/df8dea_07e6875737804bb881f32ec4790528d3~mv2.jpg/v1/fill/w_123,h_82,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/df8dea_07e6875737804bb881f32ec4790528d3~mv2.jpg",
+        image: "/interests/travel/travel-light.jpg",
         note: "A moment from the travel archive, captured to keep color, light, and memory vivid.",
       },
       {
         title: "City Rhythm",
         type: "Photography",
-        image:
-          "https://static.wixstatic.com/media/df8dea_221c5298107b4b668a4fb34c1518a86f~mv2.jpg/v1/fill/w_77,h_51,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/df8dea_221c5298107b4b668a4fb34c1518a86f~mv2.jpg",
+        image: "/interests/travel/city-rhythm.jpg",
         note: "A visual note from places I visited while observing local details and pace.",
       },
       {
         title: "Travel Portrait",
         type: "Travel Photo",
-        image:
-          "https://static.wixstatic.com/media/df8dea_7f3d17947c6147ff92664ae903c10288~mv2.jpg/v1/fill/w_77,h_116,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/df8dea_7f3d17947c6147ff92664ae903c10288~mv2.jpg",
+        image: "/interests/travel/travel-portrait.jpg",
         note: "Personal travel photography from the archive shown on the original portfolio.",
       },
       {
         title: "Global Inspiration",
         type: "Travel Photo",
-        image:
-          "https://static.wixstatic.com/media/df8dea_dc3a07c35e4a42a7ba75ea107864d1f9~mv2.jpg/v1/fill/w_51,h_77,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/df8dea_dc3a07c35e4a42a7ba75ea107864d1f9~mv2.jpg",
+        image: "/interests/travel/global-inspiration.jpg",
         note: "Travel around Thailand, Japan, Switzerland, France, the United Kingdom, Germany, Vietnam, China, and more.",
       },
       {
         title: "Moment Archive",
         type: "Photography",
-        image:
-          "https://static.wixstatic.com/media/df8dea_e2abb64773a541a2914655f8ebb1fc05~mv2.jpeg/v1/fill/w_164,h_219,al_c,q_80,usm_0.66_1.00_0.01,blur_3,enc_avif,quality_auto/df8dea_e2abb64773a541a2914655f8ebb1fc05~mv2.jpeg",
+        image: "/interests/travel/moment-archive.jpeg",
         note: "The photos are taken while traveling and kept as personal references for creative work.",
       },
     ],
@@ -705,55 +665,48 @@ export const interests: Interest[] = [
     text:
       "I enjoy turning ideas into tangible visual outcomes and continue to pursue design as a hobby.",
     cover:
-      "https://static.wixstatic.com/media/df8dea_c827554ca8de4dbfbec77db157cffac5~mv2.png/v1/fill/w_1200,h_900,al_c,q_90,enc_avif,quality_auto/df8dea_c827554ca8de4dbfbec77db157cffac5~mv2.png",
+      "/interests/design/design-object.png",
     gallery: [
       {
         title: "NOI Lab Poster",
         type: "Poster Design",
-        image:
-          "https://static.wixstatic.com/media/df8dea_23b449d516694ac1b4c6d79a956d5cd6~mv2.png/v1/fill/w_1648,h_940,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EB%85%B8%EC%9D%B4%EB%9E%A9%20%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B7%B8%EB%9E%A8%20%ED%8F%AC%EC%8A%A4%ED%84%B0%20%EC%B5%9C%EC%A2%85_%EB%8C%80%EC%A7%80%201.png",
+        image: "/interests/design/noi-lab-poster.png",
         note: "Promotional poster work for a cognitive training program.",
       },
       {
         title: "NOI Lab Card News",
         type: "Graphic Design",
-        image:
-          "https://static.wixstatic.com/media/df8dea_8bfae2f432c54b66b63610319cf75303~mv2.png/v1/fill/w_666,h_940,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EB%85%B8%EC%9D%B4%EB%9E%A9%20%EC%B9%B4%EB%93%9C%EB%89%B4%EC%8A%A4_%EB%8C%80%EC%A7%80%201-01.png",
+        image: "/interests/design/noi-lab-card-news.png",
         note: "Card-news style design work balancing information clarity and brand tone.",
       },
       {
         title: "Love Art Poster",
         type: "Art Direction",
-        image:
-          "https://static.wixstatic.com/media/df8dea_b96ea95b11854d078f2d33b6f26fb74a~mv2.png/v1/fill/w_666,h_940,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EB%9F%AC%EB%B8%8C%20%EC%95%84%ED%8A%B8%20%EC%95%84%ED%8A%B8%20%EC%B5%9C%EC%A2%85%EB%B3%B8.png",
+        image: "/interests/design/love-art-poster.png",
         note: "Editorial-style visual composition exploring emotional tone and typography.",
       },
       {
         title: "Brand Character",
         type: "Character Design",
-        image:
-          "https://static.wixstatic.com/media/df8dea_53fab8e19f7f45799632f371d032422f~mv2.png/v1/fill/w_466,h_660,al_c,lg_1,q_85,enc_avif,quality_auto/%ED%8C%8C%EC%9A%B0%EC%B9%98%20%EA%B3%B0%EB%8F%8C%EC%9D%B4%20%EC%95%88%EA%B2%BD%20%EB%B2%84%EC%A0%84.png",
+        image: "/interests/design/bear-glasses.png",
         note: "Mascot-style illustration for approachable product and brand storytelling.",
       },
       {
         title: "Brand Character Variant",
         type: "Character Design",
-        image:
-          "https://static.wixstatic.com/media/df8dea_74e3b835256a4b77a7630f4276bf8aa1~mv2.png/v1/fill/w_565,h_800,al_c,q_90,enc_avif,quality_auto/%ED%8C%8C%EC%9A%B0%EC%B9%98%20%EA%B3%B0%EB%8F%8C%EC%9D%B4.png",
+        image: "/interests/design/bear-variant.png",
         note: "A softer mascot variation designed for approachable product communication.",
       },
       {
         title: "Visual Layout Study",
         type: "Editorial Design",
-        image:
-          "https://static.wixstatic.com/media/df8dea_cd71d51db3c340a3b2ed7fd797665913~mv2.png/v1/crop/x_1,y_0,w_1249,h_1667/fill/w_706,h_940,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/KakaoTalk_Photo_2026-06-07-04-24-04.png",
+        image: "/interests/design/visual-layout.png",
         note: "A hobby design piece from the original portfolio archive.",
       },
       {
         title: "Design Object Study",
         type: "3D / Visual Study",
-        image:
-          "https://static.wixstatic.com/media/df8dea_c827554ca8de4dbfbec77db157cffac5~mv2.png/v1/fill/w_1200,h_900,al_c,q_90,enc_avif,quality_auto/df8dea_c827554ca8de4dbfbec77db157cffac5~mv2.png",
+        image: "/interests/design/design-object.png",
         note: "A playful visual study balancing glossy form, object memory, and pop color.",
       },
     ],

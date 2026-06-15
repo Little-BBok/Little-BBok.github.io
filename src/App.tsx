@@ -353,7 +353,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       style={{ "--accent": project.accent } as React.CSSProperties}
     >
       <div className="project-number">{String(index + 1).padStart(2, "0")}</div>
-      <div className="project-media">
+      <div
+        className={`project-media ${project.id === "nft-camera" ? "project-media-contain" : ""}`}
+      >
         {project.image ? (
           <img
             src={project.image}
@@ -401,15 +403,24 @@ function ProjectDetail({ project }: { project: Project }) {
             </div>
           ) : null}
         </div>
-        <div className="case-image">
+        <div
+          className={`case-image ${project.id === "nft-camera" ? "case-image-contain" : ""}`}
+        >
           {project.image ? <img src={project.image} alt={`${project.title} interface`} /> : null}
         </div>
       </section>
 
       <section className="case-columns">
-        <article>
+        <article className="role-card">
           <h3>My Role</h3>
           <p>{project.role}</p>
+          <div className="chip-row role-skill-row">
+            {project.capabilities.map((capability) => (
+              <span className="chip" key={capability}>
+                {capability}
+              </span>
+            ))}
+          </div>
         </article>
         <article>
           <h3>Outcome</h3>
@@ -465,13 +476,6 @@ function ProjectDetail({ project }: { project: Project }) {
         </section>
       ) : null}
 
-      <div className="chip-row">
-        {project.capabilities.map((capability) => (
-          <span className="chip" key={capability}>
-            {capability}
-          </span>
-        ))}
-      </div>
     </PageFrame>
   );
 }
@@ -684,11 +688,6 @@ function InterestDetail({ interest }: { interest: Interest }) {
                 loading="eager"
                 decoding="async"
               />
-              <div className="interest-gallery-copy">
-                <span>{item.type}</span>
-                <h3>{item.title}</h3>
-                <p>{item.note}</p>
-              </div>
             </article>
           ))}
         </div>
