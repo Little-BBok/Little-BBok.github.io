@@ -28,6 +28,8 @@ export const profile = {
   title: "Full-Cycle Brand Manager & Strategist",
   tagline:
     "An experience planner who explores global insights to design seamless, user-centered solutions.",
+  landingIntro:
+    "Hello, I'm Sumin Lee. I craft joyful and heartwarming experiences that linger in people's memories. Explore this website to discover my journey and work!",
   intro:
     "I craft joyful and heartwarming experiences that linger in people's memories, blending data-driven insight with human-centered empathy.",
   story:
@@ -60,7 +62,7 @@ export const keywords = [
   },
   {
     title: "Global Exploration",
-    text: "Turning worldwide inspiration into fresh business insights through travel, observation, and research.",
+    text: "Thriving on exploring new places and turning world-wide inspirations into fresh business insights.",
   },
 ];
 

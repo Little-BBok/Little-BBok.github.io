@@ -161,6 +161,24 @@ function HomePage() {
         </div>
       </section>
 
+      <section className="landing-intro-section">
+        <div className="intro-statement">
+          <p>{profile.landingIntro}</p>
+        </div>
+        <div className="landing-keywords">
+          <p className="kicker">These Keywords show me</p>
+          <div className="landing-keyword-grid">
+            {keywords.map((keyword, index) => (
+              <article className="landing-keyword-card" key={keyword.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h2>{keyword.title}</h2>
+                <p>{keyword.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="toc-section">
         <div>
           <p className="kicker">Table of Contents</p>
