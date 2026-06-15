@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import {
+  aboutKeywords,
   experiences,
   interests,
   keywords,
@@ -225,7 +226,7 @@ function AboutPage() {
           <p>{profile.intro}</p>
           <p>{profile.story}</p>
           <div className="keyword-grid">
-            {keywords.map((keyword) => (
+            {aboutKeywords.map((keyword) => (
               <article className="keyword-card" key={keyword.title}>
                 <Sparkles size={18} />
                 <h4>{keyword.title}</h4>
@@ -312,7 +313,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     >
       <div className="project-number">{String(index + 1).padStart(2, "0")}</div>
       <div className="project-media">
-        {project.image ? <img src={project.image} alt={`${project.title} preview`} /> : null}
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={`${project.title} preview`}
+            loading="eager"
+            decoding="async"
+          />
+        ) : null}
       </div>
       <div className="project-card-copy">
         <p>{project.eyebrow}</p>
@@ -403,17 +411,67 @@ function SkillsPage() {
 }
 
 function InterestsPage() {
+  const [activeInterestId, setActiveInterestId] = useState(interests[0]?.id ?? "");
+  const activeInterest =
+    interests.find((interest) => interest.id === activeInterestId) ?? interests[0];
+
   return (
     <PageFrame eyebrow="Interests" title="Traveling, Photography & Design">
       <div className="interest-grid">
         {interests.map((interest) => (
-          <article className="interest-card" key={interest.title}>
-            {interest.title.includes("Travel") ? <Camera /> : <ChartNoAxesCombined />}
-            <h3>{interest.title}</h3>
-            <p>{interest.text}</p>
-          </article>
+          <button
+            className={`interest-card ${
+              activeInterest?.id === interest.id ? "active" : ""
+            }`}
+            key={interest.id}
+            type="button"
+            onClick={() => setActiveInterestId(interest.id)}
+            aria-pressed={activeInterest?.id === interest.id}
+          >
+            <div className="interest-card-media">
+              <img
+                src={interest.cover}
+                alt={`${interest.title} preview`}
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <div className="interest-card-copy">
+              {interest.title.includes("Travel") ? <Camera /> : <ChartNoAxesCombined />}
+              <h3>{interest.title}</h3>
+              <p>{interest.text}</p>
+              <span>
+                View works <ArrowUpRight size={16} />
+              </span>
+            </div>
+          </button>
         ))}
       </div>
+      {activeInterest ? (
+        <section className="interest-detail">
+          <div className="section-title">
+            <FolderKanban />
+            <h3>{activeInterest.title}</h3>
+          </div>
+          <div className="interest-gallery">
+            {activeInterest.gallery.map((item) => (
+              <article className="interest-gallery-item" key={item.title}>
+                <img
+                  src={item.image}
+                  alt={`${item.title} ${item.type}`}
+                  loading="eager"
+                  decoding="async"
+                />
+                <div className="interest-gallery-copy">
+                  <span>{item.type}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.note}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
     </PageFrame>
   );
 }

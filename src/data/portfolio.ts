@@ -21,6 +21,19 @@ export type Experience = {
   highlights: string[];
 };
 
+export type Interest = {
+  id: string;
+  title: string;
+  text: string;
+  cover: string;
+  gallery: Array<{
+    title: string;
+    type: string;
+    image: string;
+    note: string;
+  }>;
+};
+
 export const profile = {
   name: "Sumin (Chloe) Lee",
   shortName: "Sumin Lee",
@@ -63,6 +76,21 @@ export const keywords = [
   {
     title: "Global Exploration",
     text: "Thriving on exploring new places and turning world-wide inspirations into fresh business insights.",
+  },
+];
+
+export const aboutKeywords = [
+  {
+    title: "Insight Translator",
+    text: "I turn user interviews, market signals, and cultural observations into clear strategic directions.",
+  },
+  {
+    title: "Full-cycle Builder",
+    text: "I enjoy moving from concept to IA, prototype, launch, content, CRM, and performance iteration.",
+  },
+  {
+    title: "Warm Visual Storyteller",
+    text: "I shape brand and product narratives so complex ideas feel approachable, memorable, and human.",
   },
 ];
 
@@ -173,6 +201,8 @@ export const projects: Project[] = [
     outcome:
       "Won 1st place in the final idea pitching and moved toward commercialization and launch by the partner corporation.",
     accent: "#3385c6",
+    image:
+      "https://static.wixstatic.com/media/df8dea_b364d89cad604cc7a393e9faa4304fa1~mv2.png/v1/fill/w_1235,h_486,al_c,q_90,enc_avif,quality_auto/NFT%20%ED%94%BC%EA%B7%B8%EB%A7%88%20%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85.png",
     details: [
       "Reframed B2B NFT assets into an accessible consumer experience anchored in place, camera behavior, and collectable moments.",
       "Designed a UI/UX framework that connected location discovery, capture, ownership, and sharing.",
@@ -232,6 +262,8 @@ export const projects: Project[] = [
     outcome:
       "Developed an actionable guidebook for students exploring practical career paths in Sephora and the LVMH network.",
     accent: "#d6cbb7",
+    image:
+      "https://static.wixstatic.com/media/df8dea_8929fc4e6874426fac25461f7a8531c4~mv2.png/v1/crop/x_0,y_57,w_2022,h_1071/fill/w_1402,h_744,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2003_57_36.png",
     details: [
       "Analyzed the beauty and luxury industry structure and Sephora's business model.",
       "Researched European market position, job functions, recruiting process, and career progression pathways.",
@@ -256,13 +288,79 @@ export const skills = [
   "Merchandising",
 ];
 
-export const interests = [
+export const interests: Interest[] = [
   {
+    id: "traveling-photography",
     title: "Traveling & Photography",
     text: "Exploring places, observing local culture, and translating global inspiration into business and brand insight.",
+    cover:
+      "https://static.wixstatic.com/media/df8dea_8352e2fe23334b8192d9813e5a899b8c~mv2.jpg/v1/fill/w_1200,h_900,al_c,q_90,enc_avif,quality_auto/df8dea_8352e2fe23334b8192d9813e5a899b8c~mv2.jpg",
+    gallery: [
+      {
+        title: "Hong Kong Color Study",
+        type: "Travel Photo",
+        image:
+          "https://static.wixstatic.com/media/df8dea_8352e2fe23334b8192d9813e5a899b8c~mv2.jpg/v1/fill/w_1200,h_900,al_c,q_90,enc_avif,quality_auto/df8dea_8352e2fe23334b8192d9813e5a899b8c~mv2.jpg",
+        note: "Street color, repetition, and small visual details collected through travel.",
+      },
+      {
+        title: "Urban Texture",
+        type: "Photography",
+        image:
+          "https://static.wixstatic.com/media/df8dea_4ca345d29e914f6cb6c3ab5fbb4605d6~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_90,enc_avif,quality_auto/df8dea_4ca345d29e914f6cb6c3ab5fbb4605d6~mv2.jpg",
+        note: "Observation-led photography focused on place, light, and cultural texture.",
+      },
+      {
+        title: "Memory Frame",
+        type: "Photography",
+        image:
+          "https://static.wixstatic.com/media/df8dea_e1040cd17b0d497c8de5dfc2d1cb7a32~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_90,enc_avif,quality_auto/df8dea_e1040cd17b0d497c8de5dfc2d1cb7a32~mv2.jpg",
+        note: "Travel moments translated into visual references for brand mood and storytelling.",
+      },
+      {
+        title: "Perspective Archive",
+        type: "Travel Photo",
+        image:
+          "https://static.wixstatic.com/media/df8dea_edce9942f9e6408d9a311b32cf3ad887~mv2.jpeg/v1/fill/w_900,h_1200,al_c,q_90,enc_avif,quality_auto/df8dea_edce9942f9e6408d9a311b32cf3ad887~mv2.jpeg",
+        note: "A personal image archive that keeps global inspiration close to strategy work.",
+      },
+    ],
   },
   {
+    id: "design",
     title: "Design",
     text: "Building visual systems that make complex ideas warm, structured, and easy to remember.",
+    cover:
+      "https://static.wixstatic.com/media/df8dea_c827554ca8de4dbfbec77db157cffac5~mv2.png/v1/fill/w_1200,h_900,al_c,q_90,enc_avif,quality_auto/df8dea_c827554ca8de4dbfbec77db157cffac5~mv2.png",
+    gallery: [
+      {
+        title: "NOI Lab Poster",
+        type: "Poster Design",
+        image:
+          "https://static.wixstatic.com/media/df8dea_23b449d516694ac1b4c6d79a956d5cd6~mv2.png/v1/fill/w_1648,h_940,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EB%85%B8%EC%9D%B4%EB%9E%A9%20%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B7%B8%EB%9E%A8%20%ED%8F%AC%EC%8A%A4%ED%84%B0%20%EC%B5%9C%EC%A2%85_%EB%8C%80%EC%A7%80%201.png",
+        note: "Promotional poster work for a cognitive training program.",
+      },
+      {
+        title: "Love Art Poster",
+        type: "Art Direction",
+        image:
+          "https://static.wixstatic.com/media/df8dea_b96ea95b11854d078f2d33b6f26fb74a~mv2.png/v1/fill/w_666,h_940,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EB%9F%AC%EB%B8%8C%20%EC%95%84%ED%8A%B8%20%EC%95%84%ED%8A%B8%20%EC%B5%9C%EC%A2%85%EB%B3%B8.png",
+        note: "Editorial-style visual composition exploring emotional tone and typography.",
+      },
+      {
+        title: "Brand Character",
+        type: "Character Design",
+        image:
+          "https://static.wixstatic.com/media/df8dea_53fab8e19f7f45799632f371d032422f~mv2.png/v1/fill/w_466,h_660,al_c,lg_1,q_85,enc_avif,quality_auto/%ED%8C%8C%EC%9A%B0%EC%B9%98%20%EA%B3%B0%EB%8F%8C%EC%9D%B4%20%EC%95%88%EA%B2%BD%20%EB%B2%84%EC%A0%84.png",
+        note: "Mascot-style illustration for approachable product and brand storytelling.",
+      },
+      {
+        title: "Design Object Study",
+        type: "3D / Visual Study",
+        image:
+          "https://static.wixstatic.com/media/df8dea_c827554ca8de4dbfbec77db157cffac5~mv2.png/v1/fill/w_1200,h_900,al_c,q_90,enc_avif,quality_auto/df8dea_c827554ca8de4dbfbec77db157cffac5~mv2.png",
+        note: "A playful visual study balancing glossy form, object memory, and pop color.",
+      },
+    ],
   },
 ];
