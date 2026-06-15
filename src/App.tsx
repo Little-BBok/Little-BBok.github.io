@@ -21,11 +21,13 @@ import {
   documentSections,
   experiences,
   interests,
+  interestsIntro,
   keywords,
   profile,
   projects,
   skills,
   softwareTools,
+  type Interest,
   type Project,
 } from "./data/portfolio";
 
@@ -61,6 +63,11 @@ function App() {
     return projects.find((project) => project.id === route.split("/")[1]);
   }, [route]);
 
+  const activeInterest = useMemo(() => {
+    if (!route.startsWith("interest/")) return undefined;
+    return interests.find((interest) => interest.id === route.split("/")[1]);
+  }, [route]);
+
   return (
     <div className="site-shell">
       <Header route={route} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
@@ -74,7 +81,10 @@ function App() {
         {route === "interests" ? <InterestsPage /> : null}
         {route === "contact" ? <ContactPage /> : null}
         {activeProject ? <ProjectDetail project={activeProject} /> : null}
-        {!routes.some((item) => item.id === route) && !activeProject ? (
+        {activeInterest ? <InterestDetail interest={activeInterest} /> : null}
+        {!routes.some((item) => item.id === route) &&
+        !activeProject &&
+        !activeInterest ? (
           <NotFoundPage />
         ) : null}
       </main>
@@ -100,7 +110,12 @@ function Header({
       <nav className="desktop-nav" aria-label="Main navigation">
         {routes.map((item) => (
           <a
-            className={route === item.id ? "active" : ""}
+            className={
+              route === item.id ||
+              (item.id === "interests" && route.startsWith("interest/"))
+                ? "active"
+                : ""
+            }
             href={`#/${item.id}`}
             key={item.id}
           >
@@ -125,7 +140,11 @@ function MobileMenu({ route }: { route: string }) {
     <nav className="mobile-menu" aria-label="Mobile navigation">
       {routes.map((item) => (
         <a
-          className={route === item.id ? "active" : ""}
+          className={
+            route === item.id || (item.id === "interests" && route.startsWith("interest/"))
+              ? "active"
+              : ""
+          }
           href={`#/${item.id}`}
           key={item.id}
         >
@@ -338,6 +357,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 }
 
 function ProjectDetail({ project }: { project: Project }) {
+  const actions =
+    project.actions ?? (project.external ? [{ label: "Open Project", href: project.external }] : []);
+
   return (
     <PageFrame eyebrow={project.eyebrow} title={project.title}>
       <section
@@ -346,10 +368,19 @@ function ProjectDetail({ project }: { project: Project }) {
       >
         <div>
           <p>{project.summary}</p>
-          {project.external ? (
-            <a className="button primary" href={project.external} target="_blank">
-              Open Project <ArrowUpRight size={18} />
-            </a>
+          {actions.length ? (
+            <div className="case-actions">
+              {actions.map((action, index) => (
+                <a
+                  className={`button ${index === 0 ? "primary" : "ghost"}`}
+                  href={action.href}
+                  target="_blank"
+                  key={action.href}
+                >
+                  {action.label} <ArrowUpRight size={18} />
+                </a>
+              ))}
+            </div>
           ) : null}
         </div>
         <div className="case-image">
@@ -377,6 +408,44 @@ function ProjectDetail({ project }: { project: Project }) {
           </div>
         ))}
       </section>
+
+      {project.sections?.length ? (
+        <section className="case-story-grid">
+          {project.sections.map((section) => (
+            <article className="case-story-card" key={section.title}>
+              {section.image ? (
+                <div className="case-story-media">
+                  <img src={section.image} alt={`${project.title} ${section.title}`} />
+                </div>
+              ) : null}
+              <div className="case-story-copy">
+                <h3>{section.title}</h3>
+                <p>{section.text}</p>
+              </div>
+            </article>
+          ))}
+        </section>
+      ) : null}
+
+      {project.gallery?.length ? (
+        <section className="case-gallery-section">
+          <div className="section-title">
+            <FolderKanban />
+            <h3>Project Materials</h3>
+          </div>
+          <div className="case-gallery">
+            {project.gallery.map((item) => (
+              <article className="case-gallery-item" key={item.title}>
+                <img src={item.image} alt={`${project.title} ${item.title}`} />
+                <div className="case-gallery-copy">
+                  <h3>{item.title}</h3>
+                  {item.note ? <p>{item.note}</p> : null}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <div className="chip-row">
         {project.capabilities.map((capability) => (
@@ -503,22 +572,15 @@ function SkillsPage() {
 }
 
 function InterestsPage() {
-  const [activeInterestId, setActiveInterestId] = useState(interests[0]?.id ?? "");
-  const activeInterest =
-    interests.find((interest) => interest.id === activeInterestId) ?? interests[0];
-
   return (
-    <PageFrame eyebrow="Interests" title="Traveling, Photography & Design">
+    <PageFrame eyebrow="Personal Archive" title="Interests">
+      <p className="page-lede interest-page-lede">{interestsIntro}</p>
       <div className="interest-grid">
         {interests.map((interest) => (
-          <button
-            className={`interest-card ${
-              activeInterest?.id === interest.id ? "active" : ""
-            }`}
+          <a
+            className="interest-card"
+            href={`#/interest/${interest.id}`}
             key={interest.id}
-            type="button"
-            onClick={() => setActiveInterestId(interest.id)}
-            aria-pressed={activeInterest?.id === interest.id}
           >
             <div className="interest-card-media">
               <img
@@ -536,34 +598,45 @@ function InterestsPage() {
                 View works <ArrowUpRight size={16} />
               </span>
             </div>
-          </button>
+          </a>
         ))}
       </div>
-      {activeInterest ? (
-        <section className="interest-detail">
-          <div className="section-title">
-            <FolderKanban />
-            <h3>{activeInterest.title}</h3>
-          </div>
-          <div className="interest-gallery">
-            {activeInterest.gallery.map((item) => (
-              <article className="interest-gallery-item" key={item.title}>
-                <img
-                  src={item.image}
-                  alt={`${item.title} ${item.type}`}
-                  loading="eager"
-                  decoding="async"
-                />
-                <div className="interest-gallery-copy">
-                  <span>{item.type}</span>
-                  <h3>{item.title}</h3>
-                  <p>{item.note}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      ) : null}
+    </PageFrame>
+  );
+}
+
+function InterestDetail({ interest }: { interest: Interest }) {
+  return (
+    <PageFrame eyebrow="Interests" title={interest.title}>
+      <div className="interest-detail-head">
+        <p className="page-lede">{interest.text}</p>
+        <a className="button ghost" href="#/interests">
+          Back to Interests
+        </a>
+      </div>
+      <section className="interest-detail">
+        <div className="section-title">
+          <FolderKanban />
+          <h3>Works</h3>
+        </div>
+        <div className="interest-gallery">
+          {interest.gallery.map((item) => (
+            <article className="interest-gallery-item" key={item.title}>
+              <img
+                src={item.image}
+                alt={`${item.title} ${item.type}`}
+                loading="eager"
+                decoding="async"
+              />
+              <div className="interest-gallery-copy">
+                <span>{item.type}</span>
+                <h3>{item.title}</h3>
+                <p>{item.note}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
     </PageFrame>
   );
 }
