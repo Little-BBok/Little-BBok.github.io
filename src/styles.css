@@ -154,6 +154,51 @@ img {
   gap: 4px;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-toggle {
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(38px, 1fr));
+  align-items: center;
+  border: 1px solid rgba(23, 24, 32, 0.42);
+  border-radius: 999px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.language-toggle button {
+  min-width: 38px;
+  min-height: 30px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--muted);
+  background: transparent;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: 0;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.language-toggle button:hover,
+.language-toggle button:focus-visible {
+  color: var(--ink);
+  background: rgba(255, 219, 237, 0.72);
+  transform: translateY(-1px);
+}
+
+.language-toggle button.active {
+  color: #fff;
+  background: var(--ink);
+}
+
 .desktop-nav a {
   border-color: transparent;
   padding-right: 12px;
@@ -481,6 +526,34 @@ img {
   line-height: 1.5;
 }
 
+html[lang="ko"] .intro-statement p {
+  max-width: 980px;
+  font-family:
+    "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", Inter, system-ui,
+    sans-serif;
+  font-size: clamp(18px, 1.7vw, 23px);
+  font-weight: 800;
+  line-height: 1.68;
+  word-break: keep-all;
+}
+
+html[lang="ko"] .hero-copy p,
+html[lang="ko"] .landing-keywords > .kicker,
+html[lang="ko"] .landing-keyword-card h2,
+html[lang="ko"] .landing-keyword-card p,
+html[lang="ko"] .page-lede,
+html[lang="ko"] .about-main-copy h2,
+html[lang="ko"] .about-story-block p,
+html[lang="ko"] .about-contact-block p,
+html[lang="ko"] .timeline-item,
+html[lang="ko"] .project-card-copy,
+html[lang="ko"] .document-copy,
+html[lang="ko"] .contact-hero,
+html[lang="ko"] .contact-reachout-panel {
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
 .landing-keywords {
   position: relative;
   z-index: 1;
@@ -496,6 +569,16 @@ img {
   line-height: 1;
   text-align: center;
   text-transform: none;
+}
+
+html[lang="ko"] .landing-keywords > .kicker {
+  max-width: 760px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: clamp(28px, 3.5vw, 50px);
+  font-weight: 900;
+  line-height: 1.12;
+  word-break: keep-all;
 }
 
 .landing-keyword-grid {
@@ -1993,7 +2076,8 @@ img {
 .about-socials a:focus-visible,
 .about-contact-list a:focus-visible,
 .content-tabs button:focus-visible,
-.contact-links a:focus-visible {
+.contact-links a:focus-visible,
+.language-toggle button:focus-visible {
   outline: 3px solid rgba(86, 95, 157, 0.42);
   outline-offset: 4px;
 }
@@ -2109,6 +2193,10 @@ img {
 
   .mobile-only {
     display: inline-grid;
+  }
+
+  .header-actions {
+    margin-left: auto;
   }
 
   .mobile-menu {

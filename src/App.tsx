@@ -33,6 +33,7 @@ import {
   type DocumentSection,
   type Project,
 } from "./data/portfolio";
+import { translateText, type Language } from "./i18n";
 
 const routes = [
   { id: "home", label: "Home" },
@@ -46,10 +47,16 @@ const routes = [
 ];
 
 const getRoute = () => window.location.hash.replace("#/", "") || "home";
+const getSavedLanguage = (): Language => {
+  const saved = window.localStorage.getItem("portfolio-language");
+  return saved === "ko" ? "ko" : "en";
+};
 
 function App() {
   const [route, setRoute] = useState(getRoute());
   const [menuOpen, setMenuOpen] = useState(false);
+  const [language, setLanguage] = useState<Language>(getSavedLanguage());
+  const t = (value: string) => translateText(language, value);
 
   useEffect(() => {
     const syncRoute = () => {
@@ -61,6 +68,13 @@ function App() {
     window.addEventListener("hashchange", syncRoute);
     return () => window.removeEventListener("hashchange", syncRoute);
   }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("portfolio-language", language);
+    document.documentElement.lang = language;
+    document.title =
+      language === "ko" ? "이수민 포트폴리오" : "Sumin Chloe Lee Portfolio";
+  }, [language]);
 
   useEffect(() => {
     if (route !== "home") return;
@@ -106,44 +120,59 @@ function App() {
 
   return (
     <div className="site-shell">
-      <Header route={route} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Header
+        language={language}
+        route={route}
+        menuOpen={menuOpen}
+        setLanguage={setLanguage}
+        setMenuOpen={setMenuOpen}
+        t={t}
+      />
       {menuOpen ? <MobileMenu route={route} /> : null}
       <main>
-        {route === "home" ? <HomePage /> : null}
-        {route === "about" ? <AboutPage /> : null}
-        {route === "experience" ? <ExperiencePage /> : null}
-        {route === "projects" ? <ProjectsPage /> : null}
-        {route === "skills" ? <SkillsPage /> : null}
-        {route === "documents" ? <DocumentsPage /> : null}
-        {route === "interests" ? <InterestsPage /> : null}
-        {route === "contact" ? <ContactPage /> : null}
-        {activeProject ? <ProjectDetail project={activeProject} /> : null}
-        {activeInterest ? <InterestDetail interest={activeInterest} /> : null}
-        {activeDocument ? <DocumentDetail section={activeDocument} /> : null}
+        {route === "home" ? <HomePage t={t} /> : null}
+        {route === "about" ? <AboutPage t={t} /> : null}
+        {route === "experience" ? <ExperiencePage t={t} /> : null}
+        {route === "projects" ? <ProjectsPage t={t} /> : null}
+        {route === "skills" ? <SkillsPage t={t} /> : null}
+        {route === "documents" ? <DocumentsPage t={t} /> : null}
+        {route === "interests" ? <InterestsPage t={t} /> : null}
+        {route === "contact" ? <ContactPage t={t} /> : null}
+        {activeProject ? <ProjectDetail project={activeProject} t={t} /> : null}
+        {activeInterest ? <InterestDetail interest={activeInterest} t={t} /> : null}
+        {activeDocument ? <DocumentDetail section={activeDocument} t={t} /> : null}
         {!routes.some((item) => item.id === route) &&
         !activeProject &&
         !activeInterest &&
         !activeDocument ? (
-          <NotFoundPage />
+          <NotFoundPage t={t} />
         ) : null}
       </main>
-      <Footer />
+      <Footer t={t} />
     </div>
   );
 }
 
+type Translator = (value: string) => string;
+
 function Header({
+  language,
   route,
   menuOpen,
+  setLanguage,
   setMenuOpen,
+  t,
 }: {
+  language: Language;
   route: string;
   menuOpen: boolean;
+  setLanguage: (language: Language) => void;
   setMenuOpen: (open: boolean) => void;
+  t: Translator;
 }) {
   return (
     <header className="site-header">
-      <a className="brand-pill" href="#/home" aria-label="Go to home">
+      <a className="brand-pill" href="#/home" aria-label={t("Go to home")}>
         <PortfolioLogo />
       </a>
       <nav className="desktop-nav" aria-label="Main navigation">
@@ -163,15 +192,47 @@ function Header({
           </a>
         ))}
       </nav>
+      <div className="header-actions">
+        <LanguageToggle language={language} setLanguage={setLanguage} />
+      </div>
       <button
         className="icon-button mobile-only"
         type="button"
         onClick={() => setMenuOpen(!menuOpen)}
-        aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+        aria-label={menuOpen ? t("Close navigation") : t("Open navigation")}
       >
         {menuOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
     </header>
+  );
+}
+
+function LanguageToggle({
+  language,
+  setLanguage,
+}: {
+  language: Language;
+  setLanguage: (language: Language) => void;
+}) {
+  return (
+    <div className="language-toggle" aria-label="Language switcher">
+      <button
+        className={language === "en" ? "active" : ""}
+        type="button"
+        onClick={() => setLanguage("en")}
+        aria-pressed={language === "en"}
+      >
+        EN
+      </button>
+      <button
+        className={language === "ko" ? "active" : ""}
+        type="button"
+        onClick={() => setLanguage("ko")}
+        aria-pressed={language === "ko"}
+      >
+        KO
+      </button>
+    </div>
   );
 }
 
@@ -216,7 +277,7 @@ function MobileMenu({ route }: { route: string }) {
   );
 }
 
-function HomePage() {
+function HomePage({ t }: { t: Translator }) {
   return (
     <>
       <section className="hero-section">
@@ -226,38 +287,38 @@ function HomePage() {
             Who is
             <span>Sumin?</span>
           </h1>
-          <p>{profile.tagline}</p>
+          <p>{t(profile.tagline)}</p>
           <div className="hero-proof-row" aria-label="Sumin Lee focus areas">
-            <span>Brand Strategy</span>
-            <span>UX Planning</span>
-            <span>Data Insight</span>
+            <span>{t("Brand Strategy")}</span>
+            <span>{t("UX Planning")}</span>
+            <span>{t("Data Insight")}</span>
           </div>
           <div className="hero-actions">
             <a className="button primary" href="#/projects">
-              View Projects <ArrowUpRight size={18} />
+              {t("View Projects")} <ArrowUpRight size={18} />
             </a>
             <a className="button ghost" href="#/contact">
-              Contact <Mail size={18} />
+              {t("Contact")} <Mail size={18} />
             </a>
           </div>
         </div>
         <div className="hero-visual" aria-label="Sumin Lee portfolio portrait">
-          <img src={profile.heroImage} alt="Sumin Lee smiling outdoors" />
+          <img src={profile.heroImage} alt={t("Sumin Lee")} />
         </div>
       </section>
 
       <section className="landing-intro-section">
         <div className="intro-statement reveal-on-scroll">
-          <p>{profile.landingIntro}</p>
+          <p>{t(profile.landingIntro)}</p>
         </div>
         <div className="landing-keywords">
-          <p className="kicker reveal-on-scroll">These Keywords show me</p>
+          <p className="kicker reveal-on-scroll">{t("These Keywords show me")}</p>
           <div className="landing-keyword-grid">
             {keywords.map((keyword, index) => (
               <article className="landing-keyword-card reveal-on-scroll" key={keyword.title}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
-                <h2>{keyword.title}</h2>
-                <p>{keyword.text}</p>
+                <h2>{t(keyword.title)}</h2>
+                <p>{t(keyword.text)}</p>
               </article>
             ))}
           </div>
@@ -266,8 +327,8 @@ function HomePage() {
 
       <section className="toc-section reveal-on-scroll">
         <div>
-          <p className="kicker">Table of Contents</p>
-          <h2>Choose a page</h2>
+          <p className="kicker">{t("Table of Contents")}</p>
+          <h2>{t("Choose a page")}</h2>
         </div>
         <div className="toc-grid">
           {routes.slice(1).map((item, index) => (
@@ -283,7 +344,7 @@ function HomePage() {
       <section className="featured-project-section reveal-on-scroll">
         <div className="section-title">
           <FolderKanban />
-          <h3>Project Highlights</h3>
+          <h3>{t("Project Highlights")}</h3>
         </div>
         <div className="featured-strip">
           {projects.slice(0, 5).map((project, index) => (
@@ -296,8 +357,8 @@ function HomePage() {
               style={{ "--accent": project.accent } as React.CSSProperties}
             >
               <span>{index + 1}</span>
-              <strong>{project.title}</strong>
-              <small>{project.eyebrow}</small>
+              <strong>{t(project.title)}</strong>
+              <small>{t(project.eyebrow)}</small>
             </a>
           ))}
         </div>
@@ -306,37 +367,37 @@ function HomePage() {
   );
 }
 
-function AboutPage() {
+function AboutPage({ t }: { t: Translator }) {
   return (
-    <PageFrame eyebrow="Introduction" title="About Me">
+    <PageFrame eyebrow="Introduction" title="About Me" t={t}>
       <section className="about-wix-layout">
         <div className="about-profile-panel">
           <div className="portrait-card">
-            <img src={profile.portrait} alt="Sumin Lee portrait" />
+            <img src={profile.portrait} alt={t("Sumin Lee")} />
           </div>
           <div className="about-socials" aria-label="Sumin Lee profile links">
             <a href="mailto:leesm5088@naver.com?subject=Portfolio%20Contact">
               <Mail size={17} />
-              Email
+              {t("Email")}
             </a>
             <a href="https://www.linkedin.com/in/sumin-lee-0270a8292/" target="_blank">
               <Linkedin size={17} />
-              LinkedIn
+              {t("LinkedIn")}
             </a>
           </div>
         </div>
         <div className="about-main-copy">
-          <h2>{profile.title}</h2>
-          <p className="about-opening">{aboutNarrative[0]}</p>
+          <h2>{t(profile.title)}</h2>
+          <p className="about-opening">{t(aboutNarrative[0])}</p>
           <section className="about-story-block">
             <h3>My Story</h3>
             {aboutNarrative.slice(1).map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+              <p key={paragraph}>{t(paragraph)}</p>
             ))}
           </section>
           <section className="about-contact-block">
             <h3>Contact</h3>
-            <p>I'm always looking for new and exciting opportunities. Let's connect.</p>
+            <p>{t("I'm always looking for new and exciting opportunities. Let's connect.")}</p>
             <div className="about-contact-list">
               {profile.emails.map((email) => (
                 <a href={`mailto:${email}?subject=Portfolio%20Contact`} key={email}>
@@ -351,8 +412,8 @@ function AboutPage() {
               {aboutKeywords.map((keyword) => (
                 <article className="keyword-card" key={keyword.title}>
                   <Sparkles size={18} />
-                  <h4>{keyword.title}</h4>
-                  <p>{keyword.text}</p>
+                  <h4>{t(keyword.title)}</h4>
+                  <p>{t(keyword.text)}</p>
                 </article>
               ))}
             </div>
@@ -363,19 +424,17 @@ function AboutPage() {
   );
 }
 
-function ExperiencePage() {
+function ExperiencePage({ t }: { t: Translator }) {
   const work = experiences.filter((item) => item.category === "Work");
   const associations = experiences.filter((item) => item.category === "Association");
 
   return (
-    <PageFrame eyebrow="Career" title="Experience">
+    <PageFrame eyebrow="Career" title="Experience" t={t}>
       <p className="page-lede">
-        My experience spans brand management, growth marketing, product
-        planning, UI/UX design, and user research across startups, labs, and
-        student associations.
+        {t("My experience spans brand management, growth marketing, product planning, UI/UX design, and user research across startups, labs, and student associations.")}
       </p>
-      <Timeline title="Work Experience" items={work} icon={<BriefcaseBusiness />} />
-      <Timeline title="Association Experience" items={associations} icon={<GraduationCap />} />
+      <Timeline title="Work Experience" items={work} icon={<BriefcaseBusiness />} t={t} />
+      <Timeline title="Association Experience" items={associations} icon={<GraduationCap />} t={t} />
     </PageFrame>
   );
 }
@@ -384,31 +443,33 @@ function Timeline({
   title,
   items,
   icon,
+  t,
 }: {
   title: string;
   items: typeof experiences;
   icon: React.ReactNode;
+  t: Translator;
 }) {
   return (
     <section className="timeline-block">
       <div className="section-title">
         {icon}
-        <h3>{title}</h3>
+        <h3>{t(title)}</h3>
       </div>
       <div className="timeline">
         {items.map((item) => (
           <article className="timeline-item" key={`${item.organization}-${item.role}`}>
             <div>
-              <span>{item.period}</span>
-              <h4>{item.organization}</h4>
+              <span>{t(item.period)}</span>
+              <h4>{t(item.organization)}</h4>
               {item.description ? (
-                <p className="timeline-description">{item.description}</p>
+                <p className="timeline-description">{t(item.description)}</p>
               ) : null}
-              <p>{item.role}</p>
+              <p>{t(item.role)}</p>
             </div>
             <ul>
               {item.highlights.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
+                <li key={highlight}>{t(highlight)}</li>
               ))}
             </ul>
           </article>
@@ -418,19 +479,19 @@ function Timeline({
   );
 }
 
-function ProjectsPage() {
+function ProjectsPage({ t }: { t: Translator }) {
   return (
-    <PageFrame eyebrow="Selected Work" title="Project">
+    <PageFrame eyebrow="Selected Work" title="Project" t={t}>
       <div className="project-grid">
         {projects.map((project, index) => (
-          <ProjectCard project={project} index={index} key={project.id} />
+          <ProjectCard project={project} index={index} key={project.id} t={t} />
         ))}
       </div>
     </PageFrame>
   );
 }
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+function ProjectCard({ project, index, t }: { project: Project; index: number; t: Translator }) {
   return (
     <a
       className={`project-card ${
@@ -448,35 +509,35 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         {project.image ? (
           <img
             src={project.image}
-            alt={`${project.title} preview`}
+            alt={t(project.title)}
             loading="eager"
             decoding="async"
           />
         ) : null}
       </div>
       <div className="project-card-copy">
-        <p>{project.eyebrow}</p>
-        <h3>{project.title}</h3>
+        <p>{t(project.eyebrow)}</p>
+        <h3>{t(project.title)}</h3>
         <span>
-          View case <ArrowUpRight size={16} />
+          {t("View case")} <ArrowUpRight size={16} />
         </span>
       </div>
     </a>
   );
 }
 
-function ProjectDetail({ project }: { project: Project }) {
+function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
   const actions =
     project.actions ?? (project.external ? [{ label: "Open Project", href: project.external }] : []);
 
   return (
-    <PageFrame eyebrow={project.eyebrow} title={project.title}>
+    <PageFrame eyebrow={project.eyebrow} title={project.title} t={t}>
       <section
         className="case-hero"
         style={{ "--accent": project.accent } as React.CSSProperties}
       >
         <div>
-          <p>{project.summary}</p>
+          <p>{t(project.summary)}</p>
           {actions.length ? (
             <div className="case-actions">
               {actions.map((action, index) => (
@@ -486,7 +547,7 @@ function ProjectDetail({ project }: { project: Project }) {
                   target="_blank"
                   key={action.href}
                 >
-                  {action.label} <ArrowUpRight size={18} />
+                  {t(action.label)} <ArrowUpRight size={18} />
                 </a>
               ))}
             </div>
@@ -497,34 +558,34 @@ function ProjectDetail({ project }: { project: Project }) {
             project.id === "sephora-guide" ? "case-image-document" : ""
           } ${project.id === "leviosa" ? "case-image-leviosa" : ""}`}
         >
-          {project.image ? <img src={project.image} alt={`${project.title} interface`} /> : null}
+          {project.image ? <img src={project.image} alt={t(project.title)} /> : null}
         </div>
       </section>
 
       <section className="case-columns">
         <article className="role-card">
-          <h3>My Role</h3>
-          <p>{project.role}</p>
+          <h3>{t("My Role")}</h3>
+          <p>{t(project.role)}</p>
           <div className="chip-row role-skill-row">
             {project.capabilities.map((capability) => (
               <span className="chip" key={capability}>
-                {capability}
+                {t(capability)}
               </span>
             ))}
           </div>
         </article>
         <article>
-          <h3>Outcome</h3>
-          <p>{project.outcome}</p>
+          <h3>{t("Outcome")}</h3>
+          <p>{t(project.outcome)}</p>
         </article>
       </section>
 
       <section className="case-detail-list">
-        <h3>Process Notes</h3>
+        <h3>{t("Process Notes")}</h3>
         {project.details.map((detail, index) => (
           <div className="detail-row" key={detail}>
             <span>{String(index + 1).padStart(2, "0")}</span>
-            <p>{detail}</p>
+            <p>{t(detail)}</p>
           </div>
         ))}
       </section>
@@ -546,12 +607,12 @@ function ProjectDetail({ project }: { project: Project }) {
             >
               {section.image ? (
                 <div className="case-story-media">
-                  <img src={section.image} alt={`${project.title} ${section.title}`} />
+                  <img src={section.image} alt={`${t(project.title)} ${t(section.title)}`} />
                 </div>
               ) : null}
               <div className="case-story-copy">
-                <h3>{section.title}</h3>
-                <p>{section.text}</p>
+                <h3>{t(section.title)}</h3>
+                <p>{t(section.text)}</p>
               </div>
             </article>
           ))}
@@ -562,15 +623,15 @@ function ProjectDetail({ project }: { project: Project }) {
         <section className="case-gallery-section">
           <div className="section-title">
             <FolderKanban />
-            <h3>Project Materials</h3>
+            <h3>{t("Project Materials")}</h3>
           </div>
           <div className="case-gallery">
             {project.gallery.map((item) => (
               <article className="case-gallery-item" key={item.title}>
-                <img src={item.image} alt={`${project.title} ${item.title}`} />
+                <img src={item.image} alt={`${t(project.title)} ${t(item.title)}`} />
                 <div className="case-gallery-copy">
-                  <h3>{item.title}</h3>
-                  {item.note ? <p>{item.note}</p> : null}
+                  <h3>{t(item.title)}</h3>
+                  {item.note ? <p>{t(item.note)}</p> : null}
                 </div>
               </article>
             ))}
@@ -582,24 +643,24 @@ function ProjectDetail({ project }: { project: Project }) {
   );
 }
 
-function SkillsPage() {
+function SkillsPage({ t }: { t: Translator }) {
   return (
-    <PageFrame eyebrow="Capabilities" title="Skills">
+    <PageFrame eyebrow="Capabilities" title="Skills" t={t}>
       <div className="skills-stack">
         <section className="tool-section">
           <div className="section-title">
             <Sparkles />
-            <h3>Tools I Use</h3>
+            <h3>{t("Tools I Use")}</h3>
           </div>
           <div className="tool-grid">
             {softwareTools.map((tool) => (
               <article className="tool-card" key={tool.name}>
                 <div className="tool-logo">
-                  <img src={tool.icon} alt={`${tool.name} logo`} />
+                  <img src={tool.icon} alt={t(tool.name)} />
                 </div>
                 <div>
-                  <span>{tool.category}</span>
-                  <h4>{tool.name}</h4>
+                  <span>{t(tool.category)}</span>
+                  <h4>{t(tool.name)}</h4>
                 </div>
               </article>
             ))}
@@ -609,11 +670,11 @@ function SkillsPage() {
         <section className="skill-panel">
           <div className="section-title">
             <FolderKanban />
-            <h3>Developed Skills</h3>
+            <h3>{t("Developed Skills")}</h3>
           </div>
           <div className="skill-cloud">
             {skills.map((skill) => (
-              <span key={skill}>{skill}</span>
+              <span key={skill}>{t(skill)}</span>
             ))}
           </div>
         </section>
@@ -622,24 +683,22 @@ function SkillsPage() {
   );
 }
 
-function DocumentsPage() {
+function DocumentsPage({ t }: { t: Translator }) {
   return (
-    <PageFrame eyebrow="Archive" title="Documents">
+    <PageFrame eyebrow="Archive" title="Documents" t={t}>
       <p className="page-lede">
-        Resume, completion certificates, and licenses are organized as separate
-        review pages so the supporting materials can be checked inside this
-        portfolio.
+        {t("Resume, completion certificates, and licenses are organized as separate review pages so the supporting materials can be checked inside this portfolio.")}
       </p>
       <div className="document-stack">
         {documentSections.map((section) => (
-          <DocumentCard section={section} key={section.id} />
+          <DocumentCard section={section} key={section.id} t={t} />
         ))}
       </div>
     </PageFrame>
   );
 }
 
-function DocumentCard({ section }: { section: DocumentSection }) {
+function DocumentCard({ section, t }: { section: DocumentSection; t: Translator }) {
   const isExternal = !section.href.startsWith("#/");
 
   return (
@@ -647,19 +706,19 @@ function DocumentCard({ section }: { section: DocumentSection }) {
       <div className="document-preview">
         <img
           src={section.preview}
-          alt={`${section.title} preview`}
+          alt={t(section.title)}
           loading="eager"
           decoding="async"
         />
       </div>
       <div className="document-copy">
-        <span>{section.eyebrow}</span>
-        <h3>{section.title}</h3>
-        <p>{section.text}</p>
+        <span>{t(section.eyebrow)}</span>
+        <h3>{t(section.title)}</h3>
+        <p>{t(section.text)}</p>
         <div className="chip-row">
           {section.highlights.map((item) => (
             <span className="chip" key={item}>
-              {item}
+              {t(item)}
             </span>
           ))}
         </div>
@@ -668,7 +727,7 @@ function DocumentCard({ section }: { section: DocumentSection }) {
           href={section.href}
           target={isExternal ? "_blank" : undefined}
         >
-          {section.action}
+          {t(section.action)}
           {section.title === "Resume" ? <Download size={18} /> : <FileText size={18} />}
         </a>
       </div>
@@ -676,30 +735,30 @@ function DocumentCard({ section }: { section: DocumentSection }) {
   );
 }
 
-function DocumentDetail({ section }: { section: DocumentSection }) {
+function DocumentDetail({ section, t }: { section: DocumentSection; t: Translator }) {
   const images = Array.from(new Set([section.preview, ...(section.gallery ?? [])]));
   const isResume = section.id === "resume";
 
   return (
-    <PageFrame eyebrow={section.eyebrow} title={section.title}>
+    <PageFrame eyebrow={section.eyebrow} title={section.title} t={t}>
       <section className="document-detail-hero">
         <div>
-          <p className="page-lede">{section.detailIntro ?? section.text}</p>
+          <p className="page-lede">{t(section.detailIntro ?? section.text)}</p>
           <div className="chip-row">
             {section.highlights.map((item) => (
               <span className="chip" key={item}>
-                {item}
+                {t(item)}
               </span>
             ))}
           </div>
         </div>
         <div className="document-detail-actions">
           <a className="button ghost" href="#/documents">
-            Back to Documents
+            {t("Back to Documents")}
           </a>
           {isResume ? (
             <a className="button primary" href={section.href} target="_blank">
-              Download Resume <Download size={18} />
+              {t("Download Resume")} <Download size={18} />
             </a>
           ) : null}
         </div>
@@ -710,12 +769,12 @@ function DocumentDetail({ section }: { section: DocumentSection }) {
           <figure className="document-detail-image" key={image}>
             <img
               src={image}
-              alt={`${section.title} document ${index + 1}`}
+              alt={`${t(section.title)} ${index + 1}`}
               loading="eager"
               decoding="async"
             />
             <figcaption>
-              {section.title} {String(index + 1).padStart(2, "0")}
+              {t(section.title)} {String(index + 1).padStart(2, "0")}
             </figcaption>
           </figure>
         ))}
@@ -724,10 +783,10 @@ function DocumentDetail({ section }: { section: DocumentSection }) {
   );
 }
 
-function InterestsPage() {
+function InterestsPage({ t }: { t: Translator }) {
   return (
-    <PageFrame eyebrow="Personal Archive" title="Interests">
-      <p className="page-lede interest-page-lede">{interestsIntro}</p>
+    <PageFrame eyebrow="Personal Archive" title="Interests" t={t}>
+      <p className="page-lede interest-page-lede">{t(interestsIntro)}</p>
       <div className="interest-grid">
         {interests.map((interest) => (
           <a
@@ -738,17 +797,17 @@ function InterestsPage() {
             <div className="interest-card-media">
               <img
                 src={interest.cover}
-                alt={`${interest.title} preview`}
+                alt={t(interest.title)}
                 loading="eager"
                 decoding="async"
               />
             </div>
             <div className="interest-card-copy">
               {interest.title.includes("Travel") ? <Camera /> : <ChartNoAxesCombined />}
-              <h3>{interest.title}</h3>
-              <p>{interest.text}</p>
+              <h3>{t(interest.title)}</h3>
+              <p>{t(interest.text)}</p>
               <span>
-                View works <ArrowUpRight size={16} />
+                {t("View works")} <ArrowUpRight size={16} />
               </span>
             </div>
           </a>
@@ -758,21 +817,21 @@ function InterestsPage() {
   );
 }
 
-function InterestDetail({ interest }: { interest: Interest }) {
+function InterestDetail({ interest, t }: { interest: Interest; t: Translator }) {
   const galleryColumns = getInterestGalleryColumns(interest);
 
   return (
-    <PageFrame eyebrow="Interests" title={interest.title}>
+    <PageFrame eyebrow="Interests" title={interest.title} t={t}>
       <div className="interest-detail-head">
-        <p className="page-lede">{interest.text}</p>
+        <p className="page-lede">{t(interest.text)}</p>
         <a className="button ghost" href="#/interests">
-          Back to Interests
+          {t("Back to Interests")}
         </a>
       </div>
       <section className="interest-detail">
         <div className="section-title">
           <FolderKanban />
-          <h3>Works</h3>
+          <h3>{t("Works")}</h3>
         </div>
         <div className="interest-gallery">
           {galleryColumns.map((column, columnIndex) => (
@@ -781,7 +840,7 @@ function InterestDetail({ interest }: { interest: Interest }) {
                 <article className="interest-gallery-item" key={item.title}>
                   <img
                     src={item.image}
-                    alt={`${item.title} ${item.type}`}
+                    alt={`${t(item.title)} ${t(item.type)}`}
                     loading="eager"
                     decoding="async"
                   />
@@ -818,20 +877,19 @@ function getInterestGalleryColumns(interest: Interest) {
   ];
 }
 
-function ContactPage() {
+function ContactPage({ t }: { t: Translator }) {
   return (
-    <PageFrame eyebrow="Contact" title="Contact Me">
+    <PageFrame eyebrow="Contact" title="Contact Me" t={t}>
       <section className="contact-hero">
         <div className="contact-intro">
           <CircleUserRound size={30} />
-          <h3>{profile.name}</h3>
+          <h3>{t(profile.name)}</h3>
           <p>
-            Curious about my projects, work experience, travel stories, or a
-            casual coffee chat? Feel free to reach out.
+            {t("Curious about my projects, work experience, travel stories, or a casual coffee chat? Feel free to reach out.")}
           </p>
           <span>
             <MapPin size={18} />
-            {profile.school}
+            {t(profile.school)}
           </span>
         </div>
         <div className="contact-links">
@@ -844,30 +902,29 @@ function ContactPage() {
           {profile.links.map((link) => (
             <a href={link.href} target="_blank" key={link.label}>
               {link.label === "LinkedIn" ? <Linkedin size={18} /> : <ArrowUpRight size={18} />}
-              {link.label}
+              {t(link.label)}
             </a>
           ))}
           <span>
             <MapPin size={18} />
-            Seoul, Korea
+            {t("Seoul, Korea")}
           </span>
         </div>
       </section>
       <section className="contact-reachout-panel">
         <div>
-          <p className="kicker">Reach out for</p>
-          <h3>Open conversation, clear next steps.</h3>
+          <p className="kicker">{t("Reach out for")}</p>
+          <h3>{t("Open conversation, clear next steps.")}</h3>
         </div>
         <p>
-          More portfolio details, project collaboration, work experience questions,
-          travel-inspired stories, career conversations, or coffee chats are all welcome.
+          {t("More portfolio details, project collaboration, work experience questions, travel-inspired stories, career conversations, or coffee chats are all welcome.")}
         </p>
         <div className="contact-topic-list">
-          <span>More projects</span>
-          <span>Work experience</span>
-          <span>Travel stories</span>
-          <span>Coffee chat</span>
-          <span>Collaboration</span>
+          <span>{t("More projects")}</span>
+          <span>{t("Work experience")}</span>
+          <span>{t("Travel stories")}</span>
+          <span>{t("Coffee chat")}</span>
+          <span>{t("Collaboration")}</span>
         </div>
       </section>
     </PageFrame>
@@ -878,15 +935,17 @@ function PageFrame({
   eyebrow,
   title,
   children,
+  t,
 }: {
   eyebrow: string;
   title: string;
   children: React.ReactNode;
+  t: Translator;
 }) {
   return (
     <section className="page-frame">
       <div className="page-heading">
-        <p className="kicker">{eyebrow}</p>
+        <p className="kicker">{t(eyebrow)}</p>
         <h1>{title}</h1>
       </div>
       {children}
@@ -894,22 +953,22 @@ function PageFrame({
   );
 }
 
-function NotFoundPage() {
+function NotFoundPage({ t }: { t: Translator }) {
   return (
-    <PageFrame eyebrow="404" title="Page not found">
+    <PageFrame eyebrow="404" title="Page not found" t={t}>
       <a className="button primary" href="#/home">
-        Back Home
+        {t("Back Home")}
       </a>
     </PageFrame>
   );
 }
 
-function Footer() {
+function Footer({ t }: { t: Translator }) {
   return (
     <footer className="site-footer">
-      <span>{profile.name}</span>
-      <span>{profile.school}</span>
-      <a href="#/contact">Contact</a>
+      <span>{t(profile.name)}</span>
+      <span>{t(profile.school)}</span>
+      <a href="#/contact">{t("Contact")}</a>
     </footer>
   );
 }
