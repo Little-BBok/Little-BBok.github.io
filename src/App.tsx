@@ -117,7 +117,7 @@ function Header({
   return (
     <header className="site-header">
       <a className="brand-pill" href="#/home" aria-label="Go to home">
-        {profile.shortName}
+        <PortfolioLogo />
       </a>
       <nav className="desktop-nav" aria-label="Main navigation">
         {routes.map((item) => (
@@ -145,6 +145,35 @@ function Header({
         {menuOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
     </header>
+  );
+}
+
+function PortfolioLogo() {
+  return (
+    <>
+      <span className="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 44 44" role="img">
+          <path
+            className="brand-mark-orbit"
+            d="M11 29.5C7.8 23.2 10 14.8 16.2 11.3c6.5-3.6 15.3-1 18.8 5.5"
+          />
+          <path
+            className="brand-mark-stem"
+            d="M28.5 9.5v20.8c0 3.2 2 5.2 5.7 5.2H37"
+          />
+          <path
+            className="brand-mark-ribbon"
+            d="M30.5 15.2c-2.4-2.5-6.8-3-10.1-.8-3 2-3.3 5.2-.2 6.9l6.1 3.4c3.5 1.9 3.3 5.3-.3 7.4-3.8 2.2-9.2 1.3-11.9-1.8"
+          />
+          <circle className="brand-mark-node primary" cx="14.3" cy="30" r="2.5" />
+          <circle className="brand-mark-node secondary" cx="34.3" cy="16.4" r="2" />
+        </svg>
+      </span>
+      <span className="brand-wordmark">
+        <span>Sumin</span>
+        <span>Lee</span>
+      </span>
+    </>
   );
 }
 
@@ -203,6 +232,24 @@ function HomePage() {
       <section className="landing-intro-section">
         <div className="intro-statement">
           <p>{profile.landingIntro}</p>
+        </div>
+        <div className="landing-motion-strip" aria-label="Interactive portfolio path">
+          {[
+            { label: "Explore", detail: "global inspirations", href: "#/interests" },
+            { label: "Shape", detail: "strategic systems", href: "#/projects" },
+            { label: "Connect", detail: "warm memories", href: "#/contact" },
+          ].map((item, index) => (
+            <a
+              className="motion-node"
+              href={item.href}
+              key={item.label}
+              style={{ "--node-index": index } as React.CSSProperties}
+            >
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{item.label}</strong>
+              <small>{item.detail}</small>
+            </a>
+          ))}
         </div>
         <div className="landing-keywords">
           <p className="kicker">These Keywords show me</p>
