@@ -62,6 +62,33 @@ function App() {
     return () => window.removeEventListener("hashchange", syncRoute);
   }, []);
 
+  useEffect(() => {
+    if (route !== "home") return;
+
+    const revealItems = Array.from(document.querySelectorAll<HTMLElement>(".reveal-on-scroll"));
+    if (!revealItems.length) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion || !("IntersectionObserver" in window)) {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.14 },
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, [route]);
+
   const activeProject = useMemo(() => {
     if (!route.startsWith("project/")) return undefined;
     return projects.find((project) => project.id === route.split("/")[1]);
@@ -154,24 +181,14 @@ function PortfolioLogo() {
       <span className="brand-mark" aria-hidden="true">
         <svg viewBox="0 0 44 44" role="img">
           <path
-            className="brand-mark-orbit"
-            d="M11 29.5C7.8 23.2 10 14.8 16.2 11.3c6.5-3.6 15.3-1 18.8 5.5"
+            className="brand-mark-s"
+            d="M29.5 13.8c-2-2.2-6.4-2.7-9.5-1.1-3.4 1.8-3.7 5 .1 6.5l6.6 2.7c4.5 1.9 4.1 6.1-.3 8.3-4 2-9.7 1.1-12.1-1.9"
           />
-          <path
-            className="brand-mark-stem"
-            d="M28.5 9.5v20.8c0 3.2 2 5.2 5.7 5.2H37"
-          />
-          <path
-            className="brand-mark-ribbon"
-            d="M30.5 15.2c-2.4-2.5-6.8-3-10.1-.8-3 2-3.3 5.2-.2 6.9l6.1 3.4c3.5 1.9 3.3 5.3-.3 7.4-3.8 2.2-9.2 1.3-11.9-1.8"
-          />
-          <circle className="brand-mark-node primary" cx="14.3" cy="30" r="2.5" />
-          <circle className="brand-mark-node secondary" cx="34.3" cy="16.4" r="2" />
+          <path className="brand-mark-l" d="M32 10.5v22h7" />
         </svg>
       </span>
       <span className="brand-wordmark">
-        <span>Sumin</span>
-        <span>Lee</span>
+        Sumin Lee
       </span>
     </>
   );
@@ -230,32 +247,14 @@ function HomePage() {
       </section>
 
       <section className="landing-intro-section">
-        <div className="intro-statement">
+        <div className="intro-statement reveal-on-scroll">
           <p>{profile.landingIntro}</p>
         </div>
-        <div className="landing-motion-strip" aria-label="Interactive portfolio path">
-          {[
-            { label: "Explore", detail: "global inspirations", href: "#/interests" },
-            { label: "Shape", detail: "strategic systems", href: "#/projects" },
-            { label: "Connect", detail: "warm memories", href: "#/contact" },
-          ].map((item, index) => (
-            <a
-              className="motion-node"
-              href={item.href}
-              key={item.label}
-              style={{ "--node-index": index } as React.CSSProperties}
-            >
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <strong>{item.label}</strong>
-              <small>{item.detail}</small>
-            </a>
-          ))}
-        </div>
         <div className="landing-keywords">
-          <p className="kicker">These Keywords show me</p>
+          <p className="kicker reveal-on-scroll">These Keywords show me</p>
           <div className="landing-keyword-grid">
             {keywords.map((keyword, index) => (
-              <article className="landing-keyword-card" key={keyword.title}>
+              <article className="landing-keyword-card reveal-on-scroll" key={keyword.title}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <h2>{keyword.title}</h2>
                 <p>{keyword.text}</p>
@@ -265,7 +264,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="toc-section">
+      <section className="toc-section reveal-on-scroll">
         <div>
           <p className="kicker">Table of Contents</p>
           <h2>Choose a page</h2>
@@ -281,7 +280,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="featured-project-section">
+      <section className="featured-project-section reveal-on-scroll">
         <div className="section-title">
           <FolderKanban />
           <h3>Project Highlights</h3>
