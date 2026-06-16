@@ -1474,6 +1474,15 @@ html[lang="ko"] .landing-keywords > .kicker {
   padding: 18px;
 }
 
+.case-gallery-section-sephora-analysis .case-gallery-copy {
+  padding: 14px 16px 16px;
+}
+
+.case-gallery-section-sephora-analysis .case-gallery-copy h3 {
+  font-size: clamp(17px, 1.35vw, 22px);
+  line-height: 1.15;
+}
+
 .chip-row,
 .skill-cloud {
   display: flex;

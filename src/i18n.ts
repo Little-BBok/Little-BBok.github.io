@@ -173,7 +173,7 @@ const ko: Record<string, string> = {
   "CogSci:IN": "CogSci:IN",
   "Head of PR & MD Team": "PR & MD 팀장",
   "Mar 2024 - Dec 2024": "2024.03 - 2024.12",
-  "Cognitive Science Society": "인지과학회",
+  "Cognitive Science Society": "인지과학학회",
   "Designed and executed neuromarketing research with Muse EEG to study olfactory visualization and purchase intent in omni-channel retail.":
     "Muse EEG 기반 옴니채널 리테일 환경의 후각 시각화 및 구매 의도 뉴로마케팅 실험 설계·실행",
   "Managed the full research lifecycle from experimental design to data analysis, with findings published in a peer-reviewed academic journal.":
@@ -247,34 +247,59 @@ const ko: Record<string, string> = {
   Pitching: "피칭",
   "UI/UX Framework": "UI/UX 프레임워크",
   "Leviosa AI UX Project": "Leviosa AI UX 프로젝트",
-  "Cafe24 CRM detail page UX": "Cafe24 CRM 상세 페이지 UX",
+  "Cafe24 CRM detail page UX": "Cafe24 CRM 랜딩페이지 UX",
+  "Cafe24 CRM landing page UX": "Cafe24 CRM 랜딩페이지 UX",
   "End-to-end UX/UI for the detail page of Leviosa CS, a high-performance CRM solution integrated with Cafe24.":
-    "Cafe24와 연동되는 고성능 CRM 솔루션 Leviosa CS의 상세 페이지를 위한 엔드투엔드 UX/UI 프로젝트입니다.",
+    "Cafe24와 연동되는 CRM 서비스 Leviosa CS를 소개하는 랜딩페이지 UX/UI 프로젝트입니다.",
+  "UX planning and UI design for a landing page that explains Leviosa CS, a Cafe24-connected CRM service.":
+    "Cafe24와 연동되는 CRM 서비스 Leviosa CS를 설명하는 랜딩페이지의 UX를 기획하고 UI를 디자인한 프로젝트입니다.",
   "UX/UI designer translating complex e-commerce data into an intuitive, action-oriented interface for CS agents.":
-    "복잡한 이커머스 데이터를 CS 담당자가 직관적으로 행동할 수 있는 인터페이스로 번역한 UX/UI 디자이너였습니다.",
+    "서비스의 핵심 가치와 기능 흐름을 명확하게 전달하는 랜딩페이지 UX/UI를 설계했습니다.",
+  "UX planner and UI designer responsible for structuring the landing page narrative, information flow, and visual interface.":
+    "랜딩페이지의 메시지 흐름, 정보 구조, 시각 인터페이스를 설계한 UX 기획자이자 UI 디자이너였습니다.",
   "Reduced cognitive load through clearer hierarchy, task-centric workflows, and a scalable SaaS component system.":
-    "명확한 위계, 업무 중심 워크플로우, 확장 가능한 SaaS 컴포넌트 시스템을 통해 인지 부담을 줄였습니다.",
+    "랜딩페이지의 정보 구조와 시각 위계를 정리해 서비스의 가치와 기능을 이해하기 쉽게 전달했습니다.",
+  "Clarified the service value proposition and feature flow through landing page UX, hierarchy, and UI design.":
+    "랜딩페이지 UX와 시각 위계를 통해 서비스의 핵심 가치와 기능 흐름을 명확하게 전달했습니다.",
   "UX Sample": "UX 샘플",
   "I designed the end-to-end UX/UI for the Detail Page of Leviosa CS, a high-performance CRM solution integrated with Cafe24, Korea's leading e-commerce platform. The project focused on optimizing CS-agent workflow by transforming complex e-commerce data into an intuitive, action-oriented interface.":
-    "국내 대표 이커머스 플랫폼 Cafe24와 연동되는 고성능 CRM 솔루션 Leviosa CS의 상세 페이지 UX/UI를 엔드투엔드로 설계했습니다. 복잡한 이커머스 데이터를 직관적이고 행동 중심적인 인터페이스로 전환해 CS 담당자의 업무 흐름을 최적화하는 데 집중했습니다.",
+    "국내 대표 이커머스 플랫폼 Cafe24와 연동되는 CRM 서비스 Leviosa CS를 소개하는 랜딩페이지 UX/UI를 설계했습니다. 제품의 가치와 기능을 명확하게 전달할 수 있도록 페이지 구조, 기능 스토리텔링, 전환을 고려한 인터페이스를 구성했습니다.",
+  "I planned the UX and designed the UI for a landing page that introduces Leviosa CS, a Cafe24-connected CRM service, with a focus on clear page structure, feature storytelling, and conversion-oriented interface design.":
+    "Cafe24와 연동되는 CRM 서비스 Leviosa CS를 소개하는 랜딩페이지의 UX를 기획하고 UI를 디자인했습니다. 제품의 가치와 기능을 명확하게 전달할 수 있도록 페이지 구조, 기능 스토리텔링, 전환을 고려한 인터페이스를 구성했습니다.",
   "Information Architecture": "정보구조",
   "I structured multi-layered data, including order history, customer profiles, and real-time logs, into a clear visual hierarchy to reduce cognitive load for CS agents.":
-    "주문 이력, 고객 프로필, 실시간 로그 등 다층 데이터를 명확한 시각적 위계로 구조화해 CS 담당자의 인지 부담을 줄였습니다.",
-  "Workflow Optimization": "워크플로우 최적화",
+    "방문자가 서비스 맥락, 핵심 기능, 사용 이점, 제품 가치를 빠르게 이해할 수 있도록 랜딩페이지 정보 흐름을 구성했습니다.",
+  "I organized the landing page flow so visitors could quickly understand the service context, key features, usage benefits, and product value without confusion.":
+    "방문자가 서비스 맥락, 핵심 기능, 사용 이점, 제품 가치를 빠르게 이해할 수 있도록 랜딩페이지 정보 흐름을 구성했습니다.",
+  "Workflow Optimization": "랜딩페이지 흐름 설계",
+  "Landing Flow Design": "랜딩페이지 흐름 설계",
   "The task-centric layout enables agents to process refunds, shipping updates, and inquiries with minimal clicks, while still keeping essential context visible.":
-    "업무 중심 레이아웃을 통해 환불, 배송 업데이트, 문의 처리를 최소 클릭으로 수행하면서도 핵심 맥락을 계속 확인할 수 있도록 했습니다.",
-  "Systems Thinking": "시스템 사고",
+    "문제 인식에서 솔루션의 이점, 기능 설명, 행동 유도로 이어지는 흐름을 설계해 사용자가 서비스의 필요성을 자연스럽게 이해하도록 했습니다.",
+  "I designed the page narrative to move from problem awareness to solution benefits, feature explanation, and action, helping users grasp why the service matters.":
+    "문제 인식에서 솔루션의 이점, 기능 설명, 행동 유도로 이어지는 페이지 내러티브를 설계해 사용자가 서비스의 필요성을 자연스럽게 이해하도록 했습니다.",
+  "Systems Thinking": "UI 디자인 시스템",
+  "UI Design System": "UI 디자인 시스템",
   "I ensured deep integration with Cafe24 API data structures, bridging the gap between technical constraints and user needs, and developed a scalable UI component system for the SaaS environment.":
-    "Cafe24 API 데이터 구조와 깊이 연동되도록 설계해 기술적 제약과 사용자 니즈 사이의 간극을 줄였고, SaaS 환경에 맞는 확장 가능한 UI 컴포넌트 시스템을 개발했습니다.",
+    "B2B CRM 제품을 설명하기에 적합한 재사용 가능한 섹션, 명확한 시각 위계, SaaS 스타일의 UI 컴포넌트 방향을 설계했습니다.",
+  "I created a clean SaaS-style UI direction with reusable sections, clear visual hierarchy, and interface components suited to explaining a B2B CRM product.":
+    "B2B CRM 제품을 설명하기에 적합한 재사용 가능한 섹션, 명확한 시각 위계, SaaS 스타일의 UI 컴포넌트 방향을 설계했습니다.",
   "Structured multi-layered data such as order history, customer profiles, and real-time logs into a clear visual hierarchy.":
-    "주문 이력, 고객 프로필, 실시간 로그 등 다층 데이터를 명확한 시각적 위계로 구조화했습니다.",
+    "Leviosa CS 랜딩페이지의 정보 구조와 콘텐츠 흐름 기획",
+  "Planned the landing page information architecture and content flow for Leviosa CS.":
+    "Leviosa CS 랜딩페이지의 정보 구조와 콘텐츠 흐름 기획",
   "Designed a task-centric layout for refunds, shipping updates, and inquiries with minimal clicks.":
-    "환불, 배송 업데이트, 문의 처리를 최소 클릭으로 수행할 수 있는 업무 중심 레이아웃을 설계했습니다.",
+    "서비스 기능, 이점, 제품 맥락을 설명하는 UI 섹션 디자인",
+  "Designed UI sections that explain service features, benefits, and product context.":
+    "서비스 기능, 이점, 제품 맥락을 설명하는 UI 섹션 디자인",
   "Aligned UI with Cafe24 API data structures to bridge technical constraints and agent needs.":
-    "Cafe24 API 데이터 구조와 UI를 정렬해 기술적 제약과 담당자 니즈 사이를 연결했습니다.",
+    "명확한 이해와 전환을 고려한 SaaS 스타일 랜딩페이지 인터페이스 설계",
+  "Created a SaaS-style landing page interface optimized for clarity and conversion.":
+    "명확한 이해와 전환을 고려한 SaaS 스타일 랜딩페이지 인터페이스 설계",
   "SaaS UX": "SaaS UX",
+  "Landing Page UX": "랜딩페이지 UX",
   "Workflow Design": "워크플로우 설계",
   "Component System": "컴포넌트 시스템",
+  "UI Design": "UI 디자인",
   "Sephora R Data Analysis": "Sephora R 데이터 분석",
   "Premium beauty pricing research": "프리미엄 뷰티 가격 연구",
   "An R-based analysis of 8,000+ Sephora products examining when beauty product pricing is accepted in consumer ratings.":

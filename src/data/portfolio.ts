@@ -324,48 +324,48 @@ export const projects: Project[] = [
   {
     id: "leviosa",
     title: "Leviosa AI UX Project",
-    eyebrow: "Cafe24 CRM detail page UX",
+    eyebrow: "Cafe24 CRM landing page UX",
     summary:
-      "End-to-end UX/UI for the detail page of Leviosa CS, a high-performance CRM solution integrated with Cafe24.",
+      "UX planning and UI design for a landing page that explains Leviosa CS, a Cafe24-connected CRM service.",
     role:
-      "UX/UI designer translating complex e-commerce data into an intuitive, action-oriented interface for CS agents.",
+      "UX planner and UI designer responsible for structuring the landing page narrative, information flow, and visual interface.",
     outcome:
-      "Reduced cognitive load through clearer hierarchy, task-centric workflows, and a scalable SaaS component system.",
+      "Clarified the service value proposition and feature flow through landing page UX, hierarchy, and UI design.",
     accent: "#f7769b",
-    external: "https://cafe24.cs.leviosa.ai.kr",
+    external: "https://cafe24.cs.leviosa.ai.kr/leviosa_cs/detail",
     image:
       "https://static.wixstatic.com/media/df8dea_f551a8e7576d46ada41881d17c9158e9~mv2.png/v1/fill/w_1960,h_1022,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2003_15_27.png",
     actions: [
-      { label: "UX Sample", href: "https://cafe24.cs.leviosa.ai.kr" },
+      { label: "UX Sample", href: "https://cafe24.cs.leviosa.ai.kr/leviosa_cs/detail" },
     ],
     sections: [
       {
         title: "Project Overview",
         text:
-          "I designed the end-to-end UX/UI for the Detail Page of Leviosa CS, a high-performance CRM solution integrated with Cafe24, Korea's leading e-commerce platform. The project focused on optimizing CS-agent workflow by transforming complex e-commerce data into an intuitive, action-oriented interface.",
+          "I planned the UX and designed the UI for a landing page that introduces Leviosa CS, a Cafe24-connected CRM service, with a focus on clear page structure, feature storytelling, and conversion-oriented interface design.",
       },
       {
         title: "Information Architecture",
         text:
-          "I structured multi-layered data, including order history, customer profiles, and real-time logs, into a clear visual hierarchy to reduce cognitive load for CS agents.",
+          "I organized the landing page flow so visitors could quickly understand the service context, key features, usage benefits, and product value without confusion.",
       },
       {
-        title: "Workflow Optimization",
+        title: "Landing Flow Design",
         text:
-          "The task-centric layout enables agents to process refunds, shipping updates, and inquiries with minimal clicks, while still keeping essential context visible.",
+          "I designed the page narrative to move from problem awareness to solution benefits, feature explanation, and action, helping users grasp why the service matters.",
       },
       {
-        title: "Systems Thinking",
+        title: "UI Design System",
         text:
-          "I ensured deep integration with Cafe24 API data structures, bridging the gap between technical constraints and user needs, and developed a scalable UI component system for the SaaS environment.",
+          "I created a clean SaaS-style UI direction with reusable sections, clear visual hierarchy, and interface components suited to explaining a B2B CRM product.",
       },
     ],
     details: [
-      "Structured multi-layered data such as order history, customer profiles, and real-time logs into a clear visual hierarchy.",
-      "Designed a task-centric layout for refunds, shipping updates, and inquiries with minimal clicks.",
-      "Aligned UI with Cafe24 API data structures to bridge technical constraints and agent needs.",
+      "Planned the landing page information architecture and content flow for Leviosa CS.",
+      "Designed UI sections that explain service features, benefits, and product context.",
+      "Created a SaaS-style landing page interface optimized for clarity and conversion.",
     ],
-    capabilities: ["SaaS UX", "Information Architecture", "Workflow Design", "Component System"],
+    capabilities: ["SaaS UX", "Landing Page UX", "Information Architecture", "UI Design"],
   },
   {
     id: "sephora-analysis",

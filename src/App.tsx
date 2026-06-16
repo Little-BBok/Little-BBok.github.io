@@ -620,7 +620,7 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
       ) : null}
 
       {project.gallery?.length ? (
-        <section className="case-gallery-section">
+        <section className={`case-gallery-section case-gallery-section-${project.id}`}>
           <div className="section-title">
             <FolderKanban />
             <h3>{t("Project Materials")}</h3>
