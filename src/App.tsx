@@ -238,20 +238,7 @@ function LanguageToggle({
 
 function PortfolioLogo() {
   return (
-    <>
-      <span className="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 44 44" role="img">
-          <path
-            className="brand-mark-s"
-            d="M29.5 13.8c-2-2.2-6.4-2.7-9.5-1.1-3.4 1.8-3.7 5 .1 6.5l6.6 2.7c4.5 1.9 4.1 6.1-.3 8.3-4 2-9.7 1.1-12.1-1.9"
-          />
-          <path className="brand-mark-l" d="M32 10.5v22h7" />
-        </svg>
-      </span>
-      <span className="brand-wordmark">
-        Sumin Lee
-      </span>
-    </>
+    <img className="brand-logo-image" src="/portfolio-logo.png" alt="" />
   );
 }
 

@@ -90,9 +90,10 @@ img {
 .brand-pill {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  min-width: 0;
-  padding: 8px 16px 8px 10px;
+  justify-content: center;
+  width: 58px;
+  height: 42px;
+  padding: 5px 10px;
   color: var(--ink);
   border-color: rgba(23, 24, 32, 0.58);
   background: rgba(255, 255, 255, 0.62);
@@ -104,48 +105,12 @@ img {
     transform 180ms ease;
 }
 
-.brand-mark {
-  display: inline-grid;
-  width: 28px;
-  height: 28px;
-  flex: 0 0 28px;
-  place-items: center;
-  border-radius: 8px;
-  background: #171820;
-  box-shadow: none;
-}
-
-.brand-mark svg {
-  width: 22px;
-  height: 22px;
-  overflow: visible;
+.brand-logo-image {
+  display: block;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
   transition: transform 240ms ease;
-}
-
-.brand-mark-s,
-.brand-mark-l {
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.brand-mark-s {
-  stroke: #ffdbed;
-  stroke-width: 3.2;
-}
-
-.brand-mark-l {
-  stroke: #ffffff;
-  stroke-width: 3;
-}
-
-.brand-wordmark {
-  color: var(--ink);
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0;
-  text-transform: uppercase;
-  white-space: nowrap;
 }
 
 .desktop-nav {
@@ -229,9 +194,9 @@ img {
   transform: translateY(-2px);
 }
 
-.brand-pill:hover .brand-mark svg,
-.brand-pill:focus-visible .brand-mark svg {
-  transform: translateX(1px);
+.brand-pill:hover .brand-logo-image,
+.brand-pill:focus-visible .brand-logo-image {
+  transform: scale(1.06) rotate(-2deg);
 }
 
 .desktop-nav a:hover,
@@ -2286,10 +2251,9 @@ html[lang="ko"] .landing-keywords > .kicker {
   }
 
   .brand-pill {
-    max-width: calc(100vw - 86px);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    width: 54px;
+    height: 40px;
+    flex: 0 0 54px;
   }
 
   .hero-section,
