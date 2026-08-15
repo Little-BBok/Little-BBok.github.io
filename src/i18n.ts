@@ -124,18 +124,22 @@ const ko: Record<string, string> = {
   "ALUS healthcare": "ALUS healthcare",
   "Brand Manager": "브랜드 매니저",
   "Feb 2025 - Aug 2025": "2025.02 - 2025.08",
+  "Led the end-to-end product planning and branding process for a VNS wellness device, designing a consistent brand experience from target definition, product color, and package composition to photoshoot direction, product detail page, homepage UX, and launch event.":
+    "VNS 웰니스 디바이스 제품 기획 및 브랜딩 전 과정 리드 — 타깃·제품 컬러·패키지 구성부터 촬영, 상세페이지, 홈페이지 UX, 출시 이벤트까지 일관된 브랜드 경험 설계",
+  "Developed and launched POWAPOWA, a wellness and beauty brand targeting women in their 20s and 30s, attracting inbound partnership proposals from Marriott Moxy Hotel and Qoo10 Japan.":
+    "20~30대 여성 타깃 웰니스·뷰티 브랜드 POWAPOWA 개발 및 론칭, Marriott Moxy Hotel·Qoo10 Japan 인바운드 파트너십 제안 유치",
+  "Led official e-commerce store IA, wireframes, and functional prototype development, then custom-coded a real-time influencer review section on the product page.":
+    "공식 이커머스 스토어 IA·와이어프레임·기능형 프로토타입 개발 리드, 제품 페이지 실시간 인플루언서 리뷰 영역 커스텀 코딩",
+  "Sourced manufacturing partners, compared quotes, negotiated pricing, and managed production and delivery for full-package and detailed product package manufacturing, reducing unit production costs by 24% through a new manufacturing partner.":
+    "풀패키지·세부 제품 패키지 제작을 위한 제조 파트너 소싱·견적 비교·가격 협상·생산 및 배송 관리, 신규 제조 파트너 확보로 단위 생산 비용 24% 절감",
   "Revitalized a dormant social media channel, growing followers from 10 to 1,700.":
     "비활성 소셜 미디어 채널 재활성화 및 팔로워 10명 → 1,700명 성장",
-  "Produced a viral short-form video inspired by the product's macaron design, achieving 21,000+ views and 334,000+ Instagram profile visits.":
+  "Produced short-form content inspired by the product's macaron design, achieving 21,000+ views and 334,000+ Instagram profile visits.":
     "제품의 마카롱 디자인에서 착안한 숏폼 영상 제작, 2.1만+ 조회수 및 33.4만+ 인스타그램 프로필 방문 달성",
-  "Led 10 influencer collaborations, doubled traffic to the official e-commerce website, and launched a supporter program that secured 48 UGC pieces from 11 members.":
+  "Led 10 influencer collaborations, doubled official e-commerce website traffic, and secured 48 UGC pieces from 11 supporters.":
     "인플루언서 협업 10건 리드, 공식 이커머스 웹사이트 트래픽 2배 성장, 서포터즈 11명 기반 UGC 48건 확보",
-  "Led official e-commerce store development from IA and wireframes to functional prototype, then custom-coded real-time influencer reviews into the product page.":
-    "공식 이커머스 스토어 IA, 와이어프레임, 기능형 프로토타입 개발 리드 및 제품 페이지 실시간 인플루언서 리뷰 영역 커스텀 코딩",
-  "Integrated Channel Talk CRM to analyze customer behavior and reduced unit production costs by 24% through a new manufacturing partner.":
-    "채널톡 CRM 연동을 통한 고객 행동 분석 및 신규 제조 파트너 확보로 단위 생산 비용 24% 절감",
-  "Developed and launched POWAPOWA, a wellness and beauty brand for women in their 20s and 30s, generating inbound partnership offers from Marriott Moxy Hotel and Qoo10 Japan.":
-    "20~30대 여성 타깃 웰니스·뷰티 브랜드 POWAPOWA 개발 및 론칭, Marriott Moxy Hotel·Qoo10 Japan 인바운드 파트너십 제안 유치",
+  "Integrated Channel Talk CRM to analyze customer behavior and improve the purchase journey.":
+    "채널톡 CRM 연동을 통한 고객 행동 분석 및 구매 여정 개선",
   "Yonsei University Digital Media Lab": "연세대학교 디지털미디어랩",
   "Undergraduate Intern": "학부 인턴",
   "Sep 2024 - Nov 2024": "2024.09 - 2024.11",
