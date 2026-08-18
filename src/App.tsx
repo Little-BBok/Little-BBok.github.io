@@ -5,7 +5,6 @@ import {
   ChartNoAxesCombined,
   ChevronRight,
   CircleUserRound,
-  Download,
   FileText,
   FolderKanban,
   GraduationCap,
@@ -687,6 +686,7 @@ function DocumentsPage({ t }: { t: Translator }) {
 
 function DocumentCard({ section, t }: { section: DocumentSection; t: Translator }) {
   const isExternal = !section.href.startsWith("#/");
+  const showDocumentAction = section.id !== "resume";
 
   return (
     <article className="document-card">
@@ -709,14 +709,16 @@ function DocumentCard({ section, t }: { section: DocumentSection; t: Translator 
             </span>
           ))}
         </div>
-        <a
-          className={`button ${isExternal ? "ghost" : "primary"}`}
-          href={section.href}
-          target={isExternal ? "_blank" : undefined}
-        >
-          {t(section.action)}
-          {section.title === "Resume" ? <Download size={18} /> : <FileText size={18} />}
-        </a>
+        {showDocumentAction ? (
+          <a
+            className={`button ${isExternal ? "ghost" : "primary"}`}
+            href={section.href}
+            target={isExternal ? "_blank" : undefined}
+          >
+            {t(section.action)}
+            <FileText size={18} />
+          </a>
+        ) : null}
       </div>
     </article>
   );
@@ -724,7 +726,6 @@ function DocumentCard({ section, t }: { section: DocumentSection; t: Translator 
 
 function DocumentDetail({ section, t }: { section: DocumentSection; t: Translator }) {
   const images = Array.from(new Set([section.preview, ...(section.gallery ?? [])]));
-  const isResume = section.id === "resume";
 
   return (
     <PageFrame eyebrow={section.eyebrow} title={section.title} t={t}>
@@ -743,11 +744,6 @@ function DocumentDetail({ section, t }: { section: DocumentSection; t: Translato
           <a className="button ghost" href="#/documents">
             {t("Back to Documents")}
           </a>
-          {isResume ? (
-            <a className="button primary" href={section.href} target="_blank">
-              {t("Download Resume")} <Download size={18} />
-            </a>
-          ) : null}
         </div>
       </section>
 
