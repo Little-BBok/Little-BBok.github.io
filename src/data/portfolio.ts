@@ -1,14 +1,27 @@
+export type ProjectCategory = "Brand & Growth" | "Product & UX" | "Data & Strategy";
+
 export type Project = {
   id: string;
   title: string;
   eyebrow: string;
+  category: ProjectCategory;
   period?: string;
+  tagline?: string;
   summary: string;
   role: string;
   outcome: string;
   accent: string;
   external?: string;
   image?: string;
+  placeholderLabel?: string;
+  metrics?: Array<{
+    value: string;
+    label: string;
+    context: string;
+    baseline: string;
+    baselineRatio: number;
+    resultRatio: number;
+  }>;
   actions?: Array<{
     label: string;
     href: string;
@@ -17,6 +30,33 @@ export type Project = {
     title: string;
     text: string;
     image?: string;
+    layout?: "gallery" | "sequence" | "wide" | "performance" | "impact";
+    gallery?: Array<{
+      title: string;
+      image: string;
+      note?: string;
+    }>;
+    previewGallery?: Array<{
+      title: string;
+      image: string;
+      note?: string;
+    }>;
+    impactItems?: Array<{
+      step: string;
+      title: string;
+      text: string;
+      proof: string;
+    }>;
+    performanceGroups?: Array<{
+      eyebrow: string;
+      title: string;
+      note: string;
+      metrics: Array<{
+        value: string;
+        label: string;
+        ratio: number;
+      }>;
+    }>;
   }>;
   gallery?: Array<{
     title: string;
@@ -33,6 +73,7 @@ export type Experience = {
   period: string;
   category: "Work" | "Association";
   description?: string;
+  projectId?: string;
   highlights: string[];
 };
 
@@ -158,13 +199,14 @@ export const experiences: Experience[] = [
     role: "Brand Manager",
     period: "Feb 2025 - Aug 2025",
     category: "Work",
+    projectId: "alus-healthcare",
     highlights: [
       "Led the end-to-end product planning and branding process for a VNS wellness device, designing a consistent brand experience from target definition, product color, and package composition to photoshoot direction, product detail page, homepage UX, and launch event.",
       "Developed and launched POWAPOWA, a wellness and beauty brand targeting women in their 20s and 30s, attracting inbound partnership proposals from Marriott Moxy Hotel and Qoo10 Japan.",
-      "Led official e-commerce store IA, wireframes, and functional prototype development, then custom-coded a real-time influencer review section on the product page.",
+      "Led official e-commerce store IA, wireframes, and functional prototype development, then planned a custom-coded real-time influencer review section on the product page.",
       "Sourced manufacturing partners, compared quotes, negotiated pricing, and managed production and delivery for full-package and detailed product package manufacturing, reducing unit production costs by 24% through a new manufacturing partner.",
       "Revitalized a dormant social media channel, growing followers from 10 to 1,700.",
-      "Produced short-form content inspired by the product's macaron design, achieving 21,000+ views and 334,000+ Instagram profile visits.",
+      "Produced short-form content inspired by the product's macaron design, achieving 21,000+ views while the Instagram channel recorded 334,000+ views during the measured period.",
       "Led 10 influencer collaborations, doubled official e-commerce website traffic, and secured 48 UGC pieces from 11 supporters.",
       "Integrated Channel Talk CRM to analyze customer behavior and improve the purchase journey.",
     ],
@@ -231,11 +273,455 @@ export const experiences: Experience[] = [
   },
 ];
 
+const alusDetailPageSequence = Array.from({ length: 37 }, (_, index) => ({
+  title: `Product detail page sequence ${String(index + 1).padStart(2, "0")}`,
+  image: `/projects/alus/detail-page/detail-${String(index + 1).padStart(2, "0")}.webp`,
+}));
+
 export const projects: Project[] = [
+  {
+    id: "alus-healthcare",
+    title: "ALUS Healthcare",
+    eyebrow: "End-to-end brand management & growth execution",
+    category: "Brand & Growth",
+    summary:
+      "As a Brand Manager at ALUS Healthcare, I designed and executed the full brand experience across wellness device product planning, beauty and wellness branding, e-commerce, content, creator marketing, and CRM.",
+    role:
+      "Brand Manager leading product planning, brand strategy, product color and package planning, product detail page planning, e-commerce UX, photoshoot planning and direction, social media content, influencer marketing, supporter program, CRM optimization, and manufacturing and vendor coordination.",
+    outcome:
+      "Grew Instagram followers from 10 to 1,700, led 10 influencer collaborations, secured 48 UGC pieces from 11 supporters, doubled official e-commerce traffic, reduced manufacturing unit cost by 24%, achieved 21,000+ short-form content views, and attracted inbound partnership proposals including Marriott Moxy Hotel and Qoo10 Japan.",
+    accent: "#8d93cb",
+    image: "/projects/alus/full-package-launch-visual.jpg",
+    metrics: [
+      {
+        value: "170×",
+        label: "Audience Growth",
+        context: "Instagram followers",
+        baseline: "10 → 1,700",
+        baselineRatio: 2,
+        resultRatio: 100,
+      },
+      {
+        value: "2×",
+        label: "Commerce Traffic",
+        context: "Official store traffic",
+        baseline: "1.0× → 2.0×",
+        baselineRatio: 50,
+        resultRatio: 100,
+      },
+      {
+        value: "−24%",
+        label: "Cost Efficiency",
+        context: "Manufacturing unit cost",
+        baseline: "100 → 76 cost index",
+        baselineRatio: 100,
+        resultRatio: 76,
+      },
+      {
+        value: "21K+",
+        label: "Content Reach",
+        context: "Short-form content views",
+        baseline: "Launch campaign total",
+        baselineRatio: 0,
+        resultRatio: 100,
+      },
+    ],
+    sections: [
+      {
+        title: "Project Overview",
+        text:
+          "This case study frames my ALUS Healthcare work as full-cycle brand management rather than simple marketing operation. I managed customer touchpoints from product planning and brand experience to content, e-commerce, and CRM so the brand could feel consistent across discovery, purchase, and post-purchase interaction.",
+      },
+      {
+        title: "Product & Brand Launch",
+        text:
+          "I led VNS wellness device planning across target definition, product color, package composition, manufacturing partner sourcing, and launch planning, while developing POWAPOWA as a beauty and wellness brand for women in their 20s and 30s.",
+        gallery: [
+          {
+            title: "Full Package Experience",
+            image: "/projects/alus/launch/open-package-system.jpg",
+            note:
+              "An open-box view of the complete experience, connecting onboarding guidance, the device, patches, perfume, pouch, and brand illustrations in one package system.",
+          },
+          {
+            title: "Package Component System",
+            image: "/projects/alus/launch/package-components.jpg",
+            note:
+              "A closer view of the component hierarchy and the black-and-pink visual language carried across every element of the launch package.",
+          },
+          {
+            title: "Daytone Kit Lineup",
+            image: "/projects/alus/launch/daytone-kit-lineup.jpg",
+            note:
+              "The finished device, pouch, patch box, perfume package, and master kit presented as a coherent retail-ready lineup.",
+          },
+        ],
+      },
+      {
+        title: "Inbound Partnership Proposals",
+        text:
+          "The brand's early market presence generated unsolicited partnership interest from Moxy Seoul Insadong and Qoo10 Japan. Moxy proposed collaboration options including a hotel pop-up and guest-room package, while Qoo10 Japan sent a formal platform-entry proposal covering onboarding, promotion, and commerce operations. These materials document inbound proposals rather than completed partnerships.",
+        gallery: [
+          {
+            title: "Moxy Seoul Collaboration Proposal",
+            image: "/projects/alus/partnerships/moxy-seoul-collaboration-proposal.webp",
+            note:
+              "Redacted evidence of an inbound proposal from Moxy Seoul Insadong outlining pop-up and guest-room package collaboration options.",
+          },
+          {
+            title: "Qoo10 Japan Entry Proposal",
+            image: "/projects/alus/partnerships/qoo10-entry-proposal.webp",
+            note:
+              "Redacted cover of the formal Qoo10 Japan platform-entry proposal shared with POWAPOWA.",
+          },
+        ],
+      },
+      {
+        title: "Official Store & Purchase UX",
+        text:
+          "I planned the official store from information architecture, wireframes, functional prototypes, and purchase journey through launch. I reorganized the brand story, products, welcome deals, reviews, events, and customer support into a clearer hierarchy, then validated category logic and campaign entry points. I also planned a custom-coded real-time influencer review experience so blog and Instagram proof could appear inside the store at the point of purchase consideration.",
+        layout: "wide",
+        gallery: [
+          {
+            title: "Information Architecture & Category Planning",
+            image: "/projects/alus/store/information-architecture-board.png",
+            note:
+              "Working board documenting the storefront hierarchy, category alternatives, welcome-deal entry, review architecture, and customer-support flow before implementation.",
+          },
+          {
+            title: "Official Store Mobile Experience",
+            image: "/projects/alus/store/mobile-store-clean.png",
+            note:
+              "Mobile storefront showing how campaign visuals, product discovery, and purchase entry points were connected into one commerce experience. The time-sensitive points amount is blurred.",
+          },
+          {
+            title: "Live Homepage & Campaign Entry",
+            image: "/projects/alus/store/live-homepage-mosaic.png",
+            note:
+              "Launched homepage connecting the brand identity, campaign offer, product discovery, review content, and support touchpoints. Customer faces are mosaicked and time-sensitive promotional figures are blurred.",
+          },
+          {
+            title: "Product Page Purchase UX",
+            image: "/projects/alus/store/product-page-blurred.png",
+            note:
+              "Live product page combining package communication, scarcity messaging, review proof, purchase information, and delivery guidance. Price and discount figures are blurred.",
+          },
+          {
+            title: "On-site Product Video",
+            image: "/projects/alus/store/product-video-modal-blurred.png",
+            note:
+              "Product-use video embedded at the decision point so visitors could understand the device without leaving the purchase journey. Price and points figures are blurred.",
+          },
+          {
+            title: "Blog Review Experience",
+            image: "/projects/alus/store/blog-review-gallery.jpeg",
+            note:
+              "Custom storefront module aggregating blog reviews into a visual gallery that connected real usage contexts with product discovery.",
+          },
+          {
+            title: "Instagram Review Experience",
+            image: "/projects/alus/store/instagram-review-gallery.jpeg",
+            note:
+              "Instagram review gallery surfacing creator demonstrations, package unboxings, and routine content as social proof inside the official store.",
+          },
+        ],
+      },
+      {
+        title: "Product Detail Page Planning",
+        text:
+          "I owned the detail page from narrative planning to final delivery: defining the content flow and writing the copy, aligning the visual direction with the designer, reviewing iterations, and developing each section through feedback. The conversion narrative moves from official-purchase assurance and the core hook to routine pain points, product introduction and use cases, VNS principles, research evidence, package composition, usage guidance, Q&A, safety information, and specifications.",
+        layout: "sequence",
+        gallery: alusDetailPageSequence,
+        previewGallery: [
+          alusDetailPageSequence[5],
+          alusDetailPageSequence[23],
+          alusDetailPageSequence[29],
+        ],
+      },
+      {
+        title: "Social & Creator Marketing",
+        text:
+          "I designed POWAS, POWAPOWA's content marketer crew, as a structured community program rather than a one-off supporter campaign. I defined the channel roles and weekly missions, created the recruitment identity and poster, published and managed the public listing, selected participants, and led onboarding and the offline kickoff. The listing recorded 1,812 views and 68 saves, and the crew became an operating layer for mission-based social, Reels, and blog content that fed the brand's creator-to-commerce growth loop.",
+        gallery: [
+          {
+            title: "POWAS Crew Recruitment Poster",
+            image: "/projects/alus/powas-recruitment-poster.jpg",
+            note:
+              "Recruitment creative defining a 10-person crew across content, Reels, and blog teams, with mission structure and program benefits.",
+          },
+          {
+            title: "Published Linkareer Listing",
+            image: "/projects/alus/powas-linkareer-listing.jpg",
+            note:
+              "Public recruitment listing for the first POWAS cohort, recording 1,812 views and 68 saves.",
+          },
+          {
+            title: "POWAS Offline Kickoff Setup",
+            image: "/projects/alus/community/powas-kickoff-setup.webp",
+            note:
+              "On-site setup prepared for the first POWAS offline kickoff, including participant welcome kits and mission materials.",
+          },
+        ],
+      },
+      {
+        title: "Photoshoot Project",
+        text:
+          "Working within a limited production budget, I built the shoot from the ground up instead of hiring a full-service production vendor: sourcing the photographer and model, defining the concept and shot list, directing the set, and completing post-production myself. I delivered the shoot at approximately one-third of a typical vendor quote.",
+        gallery: [
+          {
+            title: "Editorial Use-case Portrait",
+            image: "/projects/alus/model-product-editorial.jpg",
+            note:
+              "Model-led use-case photography balancing the wearable product, skin, and soft reflective light.",
+          },
+          {
+            title: "Macaron Color-world Still",
+            image: "/projects/alus/macaron-product-still.jpg",
+            note:
+              "Playful product still translating the soft pink palette into a tactile confectionery scene.",
+          },
+          {
+            title: "Sculptural Product Stack",
+            image: "/projects/alus/sculptural-product-stack.jpg",
+            note:
+              "Vertical still-life composition using repetition and balance to make the compact device feel iconic.",
+          },
+        ],
+      },
+      {
+        title: "Content Planning & Production",
+        text:
+          "I planned and produced channel-ready content across Instagram, paid media, the official store, participation campaigns, and creator UGC. I translated the photoshoot visual system into repeatable content formats, then connected editorial consistency with campaign response and commerce entry points.",
+        gallery: [
+          {
+            title: "Review-led Meta Ad",
+            image: "/projects/alus/meta-review-ad.jpg",
+            note:
+              "Paid social creative turning customer review proof into a visual advertising narrative.",
+          },
+          {
+            title: "Official Store Product Thumbnail",
+            image: "/projects/alus/official-store-bundle-thumbnail.jpg",
+            note:
+              "Official-store thumbnail visualizing the perfume-and-patch bundle and package system.",
+          },
+          {
+            title: "Daytone Cherry Visual",
+            image: "/projects/alus/daytone-cherry-instagram.jpg",
+            note:
+              "Editorial Instagram visual connecting the wellness device with a playful cherry concept.",
+          },
+          {
+            title: "Instagram Content System",
+            image: "/projects/alus/content/instagram-feed-system-clean.png",
+            note:
+              "A coordinated feed system combining product education, routine storytelling, campaigns, and creator-led content in one recognizable visual language.",
+          },
+          {
+            title: "Participation Campaign Content",
+            image: "/projects/alus/content/participation-campaign-clean.png",
+            note:
+              "Interactive quiz-event content planned to turn passive reach into saves, comments, and campaign participation.",
+          },
+          {
+            title: "Creator Unboxing UGC",
+            image: "/projects/alus/content/creator-unboxing-ugc-clean.png",
+            note:
+              "Creator-produced unboxing content showing how the campaign system extended beyond owned channels into authentic product experiences.",
+          },
+        ],
+      },
+      {
+        title: "Growth Performance & Evidence",
+        text:
+          "I connected content production to a measurable growth system, using native Instagram evidence to track awareness, response, follower acquisition, paid traffic, and participation. The figures below preserve the original reporting context: a 30-day professional dashboard, a website-visit campaign, and a high-participation quiz event.",
+        layout: "performance",
+        performanceGroups: [
+          {
+            eyebrow: "01 · Organic channel",
+            title: "Awareness became audience growth",
+            note: "Professional dashboard · Aug 8–Sep 6",
+            metrics: [
+              { value: "334K", label: "Views", ratio: 100 },
+              { value: "3.1K", label: "Interactions", ratio: 68 },
+              { value: "+686", label: "New followers", ratio: 52 },
+              { value: "74", label: "Content published", ratio: 34 },
+            ],
+          },
+          {
+            eyebrow: "02 · Paid conversion",
+            title: "Reach moved into store visits",
+            note: "Website-visit campaign · native ad insights",
+            metrics: [
+              { value: "14,711", label: "Ad views", ratio: 100 },
+              { value: "11,099", label: "Reach", ratio: 75 },
+              { value: "647", label: "Website visits", ratio: 44 },
+            ],
+          },
+          {
+            eyebrow: "03 · Participation",
+            title: "Campaign reach became active response",
+            note: "Quiz event · post insights",
+            metrics: [
+              { value: "863", label: "Comments", ratio: 100 },
+              { value: "745", label: "Likes", ratio: 86 },
+              { value: "293", label: "Shares", ratio: 56 },
+              { value: "20", label: "Reposts", ratio: 28 },
+            ],
+          },
+        ],
+        gallery: [
+          {
+            title: "30-day Professional Dashboard",
+            image: "/projects/alus/performance/professional-dashboard-clean.png",
+            note:
+              "Native channel evidence recording 334K views, 3.1K interactions, 686 new followers, and 74 published pieces during the measured period.",
+          },
+          {
+            title: "Website-visit Ad Insights",
+            image: "/projects/alus/performance/ad-insights-clean.png",
+            note:
+              "Paid campaign evidence recording 14,711 views, 11,099 reach, and 647 website visits, with saves, reactions, and shares retained for context.",
+          },
+          {
+            title: "Quiz-event Participation",
+            image: "/projects/alus/content/participation-campaign-clean.png",
+            note:
+              "The participation campaign recorded 745 likes, 863 comments, 20 reposts, and 293 shares on the captured post.",
+          },
+        ],
+      },
+      {
+        title: "Impact",
+        text:
+          "This project is the clearest evidence that my role was not confined to campaign execution. I connected market definition, brand system, product and package development, production, commerce UX, creator acquisition, CRM feedback, and cost optimization as one operating loop. Its significance lies in owning both the customer-facing experience and the behind-the-scenes system that made it repeatable: building a launch-ready brand, turning early response into measurable growth and partnership interest, and carrying every learning back into the product and operations.",
+        layout: "impact",
+        impactItems: [
+          {
+            step: "01 · Define",
+            title: "Insight & Positioning",
+            text:
+              "Translated the VNS opportunity and the routines of women in their 20s and 30s into a clear product target, brand promise, and launch direction.",
+            proof: "Target definition + brand strategy",
+          },
+          {
+            step: "02 · Build",
+            title: "Product & Package",
+            text:
+              "Connected product color, device experience, package composition, fragrance, patches, onboarding, and manufacturing partners into one retail-ready system.",
+            proof: "Unit cost −24%",
+          },
+          {
+            step: "03 · Launch",
+            title: "Commerce & Content",
+            text:
+              "Planned the detail page, official-store IA, purchase journey, photoshoot, launch assets, and review experience as one conversion narrative.",
+            proof: "Official-store traffic 2×",
+          },
+          {
+            step: "04 · Grow",
+            title: "Creator Growth Engine",
+            text:
+              "Built a repeatable acquisition loop through social content, influencer collaboration, POWAS missions, and creator-led proof instead of isolated campaigns.",
+            proof: "10 → 1,700 followers · 48 UGC",
+          },
+          {
+            step: "05 · Learn",
+            title: "CRM & Feedback Loop",
+            text:
+              "Connected customer behavior, review content, Channel Talk signals, and purchase friction so market response could improve the next experience decision.",
+            proof: "Discovery → purchase → retention",
+          },
+          {
+            step: "06 · Scale",
+            title: "Business & Partnerships",
+            text:
+              "Turned a coherent early-market presence into measurable reach, operational efficiency, and inbound collaboration interest from hospitality and Japanese commerce partners.",
+            proof: "21K+ views · 2 inbound proposals",
+          },
+        ],
+      },
+    ],
+    details: [
+      "Led product planning, brand strategy, package planning, photoshoot direction, product detail page planning, homepage UX, and launch event execution.",
+      "Developed and launched POWAPOWA for women in their 20s and 30s while attracting inbound partnership proposals from Marriott Moxy Hotel and Qoo10 Japan.",
+      "Built a growth loop across social content, influencer collaboration, supporter-generated UGC, official e-commerce traffic, and Channel Talk CRM insights.",
+    ],
+    capabilities: [
+      "Brand Strategy",
+      "Product Planning",
+      "Growth Marketing",
+      "Content Strategy",
+      "E-commerce UX",
+      "Creator Marketing",
+      "CRM",
+      "Photoshoot Direction",
+    ],
+  },
+  {
+    id: "fugudio",
+    title: "FUGUDIO",
+    eyebrow: "Multi-channel content operations workspace",
+    category: "Product & UX",
+    summary:
+      "FUGUDIO is a content operations management service for individual creators and small marketing teams, designed to help them see what to post, where to post it, and when to publish it in one workspace.",
+    role:
+      "Product planner responsible for service concept, product planning, information architecture, UX flow, UI planning, brand naming, brand identity, character and mascot direction, and the content operations framework.",
+    outcome:
+      "Defined a service concept that connects idea, production, schedule, publishing, and performance into one content operations workspace without inventing unsupported launch metrics.",
+    accent: "#8d93cb",
+    placeholderLabel: "FUGUDIO workspace assets can be added here",
+    sections: [
+      {
+        title: "The Problem",
+        text:
+          "Creator workflows are fragmented across separate tools and channels. Ideas, production status, schedules, publishing destinations, and performance results often live in different places, making weekly content operations harder to manage.",
+      },
+      {
+        title: "Service Concept",
+        text:
+          "FUGUDIO connects the fragmented workflow into one workspace for individual creators and small marketing teams, helping users understand what to create this week, where it should go, and when it should be published.",
+      },
+      {
+        title: "Information Architecture",
+        text:
+          "The service structure is organized around Calendar, Pipeline, Content, Performance, and Channels so content planning can move from scattered tasks into a coherent operating system.",
+      },
+      {
+        title: "Core Experience",
+        text:
+          "The core experience centers on Content Calendar, Production Pipeline, Multi-channel Management, and Performance Tracking, keeping weekly decisions visible and actionable.",
+      },
+      {
+        title: "UX Flow",
+        text:
+          "The workflow moves from Create Content to Set Production Stage, Schedule, Select Channel, Publish, and Track Performance, turning content operations into a repeatable loop.",
+      },
+      {
+        title: "Brand Identity",
+        text:
+          "FUGUDIO also includes brand naming, wordmark direction, mascot and character direction, icon system thinking, visual identity, and UI tone so the workspace can feel approachable rather than purely operational.",
+      },
+    ],
+    details: [
+      "Mapped fragmented creator work from Idea to Production, Schedule, Publish, and Performance.",
+      "Structured the service around calendar, pipeline, content, performance, and channel management.",
+      "Connected product planning with brand identity so the service could feel usable, memorable, and creator-friendly.",
+    ],
+    capabilities: [
+      "Product Planning",
+      "Information Architecture",
+      "UX Design",
+      "Content Operations",
+      "Brand Identity",
+      "Service Design",
+    ],
+  },
   {
     id: "began",
     title: "Began Project",
     eyebrow: "Dietary-accessible discovery service",
+    category: "Product & UX",
     summary:
       "A location-based restaurant discovery service designed to reduce dining uncertainty for people with dietary restrictions.",
     role:
@@ -280,99 +766,118 @@ export const projects: Project[] = [
     capabilities: ["Product Planning", "User Interviews", "IA", "UI/UX", "Business Model"],
   },
   {
-    id: "nft-camera",
-    title: "B2C NFT Project",
-    eyebrow: "Location-based camera app concept",
+    id: "atember",
+    title: "Atember",
+    eyebrow: "AI-powered work memory & productivity system",
+    category: "Product & UX",
+    tagline: "Attends. Remembers. Keeps you moving.",
     summary:
-      "A B2C expansion strategy for a B2B NFT business, framed as a location-based camera app with a UI/UX framework.",
+      "Atember is a productivity and memory system concept that connects multiple work contexts and AI functions into one product experience, helping users remember context and turn it back into action.",
     role:
-      "Strategist and UX planner developing the consumer-facing idea, user flow, and market expansion proposal.",
+      "Product and UX planner organizing AI product vision, information architecture, workflow strategy, memory-centered product concept, and desktop interaction direction.",
     outcome:
-      "Won 1st place in the final idea pitching and moved toward commercialization and launch by the partner corporation.",
+      "Created a product UX direction that organizes complex AI capabilities around user context, memory, retrieval, and follow-up rather than presenting features as a disconnected list.",
     accent: "#8d93cb",
-    image:
-      "https://static.wixstatic.com/media/df8dea_b364d89cad604cc7a393e9faa4304fa1~mv2.png/v1/fill/w_1235,h_486,al_c,q_90,enc_avif,quality_auto/NFT%20%ED%94%BC%EA%B7%B8%EB%A7%88%20%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85.png",
+    placeholderLabel: "Atember desktop UX assets can be added here",
     sections: [
       {
-        title: "Project Overview",
+        title: "Product Vision",
         text:
-          "I participated in an industry-academic collaboration project to propose a B2C service expansion strategy for a company that had previously provided B2B NFT solutions. Our team planned NFTCamera, a service combining location- and time-based limited AR filters with NFT issuance, storage, and verification features. By proposing a strategy to expand consumer touchpoints through brand collaborations, user-participation missions, and scarcity-based reward structures, our team won 1st place in the project.",
-        image:
-          "https://static.wixstatic.com/media/df8dea_04f1077c2d5f4c9f8d6d7a97743f8a11~mv2.png/v1/fill/w_542,h_1010,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/NFT%20%EB%A9%94%EC%9D%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80-05.png",
-      },
-      {
-        title: "Main Features",
-        text:
-          "NFTCamera is a location- and time-based NFT camera service where users can access limited AR filters only under specific conditions. Users can capture moments with exclusive filters, store them in an NFT archive, verify ownership, and track NFT issuance history.",
-      },
-      {
-        title: "Brand Collaboration",
-        text:
-          "I planned collaboration-based limited filters for festivals, fandom events, sports games, exhibitions, campaigns, and offline brand spaces. These collaborations were designed to help brands create interactive consumer experiences while attracting new users to the service.",
-      },
-      {
-        title: "User-Participation Missions",
-        text:
-          "I designed participatory missions such as first-come-first-served filters, limited-user filters, community voting, filter co-creation, and location-based challenges. These features aimed to increase app engagement, repeat usage, and the number of photo captures per user.",
-      },
-    ],
-    details: [
-      "Reframed B2B NFT assets into an accessible consumer experience anchored in place, camera behavior, and collectable moments.",
-      "Designed a UI/UX framework that connected location discovery, capture, ownership, and sharing.",
-      "Presented the strategy as a business expansion path rather than a standalone design concept.",
-    ],
-    capabilities: ["Market Strategy", "Service Concept", "Pitching", "UI/UX Framework"],
-  },
-  {
-    id: "leviosa",
-    title: "Leviosa AI UX Project",
-    eyebrow: "Cafe24 CRM landing page UX",
-    summary:
-      "UX planning and UI design for a landing page that explains Leviosa CS, a Cafe24-connected CRM service.",
-    role:
-      "UX planner and UI designer responsible for structuring the landing page narrative, information flow, and visual interface.",
-    outcome:
-      "Clarified the service value proposition and feature flow through landing page UX, hierarchy, and UI design.",
-    accent: "#f7769b",
-    external: "https://cafe24.cs.leviosa.ai.kr/leviosa_cs/detail",
-    image:
-      "https://static.wixstatic.com/media/df8dea_f551a8e7576d46ada41881d17c9158e9~mv2.png/v1/fill/w_1960,h_1022,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2003_15_27.png",
-    actions: [
-      { label: "UX Sample", href: "https://cafe24.cs.leviosa.ai.kr/leviosa_cs/detail" },
-    ],
-    sections: [
-      {
-        title: "Project Overview",
-        text:
-          "I planned the UX and designed the UI for a landing page that introduces Leviosa CS, a Cafe24-connected CRM service, with a focus on clear page structure, feature storytelling, and conversion-oriented interface design.",
+          "Atember begins from the problem that meetings, documents, tasks, research, and follow-ups often require users to manually remember and reconnect context. The product direction focuses on remembering work context and turning it into the next action.",
       },
       {
         title: "Information Architecture",
         text:
-          "I organized the landing page flow so visitors could quickly understand the service context, key features, usage benefits, and product value without confusion.",
+          "The IA organizes complex AI functions through a user-centered structure: Today, Dashboard, Search, Chat, Research, Inbox, Tasks, Sources, Automations, and Memory.",
       },
       {
-        title: "Landing Flow Design",
+        title: "Memory Architecture",
         text:
-          "I designed the page narrative to move from problem awareness to solution benefits, feature explanation, and action, helping users grasp why the service matters.",
+          "The conceptual UX flow is Activity → Context → Memory → Retrieval → Action. This is treated as a product concept diagram for how users regain context, not as a confirmed technical architecture.",
       },
       {
-        title: "UI Design System",
+        title: "Core Workflows",
         text:
-          "I created a clean SaaS-style UI direction with reusable sections, clear visual hierarchy, and interface components suited to explaining a B2B CRM product.",
+          "Core workflows are framed around Meeting → Memory, Research → Knowledge, and Task → Follow-up, emphasizing how information becomes useful again after the original activity ends.",
+      },
+      {
+        title: "Desktop UX",
+        text:
+          "This section is prepared for desktop or macOS product interface assets. No fake UI mockups are inserted; actual Atember interface visuals can be added under /public/projects/atember/ when available.",
       },
     ],
     details: [
-      "Planned the landing page information architecture and content flow for Leviosa CS.",
-      "Designed UI sections that explain service features, benefits, and product context.",
-      "Created a SaaS-style landing page interface optimized for clarity and conversion.",
+      "Framed AI product value around remembered work context and next actions.",
+      "Organized product IA across Today, Dashboard, Search, Chat, Research, Inbox, Tasks, Sources, Automations, and Memory.",
+      "Defined workflow concepts connecting meetings, research, and tasks back into usable follow-up.",
     ],
-    capabilities: ["SaaS UX", "Landing Page UX", "Information Architecture", "UI Design"],
+    capabilities: [
+      "AI Product Planning",
+      "Information Architecture",
+      "UX Strategy",
+      "Workflow Design",
+      "Product Systems",
+      "Interaction Design",
+    ],
+  },
+  {
+    id: "colortelier",
+    title: "Colortelier",
+    eyebrow: "Turning travel memories into color",
+    category: "Brand & Growth",
+    summary:
+      "Colortelier is a service and brand concept that extracts colors from travel photos, turning memories of places into palettes, names, and a personal visual archive.",
+    role:
+      "Concept planner responsible for service concept, brand concept, experience planning, visual direction, and product expansion strategy.",
+    outcome:
+      "Built an editorial service concept around the flow Travel Photo → Color Extraction → Palette → Naming → Personal Archive, keeping the emotional nature of travel memory central to the product idea.",
+    accent: "#ffdbed",
+    placeholderLabel: "Colortelier palette and travel assets can be added here",
+    sections: [
+      {
+        title: "Inspiration",
+        text:
+          "The idea started from the relationship between colors discovered while traveling and the memories attached to those places. Colortelier treats color as a way to keep travel emotion vivid after the trip ends.",
+      },
+      {
+        title: "Concept",
+        text:
+          "The core service flow is Upload Photo → Extract Colors → Build Palette → Name Colors → Save Travel Memory, transforming an image into a personal archive of color and place.",
+      },
+      {
+        title: "Experience Flow",
+        text:
+          "The emotional experience moves through Capture, Discover, Name, Collect, and Remember, so users can revisit travel memories through color rather than only through photos.",
+      },
+      {
+        title: "Visual System",
+        text:
+          "The visual system connects travel places and palettes through editorial naming examples such as Tokyo Rain, Mojiko Sunset, and Yufuin Mist. These are concept examples rather than confirmed project color data.",
+      },
+      {
+        title: "Expansion",
+        text:
+          "The concept can expand into color books, postcards, bookmarks, and a travel color archive, allowing the brand to move from digital memory keeping into physical keepsakes.",
+      },
+    ],
+    details: [
+      "Translated travel photography and place memory into a color-based service concept.",
+      "Defined the experience flow from photo upload and color extraction to palette naming and personal archive.",
+      "Explored expansion into color books, postcards, bookmarks, and a travel color archive.",
+    ],
+    capabilities: [
+      "Brand Concept",
+      "Service Design",
+      "Visual Storytelling",
+      "Experience Design",
+      "Product Expansion",
+    ],
   },
   {
     id: "sephora-analysis",
     title: "Sephora R Data Analysis",
     eyebrow: "Premium beauty pricing research",
+    category: "Data & Strategy",
     summary:
       "An R-based analysis of 8,000+ Sephora products examining when beauty product pricing is accepted in consumer ratings.",
     role:
@@ -450,9 +955,102 @@ export const projects: Project[] = [
     capabilities: ["R", "Regression", "Binary Logit", "Consumer Insight", "Beauty Strategy"],
   },
   {
+    id: "leviosa",
+    title: "Leviosa AI UX Project",
+    eyebrow: "Cafe24 CRM landing page UX",
+    category: "Product & UX",
+    summary:
+      "UX planning and UI design for a landing page that explains Leviosa CS, a Cafe24-connected CRM service.",
+    role:
+      "UX planner and UI designer responsible for structuring the landing page narrative, information flow, and visual interface.",
+    outcome:
+      "Clarified the service value proposition and feature flow through landing page UX, hierarchy, and UI design.",
+    accent: "#f7769b",
+    external: "https://cafe24.cs.leviosa.ai.kr/leviosa_cs/detail",
+    image:
+      "https://static.wixstatic.com/media/df8dea_f551a8e7576d46ada41881d17c9158e9~mv2.png/v1/fill/w_1960,h_1022,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2003_15_27.png",
+    actions: [
+      { label: "UX Sample", href: "https://cafe24.cs.leviosa.ai.kr/leviosa_cs/detail" },
+    ],
+    sections: [
+      {
+        title: "Project Overview",
+        text:
+          "I planned the UX and designed the UI for a landing page that introduces Leviosa CS, a Cafe24-connected CRM service, with a focus on clear page structure, feature storytelling, and conversion-oriented interface design.",
+      },
+      {
+        title: "Information Architecture",
+        text:
+          "I organized the landing page flow so visitors could quickly understand the service context, key features, usage benefits, and product value without confusion.",
+      },
+      {
+        title: "Landing Flow Design",
+        text:
+          "I designed the page narrative to move from problem awareness to solution benefits, feature explanation, and action, helping users grasp why the service matters.",
+      },
+      {
+        title: "UI Design System",
+        text:
+          "I created a clean SaaS-style UI direction with reusable sections, clear visual hierarchy, and interface components suited to explaining a B2B CRM product.",
+      },
+    ],
+    details: [
+      "Planned the landing page information architecture and content flow for Leviosa CS.",
+      "Designed UI sections that explain service features, benefits, and product context.",
+      "Created a SaaS-style landing page interface optimized for clarity and conversion.",
+    ],
+    capabilities: ["SaaS UX", "Landing Page UX", "Information Architecture", "UI Design"],
+  },
+  {
+    id: "nft-camera",
+    title: "B2C NFT Project",
+    eyebrow: "Location-based camera app concept",
+    category: "Product & UX",
+    summary:
+      "A B2C expansion strategy for a B2B NFT business, framed as a location-based camera app with a UI/UX framework.",
+    role:
+      "Strategist and UX planner developing the consumer-facing idea, user flow, and market expansion proposal.",
+    outcome:
+      "Won 1st place in the final idea pitching and moved toward commercialization and launch by the partner corporation.",
+    accent: "#8d93cb",
+    image:
+      "https://static.wixstatic.com/media/df8dea_b364d89cad604cc7a393e9faa4304fa1~mv2.png/v1/fill/w_1235,h_486,al_c,q_90,enc_avif,quality_auto/NFT%20%ED%94%BC%EA%B7%B8%EB%A7%88%20%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85.png",
+    sections: [
+      {
+        title: "Project Overview",
+        text:
+          "I participated in an industry-academic collaboration project to propose a B2C service expansion strategy for a company that had previously provided B2B NFT solutions. Our team planned NFTCamera, a service combining location- and time-based limited AR filters with NFT issuance, storage, and verification features. By proposing a strategy to expand consumer touchpoints through brand collaborations, user-participation missions, and scarcity-based reward structures, our team won 1st place in the project.",
+        image:
+          "https://static.wixstatic.com/media/df8dea_04f1077c2d5f4c9f8d6d7a97743f8a11~mv2.png/v1/fill/w_542,h_1010,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/NFT%20%EB%A9%94%EC%9D%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80-05.png",
+      },
+      {
+        title: "Main Features",
+        text:
+          "NFTCamera is a location- and time-based NFT camera service where users can access limited AR filters only under specific conditions. Users can capture moments with exclusive filters, store them in an NFT archive, verify ownership, and track NFT issuance history.",
+      },
+      {
+        title: "Brand Collaboration",
+        text:
+          "I planned collaboration-based limited filters for festivals, fandom events, sports games, exhibitions, campaigns, and offline brand spaces. These collaborations were designed to help brands create interactive consumer experiences while attracting new users to the service.",
+      },
+      {
+        title: "User-Participation Missions",
+        text:
+          "I designed participatory missions such as first-come-first-served filters, limited-user filters, community voting, filter co-creation, and location-based challenges. These features aimed to increase app engagement, repeat usage, and the number of photo captures per user.",
+      },
+    ],
+    details: [
+      "Reframed B2B NFT assets into an accessible consumer experience anchored in place, camera behavior, and collectable moments.",
+      "Designed a UI/UX framework that connected location discovery, capture, ownership, and sharing.",
+      "Presented the strategy as a business expansion path rather than a standalone design concept.",
+    ],
+    capabilities: ["Market Strategy", "Service Concept", "Pitching", "UI/UX Framework"],
+  },
+  {
     id: "sephora-guide",
     title: "Sephora Guide Book",
     eyebrow: "LVMH Europe career guide",
+    category: "Data & Strategy",
     summary:
       "A career guidebook project focused on entry strategies into Sephora and LVMH in Europe.",
     role:
