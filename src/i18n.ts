@@ -38,12 +38,39 @@ const ko: Record<string, string> = {
   Association: "학회 및 단체",
   "Selected Work": "주요 작업",
   Project: "프로젝트",
+  "Project category filter": "프로젝트 카테고리 필터",
+  ALL: "전체",
+  "Brand & Growth": "브랜드 & 그로스",
+  "Product & UX": "제품 & UX",
+  "Data & Strategy": "데이터 & 전략",
   "View case": "케이스 보기",
+  "View Brand Case": "브랜드 케이스 보기",
   "Open Project": "프로젝트 열기",
   "My Role": "나의 역할",
   Outcome: "성과",
   "Process Notes": "프로세스 노트",
   "Project Materials": "프로젝트 자료",
+  "Key metrics": "핵심 지표",
+  "Measured business impact": "측정된 비즈니스 임팩트",
+  "Measured Impact": "측정 성과",
+  "Brand work translated into business movement": "브랜드 실행을 비즈니스 변화로 연결",
+  "Audience Growth": "오디언스 성장",
+  "Instagram followers": "인스타그램 팔로워",
+  "10 → 1,700": "10명 → 1,700명",
+  "Commerce Traffic": "커머스 트래픽",
+  "Official store traffic": "공식 스토어 트래픽",
+  "Cost Efficiency": "비용 효율",
+  "Manufacturing unit cost": "제조 단가",
+  "100 → 76 cost index": "비용 지수 100 → 76",
+  "Content Reach": "콘텐츠 도달",
+  "Short-form content views": "숏폼 콘텐츠 조회",
+  "Launch campaign total": "론칭 캠페인 누적",
+  "Each row is normalized within its own metric.":
+    "각 행의 막대는 해당 지표 안에서 기준값과 결과값을 비교합니다.",
+  "View Full Detail Page": "전체 상세페이지 보기",
+  "Collapse Full Detail Page": "상세페이지 접기",
+  "Full Product Detail Page": "제품 상세페이지 전체 보기",
+  "Back to case study": "케이스 스터디로 돌아가기",
   Capabilities: "역량",
   "Tools I Use": "활용 도구",
   "Developed Skills": "개발한 역량",
@@ -128,14 +155,14 @@ const ko: Record<string, string> = {
     "VNS 웰니스 디바이스 제품 기획 및 브랜딩 전 과정 리드 — 타깃·제품 컬러·패키지 구성부터 촬영, 상세페이지, 홈페이지 UX, 출시 이벤트까지 일관된 브랜드 경험 설계",
   "Developed and launched POWAPOWA, a wellness and beauty brand targeting women in their 20s and 30s, attracting inbound partnership proposals from Marriott Moxy Hotel and Qoo10 Japan.":
     "20~30대 여성 타깃 웰니스·뷰티 브랜드 POWAPOWA 개발 및 론칭, Marriott Moxy Hotel·Qoo10 Japan 인바운드 파트너십 제안 유치",
-  "Led official e-commerce store IA, wireframes, and functional prototype development, then custom-coded a real-time influencer review section on the product page.":
-    "공식 이커머스 스토어 IA·와이어프레임·기능형 프로토타입 개발 리드, 제품 페이지 실시간 인플루언서 리뷰 영역 커스텀 코딩",
+  "Led official e-commerce store IA, wireframes, and functional prototype development, then planned a custom-coded real-time influencer review section on the product page.":
+    "공식 이커머스 스토어 IA·와이어프레임·기능형 프로토타입 개발 리드, 제품 페이지의 실시간 인플루언서 리뷰 영역을 직접 코딩하도록 기획",
   "Sourced manufacturing partners, compared quotes, negotiated pricing, and managed production and delivery for full-package and detailed product package manufacturing, reducing unit production costs by 24% through a new manufacturing partner.":
     "풀패키지·세부 제품 패키지 제작을 위한 제조 파트너 소싱·견적 비교·가격 협상·생산 및 배송 관리, 신규 제조 파트너 확보로 단위 생산 비용 24% 절감",
   "Revitalized a dormant social media channel, growing followers from 10 to 1,700.":
     "비활성 소셜 미디어 채널 재활성화 및 팔로워 10명 → 1,700명 성장",
-  "Produced short-form content inspired by the product's macaron design, achieving 21,000+ views and 334,000+ Instagram profile visits.":
-    "제품의 마카롱 디자인에서 착안한 숏폼 영상 제작, 2.1만+ 조회수 및 33.4만+ 인스타그램 프로필 방문 달성",
+  "Produced short-form content inspired by the product's macaron design, achieving 21,000+ views while the Instagram channel recorded 334,000+ views during the measured period.":
+    "제품의 마카롱 디자인에서 착안한 숏폼 영상 2.1만+ 조회수 달성, 측정 기간 인스타그램 채널 전체 조회수 33.4만+ 기록",
   "Led 10 influencer collaborations, doubled official e-commerce website traffic, and secured 48 UGC pieces from 11 supporters.":
     "인플루언서 협업 10건 리드, 공식 이커머스 웹사이트 트래픽 2배 성장, 서포터즈 11명 기반 UGC 48건 확보",
   "Integrated Channel Talk CRM to analyze customer behavior and improve the purchase journey.":
@@ -192,6 +219,299 @@ const ko: Record<string, string> = {
   "Won 1st place in the final idea pitching, contributing to commercialization and launch by the partnering corporation.":
     "최종 아이디어 피칭 1위 수상 및 파트너 기업 사업화·론칭 과정 기여",
 
+  "ALUS Healthcare": "ALUS Healthcare",
+  "End-to-end brand management & growth execution": "엔드투엔드 브랜드 매니지먼트 & 그로스 실행",
+  "As a Brand Manager at ALUS Healthcare, I designed and executed the full brand experience across wellness device product planning, beauty and wellness branding, e-commerce, content, creator marketing, and CRM.":
+    "ALUS Healthcare의 Brand Manager로서 웰니스 디바이스 제품 기획, 뷰티·웰니스 브랜딩, 이커머스, 콘텐츠, 크리에이터 마케팅, CRM까지 전체 브랜드 경험을 설계하고 실행했습니다.",
+  "Brand Manager leading product planning, brand strategy, product color and package planning, product detail page planning, e-commerce UX, photoshoot planning and direction, social media content, influencer marketing, supporter program, CRM optimization, and manufacturing and vendor coordination.":
+    "제품 기획, 브랜드 전략, 제품 컬러·패키지 기획, 상세페이지 기획, 이커머스 UX, 촬영 기획 및 디렉션, 소셜 미디어 콘텐츠, 인플루언서 마케팅, 서포터즈 프로그램, CRM 최적화, 제조·벤더 커뮤니케이션을 리드했습니다.",
+  "Grew Instagram followers from 10 to 1,700, led 10 influencer collaborations, secured 48 UGC pieces from 11 supporters, doubled official e-commerce traffic, reduced manufacturing unit cost by 24%, achieved 21,000+ short-form content views, and attracted inbound partnership proposals including Marriott Moxy Hotel and Qoo10 Japan.":
+    "인스타그램 팔로워 10명에서 1,700명 성장, 인플루언서 협업 10건 리드, 서포터즈 11명 기반 UGC 48건 확보, 공식 이커머스 트래픽 2배 성장, 제조 단가 24% 절감, 숏폼 콘텐츠 2.1만+ 조회수 달성, Marriott Moxy Hotel 및 Qoo10 Japan 포함 인바운드 파트너십 제안을 유치했습니다.",
+  Followers: "팔로워",
+  "UGC Contents": "UGC 콘텐츠",
+  Supporters: "서포터즈",
+  "Influencer Collaborations": "인플루언서 협업",
+  "This case study frames my ALUS Healthcare work as full-cycle brand management rather than simple marketing operation. I managed customer touchpoints from product planning and brand experience to content, e-commerce, and CRM so the brand could feel consistent across discovery, purchase, and post-purchase interaction.":
+    "이 케이스 스터디는 ALUS Healthcare에서의 경험을 단순 마케팅 운영이 아닌 풀사이클 브랜드 매니지먼트로 보여줍니다. 제품 기획과 브랜드 경험부터 콘텐츠, 이커머스, CRM까지 고객 접점을 관리해 발견, 구매, 구매 후 상호작용 전반에서 일관된 브랜드 경험이 느껴지도록 했습니다.",
+  "Product & Brand Launch": "제품 & 브랜드 론칭",
+  "I led VNS wellness device planning across target definition, product color, package composition, manufacturing partner sourcing, and launch planning, while developing POWAPOWA as a beauty and wellness brand for women in their 20s and 30s.":
+    "VNS 웰니스 디바이스의 타깃 정의, 제품 컬러, 패키지 구성, 제조 파트너 소싱, 론칭 기획을 리드했으며, 20~30대 여성을 위한 뷰티·웰니스 브랜드 POWAPOWA 개발을 함께 진행했습니다.",
+  "Full Package Experience": "풀 패키지 경험",
+  "An open-box view of the complete experience, connecting onboarding guidance, the device, patches, perfume, pouch, and brand illustrations in one package system.":
+    "온보딩 가이드, 디바이스, 패치, 향수, 파우치, 브랜드 일러스트를 하나의 패키지 시스템으로 연결한 풀 패키지 오픈 구성입니다.",
+  "Package Component System": "패키지 구성품 시스템",
+  "A closer view of the component hierarchy and the black-and-pink visual language carried across every element of the launch package.":
+    "론칭 패키지의 모든 구성품에 일관되게 적용한 블랙·핑크 비주얼 언어와 구성 위계를 가까이 보여줍니다.",
+  "Daytone Kit Lineup": "데이톤 키트 라인업",
+  "The finished device, pouch, patch box, perfume package, and master kit presented as a coherent retail-ready lineup.":
+    "완성된 디바이스, 파우치, 패치 박스, 향수 패키지, 마스터 키트를 판매 가능한 하나의 라인업으로 구성했습니다.",
+  "Inbound Partnership Proposals": "인바운드 협업 제안",
+  "The brand's early market presence generated unsolicited partnership interest from Moxy Seoul Insadong and Qoo10 Japan. Moxy proposed collaboration options including a hotel pop-up and guest-room package, while Qoo10 Japan sent a formal platform-entry proposal covering onboarding, promotion, and commerce operations. These materials document inbound proposals rather than completed partnerships.":
+    "브랜드의 초기 시장 반응을 바탕으로 Moxy Seoul Insadong과 Qoo10 Japan에서 먼저 협업 의사를 보내왔습니다. Moxy는 호텔 팝업과 객실 패키지 등의 협업안을 제안했고, Qoo10 Japan은 입점 절차, 프로모션, 커머스 운영을 포함한 공식 입점 제안서를 전달했습니다. 이 자료는 체결 완료가 아닌 실제 인바운드 제안 사실을 보여주는 증빙입니다.",
+  "Moxy Seoul Collaboration Proposal": "Moxy Seoul 협업 제안",
+  "Redacted evidence of an inbound proposal from Moxy Seoul Insadong outlining pop-up and guest-room package collaboration options.":
+    "팝업 및 객실 패키지 협업안을 담은 Moxy Seoul Insadong의 인바운드 제안 증빙으로, 개인정보는 가렸습니다.",
+  "Qoo10 Japan Entry Proposal": "Qoo10 Japan 입점 제안",
+  "Redacted cover of the formal Qoo10 Japan platform-entry proposal shared with POWAPOWA.":
+    "POWAPOWA에 전달된 Qoo10 Japan 공식 입점 제안서 표지로, 개인정보는 가렸습니다.",
+  "Official Store & Purchase UX": "공식 스토어 & 구매 UX",
+  "I planned the official store from information architecture, wireframes, functional prototypes, and purchase journey through launch. I reorganized the brand story, products, welcome deals, reviews, events, and customer support into a clearer hierarchy, then validated category logic and campaign entry points. I also planned a custom-coded real-time influencer review experience so blog and Instagram proof could appear inside the store at the point of purchase consideration.":
+    "공식 스토어는 정보구조, 와이어프레임, 기능형 프로토타입, 구매 여정부터 실제 론칭까지 기획했습니다. 브랜드 스토리, 상품, 웰컴딜, 리뷰, 이벤트, 고객지원을 명확한 위계로 재구성하고 카테고리 논리와 캠페인 진입점을 검증했습니다. 또한 구매 고려 시점에 블로그·인스타그램의 소셜 프루프가 노출되도록 실시간 인플루언서 리뷰 경험을 직접 코딩하도록 기획했습니다.",
+  "Information Architecture & Category Planning": "정보구조 & 카테고리 설계",
+  "Working board documenting the storefront hierarchy, category alternatives, welcome-deal entry, review architecture, and customer-support flow before implementation.":
+    "구현 전 스토어 위계, 카테고리 대안, 웰컴딜 진입점, 리뷰 구조, 고객지원 흐름을 검토한 설계 보드입니다.",
+  "Official Store Mobile Experience": "공식 스토어 모바일 경험",
+  "Mobile storefront showing how campaign visuals, product discovery, and purchase entry points were connected into one commerce experience. The time-sensitive points amount is blurred.":
+    "캠페인 비주얼, 제품 탐색, 구매 진입점을 하나의 커머스 경험으로 연결한 모바일 공식 스토어입니다. 시점에 따라 달라지는 적립금 수치는 블러 처리했습니다.",
+  "Live Homepage & Campaign Entry": "실제 홈페이지 & 캠페인 진입",
+  "Launched homepage connecting the brand identity, campaign offer, product discovery, review content, and support touchpoints. Customer faces are mosaicked and time-sensitive promotional figures are blurred.":
+    "브랜드 아이덴티티, 캠페인 오퍼, 제품 탐색, 리뷰 콘텐츠, 고객지원 접점을 연결해 실제 론칭한 홈페이지입니다. 고객 얼굴은 모자이크하고 시점에 따라 달라지는 프로모션 수치는 블러 처리했습니다.",
+  "Product Page Purchase UX": "상품 페이지 구매 UX",
+  "Live product page combining package communication, scarcity messaging, review proof, purchase information, and delivery guidance. Price and discount figures are blurred.":
+    "패키지 구성, 한정 수량 메시지, 리뷰 근거, 구매 정보, 배송 안내를 결합한 실제 상품 페이지입니다. 가격과 할인율은 블러 처리했습니다.",
+  "On-site Product Video": "스토어 내 제품 영상",
+  "Product-use video embedded at the decision point so visitors could understand the device without leaving the purchase journey. Price and points figures are blurred.":
+    "방문자가 구매 여정을 이탈하지 않고 기기 사용법을 이해하도록 의사결정 지점에 삽입한 제품 사용 영상입니다. 가격과 적립금 수치는 블러 처리했습니다.",
+  "Blog Review Experience": "블로그 리뷰 경험",
+  "Custom storefront module aggregating blog reviews into a visual gallery that connected real usage contexts with product discovery.":
+    "실제 사용 맥락을 제품 탐색과 연결하도록 블로그 리뷰를 비주얼 갤러리로 모은 커스텀 스토어 모듈입니다.",
+  "Instagram Review Experience": "인스타그램 리뷰 경험",
+  "Instagram review gallery surfacing creator demonstrations, package unboxings, and routine content as social proof inside the official store.":
+    "크리에이터 시연, 패키지 언박싱, 루틴 콘텐츠를 공식 스토어 안의 소셜 프루프로 노출한 인스타그램 리뷰 갤러리입니다.",
+  "Product Detail Page Planning": "제품 상세페이지 기획",
+  "I owned the detail page from narrative planning to final delivery: defining the content flow and writing the copy, aligning the visual direction with the designer, reviewing iterations, and developing each section through feedback. The conversion narrative moves from official-purchase assurance and the core hook to routine pain points, product introduction and use cases, VNS principles, research evidence, package composition, usage guidance, Q&A, safety information, and specifications.":
+    "상세페이지의 내러티브 기획부터 최종 완성까지 주도했습니다. 콘텐츠 흐름과 문구를 직접 설계하고, 디자이너와 비주얼 방향을 조율하며 시안 검토와 피드백을 반복해 각 섹션을 디벨롭했습니다. 구매 전환 흐름은 공식 구매 신뢰와 핵심 후킹에서 시작해 일상 속 고민, 제품 소개와 사용 장면, VNS 원리, 연구 근거, 패키지 구성, 사용 방법, Q&A, 주의사항과 제품 사양으로 이어집니다.",
+  "Social & Creator Marketing": "소셜 & 크리에이터 마케팅",
+  "I designed POWAS, POWAPOWA's content marketer crew, as a structured community program rather than a one-off supporter campaign. I defined the channel roles and weekly missions, created the recruitment identity and poster, published and managed the public listing, selected participants, and led onboarding and the offline kickoff. The listing recorded 1,812 views and 68 saves, and the crew became an operating layer for mission-based social, Reels, and blog content that fed the brand's creator-to-commerce growth loop.":
+    "일회성 서포터즈 캠페인이 아닌 구조화된 커뮤니티 프로그램으로 POWAPOWA 콘텐츠 마케터 크루 ‘포아즈(POWAS)’를 기획했습니다. 채널별 역할과 주차별 미션을 설계하고, 모집 비주얼과 포스터 제작, 공개 공고 게시·운영, 참여자 선발, 온보딩과 오프라인 발대식까지 전 과정을 리드했습니다. 링크커리어 공고는 조회 1,812회와 스크랩 68회를 기록했으며, 포아즈는 소셜·릴스·블로그 미션 콘텐츠를 브랜드의 크리에이터-커머스 성장 루프로 연결하는 운영 기반이 되었습니다.",
+  "POWAS Crew Recruitment Poster": "포아즈 크루 모집 포스터",
+  "Recruitment creative defining a 10-person crew across content, Reels, and blog teams, with mission structure and program benefits.":
+    "콘텐츠·릴스·블로그 팀으로 구성된 10인 크루의 역할, 미션 구조, 활동 혜택을 한눈에 전달한 모집 콘텐츠입니다.",
+  "Published Linkareer Listing": "링크커리어 공개 모집 공고",
+  "Public recruitment listing for the first POWAS cohort, recording 1,812 views and 68 saves.":
+    "조회 1,812회와 스크랩 68회를 기록한 포아즈 1기 공개 모집 공고입니다.",
+  "POWAS Offline Kickoff Setup": "포아즈 오프라인 발대식 세팅",
+  "On-site setup prepared for the first POWAS offline kickoff, including participant welcome kits and mission materials.":
+    "참여자 웰컴 키트와 미션 자료를 포함해 포아즈 1기 오프라인 발대식을 위해 준비한 현장 세팅입니다.",
+  "Photoshoot Project": "촬영 프로젝트",
+  "Working within a limited production budget, I built the shoot from the ground up instead of hiring a full-service production vendor: sourcing the photographer and model, defining the concept and shot list, directing the set, and completing post-production myself. I delivered the shoot at approximately one-third of a typical vendor quote.":
+    "제한된 제작 예산 안에서 일반 촬영 용역 업체를 이용하는 대신 촬영 작가와 모델을 직접 섭외하고, 콘셉트와 촬영 구성을 기획했으며, 현장 디렉팅부터 후가공까지 직접 수행했습니다. 일반적인 촬영 용역 견적의 약 3분의 1 수준으로 촬영을 완성했습니다.",
+  "Editorial Use-case Portrait": "에디토리얼 사용 장면",
+  "Model-led use-case photography balancing the wearable product, skin, and soft reflective light.":
+    "웨어러블 제품과 피부, 부드러운 반사광의 균형을 설계한 모델 중심 사용 장면 촬영입니다.",
+  "Macaron Color-world Still": "마카롱 컬러월드 스틸",
+  "Playful product still translating the soft pink palette into a tactile confectionery scene.":
+    "부드러운 핑크 팔레트를 촉각적인 디저트 장면으로 확장한 위트 있는 제품 스틸입니다.",
+  "Sculptural Product Stack": "조형적 제품 스택",
+  "Vertical still-life composition using repetition and balance to make the compact device feel iconic.":
+    "반복과 균형을 활용해 콤팩트한 디바이스를 아이코닉하게 보여주는 수직 스틸라이프 구성입니다.",
+  "Content Planning & Production": "콘텐츠 기획 및 제작",
+  "I planned and produced channel-ready content across Instagram, paid media, the official store, participation campaigns, and creator UGC. I translated the photoshoot visual system into repeatable content formats, then connected editorial consistency with campaign response and commerce entry points.":
+    "인스타그램, 유료 광고, 공식 스토어, 참여형 캠페인, 크리에이터 UGC 전반의 채널 콘텐츠를 기획하고 제작했습니다. 촬영 비주얼 시스템을 반복 가능한 콘텐츠 포맷으로 확장하고, 일관된 에디토리얼 톤을 캠페인 반응 및 커머스 진입점과 연결했습니다.",
+  "Review-led Meta Ad": "리뷰 기반 메타 광고",
+  "Paid social creative turning customer review proof into a visual advertising narrative.":
+    "고객 리뷰라는 신뢰 근거를 시각적 광고 내러티브로 전환한 페이드 소셜 콘텐츠입니다.",
+  "Review Event Social Post": "리뷰 이벤트 소셜 게시물",
+  "Instagram event creative designed to encourage review participation and content collection.":
+    "리뷰 참여와 콘텐츠 확보를 유도하기 위해 디자인한 인스타그램 이벤트 콘텐츠입니다.",
+  "Official Store Product Thumbnail": "공식 스토어 제품 썸네일",
+  "Official-store thumbnail visualizing the perfume-and-patch bundle and package system.":
+    "향수와 패치 번들 구성 및 패키지 시스템을 시각화한 공식 스토어 제품 썸네일입니다.",
+  "Daytone Cherry Visual": "데이톤 체리 비주얼",
+  "Editorial Instagram visual connecting the wellness device with a playful cherry concept.":
+    "웰니스 디바이스를 위트 있는 체리 콘셉트와 연결한 에디토리얼 인스타그램 비주얼입니다.",
+  "Instagram Content System": "인스타그램 콘텐츠 시스템",
+  "A coordinated feed system combining product education, routine storytelling, campaigns, and creator-led content in one recognizable visual language.":
+    "제품 정보, 루틴 스토리텔링, 캠페인, 크리에이터 콘텐츠를 하나의 식별 가능한 비주얼 언어로 연결한 피드 시스템입니다.",
+  "Participation Campaign Content": "참여형 캠페인 콘텐츠",
+  "Interactive quiz-event content planned to turn passive reach into saves, comments, and campaign participation.":
+    "단순 도달을 저장, 댓글, 캠페인 참여로 전환하도록 기획한 인터랙티브 퀴즈 이벤트 콘텐츠입니다.",
+  "Creator Unboxing UGC": "크리에이터 언박싱 UGC",
+  "Creator-produced unboxing content showing how the campaign system extended beyond owned channels into authentic product experiences.":
+    "캠페인 시스템이 자사 채널을 넘어 실제 제품 경험으로 확장되는 모습을 보여주는 크리에이터 제작 언박싱 콘텐츠입니다.",
+  "Growth Performance & Evidence": "성장 성과 & 증빙",
+  "I connected content production to a measurable growth system, using native Instagram evidence to track awareness, response, follower acquisition, paid traffic, and participation. The figures below preserve the original reporting context: a 30-day professional dashboard, a website-visit campaign, and a high-participation quiz event.":
+    "콘텐츠 제작을 측정 가능한 성장 시스템과 연결하고, 인스타그램 원본 성과 화면을 통해 인지도, 반응, 팔로워 확보, 유료 트래픽, 참여를 추적했습니다. 아래 수치는 30일 프로페셔널 대시보드, 웹사이트 방문 캠페인, 고참여 퀴즈 이벤트의 원래 측정 맥락을 그대로 유지합니다.",
+  "01 · Organic channel": "01 · 오가닉 채널",
+  "Awareness became audience growth": "인지도를 오디언스 성장으로",
+  "Professional dashboard · Aug 8–Sep 6": "프로페셔널 대시보드 · 8월 8일–9월 6일",
+  Views: "조회",
+  Interactions: "반응",
+  "New followers": "새 팔로워",
+  "Content published": "공유한 콘텐츠",
+  "02 · Paid conversion": "02 · 유료 전환",
+  "Reach moved into store visits": "도달을 스토어 방문으로",
+  "Website-visit campaign · native ad insights": "웹사이트 방문 캠페인 · 광고 인사이트 원본",
+  "Ad views": "광고 조회",
+  Reach: "도달",
+  "Website visits": "웹사이트 방문",
+  "03 · Participation": "03 · 참여 반응",
+  "Campaign reach became active response": "캠페인 도달을 능동적 반응으로",
+  "Quiz event · post insights": "퀴즈 이벤트 · 게시물 인사이트",
+  Comments: "댓글",
+  Likes: "좋아요",
+  Shares: "공유",
+  Reposts: "리포스트",
+  "30-day Professional Dashboard": "30일 프로페셔널 대시보드",
+  "Native channel evidence recording 334K views, 3.1K interactions, 686 new followers, and 74 published pieces during the measured period.":
+    "측정 기간 조회 33.4만, 반응 3.1천, 새 팔로워 686명, 공유 콘텐츠 74건을 기록한 채널 원본 증빙입니다.",
+  "Website-visit Ad Insights": "웹사이트 방문 광고 인사이트",
+  "Paid campaign evidence recording 14,711 views, 11,099 reach, and 647 website visits, with saves, reactions, and shares retained for context.":
+    "조회 14,711회, 도달 11,099명, 웹사이트 방문 647회를 기록한 유료 캠페인 증빙으로, 저장·공감·공유 수치도 함께 유지했습니다.",
+  "Quiz-event Participation": "퀴즈 이벤트 참여 성과",
+  "The participation campaign recorded 745 likes, 863 comments, 20 reposts, and 293 shares on the captured post.":
+    "캡처된 참여형 캠페인 게시물은 좋아요 745회, 댓글 863개, 리포스트 20회, 공유 293회를 기록했습니다.",
+  Impact: "임팩트",
+  "This project is the clearest evidence that my role was not confined to campaign execution. I connected market definition, brand system, product and package development, production, commerce UX, creator acquisition, CRM feedback, and cost optimization as one operating loop. Its significance lies in owning both the customer-facing experience and the behind-the-scenes system that made it repeatable: building a launch-ready brand, turning early response into measurable growth and partnership interest, and carrying every learning back into the product and operations.":
+    "이 프로젝트는 제 역할이 캠페인 실행에 머물지 않았음을 가장 선명하게 보여줍니다. 시장 정의, 브랜드 시스템, 제품·패키지 개발, 생산, 커머스 UX, 크리에이터 확보, CRM 피드백, 원가 최적화를 하나의 운영 루프로 연결했습니다. 고객이 직접 만나는 경험과 그 경험을 반복 가능하게 만드는 백엔드 운영 체계를 모두 책임졌다는 점에 의의가 있습니다. 론칭 가능한 브랜드를 구축하고, 초기 반응을 측정 가능한 성장과 협업 관심으로 전환했으며, 그 과정에서 얻은 학습을 다시 제품과 운영에 반영했습니다.",
+  "01 · Define": "01 · 정의",
+  "Insight & Positioning": "인사이트 & 포지셔닝",
+  "Translated the VNS opportunity and the routines of women in their 20s and 30s into a clear product target, brand promise, and launch direction.":
+    "VNS의 시장 기회와 20~30대 여성의 일상 루틴을 명확한 제품 타깃, 브랜드 약속, 론칭 방향으로 전환했습니다.",
+  "Target definition + brand strategy": "타깃 정의 + 브랜드 전략",
+  "02 · Build": "02 · 구축",
+  "Product & Package": "제품 & 패키지",
+  "Connected product color, device experience, package composition, fragrance, patches, onboarding, and manufacturing partners into one retail-ready system.":
+    "제품 컬러, 디바이스 경험, 패키지 구성, 향수, 패치, 온보딩, 제조 파트너를 하나의 판매 가능한 시스템으로 연결했습니다.",
+  "Unit cost −24%": "제조 단가 −24%",
+  "03 · Launch": "03 · 론칭",
+  "Commerce & Content": "커머스 & 콘텐츠",
+  "Planned the detail page, official-store IA, purchase journey, photoshoot, launch assets, and review experience as one conversion narrative.":
+    "상세페이지, 공식 스토어 IA, 구매 여정, 촬영, 론칭 에셋, 리뷰 경험을 하나의 전환 내러티브로 기획했습니다.",
+  "Official-store traffic 2×": "공식 스토어 트래픽 2×",
+  "04 · Grow": "04 · 성장",
+  "Creator Growth Engine": "크리에이터 성장 엔진",
+  "Built a repeatable acquisition loop through social content, influencer collaboration, POWAS missions, and creator-led proof instead of isolated campaigns.":
+    "단발성 캠페인이 아니라 소셜 콘텐츠, 인플루언서 협업, 포아즈 미션, 크리에이터 신뢰 근거를 통한 반복 가능한 획득 루프를 만들었습니다.",
+  "10 → 1,700 followers · 48 UGC": "팔로워 10 → 1,700 · UGC 48건",
+  "05 · Learn": "05 · 학습",
+  "CRM & Feedback Loop": "CRM & 피드백 루프",
+  "Connected customer behavior, review content, Channel Talk signals, and purchase friction so market response could improve the next experience decision.":
+    "고객 행동, 리뷰 콘텐츠, 채널톡 신호, 구매 마찰을 연결해 시장 반응이 다음 경험 의사결정을 개선하도록 했습니다.",
+  "Discovery → purchase → retention": "발견 → 구매 → 유지",
+  "06 · Scale": "06 · 확장",
+  "Business & Partnerships": "비즈니스 & 파트너십",
+  "Turned a coherent early-market presence into measurable reach, operational efficiency, and inbound collaboration interest from hospitality and Japanese commerce partners.":
+    "일관된 초기 시장 존재감을 측정 가능한 도달, 운영 효율, 호텔·일본 커머스 파트너의 인바운드 협업 관심으로 전환했습니다.",
+  "21K+ views · 2 inbound proposals": "2.1만+ 조회 · 인바운드 제안 2건",
+  "Led product planning, brand strategy, package planning, photoshoot direction, product detail page planning, homepage UX, and launch event execution.":
+    "제품 기획, 브랜드 전략, 패키지 기획, 촬영 디렉션, 상세페이지 기획, 홈페이지 UX, 론칭 이벤트 실행을 리드했습니다.",
+  "Developed and launched POWAPOWA for women in their 20s and 30s while attracting inbound partnership proposals from Marriott Moxy Hotel and Qoo10 Japan.":
+    "20~30대 여성을 위한 POWAPOWA를 개발·론칭하고 Marriott Moxy Hotel 및 Qoo10 Japan의 인바운드 파트너십 제안을 유치했습니다.",
+  "Built a growth loop across social content, influencer collaboration, supporter-generated UGC, official e-commerce traffic, and Channel Talk CRM insights.":
+    "소셜 콘텐츠, 인플루언서 협업, 서포터즈 UGC, 공식 이커머스 트래픽, 채널톡 CRM 인사이트를 연결하는 성장 루프를 구축했습니다.",
+  "Content Strategy": "콘텐츠 전략",
+  "E-commerce UX": "이커머스 UX",
+  "Creator Marketing": "크리에이터 마케팅",
+  CRM: "CRM",
+  "Photoshoot Direction": "촬영 디렉션",
+
+  FUGUDIO: "FUGUDIO",
+  "Multi-channel content operations workspace": "멀티채널 콘텐츠 운영 워크스페이스",
+  "FUGUDIO is a content operations management service for individual creators and small marketing teams, designed to help them see what to post, where to post it, and when to publish it in one workspace.":
+    "FUGUDIO는 개인 크리에이터와 소규모 마케팅팀을 위한 콘텐츠 운영 관리 서비스로, 이번 주에 무엇을 어디에 언제 올려야 하는지 하나의 워크스페이스에서 볼 수 있도록 설계했습니다.",
+  "Product planner responsible for service concept, product planning, information architecture, UX flow, UI planning, brand naming, brand identity, character and mascot direction, and the content operations framework.":
+    "서비스 콘셉트, 제품 기획, 정보구조, UX 플로우, UI 기획, 브랜드 네이밍, 브랜드 아이덴티티, 캐릭터·마스코트 디렉션, 콘텐츠 운영 프레임워크를 담당한 제품 기획자였습니다.",
+  "Defined a service concept that connects idea, production, schedule, publishing, and performance into one content operations workspace without inventing unsupported launch metrics.":
+    "아이디어, 제작, 일정, 게시, 성과를 하나의 콘텐츠 운영 워크스페이스로 연결하는 서비스 콘셉트를 정의했습니다. 확인되지 않은 론칭 지표는 임의로 만들지 않았습니다.",
+  "FUGUDIO workspace assets can be added here": "FUGUDIO 워크스페이스 에셋을 이 영역에 추가할 수 있습니다",
+  "The Problem": "문제 정의",
+  "Creator workflows are fragmented across separate tools and channels. Ideas, production status, schedules, publishing destinations, and performance results often live in different places, making weekly content operations harder to manage.":
+    "크리에이터의 업무 흐름은 여러 도구와 채널에 흩어져 있습니다. 아이디어, 제작 상태, 일정, 게시 채널, 성과 결과가 서로 다른 곳에 존재해 주간 콘텐츠 운영을 관리하기 어려워집니다.",
+  "Service Concept": "서비스 콘셉트",
+  "FUGUDIO connects the fragmented workflow into one workspace for individual creators and small marketing teams, helping users understand what to create this week, where it should go, and when it should be published.":
+    "FUGUDIO는 개인 크리에이터와 소규모 마케팅팀을 위해 흩어진 업무 흐름을 하나의 워크스페이스로 연결합니다. 사용자가 이번 주에 무엇을 만들고, 어디에 올리고, 언제 게시해야 하는지 파악하도록 돕습니다.",
+  "The service structure is organized around Calendar, Pipeline, Content, Performance, and Channels so content planning can move from scattered tasks into a coherent operating system.":
+    "서비스 구조는 Calendar, Pipeline, Content, Performance, Channels를 중심으로 정리해, 콘텐츠 기획이 흩어진 업무가 아니라 일관된 운영 시스템으로 움직이도록 했습니다.",
+  "Core Experience": "핵심 경험",
+  "The core experience centers on Content Calendar, Production Pipeline, Multi-channel Management, and Performance Tracking, keeping weekly decisions visible and actionable.":
+    "핵심 경험은 Content Calendar, Production Pipeline, Multi-channel Management, Performance Tracking을 중심으로 구성되어 주간 의사결정이 보이고 실행 가능하도록 만듭니다.",
+  "UX Flow": "UX 플로우",
+  "The workflow moves from Create Content to Set Production Stage, Schedule, Select Channel, Publish, and Track Performance, turning content operations into a repeatable loop.":
+    "워크플로우는 Create Content에서 Set Production Stage, Schedule, Select Channel, Publish, Track Performance로 이어지며, 콘텐츠 운영을 반복 가능한 루프로 만듭니다.",
+  "Brand Identity": "브랜드 아이덴티티",
+  "FUGUDIO also includes brand naming, wordmark direction, mascot and character direction, icon system thinking, visual identity, and UI tone so the workspace can feel approachable rather than purely operational.":
+    "FUGUDIO는 브랜드 네이밍, 워드마크 방향, 마스코트·캐릭터 디렉션, 아이콘 시스템, 비주얼 아이덴티티, UI 톤까지 포함해 단순 운영 도구가 아니라 친근한 워크스페이스처럼 느껴지도록 했습니다.",
+  "Mapped fragmented creator work from Idea to Production, Schedule, Publish, and Performance.":
+    "Idea, Production, Schedule, Publish, Performance로 흩어진 크리에이터 업무를 매핑했습니다.",
+  "Structured the service around calendar, pipeline, content, performance, and channel management.":
+    "캘린더, 파이프라인, 콘텐츠, 성과, 채널 관리를 중심으로 서비스를 구조화했습니다.",
+  "Connected product planning with brand identity so the service could feel usable, memorable, and creator-friendly.":
+    "제품 기획과 브랜드 아이덴티티를 연결해 서비스가 사용하기 쉽고 기억에 남으며 크리에이터 친화적으로 느껴지도록 했습니다.",
+  "UX Design": "UX 디자인",
+  "Content Operations": "콘텐츠 운영",
+  "Service Design": "서비스 디자인",
+
+  Atember: "Atember",
+  "AI-powered work memory & productivity system": "AI 기반 업무 기억 & 생산성 시스템",
+  "Attends. Remembers. Keeps you moving.": "Attends. Remembers. Keeps you moving.",
+  "Atember is a productivity and memory system concept that connects multiple work contexts and AI functions into one product experience, helping users remember context and turn it back into action.":
+    "Atember는 여러 업무 맥락과 AI 기능을 하나의 제품 경험으로 연결해, 사용자가 맥락을 기억하고 다시 행동으로 이어갈 수 있도록 돕는 생산성·기억 시스템 콘셉트입니다.",
+  "Product and UX planner organizing AI product vision, information architecture, workflow strategy, memory-centered product concept, and desktop interaction direction.":
+    "AI 제품 비전, 정보구조, 워크플로우 전략, 기억 중심 제품 콘셉트, 데스크톱 인터랙션 방향을 정리한 제품·UX 기획자였습니다.",
+  "Created a product UX direction that organizes complex AI capabilities around user context, memory, retrieval, and follow-up rather than presenting features as a disconnected list.":
+    "복잡한 AI 기능을 단순 기능 목록이 아니라 사용자 맥락, 기억, 검색, 후속 행동을 중심으로 정리하는 제품 UX 방향을 만들었습니다.",
+  "Atember desktop UX assets can be added here": "Atember 데스크톱 UX 에셋을 이 영역에 추가할 수 있습니다",
+  "Product Vision": "제품 비전",
+  "Atember begins from the problem that meetings, documents, tasks, research, and follow-ups often require users to manually remember and reconnect context. The product direction focuses on remembering work context and turning it into the next action.":
+    "Atember는 회의, 문서, task, research, follow-up의 맥락을 사용자가 직접 기억하고 다시 연결해야 하는 문제에서 시작합니다. 제품 방향은 업무 맥락을 기억하고 다음 행동으로 이어주는 데 초점을 둡니다.",
+  "The IA organizes complex AI functions through a user-centered structure: Today, Dashboard, Search, Chat, Research, Inbox, Tasks, Sources, Automations, and Memory.":
+    "IA는 Today, Dashboard, Search, Chat, Research, Inbox, Tasks, Sources, Automations, Memory라는 사용자 중심 구조로 복잡한 AI 기능을 정리합니다.",
+  "Memory Architecture": "기억 구조",
+  "The conceptual UX flow is Activity → Context → Memory → Retrieval → Action. This is treated as a product concept diagram for how users regain context, not as a confirmed technical architecture.":
+    "개념적 UX 흐름은 Activity → Context → Memory → Retrieval → Action입니다. 이는 확정된 기술 아키텍처가 아니라 사용자가 맥락을 다시 회복하는 방식을 보여주는 제품 콘셉트 다이어그램으로 다룹니다.",
+  "Core Workflows": "핵심 워크플로우",
+  "Core workflows are framed around Meeting → Memory, Research → Knowledge, and Task → Follow-up, emphasizing how information becomes useful again after the original activity ends.":
+    "핵심 워크플로우는 Meeting → Memory, Research → Knowledge, Task → Follow-up을 중심으로 구성해, 활동이 끝난 뒤에도 정보가 다시 유용해지는 방식을 강조합니다.",
+  "Desktop UX": "데스크톱 UX",
+  "This section is prepared for desktop or macOS product interface assets. No fake UI mockups are inserted; actual Atember interface visuals can be added under /public/projects/atember/ when available.":
+    "이 영역은 데스크톱 또는 macOS 제품 인터페이스 에셋을 위한 공간입니다. 가짜 UI 목업은 넣지 않았으며, 실제 Atember 인터페이스 비주얼은 준비되는 대로 /public/projects/atember/ 아래에 추가할 수 있습니다.",
+  "Framed AI product value around remembered work context and next actions.":
+    "기억된 업무 맥락과 다음 행동을 중심으로 AI 제품 가치를 정의했습니다.",
+  "Organized product IA across Today, Dashboard, Search, Chat, Research, Inbox, Tasks, Sources, Automations, and Memory.":
+    "Today, Dashboard, Search, Chat, Research, Inbox, Tasks, Sources, Automations, Memory를 중심으로 제품 IA를 정리했습니다.",
+  "Defined workflow concepts connecting meetings, research, and tasks back into usable follow-up.":
+    "회의, 리서치, task를 실행 가능한 follow-up으로 다시 연결하는 워크플로우 콘셉트를 정의했습니다.",
+  "AI Product Planning": "AI 제품 기획",
+  "UX Strategy": "UX 전략",
+  "Product Systems": "제품 시스템",
+  "Interaction Design": "인터랙션 디자인",
+
+  Colortelier: "Colortelier",
+  "Turning travel memories into color": "여행의 기억을 색으로 기록하기",
+  "Colortelier is a service and brand concept that extracts colors from travel photos, turning memories of places into palettes, names, and a personal visual archive.":
+    "Colortelier는 여행 사진에서 색을 추출해 장소의 기억을 팔레트, 이름, 개인 비주얼 아카이브로 바꾸는 서비스·브랜드 콘셉트입니다.",
+  "Concept planner responsible for service concept, brand concept, experience planning, visual direction, and product expansion strategy.":
+    "서비스 콘셉트, 브랜드 콘셉트, 경험 기획, 비주얼 디렉션, 제품 확장 전략을 담당한 콘셉트 기획자였습니다.",
+  "Built an editorial service concept around the flow Travel Photo → Color Extraction → Palette → Naming → Personal Archive, keeping the emotional nature of travel memory central to the product idea.":
+    "Travel Photo → Color Extraction → Palette → Naming → Personal Archive 흐름을 중심으로 여행 기억의 감정성을 제품 아이디어의 중심에 둔 에디토리얼 서비스 콘셉트를 만들었습니다.",
+  "Colortelier palette and travel assets can be added here": "Colortelier 팔레트와 여행 에셋을 이 영역에 추가할 수 있습니다",
+  Inspiration: "영감",
+  "The idea started from the relationship between colors discovered while traveling and the memories attached to those places. Colortelier treats color as a way to keep travel emotion vivid after the trip ends.":
+    "아이디어는 여행 중 발견한 색과 그 장소에 붙어 있는 기억 사이의 관계에서 시작되었습니다. Colortelier는 여행이 끝난 뒤에도 감정을 선명하게 보관하는 방식으로 색을 다룹니다.",
+  Concept: "콘셉트",
+  "The core service flow is Upload Photo → Extract Colors → Build Palette → Name Colors → Save Travel Memory, transforming an image into a personal archive of color and place.":
+    "핵심 서비스 흐름은 Upload Photo → Extract Colors → Build Palette → Name Colors → Save Travel Memory로, 이미지를 색과 장소의 개인 아카이브로 전환합니다.",
+  "Experience Flow": "경험 흐름",
+  "The emotional experience moves through Capture, Discover, Name, Collect, and Remember, so users can revisit travel memories through color rather than only through photos.":
+    "감정적 경험은 Capture, Discover, Name, Collect, Remember로 이어지며, 사용자가 사진뿐 아니라 색을 통해 여행 기억을 다시 만날 수 있도록 합니다.",
+  "Visual System": "비주얼 시스템",
+  "The visual system connects travel places and palettes through editorial naming examples such as Tokyo Rain, Mojiko Sunset, and Yufuin Mist. These are concept examples rather than confirmed project color data.":
+    "비주얼 시스템은 Tokyo Rain, Mojiko Sunset, Yufuin Mist 같은 에디토리얼 네이밍 예시를 통해 여행 장소와 팔레트를 연결합니다. 이는 확정된 프로젝트 컬러 데이터가 아닌 콘셉트 예시입니다.",
+  Expansion: "확장",
+  "The concept can expand into color books, postcards, bookmarks, and a travel color archive, allowing the brand to move from digital memory keeping into physical keepsakes.":
+    "이 콘셉트는 컬러북, 엽서, 북마크, 여행 컬러 아카이브로 확장될 수 있으며, 디지털 기억 보관을 물리적 기념품으로 넓힐 수 있습니다.",
+  "Translated travel photography and place memory into a color-based service concept.":
+    "여행 사진과 장소의 기억을 색 기반 서비스 콘셉트로 전환했습니다.",
+  "Defined the experience flow from photo upload and color extraction to palette naming and personal archive.":
+    "사진 업로드와 색 추출부터 팔레트 네이밍, 개인 아카이브까지 이어지는 경험 흐름을 정의했습니다.",
+  "Explored expansion into color books, postcards, bookmarks, and a travel color archive.":
+    "컬러북, 엽서, 북마크, 여행 컬러 아카이브로의 확장 가능성을 탐색했습니다.",
+  "Brand Concept": "브랜드 콘셉트",
+  "Visual Storytelling": "비주얼 스토리텔링",
+  "Experience Design": "경험 디자인",
+  "Product Expansion": "제품 확장",
+
   "Began Project": "Began 프로젝트",
   "Dietary-accessible discovery service": "식이 제한 친화 맛집 탐색 서비스",
   "A location-based restaurant discovery service designed to reduce dining uncertainty for people with dietary restrictions.":
@@ -247,7 +567,6 @@ const ko: Record<string, string> = {
   "Presented the strategy as a business expansion path rather than a standalone design concept.":
     "전략을 단순 디자인 콘셉트가 아니라 비즈니스 확장 경로로 제시했습니다.",
   "Market Strategy": "시장 전략",
-  "Service Concept": "서비스 콘셉트",
   Pitching: "피칭",
   "UI/UX Framework": "UI/UX 프레임워크",
   "Leviosa AI UX Project": "Leviosa AI UX 프로젝트",

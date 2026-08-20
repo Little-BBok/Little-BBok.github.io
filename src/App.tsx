@@ -16,6 +16,7 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import type { CSSProperties } from "react";
 import {
   aboutNarrative,
   aboutKeywords,
@@ -44,6 +45,15 @@ const routes = [
   { id: "interests", label: "Interests" },
   { id: "contact", label: "Contact" },
 ];
+
+const projectFilters = [
+  "ALL",
+  "Brand & Growth",
+  "Product & UX",
+  "Data & Strategy",
+] as const;
+
+type ProjectFilter = (typeof projectFilters)[number];
 
 const getRoute = () => window.location.hash.replace("#/", "") || "home";
 const getSavedLanguage = (): Language => {
@@ -117,6 +127,12 @@ function App() {
     return documentSections.find((section) => section.id === route.split("/")[1]);
   }, [route]);
 
+  const detailPageProject = route.endsWith("/detail-page") ? activeProject : undefined;
+
+  if (detailPageProject) {
+    return <DetailPageViewer project={detailPageProject} t={t} />;
+  }
+
   return (
     <div className="site-shell">
       <Header
@@ -153,6 +169,62 @@ function App() {
 }
 
 type Translator = (value: string) => string;
+
+const emphasisPhrases = [
+  "full brand experience",
+  "full-cycle brand management",
+  "product planning and brand experience",
+  "The brand's early market presence generated unsolicited partnership interest from Moxy Seoul Insadong and Qoo10 Japan.",
+  "Moxy Seoul Insadong and Qoo10 Japan",
+  "inbound proposals rather than completed partnerships",
+  "information architecture, wireframes, functional prototypes, and purchase journey",
+  "narrative planning to final delivery",
+  "content flow and writing the copy",
+  "aligning the visual direction with the designer",
+  "structured community program",
+  "led onboarding and the offline kickoff",
+  "sourcing the photographer and model",
+  "directing the set",
+  "one-third of a typical vendor quote",
+  "planned and produced",
+  "connected editorial consistency with campaign response and commerce entry points",
+  "followers from 10 to 1,700",
+  "doubled official e-commerce traffic",
+  "reduced manufacturing unit cost by 24%",
+  "21,000+ short-form content views",
+  "전체 브랜드 경험",
+  "풀사이클 브랜드 매니지먼트",
+  "제품 기획과 브랜드 경험",
+  "브랜드의 초기 시장 반응을 바탕으로 Moxy Seoul Insadong과 Qoo10 Japan에서 먼저 협업 의사를 보내왔습니다.",
+  "Moxy Seoul Insadong과 Qoo10 Japan",
+  "체결 완료가 아닌 실제 인바운드 제안",
+  "정보구조, 와이어프레임, 기능형 프로토타입, 구매 여정",
+  "내러티브 기획부터 최종 완성까지",
+  "콘텐츠 흐름과 문구를 직접 설계",
+  "디자이너와 비주얼 방향을 조율",
+  "구조화된 커뮤니티 프로그램",
+  "온보딩과 오프라인 발대식까지 전 과정을 리드",
+  "촬영 작가와 모델을 직접 섭외",
+  "현장 디렉팅부터 후가공까지 직접 수행",
+  "약 3분의 1 수준",
+  "채널 콘텐츠를 기획하고 제작",
+  "캠페인 반응 및 커머스 진입점과 연결",
+  "팔로워 10명에서 1,700명 성장",
+  "공식 이커머스 트래픽 2배 성장",
+  "제조 단가 24% 절감",
+  "숏폼 콘텐츠 2.1만+ 조회수",
+].sort((a, b) => b.length - a.length);
+
+const emphasisPattern = new RegExp(
+  `(${emphasisPhrases.map((phrase) => phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`,
+  "g",
+);
+
+function EmphasizedText({ children }: { children: string }) {
+  return children.split(emphasisPattern).map((part, index) =>
+    emphasisPhrases.includes(part) ? <strong key={`${part}-${index}`}>{part}</strong> : part,
+  );
+}
 
 function Header({
   language,
@@ -458,6 +530,11 @@ function Timeline({
                 <li key={highlight}>{t(highlight)}</li>
               ))}
             </ul>
+            {item.projectId ? (
+              <a className="timeline-case-link" href={`#/project/${item.projectId}`}>
+                {t("View Brand Case")} <ArrowUpRight size={15} />
+              </a>
+            ) : null}
           </article>
         ))}
       </div>
@@ -466,10 +543,29 @@ function Timeline({
 }
 
 function ProjectsPage({ t }: { t: Translator }) {
+  const [activeFilter, setActiveFilter] = useState<ProjectFilter>("ALL");
+  const filteredProjects =
+    activeFilter === "ALL"
+      ? projects
+      : projects.filter((project) => project.category === activeFilter);
+
   return (
     <PageFrame eyebrow="Selected Work" title="Project" t={t}>
+      <div className="project-filter" aria-label={t("Project category filter")}>
+        {projectFilters.map((filter) => (
+          <button
+            className={activeFilter === filter ? "active" : ""}
+            type="button"
+            aria-pressed={activeFilter === filter}
+            onClick={() => setActiveFilter(filter)}
+            key={filter}
+          >
+            {t(filter)}
+          </button>
+        ))}
+      </div>
       <div className="project-grid">
-        {projects.map((project, index) => (
+        {filteredProjects.map((project, index) => (
           <ProjectCard project={project} index={index} key={project.id} t={t} />
         ))}
       </div>
@@ -499,9 +595,15 @@ function ProjectCard({ project, index, t }: { project: Project; index: number; t
             loading="eager"
             decoding="async"
           />
-        ) : null}
+        ) : (
+          <div className="project-media-placeholder">
+            <span>{t(project.category)}</span>
+            <strong>{t(project.placeholderLabel ?? project.title)}</strong>
+          </div>
+        )}
       </div>
       <div className="project-card-copy">
+        <span className="project-category-label">{t(project.category)}</span>
         <p>{t(project.eyebrow)}</p>
         <h3>{t(project.title)}</h3>
         <span>
@@ -523,7 +625,10 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
         style={{ "--accent": project.accent } as React.CSSProperties}
       >
         <div>
-          <p>{t(project.summary)}</p>
+          {project.tagline ? <span className="case-tagline">{t(project.tagline)}</span> : null}
+          <p>
+            <EmphasizedText>{t(project.summary)}</EmphasizedText>
+          </p>
           {actions.length ? (
             <div className="case-actions">
               {actions.map((action, index) => (
@@ -544,14 +649,57 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
             project.id === "sephora-guide" ? "case-image-document" : ""
           } ${project.id === "leviosa" ? "case-image-leviosa" : ""}`}
         >
-          {project.image ? <img src={project.image} alt={t(project.title)} /> : null}
+          {project.image ? (
+            <img src={project.image} alt={t(project.title)} />
+          ) : (
+            <div className="case-image-placeholder">
+              <span>{t(project.category)}</span>
+              <strong>{t(project.placeholderLabel ?? project.title)}</strong>
+            </div>
+          )}
         </div>
       </section>
+
+      {project.metrics?.length ? (
+        <section className="case-impact-chart" aria-label={t("Measured business impact")}>
+          <div className="case-impact-heading">
+            <span>{t("Measured Impact")}</span>
+            <h3>{t("Brand work translated into business movement")}</h3>
+          </div>
+          <div className="case-impact-plot">
+            {project.metrics.map((metric) => (
+              <article
+                style={
+                  {
+                    "--baseline-ratio": `${metric.baselineRatio}%`,
+                    "--result-ratio": `${metric.resultRatio}%`,
+                  } as React.CSSProperties
+                }
+                key={`${metric.value}-${metric.label}`}
+              >
+                <div className="case-impact-label">
+                  <span>{t(metric.label)}</span>
+                  <strong>{t(metric.value)}</strong>
+                  <p>{t(metric.context)}</p>
+                </div>
+                <div className="case-impact-bars" aria-hidden="true">
+                  <i className="baseline" />
+                  <i className="result" />
+                </div>
+                <span className="case-impact-baseline">{t(metric.baseline)}</span>
+              </article>
+            ))}
+          </div>
+          <p className="case-impact-note">{t("Each row is normalized within its own metric.")}</p>
+        </section>
+      ) : null}
 
       <section className="case-columns">
         <article className="role-card">
           <h3>{t("My Role")}</h3>
-          <p>{t(project.role)}</p>
+          <p>
+            <EmphasizedText>{t(project.role)}</EmphasizedText>
+          </p>
           <div className="chip-row role-skill-row">
             {project.capabilities.map((capability) => (
               <span className="chip" key={capability}>
@@ -562,7 +710,9 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
         </article>
         <article>
           <h3>{t("Outcome")}</h3>
-          <p>{t(project.outcome)}</p>
+          <p>
+            <EmphasizedText>{t(project.outcome)}</EmphasizedText>
+          </p>
         </article>
       </section>
 
@@ -571,7 +721,9 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
         {project.details.map((detail, index) => (
           <div className="detail-row" key={detail}>
             <span>{String(index + 1).padStart(2, "0")}</span>
-            <p>{t(detail)}</p>
+            <p>
+              <EmphasizedText>{t(detail)}</EmphasizedText>
+            </p>
           </div>
         ))}
       </section>
@@ -588,6 +740,12 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                 project.id === "sephora-guide" && section.title === "Guidebook Structure"
                   ? "guidebook-toc-card"
                   : ""
+              } ${section.gallery?.length ? "case-story-card-gallery" : ""} ${
+                section.layout === "sequence" ? "case-story-card-sequence" : ""
+              } ${
+                section.layout === "impact" ? "case-story-card-impact" : ""
+              } ${
+                section.layout === "performance" ? "case-story-card-performance" : ""
               }`}
               key={section.title}
             >
@@ -598,8 +756,103 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
               ) : null}
               <div className="case-story-copy">
                 <h3>{t(section.title)}</h3>
-                <p>{t(section.text)}</p>
+                <p>
+                  <EmphasizedText>{t(section.text)}</EmphasizedText>
+                </p>
               </div>
+              {section.layout === "impact" && section.impactItems?.length ? (
+                <div className="case-impact-lifecycle">
+                  {section.impactItems.map((item) => (
+                    <article key={item.step}>
+                      <span>{t(item.step)}</span>
+                      <h4>{t(item.title)}</h4>
+                      <p>{t(item.text)}</p>
+                      <strong>{t(item.proof)}</strong>
+                    </article>
+                  ))}
+                </div>
+              ) : null}
+              {section.layout === "performance" && section.performanceGroups?.length ? (
+                <div className="case-performance-groups">
+                  {section.performanceGroups.map((group) => (
+                    <article key={group.eyebrow}>
+                      <span className="case-performance-eyebrow">{t(group.eyebrow)}</span>
+                      <h4>{t(group.title)}</h4>
+                      <p>{t(group.note)}</p>
+                      <div className="case-performance-metrics">
+                        {group.metrics.map((metric) => (
+                          <div className="case-performance-metric" key={metric.label}>
+                            <div>
+                              <strong>{metric.value}</strong>
+                              <span>{t(metric.label)}</span>
+                            </div>
+                            <i
+                              aria-hidden="true"
+                              style={{ "--performance-ratio": `${metric.ratio}%` } as CSSProperties}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              ) : null}
+              {section.gallery?.length ? (
+                <>
+                  <div
+                    className={`case-story-gallery ${
+                      section.layout === "sequence" ? "case-story-gallery-sequence" : ""
+                    } ${
+                      section.layout === "sequence" ? "case-story-gallery-sequence-preview" : ""
+                    } ${
+                      section.layout === "sequence" && section.previewGallery?.length
+                        ? "case-story-gallery-curated-preview"
+                        : ""
+                    } ${section.layout === "wide" ? "case-story-gallery-wide" : ""} ${
+                      section.layout === "performance" ? "case-story-gallery-performance" : ""
+                    }`}
+                  >
+                    {(section.previewGallery ??
+                      section.gallery.slice(
+                        0,
+                        section.layout === "sequence" ? 6 : section.gallery.length,
+                      ))
+                      .map((item, itemIndex) => (
+                        <figure key={item.title}>
+                          <img
+                            src={item.image}
+                            alt={`${t(project.title)} ${t(item.title)}`}
+                            loading={
+                              section.layout === "sequence" || itemIndex > 3 ? "lazy" : "eager"
+                            }
+                            decoding="async"
+                          />
+                          {section.layout !== "sequence" ? (
+                            <figcaption>
+                              <strong>{t(item.title)}</strong>
+                              {item.note ? (
+                                <span>
+                                  <EmphasizedText>{t(item.note)}</EmphasizedText>
+                                </span>
+                              ) : null}
+                            </figcaption>
+                          ) : null}
+                        </figure>
+                      ))}
+                  </div>
+                  {section.layout === "sequence" ? (
+                    <div className="case-sequence-actions">
+                      <a
+                        href={`${window.location.pathname}#/project/${project.id}/detail-page`}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {t("View Full Detail Page")} <ArrowUpRight size={16} />
+                      </a>
+                    </div>
+                  ) : null}
+                </>
+              ) : null}
             </article>
           ))}
         </section>
@@ -626,6 +879,41 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
       ) : null}
 
     </PageFrame>
+  );
+}
+
+function DetailPageViewer({ project, t }: { project: Project; t: Translator }) {
+  const detailSection = project.sections?.find((section) => section.layout === "sequence");
+
+  useEffect(() => {
+    document.title = `${t(project.title)} · ${t("Full Product Detail Page")}`;
+  }, [project.title, t]);
+
+  if (!detailSection?.gallery?.length) {
+    return <NotFoundPage t={t} />;
+  }
+
+  return (
+    <div className="detail-page-viewer">
+      <header className="detail-page-viewer-header">
+        <div>
+          <span>{t(project.title)}</span>
+          <h1>{t("Full Product Detail Page")}</h1>
+        </div>
+        <a href={`#/project/${project.id}`}>{t("Back to case study")}</a>
+      </header>
+      <main className="detail-page-viewer-document">
+        {detailSection.gallery.map((item, index) => (
+          <img
+            src={item.image}
+            alt={`${t(project.title)} ${t(item.title)}`}
+            loading={index < 3 ? "eager" : "lazy"}
+            decoding="async"
+            key={item.title}
+          />
+        ))}
+      </main>
+    </div>
   );
 }
 
