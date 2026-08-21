@@ -4032,11 +4032,13 @@ html[lang="ko"] .landing-keywords > .kicker {
 .case-story-card-partnership-evidence .case-story-gallery figure:first-child {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.7fr);
+  grid-template-columns: minmax(0, 1.8fr) minmax(300px, 0.55fr);
+  align-items: stretch;
 }
 
 .case-story-card-partnership-evidence .case-story-gallery figure:first-child .case-story-gallery-media {
-  min-height: 420px;
+  min-height: 0;
+  aspect-ratio: 1200 / 430;
   border-radius: 20px 0 0 20px;
 }
 
@@ -4049,9 +4051,11 @@ html[lang="ko"] .landing-keywords > .kicker {
 }
 
 .case-story-card-partnership-evidence .case-story-gallery figure:first-child figcaption {
-  display: flex;
-  justify-content: center;
-  padding: clamp(28px, 4vw, 54px);
+  display: grid;
+  align-content: center;
+  justify-content: start;
+  gap: 12px;
+  padding: clamp(24px, 3vw, 40px);
 }
 
 .case-story-card-partnership-evidence .case-story-gallery figure:not(:first-child) img {
@@ -4089,9 +4093,9 @@ html[lang="ko"] .landing-keywords > .kicker {
 
 .alus-privacy-instagram-review .mask-instagram-review-1 {
   left: 27%;
-  top: 27%;
-  width: 10.5%;
-  height: 28%;
+  top: 35%;
+  width: 9.5%;
+  height: 32%;
   border-radius: 48%;
 }
 
