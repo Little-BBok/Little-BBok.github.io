@@ -1606,13 +1606,14 @@ html[lang="ko"] .landing-keywords > .kicker {
 .case-image-colortelier {
   align-self: center;
   min-height: 0;
-  aspect-ratio: 36 / 25;
+  aspect-ratio: 16 / 9;
   border-color: rgba(111, 47, 60, 0.18);
   background: #f8f1e8;
 }
 
 .case-image-colortelier img {
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
 }
 
 .case-image-document {
@@ -1906,6 +1907,29 @@ html[lang="ko"] .landing-keywords > .kicker {
   background: #fff1b8;
 }
 
+.colortelier-opportunity-card .case-story-copy {
+  max-width: 1120px;
+}
+
+.colortelier-opportunity-card .case-impact-lifecycle article {
+  gap: 14px;
+  min-width: 0;
+  padding: clamp(22px, 2.2vw, 30px);
+}
+
+.colortelier-opportunity-card .case-impact-lifecycle h4 {
+  font-size: clamp(21px, 1.7vw, 29px);
+  line-height: 1.12;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  text-wrap: balance;
+}
+
+.colortelier-opportunity-card .case-impact-lifecycle p {
+  font-size: 14px;
+  word-break: keep-all;
+}
+
 .colortelier-journey-card .case-workflow-loop {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
@@ -1930,6 +1954,170 @@ html[lang="ko"] .landing-keywords > .kicker {
   background: #fff1b8;
 }
 
+.colortelier-ecosystem-map {
+  display: grid;
+  gap: 16px;
+  padding: 0 clamp(22px, 4vw, 42px) clamp(26px, 4vw, 44px);
+}
+
+.colortelier-ecosystem-summary {
+  display: grid;
+  grid-template-columns: auto minmax(80px, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  width: min(100%, 760px);
+  margin: 0 auto 4px;
+  color: #826b68;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.colortelier-ecosystem-summary i {
+  height: 1px;
+  background: linear-gradient(90deg, #d7e8f1, #752f40 50%, #fff1b8);
+}
+
+.colortelier-ecosystem-summary strong {
+  color: #4b2f2f;
+  font-size: inherit;
+}
+
+.colortelier-ecosystem-track {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.colortelier-ecosystem-unit {
+  position: relative;
+  min-width: 0;
+}
+
+.colortelier-ecosystem-unit article {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 18px;
+  min-height: 280px;
+  height: 100%;
+  padding: clamp(18px, 2vw, 24px);
+  border: 1px solid rgba(75, 47, 47, 0.13);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 46px rgba(75, 47, 47, 0.07);
+}
+
+.colortelier-ecosystem-unit:nth-child(2) article,
+.colortelier-ecosystem-unit:nth-child(4) article {
+  background: #f5fafc;
+}
+
+.colortelier-ecosystem-unit article > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.colortelier-ecosystem-unit article > header > span {
+  color: #752f40;
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+}
+
+.colortelier-ecosystem-unit article > header > i {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 12px;
+  color: #4b2f2f;
+  background: #fff1b8;
+  font-style: normal;
+}
+
+.colortelier-ecosystem-unit h4 {
+  margin: 0 0 10px;
+  color: #4b2f2f;
+  font-size: clamp(21px, 1.7vw, 28px);
+  line-height: 1.08;
+  word-break: keep-all;
+}
+
+.colortelier-ecosystem-unit p {
+  margin: 0;
+  color: #6d707c;
+  font-size: 13px;
+  line-height: 1.55;
+  word-break: keep-all;
+}
+
+.colortelier-ecosystem-unit article > strong {
+  width: fit-content;
+  border: 1px solid rgba(117, 47, 64, 0.13);
+  border-radius: 999px;
+  padding: 7px 10px;
+  color: #752f40;
+  background: #fffaf0;
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+.colortelier-ecosystem-connector {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  right: 0;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 1px solid rgba(117, 47, 64, 0.16);
+  border-radius: 50%;
+  color: #752f40;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(75, 47, 47, 0.1);
+  transform: translateY(-50%);
+}
+
+.colortelier-ecosystem-lanes {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  gap: 6px;
+}
+
+.colortelier-ecosystem-lanes span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+  border-radius: 10px;
+  padding: 10px 13px;
+  color: #4b2f2f;
+  background: #edf6fa;
+  font-size: 10px;
+}
+
+.colortelier-ecosystem-lanes span:nth-child(2) {
+  background: #f8e9ec;
+}
+
+.colortelier-ecosystem-lanes span:nth-child(3) {
+  background: #fff1b8;
+}
+
+.colortelier-ecosystem-lanes b {
+  font-size: inherit;
+  letter-spacing: 0.03em;
+}
+
+.colortelier-ecosystem-lanes small {
+  color: rgba(75, 47, 47, 0.55);
+  font-size: 9px;
+  font-weight: 850;
+}
+
 .colortelier-create-card {
   border-color: rgba(111, 47, 60, 0.26);
   box-shadow: 0 24px 58px rgba(75, 47, 47, 0.08);
@@ -1945,6 +2133,12 @@ html[lang="ko"] .landing-keywords > .kicker {
   margin-left: auto;
 }
 
+.colortelier-create-card .case-story-gallery figure:first-child,
+.colortelier-explore-card .case-story-gallery figure:first-child,
+.colortelier-brand-card .case-story-gallery figure:last-child {
+  grid-column: 1 / -1;
+}
+
 .colortelier-create-card .case-story-gallery img {
   width: 100%;
   height: auto;
@@ -1956,32 +2150,83 @@ html[lang="ko"] .landing-keywords > .kicker {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
+.colortelier-creator-card .case-feature-system {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.colortelier-insights-card .case-feature-system {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.colortelier-insights-card .case-story-copy {
+  max-width: 980px;
+}
+
+.colortelier-insights-card .case-feature-system article {
+  min-height: 210px;
+  border-color: rgba(111, 47, 60, 0.14);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.colortelier-insights-card .case-feature-system article:nth-child(2) {
+  background: #edf6fa;
+}
+
+.colortelier-insights-card .case-feature-system article:nth-child(3) {
+  background: #fffaf0;
+}
+
+.colortelier-insights-card .case-feature-system small {
+  color: #752f40;
+  background: #f6d9df;
+}
+
+.colortelier-insights-card .case-feature-system h4 {
+  color: #4b2f2f;
+  font-size: clamp(21px, 1.8vw, 28px);
+  line-height: 1.12;
+  word-break: keep-all;
+}
+
+.colortelier-insights-card .case-feature-system p {
+  font-size: 14px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
 .colortelier-ux-card .case-feature-system article,
-.colortelier-business-card .case-feature-system article {
+.colortelier-business-card .case-feature-system article,
+.colortelier-creator-card .case-feature-system article {
   border-color: rgba(111, 47, 60, 0.12);
   background: rgba(255, 255, 255, 0.9);
 }
 
 .colortelier-ux-card .case-feature-system small,
-.colortelier-business-card .case-feature-system small {
+.colortelier-business-card .case-feature-system small,
+.colortelier-creator-card .case-feature-system small {
   color: #752f40;
   background: #f6d9df;
 }
 
 .colortelier-ux-card .case-feature-system article:nth-child(even),
-.colortelier-business-card .case-feature-system article:nth-child(even) {
+.colortelier-business-card .case-feature-system article:nth-child(even),
+.colortelier-creator-card .case-feature-system article:nth-child(even) {
   background: #edf6fa;
 }
 
 .colortelier-brand-card .case-story-gallery img,
-.colortelier-business-card .case-story-gallery img {
+.colortelier-business-card .case-story-gallery img,
+.colortelier-creator-card .case-story-gallery img {
   width: 100%;
   height: auto;
   aspect-ratio: auto;
 }
 
 .colortelier-brand-card .case-story-gallery figure,
-.colortelier-business-card .case-story-gallery figure {
+.colortelier-business-card .case-story-gallery figure,
+.colortelier-creator-card .case-story-gallery figure {
   max-width: 1280px;
   margin-right: auto;
   margin-left: auto;
@@ -2010,15 +2255,55 @@ html[lang="ko"] .landing-keywords > .kicker {
   .colortelier-story-card .case-impact-lifecycle,
   .colortelier-journey-card .case-workflow-loop,
   .colortelier-ux-card .case-feature-system,
-  .colortelier-business-card .case-feature-system {
+  .colortelier-business-card .case-feature-system,
+  .colortelier-creator-card .case-feature-system {
     grid-template-columns: 1fr;
+  }
+
+  .colortelier-ecosystem-track,
+  .colortelier-ecosystem-lanes,
+  .colortelier-insights-card .case-feature-system {
+    grid-template-columns: 1fr;
+  }
+
+  .colortelier-ecosystem-map {
+    gap: 12px;
+  }
+
+  .colortelier-ecosystem-summary {
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    font-size: 8px;
+  }
+
+  .colortelier-ecosystem-unit article,
+  .colortelier-insights-card .case-feature-system article {
+    min-height: 0;
+  }
+
+  .colortelier-ecosystem-connector {
+    top: auto;
+    right: 50%;
+    bottom: -20px;
+    transform: translateX(50%) rotate(90deg);
+  }
+
+  .colortelier-ecosystem-lanes {
+    margin-top: 6px;
   }
 
   .colortelier-story-card .case-impact-lifecycle article,
   .colortelier-journey-card .case-workflow-loop article,
   .colortelier-ux-card .case-feature-system article,
-  .colortelier-business-card .case-feature-system article {
+  .colortelier-business-card .case-feature-system article,
+  .colortelier-creator-card .case-feature-system article {
     min-height: 0;
+  }
+
+  .colortelier-create-card .case-story-gallery figure:first-child,
+  .colortelier-explore-card .case-story-gallery figure:first-child,
+  .colortelier-brand-card .case-story-gallery figure:last-child {
+    grid-column: auto;
   }
 }
 

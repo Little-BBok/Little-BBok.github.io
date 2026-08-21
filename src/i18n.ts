@@ -1046,7 +1046,9 @@ const ko: Record<string, string> = {
     "문제 정의, 제품 구조, 반응형 인터랙션 설계, 비주얼 디렉션, 엔드투엔드 작동 프로토타입 전반의 Service Planning · UX/UI Direction · AI-assisted Prototyping을 수행했습니다.",
   "Built a responsive product system that moves beyond HEX extraction: photo context becomes an editable artifact, reusable design output, community archive, brand guide, and a foundation for digital goods and creator participation.":
     "HEX 추출을 넘어 사진의 맥락을 편집 가능한 결과물, 재사용 가능한 디자인 출력물, 커뮤니티 아카이브, 브랜드 가이드, 디지털 상품과 크리에이터 참여 기반으로 확장하는 반응형 제품 시스템을 구현했습니다.",
-  "Opportunity: Color Needs Context": "기회: 색에는 맥락이 필요하다",
+  "Built a responsive product system that moves beyond HEX extraction: photo context becomes an editable artifact, reusable design output, community archive, brand guide, and personally produced Lightroom XMP presets that validate a future creator marketplace.":
+    "HEX 추출을 넘어 사진의 맥락을 편집 가능한 결과물, 재사용 가능한 디자인 출력물, 커뮤니티 아카이브, 브랜드 가이드로 확장하고, 직접 제작한 Lightroom XMP 프리셋으로 향후 크리에이터 마켓플레이스의 가능성을 검증했습니다.",
+  "Problem Definition: Travel Color Is Hard to Reuse": "문제 정의: 사진 속 여행의 색을 다시 쓰기 어렵다",
   "Travel photos accumulate, but the light, color, and atmosphere of a place are difficult to retrieve and reuse. Existing color extractors usually stop at a palette and HEX values, leaving users to rebuild the story, format, and application on their own.":
     "여행 사진은 쌓이지만 장소의 빛·색·분위기를 다시 꺼내 활용하기는 어렵습니다. 기존 컬러 추출기는 팔레트와 HEX 값에서 멈추기 때문에 사용자가 스토리, 형식, 활용 방식을 다시 만들어야 합니다.",
   "01 · Accumulation": "01 · 축적",
@@ -1091,12 +1093,27 @@ const ko: Record<string, string> = {
   "Publish to the Board and Atlas, apply the palette to brands, or connect it to creator goods.":
     "게시판과 Atlas에 공개하고 팔레트를 브랜드에 적용하거나 크리에이터 상품으로 연결합니다.",
   "Community + commerce": "커뮤니티 + 커머스",
+  "Photo evidence": "여행 사진과 장소 맥락",
+  "Reusable color asset": "재사용 가능한 컬러 자산",
+  "Product value layers": "제품 가치 레이어",
+  "Capture context": "맥락 수집",
+  "Compose artifact": "결과물 구성",
+  "Extend value": "가치 확장",
   "Core Experience: Create Studio": "핵심 경험: Create Studio",
   "Create Studio keeps input, generated artifact, palette, and export actions in one workspace. A SAMPLE preview explains the destination before upload; the real result appears only after explicit generation, so example content and user output never blur together.":
     "Create Studio는 입력, 생성 결과물, 팔레트, 내보내기 동작을 하나의 작업 공간에 배치합니다. 업로드 전 SAMPLE 미리보기로 완성 형태를 설명하고 실제 결과는 명시적 생성 후에만 표시해 예시와 사용자 결과를 구분했습니다.",
   "Create Studio Working Interface": "Create Studio 작동 인터페이스",
   "The primary product screen combines photo and context input, a sticky editorial preview, palette details, image exports, social ratios, and design tokens without distorting the generated artifact.":
     "핵심 제품 화면에서 사진·맥락 입력, 고정형 에디토리얼 미리보기, 팔레트 정보, 이미지 저장, 소셜 비율, 디자인 토큰을 결과물 비율 왜곡 없이 함께 제공합니다.",
+  "Newspaper Color Record": "신문형 컬러 기록",
+  "A generated newspaper turns the selected photograph, palette, place, light, and story into a complete editorial record ready for export.":
+    "선택한 사진, 팔레트, 장소, 빛, 스토리를 저장 가능한 하나의 완성된 에디토리얼 기록으로 구성합니다.",
+  "Collage Travel Diary": "콜라주 여행 다이어리",
+  "Up to four travel photos and an eight-color palette are composed into a scrapbook-style diary while input and result stay visible together.":
+    "최대 네 장의 여행 사진과 8색 팔레트를 스크랩북형 다이어리로 구성하며 입력과 결과를 한 화면에서 함께 확인합니다.",
+  "Travel Loyalty Card": "트래블 로열티 카드",
+  "The same travel context can become a collectible loyalty card, memory pass, and reward coupon instead of ending as a one-off image export.":
+    "같은 여행 맥락을 일회성 이미지 저장으로 끝내지 않고 수집 가능한 로열티 카드, 메모리 패스, 리워드 쿠폰으로 확장합니다.",
   "UX Decisions for Trust and Momentum": "신뢰와 흐름을 위한 UX 의사결정",
   "The experience had to make automation legible without removing user agency. I designed state, fallback, and responsive behavior around the moments where users are most likely to hesitate or lose their work.":
     "자동화를 이해할 수 있게 만들면서도 사용자의 주도권은 유지해야 했습니다. 사용자가 망설이거나 작업을 잃기 쉬운 지점을 중심으로 상태, 대안 흐름, 반응형 동작을 설계했습니다.",
@@ -1122,6 +1139,9 @@ const ko: Record<string, string> = {
   "Explore & Community: Records Become Discovery": "탐색 & 커뮤니티: 기록이 발견으로",
   "The Atlas organizes colors by place and context, while the Color Board archives finished newspaper, collage, and loyalty-card outputs with their palettes. Personal records therefore become discoverable service assets rather than isolated exports.":
     "Atlas는 색을 장소와 맥락별로 정리하고 컬러 게시판은 완성된 신문·콜라주·로열티 카드와 팔레트를 함께 아카이빙합니다. 개인 기록은 고립된 출력물이 아니라 탐색 가능한 서비스 자산이 됩니다.",
+  "Contextual Palette Atlas": "맥락형 팔레트 Atlas",
+  "Named palettes connect a HEX value to city, time, mood, use case, and descriptive tags, making color records easier to retrieve and reuse.":
+    "이름이 붙은 팔레트가 HEX 값을 도시, 시간, 무드, 사용처, 설명 태그와 연결해 컬러 기록을 쉽게 다시 찾고 활용할 수 있게 합니다.",
   "Travel Color Atlas": "여행 컬러 Atlas",
   "Image-led place collections support discovery by city, atmosphere, and use, with a direct path to request a missing city or create a new record.":
     "이미지 중심 장소 컬렉션으로 도시, 분위기, 사용처를 탐색하고 없는 도시 요청 또는 새 기록 생성으로 바로 이어집니다.",
@@ -1134,9 +1154,39 @@ const ko: Record<string, string> = {
   "Paris Rose Application Guide": "Paris Rose 브랜드 적용 가이드",
   "A dusty rose and mauve palette drawn from Paris becomes the “window atelier.” logo system, signature mark, type hierarchy, and applied brand assets while the Eiffel Tower source image remains visible.":
     "파리에서 추출한 더스티 로즈·모브 팔레트를 에펠탑 원본 이미지와 함께 ‘window atelier.’ 로고 시스템, 시그니처 마크, 타이포 위계, 브랜드 응용 자산으로 확장했습니다.",
+  "Contrast & Pairing Check": "대비 & 컬러 조합 점검",
+  "The selected rose is tested against background and text colors, then expanded through complementary, analogous, and anchor combinations before application.":
+    "선택한 로즈 컬러를 배경색·텍스트색과 대비 점검하고, 적용 전에 보색·유사색·앵커 조합으로 확장합니다.",
+  "Applied Palette Builder": "활용 목적별 팔레트 빌더",
+  "Purpose-specific five-color systems translate one travel color into ready-to-use palettes for brand, beauty, and hospitality touchpoints.":
+    "여행지 색 하나를 브랜드, 뷰티, 호스피탈리티 접점에 바로 적용할 수 있는 목적별 5색 팔레트로 변환합니다.",
+  "Window Atelier Brand System": "Window Atelier 브랜드 시스템",
+  "Montmartre Rose becomes a complete visual system with logo variants, signature marks, typography, colorimetry, patterns, packaging, menus, and gift-note applications.":
+    "Montmartre Rose를 로고 변형, 시그니처 마크, 타이포그래피, 컬러 시스템, 패턴, 패키지, 메뉴, 기프트 노트까지 갖춘 완성형 비주얼 시스템으로 확장했습니다.",
+  "Creator Product Strategy: From My XMP Presets to a Platform":
+    "크리에이터 제품 전략: 직접 만든 XMP 프리셋에서 플랫폼까지",
+  "The first filters shown in Colortelier are Lightroom XMP presets I personally created and packaged as usable products. This gives the commerce model a concrete starting point; the next stage is to let creators register their own presets or color-led goods so Colortelier can grow from a curated shop into a creator platform.":
+    "Colortelier에서 처음 선보이는 필터는 제가 직접 만든 Lightroom XMP 프리셋을 실제 사용 가능한 상품으로 구성한 것입니다. 이를 커머스 모델의 구체적인 출발점으로 삼고, 다음 단계에는 크리에이터가 자신의 프리셋이나 컬러 기반 상품을 등록할 수 있게 해 큐레이션 숍에서 크리에이터 플랫폼으로 확장할 계획입니다.",
+  "Lightroom XMP Preset Gallery": "Lightroom XMP 프리셋 갤러리",
+  "Before-and-after previews make the effect of each personally authored XMP preset visible and connect saved color moods directly to product discovery.":
+    "직접 제작한 XMP 프리셋의 효과를 Before·After로 명확히 보여주고, 저장한 컬러 무드를 상품 탐색으로 바로 연결합니다.",
+  Proof: "검증",
+  "Personally Authored XMP Filters": "직접 제작한 XMP 필터",
+  "I created the initial Lightroom XMP presets myself, defining the visual tone and testing how a travel color archive can become a usable digital product.":
+    "초기 Lightroom XMP 프리셋을 직접 제작해 비주얼 톤을 정의하고 여행 컬러 아카이브가 사용 가능한 디지털 상품이 되는 방식을 검증했습니다.",
+  Productization: "상품화",
+  "From Color Mood to Downloadable Good": "컬러 무드에서 다운로드 상품으로",
+  "Before-and-after comparison, save, cart, and usage information turn an abstract color mood into a product users can evaluate and collect.":
+    "Before·After 비교, 저장, 장바구니, 사용 정보가 추상적인 컬러 무드를 사용자가 평가하고 소장할 수 있는 상품으로 전환합니다.",
+  Roadmap: "로드맵",
+  "Creator Registration & Marketplace": "크리에이터 등록 & 마켓플레이스",
+  "The planned expansion opens registration for creator-made presets and products, building a multi-seller platform rather than keeping the shop limited to my own catalog.":
+    "향후에는 크리에이터가 직접 만든 프리셋과 상품을 등록할 수 있게 해, 제 상품에 한정된 숍이 아닌 다중 판매자 플랫폼으로 확장할 계획입니다.",
   "Business Model: Value Grows With Use": "비즈니스 모델: 사용할수록 확장되는 가치",
   "The model starts with a free colorboard experience and expands only when users need richer ownership or repeated use: single digital goods, a travel pass, annual archive membership, and a creator marketplace for presets, templates, reports, and color products.":
     "무료 컬러보드 경험에서 시작해 더 깊은 소장과 반복 사용이 필요할 때 단건 디지털 상품, 여행 패스, 연간 아카이브 멤버십, 프리셋·템플릿·리포트·컬러 상품 크리에이터 마켓으로 확장합니다.",
+  "The model starts with a free colorboard experience, validates paid utility through my own XMP presets and digital goods, and expands only when users need richer ownership or repeated use: a travel pass, annual archive membership, and eventually a multi-creator marketplace.":
+    "무료 컬러보드 경험에서 시작해 제가 직접 만든 XMP 프리셋과 디지털 상품으로 유료 효용을 검증하고, 더 깊은 소장과 반복 사용이 필요할 때 여행 패스, 연간 아카이브 멤버십, 최종적으로 다중 크리에이터 마켓플레이스로 확장합니다.",
   "Shop & Creator Commerce": "Shop & 크리에이터 커머스",
   "The shop makes the value ladder visible through Travel Roll, Travel Color Report, Archive Plus Annual, and creator-made presets rather than relying on an abstract pricing diagram.":
     "추상적인 가격표 대신 Travel Roll, Travel Color Report, Archive Plus Annual, 크리에이터 프리셋을 통해 단계별 가치를 실제 상품으로 보여줍니다.",
@@ -1159,9 +1209,24 @@ const ko: Record<string, string> = {
   "Creator Market": "크리에이터 마켓",
   "Presets, templates, color reports, and digital products create a path from personal practice to creator commerce.":
     "프리셋, 템플릿, 컬러 리포트, 디지털 상품이 개인 작업을 크리에이터 커머스로 연결합니다.",
-  "Reflection: Prioritizing the Core Action": "회고: 핵심 행동을 선명하게 만들기",
-  "Designing a broad platform made one lesson clear: feature breadth is useful only when the path from photo to finished color record stays unmistakable. I repeatedly refined CTA hierarchy, state language, and responsive movement so Atlas, community, brand tools, and commerce extend the Create experience instead of competing with it.":
-    "기능 범위가 넓은 플랫폼을 설계하며 한 가지를 분명히 배웠습니다. 사진에서 완성된 컬러 기록까지의 경로가 선명할 때만 기능 확장이 의미가 있습니다. Atlas, 커뮤니티, 브랜드 도구, 커머스가 Create 경험과 경쟁하지 않고 확장하도록 CTA 위계, 상태 문구, 반응형 이동을 반복 조정했습니다.",
+  "The roadmap allows creators to register their own presets, templates, color reports, and products, extending the initial in-house catalog into a platform ecosystem.":
+    "크리에이터가 자신의 프리셋, 템플릿, 컬러 리포트, 상품을 등록할 수 있게 해 초기 자체 제작 카탈로그를 플랫폼 생태계로 확장하는 로드맵입니다.",
+  "Final Insights: Principles That Keep the Experience Coherent":
+    "최종 인사이트: 하나의 경험으로 연결하는 세 가지 원칙",
+  "The final product direction became clearer through three principles that connect photo interpretation, artifact creation, and future platform expansion.":
+    "사진 해석, 결과물 생성, 향후 플랫폼 확장을 하나의 경험으로 연결하는 세 가지 원칙으로 최종 방향을 정리했습니다.",
+  "Context layer": "맥락",
+  "Context Before Color": "색보다 먼저 맥락을 보존",
+  "A color becomes memorable and reusable only when place, time, light, and mood remain attached to it.":
+    "장소, 시간, 빛, 무드가 함께 남아 있을 때 색은 기억하고 다시 활용할 수 있는 자산이 됩니다.",
+  "Decision layer": "통제",
+  "User Approval After Automation": "자동화 뒤에는 사용자 승인",
+  "Automation should accelerate interpretation, while the user confirms metadata, color, format, and publication.":
+    "자동화는 해석을 빠르게 돕되 메타데이터, 색, 형식, 공개 여부는 사용자가 최종 결정합니다.",
+  "Experience layer": "집중",
+  "Core Experience Before Expansion": "확장보다 먼저 핵심 경험",
+  "Atlas, community, brand tools, and commerce create value only after the photo-to-artifact journey is unmistakable.":
+    "사진에서 완성 결과물까지의 경로가 선명해야 Atlas, 커뮤니티, 브랜드 도구, 커머스도 의미 있게 확장됩니다.",
   "Framed the gap between travel-photo accumulation and context-poor HEX extraction as an opportunity for a reusable color record.":
     "여행 사진의 축적과 맥락이 부족한 HEX 추출 사이의 간극을 재사용 가능한 컬러 기록의 기회로 정의했습니다.",
   "Designed the service architecture from upload, metadata estimation, manual correction, and template generation to export, archive, discovery, and commerce.":
@@ -1170,12 +1235,15 @@ const ko: Record<string, string> = {
     "샘플·빈 상태, 메타데이터 대안 입력, 데스크톱 고정 비교, 모바일 이동 안내를 위한 반응형 UX 의사결정을 구현했습니다.",
   "Connected the core Create Studio to Atlas, community, brand application, and a staged creator-commerce model without overstating the implemented scope.":
     "구현 범위를 과장하지 않고 핵심 Create Studio를 Atlas, 커뮤니티, 브랜드 적용, 단계형 크리에이터 커머스 모델에 연결했습니다.",
+  "Created the initial Lightroom XMP preset products myself and defined a staged path toward creator registration and a multi-seller marketplace.":
+    "초기 Lightroom XMP 프리셋 상품을 직접 제작하고, 크리에이터 등록과 다중 판매자 마켓플레이스로 이어지는 단계형 확장 경로를 설계했습니다.",
   "Service Planning": "서비스 기획",
   "UX/UI Direction": "UX/UI 디렉션",
   "AI-assisted Prototyping": "AI 보조 프로토타이핑",
   "Product Architecture": "제품 구조 설계",
   "Responsive UX": "반응형 UX",
   "Brand Application": "브랜드 적용",
+  "Creator Platform Strategy": "크리에이터 플랫폼 전략",
 
   "Began Project": "Began 프로젝트",
   "Dietary-accessible discovery service": "식이 제한 친화 맛집 탐색 서비스",

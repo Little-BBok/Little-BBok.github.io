@@ -269,6 +269,12 @@ const emphasisPhrases = [
   "실제 제품 경험",
   "네 단계",
   "우선순위 확인, 근거 기반 기회 탐색, 생성된 Task 관리, 대화 맥락을 활용한 실행 가능한 응답",
+  "Lightroom XMP presets I personally created",
+  "personally produced Lightroom XMP presets",
+  "제가 직접 만든 Lightroom XMP 프리셋",
+  "직접 제작한 Lightroom XMP 프리셋",
+  "creator marketplace",
+  "크리에이터 마켓플레이스",
 ].sort((a, b) => b.length - a.length);
 
 const emphasisPattern = new RegExp(
@@ -284,6 +290,10 @@ function EmphasizedText({ children }: { children: string }) {
 
 type FugudioFeatureItem = NonNullable<
   NonNullable<Project["sections"]>[number]["featureItems"]
+>[number];
+
+type ProjectWorkflowItem = NonNullable<
+  NonNullable<Project["sections"]>[number]["workflowItems"]
 >[number];
 
 function FugudioSystemMap({
@@ -358,6 +368,59 @@ function FugudioSystemMap({
             </div>
           </section>
         ))}
+      </div>
+    </div>
+  );
+}
+
+function ColortelierEcosystemMap({
+  items,
+  t,
+}: {
+  items: ProjectWorkflowItem[];
+  t: Translator;
+}) {
+  const icons = [
+    <Upload size={20} aria-hidden="true" />,
+    <Sparkles size={20} aria-hidden="true" />,
+    <Check size={20} aria-hidden="true" />,
+    <FileText size={20} aria-hidden="true" />,
+    <FolderKanban size={20} aria-hidden="true" />,
+  ];
+
+  return (
+    <div className="colortelier-ecosystem-map">
+      <div className="colortelier-ecosystem-summary" aria-hidden="true">
+        <span>{t("Photo evidence")}</span>
+        <i />
+        <strong>{t("Reusable color asset")}</strong>
+      </div>
+      <div className="colortelier-ecosystem-track">
+        {items.map((item, index) => (
+          <div className="colortelier-ecosystem-unit" key={item.step}>
+            <article>
+              <header>
+                <span>{item.step}</span>
+                <i>{icons[index]}</i>
+              </header>
+              <div>
+                <h4>{t(item.title)}</h4>
+                <p>{t(item.text)}</p>
+              </div>
+              <strong>{t(item.output)}</strong>
+            </article>
+            {index < items.length - 1 ? (
+              <span className="colortelier-ecosystem-connector" aria-hidden="true">
+                <ChevronRight size={16} />
+              </span>
+            ) : null}
+          </div>
+        ))}
+      </div>
+      <div className="colortelier-ecosystem-lanes" aria-label={t("Product value layers")}>
+        <span><b>{t("Capture context")}</b><small>01—02</small></span>
+        <span><b>{t("Compose artifact")}</b><small>03—04</small></span>
+        <span><b>{t("Extend value")}</b><small>05</small></span>
       </div>
     </div>
   );
@@ -1113,6 +1176,11 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                 project.id === "colortelier" ? "colortelier-story-card" : ""
               } ${
                 project.id === "colortelier" &&
+                section.title === "Problem Definition: Travel Color Is Hard to Reuse"
+                  ? "colortelier-opportunity-card"
+                  : ""
+              } ${
+                project.id === "colortelier" &&
                 section.title === "Product Ecosystem: From Photo to Reusable Asset"
                   ? "colortelier-journey-card"
                   : ""
@@ -1139,6 +1207,16 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                 project.id === "colortelier" &&
                 section.title === "Business Model: Value Grows With Use"
                   ? "colortelier-business-card"
+                  : ""
+              } ${
+                project.id === "colortelier" &&
+                section.title === "Creator Product Strategy: From My XMP Presets to a Platform"
+                  ? "colortelier-creator-card"
+                  : ""
+              } ${
+                project.id === "colortelier" &&
+                section.title === "Final Insights: Principles That Keep the Experience Coherent"
+                  ? "colortelier-insights-card"
                   : ""
               } ${
                 project.id === "atember" && section.title === "Live Demo: Context to Execution"
@@ -1206,26 +1284,31 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                 </div>
               ) : null}
               {section.layout === "workflow" && section.workflowItems?.length ? (
-                <div className="case-workflow-loop">
-                  {section.workflowItems.map((item, index) => (
-                    <article key={item.step}>
-                      <div className="case-workflow-heading">
-                        <span>{item.step}</span>
-                        <i aria-hidden="true" />
-                      </div>
-                      <h4>{t(item.title)}</h4>
-                      <p>{t(item.text)}</p>
-                      <strong>{t(item.output)}</strong>
-                      {index < section.workflowItems!.length - 1 ? (
-                        <b aria-hidden="true">→</b>
-                      ) : (
-                        <b className="case-workflow-return" aria-hidden="true">
-                          ↻
-                        </b>
-                      )}
-                    </article>
-                  ))}
-                </div>
+                project.id === "colortelier" &&
+                section.title === "Product Ecosystem: From Photo to Reusable Asset" ? (
+                  <ColortelierEcosystemMap items={section.workflowItems} t={t} />
+                ) : (
+                  <div className="case-workflow-loop">
+                    {section.workflowItems.map((item, index) => (
+                      <article key={item.step}>
+                        <div className="case-workflow-heading">
+                          <span>{item.step}</span>
+                          <i aria-hidden="true" />
+                        </div>
+                        <h4>{t(item.title)}</h4>
+                        <p>{t(item.text)}</p>
+                        <strong>{t(item.output)}</strong>
+                        {index < section.workflowItems!.length - 1 ? (
+                          <b aria-hidden="true">→</b>
+                        ) : (
+                          <b className="case-workflow-return" aria-hidden="true">
+                            ↻
+                          </b>
+                        )}
+                      </article>
+                    ))}
+                  </div>
+                )
               ) : null}
               {section.layout === "feature-system" && section.featureItems?.length ? (
                 project.id === "fugudio" &&
@@ -1280,13 +1363,13 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                             alt={`${t(project.title)} ${t(item.title)}`}
                             loading={
                               project.id === "colortelier"
-                                ? "eager"
+                                ? "lazy"
                                 : section.layout === "sequence" || itemIndex > 3
                                   ? "lazy"
                                   : "eager"
                             }
-                            decoding={project.id === "colortelier" ? "sync" : "async"}
-                            fetchPriority={project.id === "colortelier" ? "high" : "auto"}
+                            decoding="async"
+                            fetchPriority="auto"
                           />
                           {section.layout !== "sequence" ? (
                             <figcaption>

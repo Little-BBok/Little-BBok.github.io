@@ -1161,12 +1161,12 @@ export const projects: Project[] = [
     role:
       "Service Planning · UX/UI Direction · AI-assisted Prototyping across problem framing, product architecture, responsive interaction design, visual direction, and the end-to-end working prototype.",
     outcome:
-      "Built a responsive product system that moves beyond HEX extraction: photo context becomes an editable artifact, reusable design output, community archive, brand guide, and a foundation for digital goods and creator participation.",
+      "Built a responsive product system that moves beyond HEX extraction: photo context becomes an editable artifact, reusable design output, community archive, brand guide, and personally produced Lightroom XMP presets that validate a future creator marketplace.",
     accent: "#d7e8f1",
-    image: "/projects/colortelier/travel-color-home.jpg",
+    image: "/projects/colortelier/paris-hero.jpg",
     sections: [
       {
-        title: "Opportunity: Color Needs Context",
+        title: "Problem Definition: Travel Color Is Hard to Reuse",
         text:
           "Travel photos accumulate, but the light, color, and atmosphere of a place are difficult to retrieve and reuse. Existing color extractors usually stop at a palette and HEX values, leaving users to rebuild the story, format, and application on their own.",
         layout: "impact",
@@ -1242,9 +1242,19 @@ export const projects: Project[] = [
         layout: "wide",
         gallery: [
           {
-            title: "Create Studio Working Interface",
-            image: "/projects/colortelier/create-studio.jpg",
-            note: "The primary product screen combines photo and context input, a sticky editorial preview, palette details, image exports, social ratios, and design tokens without distorting the generated artifact.",
+            title: "Newspaper Color Record",
+            image: "/projects/colortelier/create-newspaper.jpg",
+            note: "A generated newspaper turns the selected photograph, palette, place, light, and story into a complete editorial record ready for export.",
+          },
+          {
+            title: "Collage Travel Diary",
+            image: "/projects/colortelier/create-collage-diary.jpg",
+            note: "Up to four travel photos and an eight-color palette are composed into a scrapbook-style diary while input and result stay visible together.",
+          },
+          {
+            title: "Travel Loyalty Card",
+            image: "/projects/colortelier/create-loyalty-card.jpg",
+            note: "The same travel context can become a collectible loyalty card, memory pass, and reward coupon instead of ending as a one-off image export.",
           },
         ],
       },
@@ -1287,6 +1297,11 @@ export const projects: Project[] = [
           "The Atlas organizes colors by place and context, while the Color Board archives finished newspaper, collage, and loyalty-card outputs with their palettes. Personal records therefore become discoverable service assets rather than isolated exports.",
         gallery: [
           {
+            title: "Contextual Palette Atlas",
+            image: "/projects/colortelier/contextual-color-atlas.jpg",
+            note: "Named palettes connect a HEX value to city, time, mood, use case, and descriptive tags, making color records easier to retrieve and reuse.",
+          },
+          {
             title: "Travel Color Atlas",
             image: "/projects/colortelier/travel-color-atlas.jpg",
             note: "Image-led place collections support discovery by city, atmosphere, and use, with a direct path to request a missing city or create a new record.",
@@ -1305,16 +1320,56 @@ export const projects: Project[] = [
         layout: "wide",
         gallery: [
           {
-            title: "Paris Rose Application Guide",
-            image: "/projects/colortelier/brand-application-guide.jpg",
-            note: "A dusty rose and mauve palette drawn from Paris becomes the “window atelier.” logo system, signature mark, type hierarchy, and applied brand assets while the Eiffel Tower source image remains visible.",
+            title: "Contrast & Pairing Check",
+            image: "/projects/colortelier/brand-contrast-check.jpg",
+            note: "The selected rose is tested against background and text colors, then expanded through complementary, analogous, and anchor combinations before application.",
+          },
+          {
+            title: "Applied Palette Builder",
+            image: "/projects/colortelier/applied-palette-builder.jpg",
+            note: "Purpose-specific five-color systems translate one travel color into ready-to-use palettes for brand, beauty, and hospitality touchpoints.",
+          },
+          {
+            title: "Window Atelier Brand System",
+            image: "/projects/colortelier/window-atelier-brand-system.jpg",
+            note: "Montmartre Rose becomes a complete visual system with logo variants, signature marks, typography, colorimetry, patterns, packaging, menus, and gift-note applications.",
+          },
+        ],
+      },
+      {
+        title: "Creator Product Strategy: From My XMP Presets to a Platform",
+        text:
+          "The first filters shown in Colortelier are Lightroom XMP presets I personally created and packaged as usable products. This gives the commerce model a concrete starting point; the next stage is to let creators register their own presets or color-led goods so Colortelier can grow from a curated shop into a creator platform.",
+        layout: "feature-system",
+        gallery: [
+          {
+            title: "Lightroom XMP Preset Gallery",
+            image: "/projects/colortelier/lightroom-xmp-preset-market.jpg",
+            note: "Before-and-after previews make the effect of each personally authored XMP preset visible and connect saved color moods directly to product discovery.",
+          },
+        ],
+        featureItems: [
+          {
+            group: "Proof",
+            title: "Personally Authored XMP Filters",
+            text: "I created the initial Lightroom XMP presets myself, defining the visual tone and testing how a travel color archive can become a usable digital product.",
+          },
+          {
+            group: "Productization",
+            title: "From Color Mood to Downloadable Good",
+            text: "Before-and-after comparison, save, cart, and usage information turn an abstract color mood into a product users can evaluate and collect.",
+          },
+          {
+            group: "Roadmap",
+            title: "Creator Registration & Marketplace",
+            text: "The planned expansion opens registration for creator-made presets and products, building a multi-seller platform rather than keeping the shop limited to my own catalog.",
           },
         ],
       },
       {
         title: "Business Model: Value Grows With Use",
         text:
-          "The model starts with a free colorboard experience and expands only when users need richer ownership or repeated use: single digital goods, a travel pass, annual archive membership, and a creator marketplace for presets, templates, reports, and color products.",
+          "The model starts with a free colorboard experience, validates paid utility through my own XMP presets and digital goods, and expands only when users need richer ownership or repeated use: a travel pass, annual archive membership, and eventually a multi-creator marketplace.",
         layout: "feature-system",
         gallery: [
           {
@@ -1347,14 +1402,32 @@ export const projects: Project[] = [
           {
             group: "Ecosystem",
             title: "Creator Market",
-            text: "Presets, templates, color reports, and digital products create a path from personal practice to creator commerce.",
+            text: "The roadmap allows creators to register their own presets, templates, color reports, and products, extending the initial in-house catalog into a platform ecosystem.",
           },
         ],
       },
       {
-        title: "Reflection: Prioritizing the Core Action",
+        title: "Final Insights: Principles That Keep the Experience Coherent",
         text:
-          "Designing a broad platform made one lesson clear: feature breadth is useful only when the path from photo to finished color record stays unmistakable. I repeatedly refined CTA hierarchy, state language, and responsive movement so Atlas, community, brand tools, and commerce extend the Create experience instead of competing with it.",
+          "The final product direction became clearer through three principles that connect photo interpretation, artifact creation, and future platform expansion.",
+        layout: "feature-system",
+        featureItems: [
+          {
+            group: "Context layer",
+            title: "Context Before Color",
+            text: "A color becomes memorable and reusable only when place, time, light, and mood remain attached to it.",
+          },
+          {
+            group: "Decision layer",
+            title: "User Approval After Automation",
+            text: "Automation should accelerate interpretation, while the user confirms metadata, color, format, and publication.",
+          },
+          {
+            group: "Experience layer",
+            title: "Core Experience Before Expansion",
+            text: "Atlas, community, brand tools, and commerce create value only after the photo-to-artifact journey is unmistakable.",
+          },
+        ],
       },
     ],
     details: [
@@ -1362,6 +1435,7 @@ export const projects: Project[] = [
       "Designed the service architecture from upload, metadata estimation, manual correction, and template generation to export, archive, discovery, and commerce.",
       "Built responsive UX decisions for sample and empty states, metadata fallback, sticky desktop comparison, and guided mobile movement.",
       "Connected the core Create Studio to Atlas, community, brand application, and a staged creator-commerce model without overstating the implemented scope.",
+      "Created the initial Lightroom XMP preset products myself and defined a staged path toward creator registration and a multi-seller marketplace.",
     ],
     capabilities: [
       "Service Planning",
@@ -1371,6 +1445,7 @@ export const projects: Project[] = [
       "Responsive UX",
       "Brand Application",
       "Business Model",
+      "Creator Platform Strategy",
     ],
   },
   {
