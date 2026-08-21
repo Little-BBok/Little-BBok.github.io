@@ -2145,6 +2145,13 @@ html[lang="ko"] .landing-keywords > .kicker {
   aspect-ratio: auto;
 }
 
+.colortelier-explore-card .case-story-gallery figure:first-child img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: initial;
+}
+
 .colortelier-ux-card .case-feature-system,
 .colortelier-business-card .case-feature-system {
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -2685,6 +2692,18 @@ html[lang="ko"] .landing-keywords > .kicker {
 
 .fugudio-guidance-gallery .fugudio-guidance-agent {
   grid-column: span 4;
+  grid-template-rows: 320px auto;
+}
+
+.fugudio-guidance-gallery .fugudio-guidance-agent > div {
+  height: 320px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.fugudio-guidance-gallery .fugudio-guidance-agent > div img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .fugudio-guidance-gallery .fugudio-guidance-alerts {
@@ -3708,7 +3727,7 @@ html[lang="ko"] .landing-keywords > .kicker {
 
 .case-performance-groups {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 12px;
   padding: 0 clamp(22px, 4vw, 42px) clamp(22px, 4vw, 42px);
 }
@@ -3943,9 +3962,86 @@ html[lang="ko"] .landing-keywords > .kicker {
   background: #f7f7f5;
 }
 
-.case-story-gallery-performance {
+.case-story-gallery-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.alus-privacy-mask {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  border-radius: 48% 52% 46% 54%;
+  background: rgb(250 246 247 / 12%);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 0 18px 10px rgb(250 246 247 / 16%);
+  pointer-events: none;
+}
+
+.alus-privacy-live .mask-1 {
+  left: 10.5%;
+  top: 84%;
+  width: 8%;
+  height: 17%;
+}
+
+.alus-privacy-live .mask-2 {
+  left: 53.5%;
+  top: 83%;
+  width: 12%;
+  height: 19%;
+}
+
+.alus-privacy-follower-evidence .alus-privacy-mask {
+  border-radius: 50%;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.alus-privacy-follower-evidence .mask-follower-1 {
+  left: 3%;
+  top: 31.5%;
+  width: 62%;
+  height: 6%;
+  border-radius: 999px;
+}
+
+.case-story-card-instagram-evidence .case-story-gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  column-count: auto;
+}
+
+.case-story-card-instagram-evidence .case-story-gallery figure {
+  margin: 0;
+}
+
+.alus-privacy-blog .mask-1 {
+  left: 10%;
+  top: 10%;
+  width: 12%;
+  height: 35%;
+}
+
+.alus-privacy-blog .mask-2 {
+  left: 51.5%;
+  top: 10%;
+  width: 13%;
+  height: 30%;
+}
+
+.alus-privacy-blog .mask-3 {
+  left: 26%;
+  top: 54%;
+  width: 11%;
+  height: 37%;
+}
+
+.case-story-gallery-performance {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   column-count: auto;
 }
@@ -4964,6 +5060,10 @@ html[lang="ko"] .landing-keywords > .kicker {
     grid-template-columns: 1fr;
   }
 
+  .case-story-card-instagram-evidence .case-story-gallery {
+    grid-template-columns: 1fr;
+  }
+
   .case-impact-heading,
   .case-impact-plot article {
     grid-template-columns: 1fr;
@@ -5386,6 +5486,10 @@ html[lang="ko"] .landing-keywords > .kicker {
 
   .fugudio-guidance-gallery .fugudio-guidance-alerts {
     grid-template-rows: 320px auto;
+  }
+
+  .fugudio-guidance-gallery .fugudio-guidance-agent > div {
+    height: 300px;
   }
 
   .fugudio-brand-system {

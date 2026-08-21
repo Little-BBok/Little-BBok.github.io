@@ -200,10 +200,10 @@ const emphasisPhrases = [
   "one-third of a typical vendor quote",
   "planned and produced",
   "connected editorial consistency with campaign response and commerce entry points",
-  "followers from 10 to 1,700",
-  "doubled official e-commerce traffic",
+  "followers from 10 to 1,707",
+  "generated 852 comments and 732 likes on a launch quiz event",
   "reduced manufacturing unit cost by 24%",
-  "21,000+ short-form content views",
+  "334,000 views during the measured 30-day period",
   "content context break",
   "full 0→1 process",
   "problem definition and product strategy",
@@ -243,10 +243,10 @@ const emphasisPhrases = [
   "약 3분의 1 수준",
   "채널 콘텐츠를 기획하고 제작",
   "캠페인 반응 및 커머스 진입점과 연결",
-  "팔로워 10명에서 1,700명 성장",
-  "공식 이커머스 트래픽 2배 성장",
+  "팔로워 10명에서 1,707명 성장",
+  "론칭 퀴즈 이벤트 댓글 852건과 좋아요 732건",
   "제조 단가 24% 절감",
-  "숏폼 콘텐츠 2.1만+ 조회수",
+  "측정된 30일간 조회수 33.4만회",
   "콘텐츠 맥락이 끊기는 문제",
   "0→1 전 과정을 직접 수행했습니다",
   "문제 정의와 제품 전략",
@@ -1222,6 +1222,11 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                 project.id === "atember" && section.title === "Live Demo: Context to Execution"
                   ? "atember-product-gallery"
                   : ""
+              } ${
+                project.id === "alus-healthcare" &&
+                section.title === "Instagram Brand System & Audience Response"
+                  ? "case-story-card-instagram-evidence"
+                  : ""
               } ${section.gallery?.length ? "case-story-card-gallery" : ""} ${
                 section.layout === "sequence" ? "case-story-card-sequence" : ""
               } ${
@@ -1358,19 +1363,56 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                       ))
                       .map((item, itemIndex) => (
                         <figure key={item.title}>
-                          <img
-                            src={item.image}
-                            alt={`${t(project.title)} ${t(item.title)}`}
-                            loading={
-                              project.id === "colortelier"
-                                ? "lazy"
-                                : section.layout === "sequence" || itemIndex > 3
-                                  ? "lazy"
-                                  : "eager"
-                            }
-                            decoding="async"
-                            fetchPriority="auto"
-                          />
+                          <div
+                            className={`case-story-gallery-media ${
+                              project.id === "alus-healthcare" &&
+                              item.title === "Live Homepage & Campaign Entry"
+                                ? "alus-privacy-live"
+                                : project.id === "alus-healthcare" &&
+                                    item.title === "Blog Review Experience"
+                                  ? "alus-privacy-blog"
+                                  : project.id === "alus-healthcare" &&
+                                      item.title === "Verified 1,707 Follower Milestone"
+                                    ? "alus-privacy-follower-evidence"
+                                    : ""
+                            }`}
+                          >
+                              <img
+                                src={item.image}
+                                alt={`${t(project.title)} ${t(item.title)}`}
+                                loading={
+                                  project.id === "colortelier"
+                                    ? "lazy"
+                                    : section.layout === "sequence" || itemIndex > 3
+                                      ? "lazy"
+                                      : "eager"
+                                }
+                                decoding="async"
+                                fetchPriority="auto"
+                              />
+                              {project.id === "alus-healthcare" &&
+                              item.title === "Live Homepage & Campaign Entry" ? (
+                                <>
+                                  <i className="alus-privacy-mask mask-1" aria-hidden="true" />
+                                  <i className="alus-privacy-mask mask-2" aria-hidden="true" />
+                                </>
+                              ) : null}
+                              {project.id === "alus-healthcare" &&
+                              item.title === "Verified 1,707 Follower Milestone" ? (
+                                <i
+                                  className="alus-privacy-mask mask-follower-1"
+                                  aria-hidden="true"
+                                />
+                              ) : null}
+                              {project.id === "alus-healthcare" &&
+                              item.title === "Blog Review Experience" ? (
+                                <>
+                                  <i className="alus-privacy-mask mask-1" aria-hidden="true" />
+                                  <i className="alus-privacy-mask mask-2" aria-hidden="true" />
+                                  <i className="alus-privacy-mask mask-3" aria-hidden="true" />
+                                </>
+                              ) : null}
+                          </div>
                           {section.layout !== "sequence" ? (
                             <figcaption>
                               <strong>{t(item.title)}</strong>

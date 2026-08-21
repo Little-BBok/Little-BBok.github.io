@@ -224,9 +224,9 @@ export const experiences: Experience[] = [
       "Developed and launched POWAPOWA, a wellness and beauty brand targeting women in their 20s and 30s, attracting inbound partnership proposals from Marriott Moxy Hotel and Qoo10 Japan.",
       "Led official e-commerce store IA, wireframes, and functional prototype development, then planned a custom-coded real-time influencer review section on the product page.",
       "Sourced manufacturing partners, compared quotes, negotiated pricing, and managed production and delivery for full-package and detailed product package manufacturing, reducing unit production costs by 24% through a new manufacturing partner.",
-      "Revitalized a dormant social media channel, growing followers from 10 to 1,700.",
+      "Revitalized a dormant social media channel, growing followers from 10 to 1,707.",
       "Produced short-form content inspired by the product's macaron design, achieving 21,000+ views while the Instagram channel recorded 334,000+ views during the measured period.",
-      "Led 10 influencer collaborations, doubled official e-commerce website traffic, and secured 48 UGC pieces from 11 supporters.",
+      "Led 10 influencer collaborations, secured 48 UGC pieces from 11 supporters, and generated 852 comments and 732 likes on a launch quiz event.",
       "Integrated Channel Talk CRM to analyze customer behavior and improve the purchase journey.",
     ],
   },
@@ -312,7 +312,7 @@ export const projects: Project[] = [
     role:
       "Brand Manager leading product planning, brand strategy, product color and package planning, product detail page planning, e-commerce UX, photoshoot planning and direction, social media content, influencer marketing, supporter program, CRM optimization, and manufacturing and vendor coordination.",
     outcome:
-      "Grew Instagram followers from 10 to 1,700, led 10 influencer collaborations, secured 48 UGC pieces from 11 supporters, doubled official e-commerce traffic, reduced manufacturing unit cost by 24%, achieved 21,000+ short-form content views, and attracted inbound partnership proposals including Marriott Moxy Hotel and Qoo10 Japan.",
+      "Grew Instagram followers from 10 to 1,707, led 10 influencer collaborations, secured 48 UGC pieces from 11 supporters, generated 852 comments and 732 likes on a launch quiz event, reduced manufacturing unit cost by 24%, reached 334,000 views during the measured 30-day period, and attracted inbound partnership proposals including Marriott Moxy Hotel and Qoo10 Japan.",
     accent: "#8d93cb",
     image: "/projects/alus/full-package-launch-visual.jpg",
     metrics: [
@@ -320,16 +320,16 @@ export const projects: Project[] = [
         value: "170×",
         label: "Audience Growth",
         context: "Instagram followers",
-        baseline: "10 → 1,700",
+        baseline: "10 → 1,707",
         baselineRatio: 2,
         resultRatio: 100,
       },
       {
-        value: "2×",
-        label: "Commerce Traffic",
-        context: "Official store traffic",
-        baseline: "1.0× → 2.0×",
-        baselineRatio: 50,
+        value: "852",
+        label: "Event Comments",
+        context: "Launch quiz event",
+        baseline: "732 likes · 20 reposts",
+        baselineRatio: 0,
         resultRatio: 100,
       },
       {
@@ -341,10 +341,10 @@ export const projects: Project[] = [
         resultRatio: 76,
       },
       {
-        value: "21K+",
-        label: "Content Reach",
-        context: "Short-form content views",
-        baseline: "Launch campaign total",
+        value: "334K",
+        label: "Channel Views",
+        context: "30-day professional dashboard",
+        baseline: "Aug 8 – Sep 6",
         baselineRatio: 0,
         resultRatio: 100,
       },
@@ -392,6 +392,12 @@ export const projects: Project[] = [
               "Redacted evidence of an inbound proposal from Moxy Seoul Insadong outlining pop-up and guest-room package collaboration options.",
           },
           {
+            title: "Moxy Seoul Inbound Message",
+            image: "/projects/alus/instagram-evidence/moxy-inbound-message-cropped.jpg",
+            note:
+              "Original business-account message proposing a POWAPOWA pop-up and guest-room package collaboration at Moxy Seoul Insadong.",
+          },
+          {
             title: "Qoo10 Japan Entry Proposal",
             image: "/projects/alus/partnerships/qoo10-entry-proposal.webp",
             note:
@@ -412,16 +418,10 @@ export const projects: Project[] = [
               "Working board documenting the storefront hierarchy, category alternatives, welcome-deal entry, review architecture, and customer-support flow before implementation.",
           },
           {
-            title: "Official Store Mobile Experience",
-            image: "/projects/alus/store/mobile-store-clean.png",
-            note:
-              "Mobile storefront showing how campaign visuals, product discovery, and purchase entry points were connected into one commerce experience. The time-sensitive points amount is blurred.",
-          },
-          {
             title: "Live Homepage & Campaign Entry",
-            image: "/projects/alus/store/live-homepage-mosaic.png",
+            image: "/projects/alus/store/live-homepage-blurred.png",
             note:
-              "Launched homepage connecting the brand identity, campaign offer, product discovery, review content, and support touchpoints. Customer faces are mosaicked and time-sensitive promotional figures are blurred.",
+              "Launched homepage connecting the brand identity, campaign offer, product discovery, review content, and support touchpoints. Customer faces and time-sensitive promotional figures are softly blurred.",
           },
           {
             title: "Product Page Purchase UX",
@@ -555,9 +555,35 @@ export const projects: Project[] = [
         ],
       },
       {
+        title: "Instagram Brand System & Audience Response",
+        text:
+          "I rebuilt a dormant Instagram account as a coherent brand channel rather than a collection of isolated posts. A repeatable visual system connected product education, daily-routine storytelling, launch content, and participation campaigns; the same system grew the account from 10 to 1,707 followers and turned the launch quiz into 852 comments, 732 likes, and 20 reposts on the captured post.",
+        layout: "gallery",
+        gallery: [
+          {
+            title: "Instagram Visual System",
+            image: "/projects/alus/instagram-evidence/instagram-visual-system-cropped.jpg",
+            note:
+              "The live feed shows a recognizable system spanning product demonstrations, routine education, campaign content, and launch storytelling.",
+          },
+          {
+            title: "Verified 1,707 Follower Milestone",
+            image: "/projects/alus/instagram-evidence/follower-milestone-1707-cropped.jpg",
+            note:
+              "Original profile capture documenting 1,707 followers after rebuilding the channel from an initial audience of 10.",
+          },
+          {
+            title: "Quiz-event Audience Response",
+            image: "/projects/alus/instagram-evidence/quiz-event-response-cropped.jpg",
+            note:
+              "The launch naming quiz recorded 852 comments, 732 likes, and 20 reposts, showing that the visual system could convert attention into active participation.",
+          },
+        ],
+      },
+      {
         title: "Growth Performance & Evidence",
         text:
-          "I connected content production to a measurable growth system, using native Instagram evidence to track awareness, response, follower acquisition, paid traffic, and participation. The figures below preserve the original reporting context: a 30-day professional dashboard, a website-visit campaign, and a high-participation quiz event.",
+          "I connected content production to a measurable growth system, using native Instagram evidence to track awareness, response, follower acquisition, and participation. The figures below preserve the original reporting context: a 30-day professional dashboard and the captured launch quiz event.",
         layout: "performance",
         performanceGroups: [
           {
@@ -572,24 +598,13 @@ export const projects: Project[] = [
             ],
           },
           {
-            eyebrow: "02 · Paid conversion",
-            title: "Reach moved into store visits",
-            note: "Website-visit campaign · native ad insights",
-            metrics: [
-              { value: "14,711", label: "Ad views", ratio: 100 },
-              { value: "11,099", label: "Reach", ratio: 75 },
-              { value: "647", label: "Website visits", ratio: 44 },
-            ],
-          },
-          {
-            eyebrow: "03 · Participation",
+            eyebrow: "02 · Participation",
             title: "Campaign reach became active response",
             note: "Quiz event · post insights",
             metrics: [
-              { value: "863", label: "Comments", ratio: 100 },
-              { value: "745", label: "Likes", ratio: 86 },
-              { value: "293", label: "Shares", ratio: 56 },
-              { value: "20", label: "Reposts", ratio: 28 },
+              { value: "852", label: "Comments", ratio: 100 },
+              { value: "732", label: "Likes", ratio: 86 },
+              { value: "20", label: "Reposts", ratio: 34 },
             ],
           },
         ],
@@ -601,16 +616,10 @@ export const projects: Project[] = [
               "Native channel evidence recording 334K views, 3.1K interactions, 686 new followers, and 74 published pieces during the measured period.",
           },
           {
-            title: "Website-visit Ad Insights",
-            image: "/projects/alus/performance/ad-insights-clean.png",
-            note:
-              "Paid campaign evidence recording 14,711 views, 11,099 reach, and 647 website visits, with saves, reactions, and shares retained for context.",
-          },
-          {
             title: "Quiz-event Participation",
-            image: "/projects/alus/content/participation-campaign-clean.png",
+            image: "/projects/alus/instagram-evidence/quiz-event-response-cropped.jpg",
             note:
-              "The participation campaign recorded 745 likes, 863 comments, 20 reposts, and 293 shares on the captured post.",
+              "The captured launch quiz recorded 732 likes, 852 comments, and 20 reposts.",
           },
         ],
       },
@@ -639,14 +648,14 @@ export const projects: Project[] = [
             title: "Commerce & Content",
             text:
               "Planned the detail page, official-store IA, purchase journey, photoshoot, launch assets, and review experience as one conversion narrative.",
-            proof: "Official-store traffic 2×",
+            proof: "852 comments · 732 likes",
           },
           {
             step: "04 · Grow",
             title: "Creator Growth Engine",
             text:
               "Built a repeatable acquisition loop through social content, influencer collaboration, POWAS missions, and creator-led proof instead of isolated campaigns.",
-            proof: "10 → 1,700 followers · 48 UGC",
+            proof: "10 → 1,707 followers · 48 UGC",
           },
           {
             step: "05 · Learn",
@@ -660,7 +669,7 @@ export const projects: Project[] = [
             title: "Business & Partnerships",
             text:
               "Turned a coherent early-market presence into measurable reach, operational efficiency, and inbound collaboration interest from hospitality and Japanese commerce partners.",
-            proof: "21K+ views · 2 inbound proposals",
+            proof: "334K views · 2 inbound proposals",
           },
         ],
       },
@@ -1154,7 +1163,7 @@ export const projects: Project[] = [
     id: "colortelier",
     title: "Colortelier",
     eyebrow: "Travel Color Archive & Creator Commerce",
-    category: "Product & UX",
+    category: "Brand & Growth",
     tagline: "One photo, translated into a color record of place.",
     summary:
       "Colortelier turns a travel photo into an editorial colorboard that preserves the light, color, place, and atmosphere behind it—then connects that record to sharing, brand application, personal archiving, and creator commerce.",
