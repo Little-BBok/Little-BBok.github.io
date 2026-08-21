@@ -1420,6 +1420,7 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                               {project.id === "alus-healthcare" &&
                               item.title === "Blog Review Experience" ? (
                                 <>
+                                  <i className="alus-privacy-mask mask-1" aria-hidden="true" />
                                   <i className="alus-privacy-mask mask-2" aria-hidden="true" />
                                   <i className="alus-privacy-mask mask-3" aria-hidden="true" />
                                 </>

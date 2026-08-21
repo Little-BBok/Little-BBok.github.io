@@ -3972,10 +3972,10 @@ html[lang="ko"] .landing-keywords > .kicker {
   z-index: 2;
   display: block;
   border-radius: 48% 52% 46% 54%;
-  background: rgb(250 246 247 / 12%);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  box-shadow: 0 0 18px 10px rgb(250 246 247 / 16%);
+  background: rgb(239 224 230 / 30%);
+  backdrop-filter: blur(30px) saturate(0.72);
+  -webkit-backdrop-filter: blur(30px) saturate(0.72);
+  box-shadow: 0 0 16px 8px rgb(250 246 247 / 20%);
   pointer-events: none;
 }
 
@@ -3995,15 +3995,16 @@ html[lang="ko"] .landing-keywords > .kicker {
 
 .alus-privacy-follower-evidence .alus-privacy-mask {
   border-radius: 50%;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgb(246 241 243 / 62%);
+  backdrop-filter: blur(22px) saturate(0.6);
+  -webkit-backdrop-filter: blur(22px) saturate(0.6);
 }
 
 .alus-privacy-follower-evidence .mask-follower-1 {
-  left: 3%;
-  top: 31.5%;
-  width: 62%;
-  height: 6%;
+  left: 2.5%;
+  top: 30.8%;
+  width: 73%;
+  height: 7.2%;
   border-radius: 999px;
 }
 
@@ -4097,6 +4098,13 @@ html[lang="ko"] .landing-keywords > .kicker {
   width: 9.5%;
   height: 32%;
   border-radius: 48%;
+}
+
+.alus-privacy-blog .mask-1 {
+  left: 1.5%;
+  top: 10.5%;
+  width: 15.5%;
+  height: 31%;
 }
 
 .alus-privacy-blog .mask-2 {
