@@ -58,15 +58,16 @@ const ko: Record<string, string> = {
   "Brand work translated into business movement": "브랜드 실행을 비즈니스 변화로 연결",
   "Audience Growth": "오디언스 성장",
   "Instagram followers": "인스타그램 팔로워",
-  "10 → 1,700": "10명 → 1,700명",
-  "Commerce Traffic": "커머스 트래픽",
-  "Official store traffic": "공식 스토어 트래픽",
+  "10 → 1,707": "10명 → 1,707명",
+  "Event Comments": "이벤트 댓글",
+  "Launch quiz event": "론칭 퀴즈 이벤트",
+  "732 likes · 20 reposts": "좋아요 732회 · 리포스트 20회",
   "Cost Efficiency": "비용 효율",
   "Manufacturing unit cost": "제조 단가",
   "100 → 76 cost index": "비용 지수 100 → 76",
-  "Content Reach": "콘텐츠 도달",
-  "Short-form content views": "숏폼 콘텐츠 조회",
-  "Launch campaign total": "론칭 캠페인 누적",
+  "Channel Views": "채널 조회수",
+  "30-day professional dashboard": "30일 프로페셔널 대시보드",
+  "Aug 8 – Sep 6": "8월 8일–9월 6일",
   "Each row is normalized within its own metric.":
     "각 행의 막대는 해당 지표 안에서 기준값과 결과값을 비교합니다.",
   "View Full Detail Page": "전체 상세페이지 보기",
@@ -161,12 +162,12 @@ const ko: Record<string, string> = {
     "공식 이커머스 스토어 IA·와이어프레임·기능형 프로토타입 개발 리드, 제품 페이지의 실시간 인플루언서 리뷰 영역을 직접 코딩하도록 기획",
   "Sourced manufacturing partners, compared quotes, negotiated pricing, and managed production and delivery for full-package and detailed product package manufacturing, reducing unit production costs by 24% through a new manufacturing partner.":
     "풀패키지·세부 제품 패키지 제작을 위한 제조 파트너 소싱·견적 비교·가격 협상·생산 및 배송 관리, 신규 제조 파트너 확보로 단위 생산 비용 24% 절감",
-  "Revitalized a dormant social media channel, growing followers from 10 to 1,700.":
-    "비활성 소셜 미디어 채널 재활성화 및 팔로워 10명 → 1,700명 성장",
+  "Revitalized a dormant social media channel, growing followers from 10 to 1,707.":
+    "비활성 소셜 미디어 채널 재활성화 및 팔로워 10명 → 1,707명 성장",
   "Produced short-form content inspired by the product's macaron design, achieving 21,000+ views while the Instagram channel recorded 334,000+ views during the measured period.":
     "제품의 마카롱 디자인에서 착안한 숏폼 영상 2.1만+ 조회수 달성, 측정 기간 인스타그램 채널 전체 조회수 33.4만+ 기록",
-  "Led 10 influencer collaborations, doubled official e-commerce website traffic, and secured 48 UGC pieces from 11 supporters.":
-    "인플루언서 협업 10건 리드, 공식 이커머스 웹사이트 트래픽 2배 성장, 서포터즈 11명 기반 UGC 48건 확보",
+  "Led 10 influencer collaborations, secured 48 UGC pieces from 11 supporters, and generated 852 comments and 732 likes on a launch quiz event.":
+    "인플루언서 협업 10건을 리드하고, 서포터즈 11명 기반 UGC 48건을 확보했으며, 론칭 퀴즈 이벤트에서 댓글 852건과 좋아요 732회를 기록",
   "Integrated Channel Talk CRM to analyze customer behavior and improve the purchase journey.":
     "채널톡 CRM 연동을 통한 고객 행동 분석 및 구매 여정 개선",
   "Yonsei University Digital Media Lab": "연세대학교 디지털미디어랩",
@@ -227,8 +228,8 @@ const ko: Record<string, string> = {
     "ALUS Healthcare의 Brand Manager로서 웰니스 디바이스 제품 기획, 뷰티·웰니스 브랜딩, 이커머스, 콘텐츠, 크리에이터 마케팅, CRM까지 전체 브랜드 경험을 설계하고 실행했습니다.",
   "Brand Manager leading product planning, brand strategy, product color and package planning, product detail page planning, e-commerce UX, photoshoot planning and direction, social media content, influencer marketing, supporter program, CRM optimization, and manufacturing and vendor coordination.":
     "제품 기획, 브랜드 전략, 제품 컬러·패키지 기획, 상세페이지 기획, 이커머스 UX, 촬영 기획 및 디렉션, 소셜 미디어 콘텐츠, 인플루언서 마케팅, 서포터즈 프로그램, CRM 최적화, 제조·벤더 커뮤니케이션을 리드했습니다.",
-  "Grew Instagram followers from 10 to 1,700, led 10 influencer collaborations, secured 48 UGC pieces from 11 supporters, doubled official e-commerce traffic, reduced manufacturing unit cost by 24%, achieved 21,000+ short-form content views, and attracted inbound partnership proposals including Marriott Moxy Hotel and Qoo10 Japan.":
-    "인스타그램 팔로워 10명에서 1,700명 성장, 인플루언서 협업 10건 리드, 서포터즈 11명 기반 UGC 48건 확보, 공식 이커머스 트래픽 2배 성장, 제조 단가 24% 절감, 숏폼 콘텐츠 2.1만+ 조회수 달성, Marriott Moxy Hotel 및 Qoo10 Japan 포함 인바운드 파트너십 제안을 유치했습니다.",
+  "Grew Instagram followers from 10 to 1,707, led 10 influencer collaborations, secured 48 UGC pieces from 11 supporters, generated 852 comments and 732 likes on a launch quiz event, reduced manufacturing unit cost by 24%, reached 334,000 views during the measured 30-day period, and attracted inbound partnership proposals including Marriott Moxy Hotel and Qoo10 Japan.":
+    "인스타그램 팔로워를 10명에서 1,707명으로 성장시키고, 인플루언서 협업 10건을 리드했으며, 서포터즈 11명 기반 UGC 48건을 확보했습니다. 론칭 퀴즈 이벤트에서 댓글 852건과 좋아요 732회를 기록하고 제조 단가를 24% 절감했으며, 측정된 30일간 조회수 33.4만 회와 Marriott Moxy Hotel·Qoo10 Japan의 인바운드 파트너십 제안을 만들었습니다.",
   Followers: "팔로워",
   "UGC Contents": "UGC 콘텐츠",
   Supporters: "서포터즈",
@@ -256,6 +257,9 @@ const ko: Record<string, string> = {
   "Qoo10 Japan Entry Proposal": "Qoo10 Japan 입점 제안",
   "Redacted cover of the formal Qoo10 Japan platform-entry proposal shared with POWAPOWA.":
     "POWAPOWA에 전달된 Qoo10 Japan 공식 입점 제안서 표지로, 개인정보는 가렸습니다.",
+  "Moxy Seoul Inbound Message": "Moxy Seoul 인바운드 메시지",
+  "Original business-account message proposing a POWAPOWA pop-up and guest-room package collaboration at Moxy Seoul Insadong.":
+    "Moxy Seoul Insadong에서 POWAPOWA 팝업 및 객실 패키지 협업을 제안한 공식 비즈니스 계정 메시지입니다.",
   "Official Store & Purchase UX": "공식 스토어 & 구매 UX",
   "I planned the official store from information architecture, wireframes, functional prototypes, and purchase journey through launch. I reorganized the brand story, products, welcome deals, reviews, events, and customer support into a clearer hierarchy, then validated category logic and campaign entry points. I also planned a custom-coded real-time influencer review experience so blog and Instagram proof could appear inside the store at the point of purchase consideration.":
     "공식 스토어는 정보구조, 와이어프레임, 기능형 프로토타입, 구매 여정부터 실제 론칭까지 기획했습니다. 브랜드 스토리, 상품, 웰컴딜, 리뷰, 이벤트, 고객지원을 명확한 위계로 재구성하고 카테고리 논리와 캠페인 진입점을 검증했습니다. 또한 구매 고려 시점에 블로그·인스타그램의 소셜 프루프가 노출되도록 실시간 인플루언서 리뷰 경험을 직접 코딩하도록 기획했습니다.",
@@ -266,8 +270,8 @@ const ko: Record<string, string> = {
   "Mobile storefront showing how campaign visuals, product discovery, and purchase entry points were connected into one commerce experience. The time-sensitive points amount is blurred.":
     "캠페인 비주얼, 제품 탐색, 구매 진입점을 하나의 커머스 경험으로 연결한 모바일 공식 스토어입니다. 시점에 따라 달라지는 적립금 수치는 블러 처리했습니다.",
   "Live Homepage & Campaign Entry": "실제 홈페이지 & 캠페인 진입",
-  "Launched homepage connecting the brand identity, campaign offer, product discovery, review content, and support touchpoints. Customer faces are mosaicked and time-sensitive promotional figures are blurred.":
-    "브랜드 아이덴티티, 캠페인 오퍼, 제품 탐색, 리뷰 콘텐츠, 고객지원 접점을 연결해 실제 론칭한 홈페이지입니다. 고객 얼굴은 모자이크하고 시점에 따라 달라지는 프로모션 수치는 블러 처리했습니다.",
+  "Launched homepage connecting the brand identity, campaign offer, product discovery, review content, and support touchpoints. Customer faces and time-sensitive promotional figures are softly blurred.":
+    "브랜드 아이덴티티, 캠페인 오퍼, 제품 탐색, 리뷰 콘텐츠, 고객지원 접점을 연결해 실제 론칭한 홈페이지입니다. 고객 얼굴과 시점에 따라 달라지는 프로모션 수치는 부드럽게 블러 처리했습니다.",
   "Product Page Purchase UX": "상품 페이지 구매 UX",
   "Live product page combining package communication, scarcity messaging, review proof, purchase information, and delivery guidance. Price and discount figures are blurred.":
     "패키지 구성, 한정 수량 메시지, 리뷰 근거, 구매 정보, 배송 안내를 결합한 실제 상품 페이지입니다. 가격과 할인율은 블러 처리했습니다.",
@@ -328,12 +332,35 @@ const ko: Record<string, string> = {
   "Participation Campaign Content": "참여형 캠페인 콘텐츠",
   "Interactive quiz-event content planned to turn passive reach into saves, comments, and campaign participation.":
     "단순 도달을 저장, 댓글, 캠페인 참여로 전환하도록 기획한 인터랙티브 퀴즈 이벤트 콘텐츠입니다.",
+  "Paid Launch Preview Creative": "메타 광고 론칭 프리뷰",
+  "A paid-social launch preview translating the open-box package experience into a clear product-and-brand narrative.":
+    "오픈박스 패키지 경험을 명확한 제품·브랜드 내러티브로 전환한 메타 광고 론칭 프리뷰입니다.",
+  "Paid Package Explainer Creative": "메타 광고 패키지 안내",
+  "A Meta campaign visual reorganizing the full kit into an immediately scannable package hierarchy.":
+    "풀 키트 구성을 한눈에 읽히는 패키지 위계로 재구성한 메타 캠페인 비주얼입니다.",
   "Creator Unboxing UGC": "크리에이터 언박싱 UGC",
   "Creator-produced unboxing content showing how the campaign system extended beyond owned channels into authentic product experiences.":
     "캠페인 시스템이 자사 채널을 넘어 실제 제품 경험으로 확장되는 모습을 보여주는 크리에이터 제작 언박싱 콘텐츠입니다.",
+  "Instagram Brand System & Audience Response": "인스타그램 브랜드 시스템 & 오디언스 반응",
+  "I rebuilt a dormant Instagram account as a coherent brand channel rather than a collection of isolated posts. A repeatable visual system connected product education, daily-routine storytelling, launch content, and participation campaigns; the same system grew the account from 10 to 1,707 followers and turned the launch quiz into 852 comments, 732 likes, and 20 reposts on the captured post.":
+    "비활성 인스타그램 계정을 개별 게시물의 집합이 아닌 일관된 브랜드 채널로 재구축했습니다. 제품 교육, 일상 루틴 스토리텔링, 론칭 콘텐츠, 참여형 캠페인을 반복 가능한 비주얼 시스템으로 연결했고, 이를 통해 팔로워를 10명에서 1,707명으로 성장시키며 캡처된 론칭 퀴즈에서 댓글 852건, 좋아요 732회, 리포스트 20회를 만들었습니다.",
+  "I rebuilt a dormant Instagram account as a coherent brand channel rather than a collection of isolated posts. A repeatable visual system connected product education, daily-routine storytelling, launch content, paid campaigns, and follower events; the same system grew the account from 10 to 1,707 followers and created a repeatable path from acquisition to active participation.":
+    "비활성 인스타그램 계정을 개별 게시물의 집합이 아닌 일관된 브랜드 채널로 재구축했습니다. 제품 교육, 일상 루틴 스토리텔링, 론칭 콘텐츠, 유료 캠페인, 팔로워 이벤트를 반복 가능한 비주얼 시스템으로 연결했고, 이를 통해 팔로워를 10명에서 1,707명으로 성장시키며 획득부터 능동적 참여까지 이어지는 경로를 만들었습니다.",
+  "Instagram Visual System": "인스타그램 비주얼 시스템",
+  "The live feed shows a recognizable system spanning product demonstrations, routine education, campaign content, and launch storytelling.":
+    "실제 피드는 제품 시연, 루틴 교육, 캠페인 콘텐츠, 론칭 스토리텔링을 하나의 알아보기 쉬운 시스템으로 연결한 모습을 보여줍니다.",
+  "Verified 1,707 Follower Milestone": "팔로워 1,707명 달성 인증",
+  "Original profile capture documenting 1,707 followers after rebuilding the channel from an initial audience of 10.":
+    "초기 오디언스 10명에서 채널을 재구축한 뒤 팔로워 1,707명을 달성한 원본 프로필 캡처입니다.",
+  "Quiz-event Audience Response": "퀴즈 이벤트 오디언스 반응",
+  "The launch naming quiz recorded 852 comments, 732 likes, and 20 reposts, showing that the visual system could convert attention into active participation.":
+    "론칭 네이밍 퀴즈에서 댓글 852건, 좋아요 732회, 리포스트 20회를 기록해 비주얼 시스템이 관심을 능동적 참여로 전환할 수 있음을 확인했습니다.",
+  "Follower Event Creative": "팔로워 이벤트 크리에이티브",
+  "A light-blue follower event creative extending the channel system beyond launch communication into audience acquisition and participation.":
+    "채널 시스템을 론칭 커뮤니케이션에서 오디언스 획득과 참여까지 확장한 하늘색 팔로워 이벤트 크리에이티브입니다.",
   "Growth Performance & Evidence": "성장 성과 & 증빙",
-  "I connected content production to a measurable growth system, using native Instagram evidence to track awareness, response, follower acquisition, paid traffic, and participation. The figures below preserve the original reporting context: a 30-day professional dashboard, a website-visit campaign, and a high-participation quiz event.":
-    "콘텐츠 제작을 측정 가능한 성장 시스템과 연결하고, 인스타그램 원본 성과 화면을 통해 인지도, 반응, 팔로워 확보, 유료 트래픽, 참여를 추적했습니다. 아래 수치는 30일 프로페셔널 대시보드, 웹사이트 방문 캠페인, 고참여 퀴즈 이벤트의 원래 측정 맥락을 그대로 유지합니다.",
+  "I connected content production to a measurable growth system, using native Instagram evidence to track awareness, response, follower acquisition, and participation. The figures below preserve the original reporting context: a 30-day professional dashboard and the captured launch quiz event.":
+    "콘텐츠 제작을 측정 가능한 성장 시스템과 연결하고, 인스타그램 원본 성과 화면을 통해 인지도, 반응, 팔로워 확보, 참여를 추적했습니다. 아래 수치는 30일 프로페셔널 대시보드와 캡처된 론칭 퀴즈 이벤트의 원래 측정 맥락을 유지합니다.",
   "01 · Organic channel": "01 · 오가닉 채널",
   "Awareness became audience growth": "인지도를 오디언스 성장으로",
   "Professional dashboard · Aug 8–Sep 6": "프로페셔널 대시보드 · 8월 8일–9월 6일",
@@ -341,13 +368,8 @@ const ko: Record<string, string> = {
   Interactions: "반응",
   "New followers": "새 팔로워",
   "Content published": "공유한 콘텐츠",
-  "02 · Paid conversion": "02 · 유료 전환",
-  "Reach moved into store visits": "도달을 스토어 방문으로",
-  "Website-visit campaign · native ad insights": "웹사이트 방문 캠페인 · 광고 인사이트 원본",
-  "Ad views": "광고 조회",
   Reach: "도달",
-  "Website visits": "웹사이트 방문",
-  "03 · Participation": "03 · 참여 반응",
+  "02 · Participation": "02 · 참여 반응",
   "Campaign reach became active response": "캠페인 도달을 능동적 반응으로",
   "Quiz event · post insights": "퀴즈 이벤트 · 게시물 인사이트",
   Comments: "댓글",
@@ -357,12 +379,9 @@ const ko: Record<string, string> = {
   "30-day Professional Dashboard": "30일 프로페셔널 대시보드",
   "Native channel evidence recording 334K views, 3.1K interactions, 686 new followers, and 74 published pieces during the measured period.":
     "측정 기간 조회 33.4만, 반응 3.1천, 새 팔로워 686명, 공유 콘텐츠 74건을 기록한 채널 원본 증빙입니다.",
-  "Website-visit Ad Insights": "웹사이트 방문 광고 인사이트",
-  "Paid campaign evidence recording 14,711 views, 11,099 reach, and 647 website visits, with saves, reactions, and shares retained for context.":
-    "조회 14,711회, 도달 11,099명, 웹사이트 방문 647회를 기록한 유료 캠페인 증빙으로, 저장·공감·공유 수치도 함께 유지했습니다.",
   "Quiz-event Participation": "퀴즈 이벤트 참여 성과",
-  "The participation campaign recorded 745 likes, 863 comments, 20 reposts, and 293 shares on the captured post.":
-    "캡처된 참여형 캠페인 게시물은 좋아요 745회, 댓글 863개, 리포스트 20회, 공유 293회를 기록했습니다.",
+  "The captured launch quiz recorded 732 likes, 852 comments, and 20 reposts.":
+    "캡처된 론칭 퀴즈는 좋아요 732회, 댓글 852건, 리포스트 20회를 기록했습니다.",
   Impact: "임팩트",
   "This project is the clearest evidence that my role was not confined to campaign execution. I connected market definition, brand system, product and package development, production, commerce UX, creator acquisition, CRM feedback, and cost optimization as one operating loop. Its significance lies in owning both the customer-facing experience and the behind-the-scenes system that made it repeatable: building a launch-ready brand, turning early response into measurable growth and partnership interest, and carrying every learning back into the product and operations.":
     "이 프로젝트는 제 역할이 캠페인 실행에 머물지 않았음을 가장 선명하게 보여줍니다. 시장 정의, 브랜드 시스템, 제품·패키지 개발, 생산, 커머스 UX, 크리에이터 확보, CRM 피드백, 원가 최적화를 하나의 운영 루프로 연결했습니다. 고객이 직접 만나는 경험과 그 경험을 반복 가능하게 만드는 백엔드 운영 체계를 모두 책임졌다는 점에 의의가 있습니다. 론칭 가능한 브랜드를 구축하고, 초기 반응을 측정 가능한 성장과 협업 관심으로 전환했으며, 그 과정에서 얻은 학습을 다시 제품과 운영에 반영했습니다.",
@@ -380,12 +399,12 @@ const ko: Record<string, string> = {
   "Commerce & Content": "커머스 & 콘텐츠",
   "Planned the detail page, official-store IA, purchase journey, photoshoot, launch assets, and review experience as one conversion narrative.":
     "상세페이지, 공식 스토어 IA, 구매 여정, 촬영, 론칭 에셋, 리뷰 경험을 하나의 전환 내러티브로 기획했습니다.",
-  "Official-store traffic 2×": "공식 스토어 트래픽 2×",
+  "852 comments · 732 likes": "댓글 852건 · 좋아요 732회",
   "04 · Grow": "04 · 성장",
   "Creator Growth Engine": "크리에이터 성장 엔진",
   "Built a repeatable acquisition loop through social content, influencer collaboration, POWAS missions, and creator-led proof instead of isolated campaigns.":
     "단발성 캠페인이 아니라 소셜 콘텐츠, 인플루언서 협업, 포아즈 미션, 크리에이터 신뢰 근거를 통한 반복 가능한 획득 루프를 만들었습니다.",
-  "10 → 1,700 followers · 48 UGC": "팔로워 10 → 1,700 · UGC 48건",
+  "10 → 1,707 followers · 48 UGC": "팔로워 10 → 1,707 · UGC 48건",
   "05 · Learn": "05 · 학습",
   "CRM & Feedback Loop": "CRM & 피드백 루프",
   "Connected customer behavior, review content, Channel Talk signals, and purchase friction so market response could improve the next experience decision.":
@@ -395,7 +414,7 @@ const ko: Record<string, string> = {
   "Business & Partnerships": "비즈니스 & 파트너십",
   "Turned a coherent early-market presence into measurable reach, operational efficiency, and inbound collaboration interest from hospitality and Japanese commerce partners.":
     "일관된 초기 시장 존재감을 측정 가능한 도달, 운영 효율, 호텔·일본 커머스 파트너의 인바운드 협업 관심으로 전환했습니다.",
-  "21K+ views · 2 inbound proposals": "2.1만+ 조회 · 인바운드 제안 2건",
+  "334K views · 2 inbound proposals": "33.4만 조회 · 인바운드 제안 2건",
   "Led product planning, brand strategy, package planning, photoshoot direction, product detail page planning, homepage UX, and launch event execution.":
     "제품 기획, 브랜드 전략, 패키지 기획, 촬영 디렉션, 상세페이지 기획, 홈페이지 UX, 론칭 이벤트 실행을 리드했습니다.",
   "Developed and launched POWAPOWA for women in their 20s and 30s while attracting inbound partnership proposals from Marriott Moxy Hotel and Qoo10 Japan.":
