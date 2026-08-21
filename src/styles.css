@@ -2713,6 +2713,7 @@ html[lang="ko"] .landing-keywords > .kicker {
 .fugudio-guidance-gallery figure > div:not(.fugudio-alert-stack) {
   display: grid;
   min-height: 0;
+  overflow: hidden;
   place-items: center;
   padding: 18px;
   background:
@@ -2724,6 +2725,8 @@ html[lang="ko"] .landing-keywords > .kicker {
   display: block;
   width: 100%;
   height: 100%;
+  min-height: 0;
+  max-height: 100%;
   object-fit: contain;
 }
 
@@ -2749,10 +2752,13 @@ html[lang="ko"] .landing-keywords > .kicker {
 }
 
 .fugudio-guidance-gallery figcaption {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: 6px;
   align-content: start;
   padding: 16px 18px 18px;
+  background: #fff;
 }
 
 .fugudio-guidance-gallery figcaption strong {

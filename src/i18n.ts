@@ -289,11 +289,11 @@ const ko: Record<string, string> = {
     "상세페이지의 내러티브 기획부터 최종 완성까지 주도했습니다. 콘텐츠 흐름과 문구를 직접 설계하고, 디자이너와 비주얼 방향을 조율하며 시안 검토와 피드백을 반복해 각 섹션을 디벨롭했습니다. 구매 전환 흐름은 공식 구매 신뢰와 핵심 후킹에서 시작해 일상 속 고민, 제품 소개와 사용 장면, VNS 원리, 연구 근거, 패키지 구성, 사용 방법, Q&A, 주의사항과 제품 사양으로 이어집니다.",
   "Social & Creator Marketing": "소셜 & 크리에이터 마케팅",
   "I designed POWAS, POWAPOWA's content marketer crew, as a structured community program rather than a one-off supporter campaign. I defined the channel roles and weekly missions, created the recruitment identity and poster, published and managed the public listing, selected participants, and led onboarding and the offline kickoff. The listing recorded 1,812 views and 68 saves, and the crew became an operating layer for mission-based social, Reels, and blog content that fed the brand's creator-to-commerce growth loop.":
-    "일회성 서포터즈 캠페인이 아닌 구조화된 커뮤니티 프로그램으로 POWAPOWA 콘텐츠 마케터 크루 ‘포아즈(POWAS)’를 기획했습니다. 채널별 역할과 주차별 미션을 설계하고, 모집 비주얼과 포스터 제작, 공개 공고 게시·운영, 참여자 선발, 온보딩과 오프라인 발대식까지 전 과정을 리드했습니다. 링크커리어 공고는 조회 1,812회와 스크랩 68회를 기록했으며, 포아즈는 소셜·릴스·블로그 미션 콘텐츠를 브랜드의 크리에이터-커머스 성장 루프로 연결하는 운영 기반이 되었습니다.",
+    "일회성 서포터즈 캠페인이 아닌 구조화된 커뮤니티 프로그램으로 POWAPOWA 콘텐츠 마케터 크루 ‘포아즈(POWAS)’를 기획했습니다. 채널별 역할과 주차별 미션을 설계하고, 모집 비주얼과 포스터 제작, 공개 공고 게시·운영, 참여자 선발, 온보딩과 오프라인 발대식까지 전 과정을 리드했습니다. 링커리어 공고는 조회 1,812회와 스크랩 68회를 기록했으며, 포아즈는 소셜·릴스·블로그 미션 콘텐츠를 브랜드의 크리에이터-커머스 성장 루프로 연결하는 운영 기반이 되었습니다.",
   "POWAS Crew Recruitment Poster": "포아즈 크루 모집 포스터",
   "Recruitment creative defining a 10-person crew across content, Reels, and blog teams, with mission structure and program benefits.":
     "콘텐츠·릴스·블로그 팀으로 구성된 10인 크루의 역할, 미션 구조, 활동 혜택을 한눈에 전달한 모집 콘텐츠입니다.",
-  "Published Linkareer Listing": "링크커리어 공개 모집 공고",
+  "Published Linkareer Listing": "링커리어 공개 모집 공고",
   "Public recruitment listing for the first POWAS cohort, recording 1,812 views and 68 saves.":
     "조회 1,812회와 스크랩 68회를 기록한 포아즈 1기 공개 모집 공고입니다.",
   "POWAS Offline Kickoff Setup": "포아즈 오프라인 발대식 세팅",
