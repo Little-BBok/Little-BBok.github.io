@@ -4018,11 +4018,81 @@ html[lang="ko"] .landing-keywords > .kicker {
   margin: 0;
 }
 
-.alus-privacy-blog .mask-1 {
-  left: 10%;
-  top: 10%;
-  width: 12%;
-  height: 35%;
+.case-story-card-partnership-evidence .case-story-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  column-count: auto;
+}
+
+.case-story-card-partnership-evidence .case-story-gallery figure {
+  margin: 0;
+}
+
+.case-story-card-partnership-evidence .case-story-gallery figure:first-child {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.7fr);
+}
+
+.case-story-card-partnership-evidence .case-story-gallery figure:first-child .case-story-gallery-media {
+  min-height: 420px;
+  border-radius: 20px 0 0 20px;
+}
+
+.case-story-card-partnership-evidence .case-story-gallery figure:first-child img,
+.case-story-card-partnership-evidence .case-story-gallery figure:not(:first-child) img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #f2f8fb;
+}
+
+.case-story-card-partnership-evidence .case-story-gallery figure:first-child figcaption {
+  display: flex;
+  justify-content: center;
+  padding: clamp(28px, 4vw, 54px);
+}
+
+.case-story-card-partnership-evidence .case-story-gallery figure:not(:first-child) img {
+  max-height: 340px;
+  background: #f7f7f5;
+}
+
+.case-story-card-content-planning .case-story-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  column-count: auto;
+}
+
+.case-story-card-content-planning .case-story-gallery figure {
+  margin: 0;
+}
+
+.case-story-card-content-planning .case-story-gallery-media {
+  aspect-ratio: 4 / 5;
+  background: #f7f7f5;
+}
+
+.case-story-card-content-planning .case-story-gallery-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 1100px) {
+  .case-story-card-content-planning .case-story-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.alus-privacy-instagram-review .mask-instagram-review-1 {
+  left: 27%;
+  top: 27%;
+  width: 10.5%;
+  height: 28%;
+  border-radius: 48%;
 }
 
 .alus-privacy-blog .mask-2 {
@@ -5061,6 +5131,24 @@ html[lang="ko"] .landing-keywords > .kicker {
   }
 
   .case-story-card-instagram-evidence .case-story-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .case-story-card-partnership-evidence .case-story-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .case-story-card-partnership-evidence .case-story-gallery figure:first-child {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .case-story-card-partnership-evidence .case-story-gallery figure:first-child .case-story-gallery-media {
+    min-height: 0;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .case-story-card-content-planning .case-story-gallery {
     grid-template-columns: 1fr;
   }
 

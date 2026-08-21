@@ -332,12 +332,20 @@ const ko: Record<string, string> = {
   "Participation Campaign Content": "참여형 캠페인 콘텐츠",
   "Interactive quiz-event content planned to turn passive reach into saves, comments, and campaign participation.":
     "단순 도달을 저장, 댓글, 캠페인 참여로 전환하도록 기획한 인터랙티브 퀴즈 이벤트 콘텐츠입니다.",
+  "Paid Launch Preview Creative": "메타 광고 론칭 프리뷰",
+  "A paid-social launch preview translating the open-box package experience into a clear product-and-brand narrative.":
+    "오픈박스 패키지 경험을 명확한 제품·브랜드 내러티브로 전환한 메타 광고 론칭 프리뷰입니다.",
+  "Paid Package Explainer Creative": "메타 광고 패키지 안내",
+  "A Meta campaign visual reorganizing the full kit into an immediately scannable package hierarchy.":
+    "풀 키트 구성을 한눈에 읽히는 패키지 위계로 재구성한 메타 캠페인 비주얼입니다.",
   "Creator Unboxing UGC": "크리에이터 언박싱 UGC",
   "Creator-produced unboxing content showing how the campaign system extended beyond owned channels into authentic product experiences.":
     "캠페인 시스템이 자사 채널을 넘어 실제 제품 경험으로 확장되는 모습을 보여주는 크리에이터 제작 언박싱 콘텐츠입니다.",
   "Instagram Brand System & Audience Response": "인스타그램 브랜드 시스템 & 오디언스 반응",
   "I rebuilt a dormant Instagram account as a coherent brand channel rather than a collection of isolated posts. A repeatable visual system connected product education, daily-routine storytelling, launch content, and participation campaigns; the same system grew the account from 10 to 1,707 followers and turned the launch quiz into 852 comments, 732 likes, and 20 reposts on the captured post.":
     "비활성 인스타그램 계정을 개별 게시물의 집합이 아닌 일관된 브랜드 채널로 재구축했습니다. 제품 교육, 일상 루틴 스토리텔링, 론칭 콘텐츠, 참여형 캠페인을 반복 가능한 비주얼 시스템으로 연결했고, 이를 통해 팔로워를 10명에서 1,707명으로 성장시키며 캡처된 론칭 퀴즈에서 댓글 852건, 좋아요 732회, 리포스트 20회를 만들었습니다.",
+  "I rebuilt a dormant Instagram account as a coherent brand channel rather than a collection of isolated posts. A repeatable visual system connected product education, daily-routine storytelling, launch content, paid campaigns, and follower events; the same system grew the account from 10 to 1,707 followers and created a repeatable path from acquisition to active participation.":
+    "비활성 인스타그램 계정을 개별 게시물의 집합이 아닌 일관된 브랜드 채널로 재구축했습니다. 제품 교육, 일상 루틴 스토리텔링, 론칭 콘텐츠, 유료 캠페인, 팔로워 이벤트를 반복 가능한 비주얼 시스템으로 연결했고, 이를 통해 팔로워를 10명에서 1,707명으로 성장시키며 획득부터 능동적 참여까지 이어지는 경로를 만들었습니다.",
   "Instagram Visual System": "인스타그램 비주얼 시스템",
   "The live feed shows a recognizable system spanning product demonstrations, routine education, campaign content, and launch storytelling.":
     "실제 피드는 제품 시연, 루틴 교육, 캠페인 콘텐츠, 론칭 스토리텔링을 하나의 알아보기 쉬운 시스템으로 연결한 모습을 보여줍니다.",
@@ -347,6 +355,9 @@ const ko: Record<string, string> = {
   "Quiz-event Audience Response": "퀴즈 이벤트 오디언스 반응",
   "The launch naming quiz recorded 852 comments, 732 likes, and 20 reposts, showing that the visual system could convert attention into active participation.":
     "론칭 네이밍 퀴즈에서 댓글 852건, 좋아요 732회, 리포스트 20회를 기록해 비주얼 시스템이 관심을 능동적 참여로 전환할 수 있음을 확인했습니다.",
+  "Follower Event Creative": "팔로워 이벤트 크리에이티브",
+  "A light-blue follower event creative extending the channel system beyond launch communication into audience acquisition and participation.":
+    "채널 시스템을 론칭 커뮤니케이션에서 오디언스 획득과 참여까지 확장한 하늘색 팔로워 이벤트 크리에이티브입니다.",
   "Growth Performance & Evidence": "성장 성과 & 증빙",
   "I connected content production to a measurable growth system, using native Instagram evidence to track awareness, response, follower acquisition, and participation. The figures below preserve the original reporting context: a 30-day professional dashboard and the captured launch quiz event.":
     "콘텐츠 제작을 측정 가능한 성장 시스템과 연결하고, 인스타그램 원본 성과 화면을 통해 인지도, 반응, 팔로워 확보, 참여를 추적했습니다. 아래 수치는 30일 프로페셔널 대시보드와 캡처된 론칭 퀴즈 이벤트의 원래 측정 맥락을 유지합니다.",

@@ -386,6 +386,12 @@ export const projects: Project[] = [
           "The brand's early market presence generated unsolicited partnership interest from Moxy Seoul Insadong and Qoo10 Japan. Moxy proposed collaboration options including a hotel pop-up and guest-room package, while Qoo10 Japan sent a formal platform-entry proposal covering onboarding, promotion, and commerce operations. These materials document inbound proposals rather than completed partnerships.",
         gallery: [
           {
+            title: "Qoo10 Japan Entry Proposal",
+            image: "/projects/alus/partnerships/qoo10-entry-proposal.webp",
+            note:
+              "Redacted cover of the formal Qoo10 Japan platform-entry proposal shared with POWAPOWA.",
+          },
+          {
             title: "Moxy Seoul Collaboration Proposal",
             image: "/projects/alus/partnerships/moxy-seoul-collaboration-proposal.webp",
             note:
@@ -396,12 +402,6 @@ export const projects: Project[] = [
             image: "/projects/alus/instagram-evidence/moxy-inbound-message-cropped.jpg",
             note:
               "Original business-account message proposing a POWAPOWA pop-up and guest-room package collaboration at Moxy Seoul Insadong.",
-          },
-          {
-            title: "Qoo10 Japan Entry Proposal",
-            image: "/projects/alus/partnerships/qoo10-entry-proposal.webp",
-            note:
-              "Redacted cover of the formal Qoo10 Japan platform-entry proposal shared with POWAPOWA.",
           },
         ],
       },
@@ -541,10 +541,16 @@ export const projects: Project[] = [
               "A coordinated feed system combining product education, routine storytelling, campaigns, and creator-led content in one recognizable visual language.",
           },
           {
-            title: "Participation Campaign Content",
-            image: "/projects/alus/content/participation-campaign-clean.png",
+            title: "Paid Launch Preview Creative",
+            image: "/projects/alus/instagram-evidence/meta-launch-preview-cropped.png",
             note:
-              "Interactive quiz-event content planned to turn passive reach into saves, comments, and campaign participation.",
+              "A paid-social launch preview translating the open-box package experience into a clear product-and-brand narrative.",
+          },
+          {
+            title: "Paid Package Explainer Creative",
+            image: "/projects/alus/instagram-evidence/meta-package-explainer-cropped.png",
+            note:
+              "A Meta campaign visual reorganizing the full kit into an immediately scannable package hierarchy.",
           },
           {
             title: "Creator Unboxing UGC",
@@ -557,7 +563,7 @@ export const projects: Project[] = [
       {
         title: "Instagram Brand System & Audience Response",
         text:
-          "I rebuilt a dormant Instagram account as a coherent brand channel rather than a collection of isolated posts. A repeatable visual system connected product education, daily-routine storytelling, launch content, and participation campaigns; the same system grew the account from 10 to 1,707 followers and turned the launch quiz into 852 comments, 732 likes, and 20 reposts on the captured post.",
+          "I rebuilt a dormant Instagram account as a coherent brand channel rather than a collection of isolated posts. A repeatable visual system connected product education, daily-routine storytelling, launch content, paid campaigns, and follower events; the same system grew the account from 10 to 1,707 followers and created a repeatable path from acquisition to active participation.",
         layout: "gallery",
         gallery: [
           {
@@ -573,10 +579,10 @@ export const projects: Project[] = [
               "Original profile capture documenting 1,707 followers after rebuilding the channel from an initial audience of 10.",
           },
           {
-            title: "Quiz-event Audience Response",
-            image: "/projects/alus/instagram-evidence/quiz-event-response-cropped.jpg",
+            title: "Follower Event Creative",
+            image: "/projects/alus/instagram-evidence/follower-event-cropped.png",
             note:
-              "The launch naming quiz recorded 852 comments, 732 likes, and 20 reposts, showing that the visual system could convert attention into active participation.",
+              "A light-blue follower event creative extending the channel system beyond launch communication into audience acquisition and participation.",
           },
         ],
       },

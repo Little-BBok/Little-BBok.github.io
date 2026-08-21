@@ -1227,6 +1227,16 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                 section.title === "Instagram Brand System & Audience Response"
                   ? "case-story-card-instagram-evidence"
                   : ""
+              } ${
+                project.id === "alus-healthcare" &&
+                section.title === "Inbound Partnership Proposals"
+                  ? "case-story-card-partnership-evidence"
+                  : ""
+              } ${
+                project.id === "alus-healthcare" &&
+                section.title === "Content Planning & Production"
+                  ? "case-story-card-content-planning"
+                  : ""
               } ${section.gallery?.length ? "case-story-card-gallery" : ""} ${
                 section.layout === "sequence" ? "case-story-card-sequence" : ""
               } ${
@@ -1372,6 +1382,9 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                                     item.title === "Blog Review Experience"
                                   ? "alus-privacy-blog"
                                   : project.id === "alus-healthcare" &&
+                                      item.title === "Instagram Review Experience"
+                                    ? "alus-privacy-instagram-review"
+                                  : project.id === "alus-healthcare" &&
                                       item.title === "Verified 1,707 Follower Milestone"
                                     ? "alus-privacy-follower-evidence"
                                     : ""
@@ -1407,10 +1420,16 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                               {project.id === "alus-healthcare" &&
                               item.title === "Blog Review Experience" ? (
                                 <>
-                                  <i className="alus-privacy-mask mask-1" aria-hidden="true" />
                                   <i className="alus-privacy-mask mask-2" aria-hidden="true" />
                                   <i className="alus-privacy-mask mask-3" aria-hidden="true" />
                                 </>
+                              ) : null}
+                              {project.id === "alus-healthcare" &&
+                              item.title === "Instagram Review Experience" ? (
+                                <i
+                                  className="alus-privacy-mask mask-instagram-review-1"
+                                  aria-hidden="true"
+                                />
                               ) : null}
                           </div>
                           {section.layout !== "sequence" ? (
