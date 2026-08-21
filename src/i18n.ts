@@ -45,6 +45,8 @@ const ko: Record<string, string> = {
   "Data & Strategy": "데이터 & 전략",
   "View case": "케이스 보기",
   "View Brand Case": "브랜드 케이스 보기",
+  "View Service UX Case": "서비스 UX 케이스 보기",
+  "View B2C Strategy Case": "B2C 전략 케이스 보기",
   "Open Project": "프로젝트 열기",
   "My Role": "나의 역할",
   Outcome: "성과",
@@ -441,7 +443,565 @@ const ko: Record<string, string> = {
   "UX Design": "UX 디자인",
   "Content Operations": "콘텐츠 운영",
   "Service Design": "서비스 디자인",
+  "One workflow from content idea to the next opportunity": "콘텐츠 아이디어부터 다음 기회까지 하나의 워크플로",
+  "Independent 0→1 product case study": "개인 0→1 제품 케이스 스터디",
+  "From a recurring operational problem to a tested working product":
+    "반복되는 운영 문제에서 검증 가능한 실제 제품까지",
+  "I started FUGUDIO after seeing content context break across notes, calendars, spreadsheets, and platform dashboards. I owned the full 0→1 process—from problem definition and product strategy to brand, UI/UX, usability testing, and iteration.":
+    "메모, 캘린더, 스프레드시트, 플랫폼 대시보드 사이에서 콘텐츠 맥락이 끊기는 문제를 보며 후구디오를 시작했습니다. 문제 정의와 제품 전략부터 브랜드·UI/UX 설계, 사용성 테스트와 반복 개선까지 0→1 전 과정을 직접 수행했습니다.",
+  "Sole product owner and designer across the full 0→1 process: problem framing, user and workflow research, product strategy, requirements, information architecture, interaction flows, UI design, brand naming and identity, prototyping, usability testing, and iterative refinement.":
+    "문제 정의, 사용자·워크플로 리서치, 제품 전략, 요구사항, 정보구조, 인터랙션 플로, UI 디자인, 브랜드 네이밍·아이덴티티, 프로토타이핑, 사용성 테스트, 반복 개선까지 0→1 전 과정을 단독으로 이끈 제품 오너이자 디자이너입니다.",
+  "Turned a self-defined operational problem into a deployed, testable product. The result demonstrates my ability to connect strategic judgment, system design, visual craft, and user evidence throughout an end-to-end product cycle—not just design isolated screens.":
+    "스스로 발견하고 정의한 운영 문제를 배포된 검증 가능 제품으로 구현했습니다. 단편적인 화면 디자인을 넘어, 전략적 판단과 시스템 설계, 비주얼 완성도, 사용자 근거를 엔드투엔드 제품 사이클 전반에서 연결하는 역량을 보여줍니다.",
+  "Why I Built FUGUDIO": "후구디오를 만든 이유",
+  "While planning and operating content across several social channels, I kept seeing the same friction: ideas lived in notes, schedules in calendars, production status in spreadsheets or chat, and results inside separate platform dashboards. The real problem was not a lack of tools. It was the loss of context between making, publishing, learning, and deciding what to do next. I turned that recurring operational frustration into the starting hypothesis for FUGUDIO.":
+    "여러 SNS 채널의 콘텐츠를 기획하고 운영하면서 같은 불편을 반복해서 마주했습니다. 아이디어는 메모에, 일정은 캘린더에, 제작 상태는 스프레드시트나 채팅에, 성과는 각 플랫폼 대시보드에 흩어져 있었습니다. 진짜 문제는 도구가 부족한 것이 아니라 제작, 발행, 학습, 다음 의사결정 사이에서 맥락이 끊기는 것이었습니다. 저는 이 반복되는 실무 문제를 후구디오의 출발 가설로 삼았습니다.",
+  "The Problem Behind the Product": "제품 뒤에 있던 문제",
+  "I translated the observed workflow into four connected problem areas. These became design requirements and a basis for deciding what the product should—and should not—solve.":
+    "관찰한 워크플로를 서로 연결된 네 가지 문제 영역으로 정리했습니다. 이는 디자인 요구사항이자 제품이 해결해야 할 것과 해결하지 않을 것을 결정하는 기준이 됐습니다.",
+  "01 · Fragmented": "01 · 분산",
+  "Context Scattered Across Tools": "도구마다 흩어진 맥락",
+  "The idea, latest file, owner, deadline, publishing state, and result were stored in different places.":
+    "아이디어, 최신 파일, 담당자, 마감, 발행 상태, 결과가 서로 다른 곳에 저장돼 있었습니다.",
+  "Repeated context switching": "반복되는 컨텍스트 전환",
+  "02 · Invisible": "02 · 비가시성",
+  "Production State Was Hard to Read": "한눈에 보이지 않는 제작 상태",
+  "Delays and bottlenecks depended on someone remembering and reconstructing the whole picture.":
+    "지연과 병목을 찾으려면 누군가 전체 상황을 기억하고 다시 조합해야 했습니다.",
+  "Operational uncertainty": "운영 불확실성",
+  "03 · Disposable": "03 · 일회성",
+  "Content Ended After Publishing": "발행과 함께 끝나는 콘텐츠",
+  "The relationship between an original asset and its channel variants disappeared after each post went live.":
+    "게시물이 발행된 뒤에는 원본 자산과 채널별 파생 콘텐츠의 관계가 사라졌습니다.",
+  "Lost reuse opportunities": "사라지는 재활용 기회",
+  "04 · Disconnected": "04 · 단절",
+  "Performance Did Not Guide Action": "다음 행동으로 이어지지 않는 성과",
+  "Platform metrics showed what happened, but did not connect the evidence to a concrete next content decision.":
+    "플랫폼 지표는 무슨 일이 있었는지는 보여주지만, 그 근거를 구체적인 다음 콘텐츠 결정으로 연결하지 못했습니다.",
+  "Insight without follow-up": "후속 행동 없는 인사이트",
+  "My 0→1 Product Process": "나의 0→1 제품 프로세스",
+  "I owned the project as one continuous decision-making process. Each phase produced an artifact or testable assumption that informed the next, so strategy, UX, visual design, and validation stayed connected.":
+    "프로젝트를 하나의 연속된 의사결정 과정으로 직접 이끌었습니다. 각 단계에서 다음 단계를 판단할 산출물이나 검증 가능한 가설을 만들며 제품 전략, UX, 비주얼 디자인, 검증이 끊기지 않도록 했습니다.",
+  Discover: "발견",
+  "Mapped recurring content-operations friction and the complete journey from idea to reuse.":
+    "반복되는 콘텐츠 운영의 불편과 아이디어에서 재활용까지의 전체 여정을 매핑했습니다.",
+  "Problem framing": "문제 정의",
+  Define: "정의",
+  "Set target users, core jobs, product hypothesis, requirements, priorities, and MVP boundaries.":
+    "타깃 사용자, 핵심 과업, 제품 가설, 요구사항, 우선순위, MVP 범위를 설정했습니다.",
+  "Product strategy": "제품 전략",
+  Structure: "구조화",
+  "Designed the information architecture, content model, states, permissions, and end-to-end UX flows.":
+    "정보구조, 콘텐츠 모델, 상태, 권한, 엔드투엔드 UX 플로를 설계했습니다.",
+  "IA + UX flow": "IA + UX 플로",
+  "Design & Build": "디자인 & 구현",
+  "Created the naming, identity, Hugu assistant, design system, interaction details, and working interface.":
+    "네이밍, 아이덴티티, 후구 어시스턴트, 디자인 시스템, 세부 인터랙션과 실제 동작 화면을 만들었습니다.",
+  "UI + product": "UI + 실제 제품",
+  "Test & Iterate": "테스트 & 개선",
+  "Ran scenario-based usability tests, observed friction, and refined hierarchy, copy, states, and task flows.":
+    "시나리오 기반 사용성 테스트를 진행하고 사용자의 어려움을 관찰해 정보 위계, 문구, 상태 피드백, 핵심 과업 흐름을 개선했습니다.",
+  "Validated iterations": "검증 기반 개선",
+  "The Core Product Hypothesis": "핵심 제품 가설",
+  "I hypothesized that the product should preserve context through one repeatable loop rather than add another isolated tool. A topic becomes a master content asset, moves through a visible production pipeline, branches into channel-specific formats and schedules, collects performance evidence, and returns as a concrete follow-up action.":
+    "또 하나의 분리된 도구를 더하는 대신, 반복 가능한 하나의 루프 안에서 맥락을 보존해야 한다고 가설을 세웠습니다. 하나의 주제가 마스터 콘텐츠 자산이 되고, 가시적인 제작 파이프라인을 거쳐 채널별 포맷과 일정으로 분기되며, 성과 근거를 축적해 구체적인 후속 행동으로 돌아옵니다.",
+  "How My Decisions Became a Product System": "나의 판단을 제품 시스템으로 만든 방식",
+  "I converted the problem framing into one shared information model and ten connected capabilities. The dashboard, calendar, pipeline, library, distribution, analytics, settings, studios, and Hugu assistant are not a feature checklist; each is a response to a specific breakdown in the original workflow.":
+    "문제 정의를 하나의 공유 정보 모델과 서로 연결된 10개 기능으로 전환했습니다. 대시보드, 캘린더, 파이프라인, 라이브러리, 배포, 분석, 설정, 스튜디오, 후구 어시스턴트는 기능 목록이 아니라 기존 워크플로의 구체적인 단절에 대한 각각의 해답입니다.",
+  "Shared source of truth": "하나의 기준 정보",
+  "Master Content Model": "마스터 콘텐츠 모델",
+  "Idea · asset · channel variant · state · schedule · performance":
+    "아이디어 · 자산 · 채널 파생본 · 상태 · 일정 · 성과",
+  "01 · Operations layer": "01 · 운영 레이어",
+  "See & prioritize": "가시화 & 우선순위",
+  "02 · Content core": "02 · 콘텐츠 코어",
+  "Create & distribute": "제작 & 배포",
+  "03 · Learning loop": "03 · 학습 루프",
+  "Measure & extend": "측정 & 확장",
+  "04 · Workspace foundation": "04 · 워크스페이스 기반",
+  "Configure & collaborate": "설정 & 협업",
+  "A Product Decision: One Source, Many Outputs": "제품 의사결정: 하나의 원본, 여러 결과물",
+  "I made the master-to-variant relationship the core product model. One travel Reel can move through production, publish on Instagram, branch into Naver Clip and YouTube Shorts, and later become evidence for the next topic instead of disappearing after one post.":
+    "마스터와 파생 결과물의 관계를 핵심 제품 모델로 정했습니다. 하나의 여행 릴스가 제작 단계를 거쳐 Instagram에 발행되고 Naver Clip과 YouTube Shorts로 분기된 뒤, 한 번의 게시물로 사라지지 않고 다음 주제의 근거가 됩니다.",
+  "UX Decisions I Made": "내가 내린 UX 의사결정",
+  "I used four principles to keep a complex operational product understandable: make state immediately legible, preserve the relationship between original and distributed content, let each channel move independently, and place analysis close to the next decision.":
+    "복잡한 운영 제품을 이해하기 쉽게 만들기 위해 네 가지 원칙을 적용했습니다. 상태를 즉시 읽을 수 있게 하고, 원본과 배포 콘텐츠의 관계를 보존하며, 각 채널이 독립적으로 움직이게 하고, 분석을 다음 의사결정 가까이에 배치했습니다.",
+  "What This Project Demonstrates": "이 프로젝트가 보여주는 역량",
+  "FUGUDIO is evidence of how I work when there is no prewritten brief: I identify a meaningful problem, define the product logic, make the experience tangible, test the riskiest assumptions, and carry the decisions through to a coherent working product.":
+    "후구디오는 정해진 브리프가 없을 때 제가 일하는 방식을 보여줍니다. 의미 있는 문제를 발견하고, 제품 논리를 정의하고, 경험을 구체화하고, 가장 위험한 가설을 테스트하며, 그 의사결정을 일관된 실제 제품까지 이어갑니다.",
+  "01 · Own": "01 · 주도",
+  "End-to-End Product Ownership": "엔드투엔드 제품 오너십",
+  "I connected problem definition, scope, requirements, UX, UI, brand, testing, and iteration without handing off the product logic between phases.":
+    "단계 사이에서 제품 논리를 넘기지 않고 문제 정의, 범위, 요구사항, UX, UI, 브랜드, 테스트, 개선을 직접 연결했습니다.",
+  "Problem → deployed product": "문제 → 배포된 제품",
+  "02 · Systemize": "02 · 시스템화",
+  "I modeled content, variants, states, schedules, roles, and performance as one connected operating system.":
+    "콘텐츠, 파생 결과물, 상태, 일정, 역할, 성과를 하나의 연결된 운영 시스템으로 모델링했습니다.",
+  "One shared content model": "하나의 공유 콘텐츠 모델",
+  "03 · Craft": "03 · 완성",
+  "Product & Brand Craft": "제품 & 브랜드 완성도",
+  "I shaped the information hierarchy, interaction patterns, interface, naming, visual language, and Hugu assistant as one experience.":
+    "정보 위계, 인터랙션 패턴, 인터페이스, 네이밍, 비주얼 언어, 후구 어시스턴트를 하나의 경험으로 설계했습니다.",
+  "Strategy + UI + identity": "전략 + UI + 아이덴티티",
+  "04 · Validate": "04 · 검증",
+  "Evidence-led Iteration": "근거 기반 반복 개선",
+  "I used usability-test observations to refine task priority, labels, system feedback, and the path through core workflows.":
+    "사용성 테스트 관찰을 바탕으로 과업 우선순위, 레이블, 시스템 피드백, 핵심 워크플로 경로를 개선했습니다.",
+  "Test → learn → revise": "테스트 → 학습 → 개선",
+  "Started from a recurring problem I observed in real multi-channel content work and translated it into a product hypothesis, target workflow, scope, and prioritized requirements.":
+    "실제 멀티채널 콘텐츠 업무에서 반복해서 관찰한 문제를 출발점으로 제품 가설, 타깃 워크플로, 범위, 우선순위 요구사항을 정의했습니다.",
+  "Designed the service architecture and end-to-end experience myself—from master content and channel variants to production states, schedules, permissions, analytics, and follow-up actions.":
+    "마스터 콘텐츠와 채널별 파생 결과물부터 제작 상태, 일정, 권한, 분석, 후속 행동까지 서비스 구조와 엔드투엔드 경험을 직접 설계했습니다.",
+  "Created the naming, brand identity, Hugu mascot and assistant, UI system, and working interface, then ran usability tests and iterated the hierarchy, copy, feedback, and core task flows.":
+    "네이밍, 브랜드 아이덴티티, 후구 마스코트와 어시스턴트, UI 시스템, 실제 동작 인터페이스를 만든 뒤 사용성 테스트를 진행하고 정보 위계, 문구, 피드백, 핵심 과업 흐름을 개선했습니다.",
+  "Defined the product hypothesis, target workflow, scope, and priorities from a recurring problem observed in real multi-channel content work.":
+    "실제 멀티채널 콘텐츠 업무에서 반복해서 관찰한 문제를 바탕으로 제품 가설, 타깃 워크플로, 범위, 우선순위를 정의했습니다.",
+  "Designed the service architecture, brand, UI system, and working interface, then used usability tests to refine the core task flows.":
+    "서비스 구조, 브랜드, UI 시스템, 실제 동작 인터페이스를 설계하고 사용성 테스트를 통해 핵심 과업 흐름을 개선했습니다.",
+  "Framed the recurring multi-channel operations problem, target users, product hypothesis, scope, and priorities.":
+    "반복되는 멀티채널 운영 문제와 타깃 사용자, 제품 가설, 범위, 우선순위를 정의했습니다.",
+  "Designed the shared content model, information architecture, permissions, states, and end-to-end task flows.":
+    "공유 콘텐츠 모델, 정보구조, 권한, 상태, 엔드투엔드 과업 흐름을 설계했습니다.",
+  "Built the brand and UI system, tested the working interface, and refined core flows with usability-test evidence.":
+    "브랜드와 UI 시스템을 구축하고 실제 동작 인터페이스를 테스트한 뒤, 사용성 테스트 근거로 핵심 흐름을 개선했습니다.",
+  Prototyping: "프로토타이핑",
+  "Usability Testing": "사용성 테스트",
+  "FUGUDIO is a multi-channel content operations platform that connects fragmented content planning, production, publishing, performance analysis, and follow-up use in one continuous workflow.":
+    "후구디오는 흩어진 콘텐츠 제작 과정과 채널별 발행 일정을 하나의 워크플로로 연결하고, 성과 데이터를 다음 콘텐츠 기회로 전환하는 멀티채널 콘텐츠 운영 플랫폼입니다.",
+  "Product planner responsible for the service concept, product definition, information architecture, UX flow, UI planning, brand naming and identity, Hugu mascot direction, and the end-to-end content operations framework.":
+    "서비스 콘셉트, 제품 정의, 정보구조, UX 플로우, UI 기획, 브랜드 네이밍·아이덴티티, 후구 마스코트 디렉션, 엔드투엔드 콘텐츠 운영 프레임워크를 담당한 제품 기획자였습니다.",
+  "Translated a complex multi-channel workflow into a working product system where one master content asset can move through production, become channel-specific outputs, accumulate performance evidence, and create the next distribution opportunity.":
+    "복잡한 멀티채널 업무를 하나의 마스터 콘텐츠가 제작 단계를 거쳐 채널별 결과물로 확장되고, 성과 근거를 축적해 다음 배포 기회로 이어지는 실제 제품 시스템으로 구현했습니다.",
+  "FUGUDIO Website": "후구디오 서비스",
+  "Product Introduction": "제품 소개",
+  "Product Thesis": "제품 정의",
+  "Content teams do not only make content. They track ideas, deadlines, production stages, channel-specific schedules, approvals, publishing history, and performance across disconnected tools. FUGUDIO reframes those scattered tasks as one operating system: connecting the production process and every channel schedule, then turning performance data into the next content opportunity.":
+    "콘텐츠 팀은 콘텐츠만 만드는 것이 아닙니다. 서로 다른 도구에서 아이디어, 마감, 제작 단계, 채널별 일정, 검토, 발행 이력, 성과를 함께 관리해야 합니다. 후구디오는 이 흩어진 업무를 하나의 운영 시스템으로 재구성합니다. 제작 과정과 모든 채널 일정을 연결하고, 성과 데이터를 다음 콘텐츠 기회로 전환합니다.",
+  "End-to-End Operating Loop": "엔드투엔드 운영 루프",
+  "The product is structured as a repeatable loop rather than a set of isolated tools. A topic becomes a master content asset, moves through a visible production pipeline, branches into channel-specific formats and schedules, collects performance evidence, and returns as a concrete follow-up action.":
+    "제품은 서로 분리된 도구의 묶음이 아니라 반복 가능한 루프로 설계했습니다. 하나의 주제가 마스터 콘텐츠 자산이 되고, 가시적인 제작 파이프라인을 거쳐 채널별 포맷과 일정으로 분기되며, 성과 근거를 축적해 구체적인 후속 행동으로 돌아옵니다.",
+  Capture: "포착",
+  "Save an idea, brief, script, or original video as a master content asset.": "아이디어, 브리프, 원고, 원본 영상을 마스터 콘텐츠 자산으로 저장합니다.",
+  Produce: "제작",
+  "Move work through planning, filming, editing, review, and approval stages.": "기획, 촬영, 편집, 검토, 승인 단계를 따라 제작을 진행합니다.",
+  "Ready to publish": "발행 준비 완료",
+  Distribute: "배포",
+  "Create independent Reels, Shorts, Clip, Blog, and TikTok variants and schedules.": "릴스, 쇼츠, 클립, 블로그, 틱톡별 결과물과 일정을 독립적으로 만듭니다.",
+  "Channel outputs": "채널별 결과물",
+  Measure: "측정",
+  "Compare views, interactions, and engagement by channel and content.": "채널별·콘텐츠별 조회, 반응, 참여율을 비교합니다.",
+  "Performance signal": "성과 신호",
+  Extend: "확장",
+  "Identify unused channels and turn strong results into the next content action.": "아직 활용하지 않은 채널을 찾고 좋은 성과를 다음 콘텐츠 행동으로 전환합니다.",
+  "Next opportunity": "다음 기회",
+  "Core Product System": "핵심 제품 시스템",
+  "The information architecture balances immediate operational visibility with long-term content reuse. Dashboard, Calendar, Pipeline, Library, Distribution, Analytics, Suggestions, Settings, Studios, and Hugu each solve a different part of the same workflow while sharing one content model.":
+    "정보구조는 즉각적인 운영 가시성과 장기적인 콘텐츠 재활용을 함께 다룹니다. 대시보드, 캘린더, 파이프라인, 라이브러리, 배포, 분석, 제안, 설정, 스튜디오, 후구가 하나의 콘텐츠 모델을 공유하면서 같은 워크플로의 서로 다른 문제를 해결합니다.",
+  Visibility: "가시화",
+  "Operations Dashboard": "콘텐츠 운영 대시보드",
+  "Surfaces urgent deadlines, publishing status, today's work, and channel balance in one view.": "임박한 마감, 발행 현황, 오늘의 작업, 채널별 콘텐츠 균형을 한 화면에 보여줍니다.",
+  Plan: "기획",
+  "Multi-channel Calendar": "멀티채널 콘텐츠 캘린더",
+  "Color-codes Instagram, YouTube, TikTok, Naver Blog, and Clip schedules with independent reservation and publishing states.":
+    "Instagram, YouTube, TikTok, Naver Blog·Clip 일정을 색상으로 구분하고 예약·발행 상태를 독립적으로 관리합니다.",
+  "Kanban Production Pipeline": "칸반형 제작 파이프라인",
+  "Moves content through idea, planning, filming, editing, review, scheduled, and published stages.": "아이디어, 기획, 촬영, 편집, 검토, 발행 예약, 발행 완료 단계를 따라 콘텐츠를 이동합니다.",
+  Asset: "자산",
+  "Content Library": "콘텐츠 라이브러리",
+  "Stores ideas, scripts, and videos as master assets with every derived output and publishing record attached.": "아이디어, 원고, 영상을 마스터 자산으로 보관하고 모든 파생 결과물과 발행 이력을 연결합니다.",
+  "Channel Variants": "플랫폼별 배포 관리",
+  "Transforms one source into Reels, Shorts, Naver Clip, Blog, and other channel-specific formats.": "하나의 원본을 릴스, 쇼츠, 네이버 클립, 블로그 등 채널별 포맷으로 재가공합니다.",
+  Learn: "학습",
+  "Performance Analytics": "성과 분석",
+  "Compares views, interactions, and engagement across channels, content, topics, and formats.": "조회수, 참여 수, 참여율을 채널, 콘텐츠, 주제, 포맷별로 비교합니다.",
+  "Follow-up Suggestions": "후속 콘텐츠 제안",
+  "Recommends concrete reuse such as extending a strong Reel into Naver Clip or YouTube Shorts.": "성과가 좋았던 릴스를 네이버 클립이나 YouTube Shorts로 확장하는 구체적인 재활용 방안을 제안합니다.",
+  "Uses content state and undistributed channels to turn one-off posts into concrete reuse opportunities for Naver Clip, YouTube Shorts, and other platforms.":
+    "콘텐츠 상태와 아직 배포하지 않은 채널을 바탕으로 일회성 게시물을 Naver Clip, YouTube Shorts 등 다른 플랫폼의 구체적인 재활용 기회로 전환합니다.",
+  Configure: "설정",
+  "Custom Operating Presets": "맞춤형 운영 설정",
+  "Adapts channel, format, category, and target-mix presets to each user's operating style.": "채널, 포맷, 카테고리, 목표 비중 프리셋을 사용자의 운영 방식에 맞게 설정합니다.",
+  Collaborate: "협업",
+  "Personal & Team Studios": "개인·팀 스튜디오",
+  "Supports independent creator workspaces and shared studios with member roles and permissions.": "개인 크리에이터의 독립 공간과 멤버 역할·권한을 나눈 팀 공동 스튜디오를 지원합니다.",
+  Assist: "보조",
+  "Hugu Operations Co-pilot": "후구 운영 도우미",
+  "Flags delays, urgent publishing, next tasks, and additional distribution opportunities throughout the workflow.": "제작 지연, 임박한 발행, 다음 작업, 추가 배포 기회를 운영 과정 전반에서 안내합니다.",
+  "Delivers context-aware alerts for delays, next tasks, and reuse opportunities, then links users directly to the relevant work or recommended channel adaptation.":
+    "사용자의 지연 작업, 다음 과업, 재활용 기회에 맞춘 알림을 제공하고 관련 작업이나 추천 채널 재가공 화면으로 바로 연결합니다.",
+  "Live Product Interface": "실제 제품 인터페이스",
+  "These screens are captured from the latest authenticated production deployment. Together they show how the product moves from daily operational visibility to scheduling, production control, asset management, performance learning, and workspace configuration without breaking the content lifecycle into disconnected tools.":
+    "로그인된 최신 운영 배포본에서 캡처한 실제 화면입니다. 일상적인 운영 가시화에서 일정 관리, 제작 제어, 자산 관리, 성과 학습, 워크스페이스 설정까지 콘텐츠 라이프사이클을 분리된 도구로 나누지 않고 하나의 제품 안에서 연결하는 방식을 보여줍니다.",
+  "These screens are captured from the latest authenticated production deployment. Together they show scheduling, production control, asset management, operational visibility, and workspace configuration inside one connected content workflow.":
+    "로그인된 최신 운영 배포본에서 캡처한 실제 화면입니다. 일정 관리, 제작 제어, 자산 관리, 운영 가시화, 워크스페이스 설정이 하나의 연결된 콘텐츠 워크플로 안에서 작동하는 방식을 보여줍니다.",
+  "Prioritizes overdue work, today's tasks, upcoming publishing, content-pillar balance, and channel distribution while Hugu surfaces the most urgent next action.":
+    "지연 작업, 오늘의 할 일, 다가오는 발행, 콘텐츠 Pillar 균형, 채널별 분포를 우선순위화하고 후구가 가장 긴급한 다음 행동을 안내합니다.",
+  "Multi-channel Publishing Calendar": "멀티채널 발행 캘린더",
+  "Maps platform, format, production state, reservation state, and publishing state onto color-coded calendar blocks so one topic can move on different channel schedules.":
+    "플랫폼, 포맷, 제작 상태, 예약 상태, 발행 상태를 색상 캘린더 블록에 매핑해 하나의 주제가 채널마다 서로 다른 일정으로 움직이도록 합니다.",
+  "Makes production bottlenecks visible across idea, planning, filming, editing, review, scheduling, and completion, with stage changes controlled directly from each card.":
+    "아이디어, 기획, 촬영, 편집, 검토, 발행 예약, 완료 단계의 제작 병목을 보여주고 각 카드에서 직접 진행 단계를 변경할 수 있습니다.",
+  "Master Content Library": "마스터 콘텐츠 라이브러리",
+  "Provides a searchable master-asset view across pillars, platforms, production states, distribution blocks, publishing dates, and accumulated performance.":
+    "Pillar, 플랫폼, 제작 상태, 배포 블록, 발행일, 누적 성과를 기준으로 검색 가능한 마스터 자산 뷰를 제공합니다.",
+  "Performance & Next-action Analysis": "성과 & 다음 행동 분석",
+  "The production interface reserves analytics for eligible plans and explains how published results will become the basis for Hugu's next-action recommendations.":
+    "운영 화면은 이용 가능한 플랜에 성과 분석을 제공하며, 발행 결과가 후구의 다음 행동 제안 근거가 되는 방식을 안내합니다.",
+  "Workspace, Presets & Permissions": "워크스페이스, 프리셋 & 권한",
+  "Brings plan permissions, SNS-format presets, workspace settings, member roles, and target content-pillar ratios into one operating configuration surface.":
+    "플랜별 권한, SNS·콘텐츠 포맷 프리셋, 워크스페이스 설정, 멤버 역할, 목표 콘텐츠 Pillar 비율을 하나의 운영 설정 화면으로 통합합니다.",
+  "Context-aware Guidance & Reuse": "맞춤형 안내 & 콘텐츠 재활용",
+  "Hugu reads the user's current deadlines, production states, and channel distribution context to surface personalized alerts and next tasks. It also finds content that has not yet been distributed to other platforms, so a one-off post can become a concrete channel-specific reuse opportunity.":
+    "후구는 사용자의 현재 마감, 제작 상태, 채널별 배포 상황을 읽어 맞춤형 알림과 다음 과업을 안내합니다. 아직 다른 플랫폼에 배포하지 않은 콘텐츠도 찾아 일회성 게시물을 채널별로 실행 가능한 재활용 기회로 전환합니다.",
+  "Hugu Agent Panel": "후구 에이전트 패널",
+  "Brings today's work, personalized alerts, reuse opportunities, and content creation into one contextual action panel.":
+    "오늘의 작업, 맞춤형 알림, 재활용 기회, 새 콘텐츠 만들기를 하나의 상황별 액션 패널에 모았습니다.",
+  "Personalized Reuse Opportunity Alert": "맞춤형 콘텐츠 재활용 알림",
+  "Identifies a published asset that can be adapted for another channel and takes the user directly to the recommended reuse action.":
+    "다른 채널로 재가공할 수 있는 발행 자산을 찾아 추천 재활용 작업으로 사용자를 바로 연결합니다.",
+  "Reuse opportunity alert": "콘텐츠 재활용 기회 알림",
+  "Overdue priority alert": "마감 지연 우선 작업 알림",
+  "Upcoming schedule alert": "다가오는 발행 일정 알림",
+  "Delayed task alert": "지연된 제작 작업 알림",
+  "Content pillar target alert": "콘텐츠 Pillar 목표 알림",
+  "Personalized Operations Alerts": "상황별 맞춤형 운영 알림",
+  "Hugu adapts its message and direct action to reuse opportunities, overdue work, upcoming publishing, delayed production, and content-pillar balance.":
+    "후구는 재활용 기회, 마감 지연, 다가오는 발행, 제작 지연, 콘텐츠 Pillar 균형 등 사용자의 현재 상황에 맞춰 메시지와 바로 실행할 수 있는 행동을 다르게 제안합니다.",
+  "Channel-specific Repurpose Suggestions": "채널별 콘텐츠 재활용 제안",
+  "Turns the alert into executable options by recommending Naver Clip, YouTube Shorts, and TikTok adaptations from the same published Reel.":
+    "같은 발행 릴스를 Naver Clip, YouTube Shorts, TikTok에 맞게 재가공하는 선택지를 제시해 알림을 실제 실행으로 연결합니다.",
+  "Reuse States in the Content Library": "콘텐츠 라이브러리의 재활용 상태",
+  "Shows reuse-ready, reviewed, and newly created derivative content in the master library so the recommendation becomes a traceable operating workflow.":
+    "재활용 가능, 검토 완료, 새로 생성된 파생 콘텐츠를 마스터 라이브러리에서 함께 보여주어 제안이 추적 가능한 운영 흐름이 되도록 합니다.",
+  "One Master Asset, Many Channel Outputs": "하나의 마스터 자산, 여러 채널 결과물",
+  "The master-to-variant relationship is the core product model. One travel Reel can move through production, publish on Instagram, branch into Naver Clip and YouTube Shorts, and later become evidence for the next topic instead of disappearing after one post.":
+    "마스터와 파생 결과물의 관계가 핵심 제품 모델입니다. 하나의 여행 릴스가 제작 단계를 거쳐 Instagram에 발행되고, Naver Clip과 YouTube Shorts로 분기된 뒤 한 번의 게시물로 사라지지 않고 다음 주제의 근거가 됩니다.",
+  "The Connected Content Lifecycle": "연결된 콘텐츠 라이프사이클",
+  "The live FUGUDIO introduction visualizes the five-stage flow from idea capture and production to multi-channel publishing, performance connection, and the next action.":
+    "실제 후구디오 제품 소개 화면은 아이디어 포착과 제작에서 멀티채널 발행, 성과 연결, 다음 행동까지 이어지는 5단계 흐름을 보여줍니다.",
+  "Interaction Principles": "인터랙션 원칙",
+  "The UX reduces coordination work by making operational state legible, preserving the relationship between original and distributed content, allowing each channel to move independently, and keeping analysis close to the next decision.":
+    "운영 상태를 읽기 쉽게 만들고, 원본과 배포 콘텐츠의 관계를 보존하며, 각 채널이 독립적으로 움직이게 하고, 분석을 다음 의사결정 가까이에 배치해 조율 비용을 줄였습니다.",
+  "01 · See": "01 · 가시화",
+  "Visible Operational State": "보이는 운영 상태",
+  "Deadlines, blockers, owners, publishing states, and channel balance stay visible without rebuilding the picture across tools.": "여러 도구를 다시 확인하지 않아도 마감, 병목, 담당자, 발행 상태, 채널 균형을 볼 수 있습니다.",
+  "Dashboard + calendar + pipeline": "대시보드 + 캘린더 + 파이프라인",
+  "02 · Connect": "02 · 연결",
+  "Master-to-Variant Model": "마스터-파생 모델",
+  "Original ideas, scripts, and videos remain connected to every channel adaptation and publishing history.": "원본 아이디어, 원고, 영상이 모든 채널별 재가공 결과와 발행 이력에 연결됩니다.",
+  "One asset → many outputs": "하나의 자산 → 여러 결과물",
+  "03 · Control": "03 · 제어",
+  "Channel Independence": "채널 독립성",
+  "Each platform output keeps its own format, schedule, reservation state, publishing state, and performance record.": "각 플랫폼 결과물은 고유한 포맷, 일정, 예약 상태, 발행 상태, 성과 기록을 유지합니다.",
+  "Shared topic, independent delivery": "같은 주제, 독립적인 배포",
+  "04 · Learn": "04 · 학습",
+  "Data into Next Action": "데이터를 다음 행동으로",
+  "Performance is not an endpoint; strong topics, formats, and unused channels become actionable reuse suggestions.": "성과는 끝점이 아닙니다. 반응이 좋았던 주제·포맷과 미배포 채널이 실행 가능한 재활용 제안이 됩니다.",
+  "Measure → recommend → extend": "측정 → 제안 → 확장",
+  "Hugu, the Operations Co-pilot": "운영 도우미, 후구",
+  "Hugu is both the FUGUDIO mascot and an operational assistant. It makes a complex B2B-style workflow feel approachable while guiding the user through delayed production, urgent publishing, next tasks, performance summaries, and channel expansion opportunities.":
+    "후구는 후구디오의 마스코트이자 운영 도우미입니다. 복잡한 업무용 워크플로를 친근하게 만들면서 제작 지연, 임박한 발행, 다음 작업, 성과 요약, 채널 확장 기회를 안내합니다.",
+  "Hugu Assistance System": "후구 어시스턴스 시스템",
+  "The live product introduction positions Hugu across deadline alerts, performance summaries, channel expansion, and role-aware collaboration guidance.": "실제 제품 소개 화면에서 후구는 마감 알림, 성과 요약, 채널 확장, 역할에 따른 협업 안내를 담당합니다.",
+  "Brand & Product Language": "브랜드 & 제품 언어",
+  "UI Kit & Design System": "UI KIT & 디자인 시스템",
+  "FUGUDIO balances the professionalism of a content operations tool with the warmth of its brand. I built a reusable system around primary navy, dusty pink, iOS-inspired translucent surfaces, disciplined radii, legible system typography, Lucide icons, and domain-specific components—keeping information priority clear across desktop and mobile.":
+    "후구디오는 콘텐츠 운영 도구의 전문성과 브랜드의 친근함을 함께 전달합니다. 프라이머리 네이비와 더스티 핑크, iOS에서 착안한 반투명 표면, 일관된 곡률, 가독성 높은 시스템 타이포그래피, Lucide 아이콘, 도메인 전용 컴포넌트를 하나의 재사용 가능한 시스템으로 구축해 데스크톱과 모바일 모두에서 정보의 우선순위를 명확하게 유지했습니다.",
+  "A professional content workspace softened by dusty pink, translucent layers, and a disciplined radius system.":
+    "더스티 핑크와 반투명 레이어, 일관된 곡률로 전문적인 콘텐츠 운영 경험을 부드럽게 만들었습니다.",
+  "Design direction": "디자인 방향",
+  "Professional foundation": "전문적인 기반",
+  "Navy, clear hierarchy, and restrained decoration support dense content operations.":
+    "네이비, 명확한 정보 위계, 절제된 장식으로 복잡한 콘텐츠 운영을 안정적으로 지원합니다.",
+  "Friendly brand layer": "친근한 브랜드 레이어",
+  "Dusty pink, Hugu, and soft surfaces make repeated operational work feel approachable.":
+    "더스티 핑크와 후구, 부드러운 표면으로 반복되는 운영 업무를 부담 없이 느끼게 합니다.",
+  "Translucent, not fragile": "투명하지만 흐리지 않게",
+  "iOS-inspired glass stays 80–94% opaque so depth never compromises readability.":
+    "iOS에서 착안한 글래스 표면은 80–94% 불투명도를 유지해 레이어 깊이가 가독성을 해치지 않도록 합니다.",
+  "Body · buttons · inputs": "본문 · 버튼 · 입력창",
+  "Body · buttons · inputs · system sans-serif fallback": "본문 · 버튼 · 입력창 · 시스템 산세리프 폴백",
+  "Momoment Kkukkuk": "메모먼트 꾹꾹체",
+  "Limited brand headlines · local only": "제한된 브랜드 헤드라인 · 로컬 환경 전용",
+  "Limited brand headlines · local only by license policy": "제한된 브랜드 헤드라인 · 라이선스 정책에 따라 로컬 환경 전용",
+  "Eyebrow · labels · status data": "Eyebrow · 레이블 · 상태 데이터",
+  "KPI · metrics · table headers": "KPI · 지표 · 테이블 헤더",
+  "System font fallbacks preserve legibility without external webfonts; expressive type is used only where it carries meaning.":
+    "외부 웹폰트 없이도 시스템 폰트 폴백으로 가독성을 유지하고, 개성 있는 서체는 의미가 필요한 지점에만 제한적으로 사용합니다.",
+  "Color system": "컬러 시스템",
+  "Primary Navy": "프라이머리 네이비",
+  "Brand Pink": "브랜드 핑크",
+  "Soft Pink": "소프트 핑크",
+  Paper: "페이퍼",
+  Canvas: "캔버스",
+  "Secondary Text": "보조 텍스트",
+  "Muted Text": "뮤트 텍스트",
+  Divider: "구분선",
+  Success: "성공",
+  Warning: "주의",
+  "Text · CTA · active": "주요 텍스트 · CTA · 활성",
+  "Brand · selected": "브랜드 포인트 · 선택",
+  "Highlight · support": "하이라이트 · 보조",
+  "Cards · content": "카드 · 콘텐츠",
+  "App background": "서비스 배경",
+  Descriptions: "설명 정보",
+  "Metadata · disabled": "메타데이터 · 비활성",
+  "Borders · dividers": "테두리 · 구분선",
+  "Published · normal": "발행 완료 · 정상",
+  "Deadline · attention": "마감 · 주의",
+  "Platform colors": "플랫폼 컬러",
+  "Platform color identifies the channel; a separate badge communicates publishing state.":
+    "플랫폼 컬러는 채널을 구분하고 발행 상태는 별도의 배지로 전달해 두 정보가 혼동되지 않도록 했습니다.",
+  "Shape & surface": "형태 & 표면",
+  "Component sizing & layers": "컴포넌트 크기 & 레이어",
+  "Input · button": "입력창 · 버튼",
+  Controls: "컨트롤",
+  "Content cards": "콘텐츠 카드",
+  "Panels · modals": "패널 · 모달",
+  "Chips · status": "칩 · 상태",
+  "Translucent panel": "반투명 패널",
+  "Action card": "액션 카드",
+  "80–94% opacity and 18–30px blur create depth while preserving text contrast.":
+    "80–94% 불투명도와 18–30px 블러로 텍스트 대비를 유지하면서 레이어 깊이를 표현합니다.",
+  Small: "작은 요소",
+  Control: "컨트롤",
+  Card: "카드",
+  Panel: "패널",
+  Badge: "배지",
+  "Glass surface": "글래스 표면",
+  "opacity · blur 18–30px · soft depth": "불투명도 · 블러 18–30px · 부드러운 깊이",
+  "Icon system": "아이콘 시스템",
+  "Lucide React icon samples": "Lucide React 아이콘 예시",
+  "Lucide React · 14–18px · 1.8px stroke · labels remain visible beside icons.":
+    "Lucide React · 14–18px · 1.8px Stroke · 아이콘 옆에 텍스트 레이블을 함께 표시합니다.",
+  "Buttons & interaction states": "버튼 & 인터랙션 상태",
+  "Primary action": "핵심 행동",
+  Secondary: "보조 행동",
+  Ghost: "고스트",
+  Danger: "위험 행동",
+  "Form controls": "폼 컨트롤",
+  "Text input": "텍스트 입력",
+  "Search input": "검색 입력",
+  "Bubble select": "버블 셀렉트",
+  "Instagram Reels": "Instagram Reels",
+  "File upload": "파일 업로드",
+  "Choose file": "파일 선택",
+  "Component architecture": "컴포넌트 아키텍처",
+  "Form control": "폼 컨트롤",
+  Search: "검색",
+  "Date picker": "날짜 선택",
+  Cards: "카드",
+  KPI: "KPI",
+  Content: "콘텐츠",
+  "Calendar block": "캘린더 블록",
+  Kanban: "칸반",
+  Distribution: "배포",
+  "Chip & badge": "칩 & 배지",
+  Platform: "플랫폼",
+  Production: "제작 단계",
+  "Publish state": "발행 상태",
+  Pillar: "Pillar",
+  Role: "사용자 역할",
+  Feedback: "피드백",
+  Tooltip: "툴팁",
+  Toast: "토스트",
+  Alert: "알림 카드",
+  "Empty state": "빈 상태",
+  "Confirm dialog": "확인 다이얼로그",
+  Navigation: "내비게이션",
+  Sidebar: "사이드바",
+  Header: "헤더",
+  "Mobile tabs": "모바일 탭",
+  "Active indicator": "활성 표시",
+  Transition: "페이지 전환",
+  "Domain-specific": "도메인 전용",
+  "Kanban card": "칸반 카드",
+  "Master panel": "마스터 콘텐츠 패널",
+  "SNS preset": "SNS 프리셋",
+  "Hugu insight": "후구 인사이트",
+  "Domain guidance combines status, explanation, and a direct next action.":
+    "도메인 안내 컴포넌트는 상태, 설명, 바로 실행 가능한 다음 행동을 함께 제공합니다.",
+  "Responsive navigation": "반응형 내비게이션",
+  "Desktop sidebar + header": "데스크톱 사이드바 + 헤더",
+  "Mobile top bar + bottom tabs": "모바일 상단 바 + 하단 탭",
+  "Interaction & motion": "인터랙션 & 모션",
+  "Fade · Slide": "Fade · Slide",
+  "Hover lift": "Hover 상승",
+  "Tooltip · Toast": "Tooltip · Toast",
+  "Bottom sheet": "Bottom Sheet",
+  "Reduced motion": "모션 최소화",
+  "Motion explains page changes, selection results, and layer relationships instead of decorating the interface.":
+    "모션은 장식보다 페이지 변화, 선택 결과, 레이어 관계를 설명하는 목적으로 사용하며 모션 최소화 설정을 지원합니다.",
+  "The brand system combines a strong navy-and-coral interface palette with a playful wordmark and handmade mascot. This contrast gives the workspace enough structure for serious operations while keeping it memorable and creator-friendly.":
+    "브랜드 시스템은 네이비·코랄 인터페이스 팔레트에 위트 있는 워드마크와 핸드메이드 마스코트를 결합합니다. 진지한 운영 도구에 필요한 구조감을 유지하면서도 기억에 남고 크리에이터 친화적인 인상을 만듭니다.",
+  "I built the brand system around a deliberate contrast: enough structure and navy to feel trustworthy as an operations product, with coral, soft surfaces, a playful wordmark, and Hugu to make repeated content work feel encouraging and creator-friendly.":
+    "운영 제품으로서 신뢰를 주는 구조와 네이비에 코랄, 부드러운 표면, 위트 있는 워드마크, 후구를 결합했습니다. 반복되는 콘텐츠 업무가 부담스럽지 않고 응원받는 경험이 되도록 설계한 브랜드 시스템입니다.",
+  "I translated the brand language into a reusable UI kit covering color, typography, controls, operational states, content cards, and Hugu guidance components. The system keeps dense content operations trustworthy and legible while preserving a warm, creator-friendly personality.":
+    "브랜드 언어를 컬러, 타이포그래피, 컨트롤, 운영 상태, 콘텐츠 카드, 후구 안내 컴포넌트를 아우르는 재사용 가능한 UI Kit로 구축했습니다. 복잡한 콘텐츠 운영은 신뢰감 있고 읽기 쉽게 유지하면서 따뜻하고 크리에이터 친화적인 개성을 보존했습니다.",
+  "Core data model": "핵심 데이터 모델",
+  "One shared source": "하나의 기준 정보",
+  "Master content data structure": "마스터 콘텐츠 데이터 구조",
+  "Idea": "아이디어",
+  "Master asset": "마스터 자산",
+  "Channel variant": "채널별 파생 콘텐츠",
+  "State": "상태",
+  "Schedule": "일정",
+  "Performance": "성과",
+  "A reusable visual system for focused, friendly content operations.":
+    "집중도 높은 콘텐츠 운영과 친근한 안내를 위한 재사용 가능한 비주얼 시스템입니다.",
+  "Colors": "컬러",
+  "Typography": "타이포그래피",
+  "Headings · clear hierarchy": "헤딩 · 명확한 위계",
+  "Body · calm readability": "본문 · 편안한 가독성",
+  "Buttons & states": "버튼 & 상태",
+  "Create content": "콘텐츠 만들기",
+  "View next task": "다음 작업 보기",
+  "Completed": "완료",
+  "In production": "제작 중",
+  "Needs review": "검토 필요",
+  "Published": "발행 완료",
+  "Core components": "핵심 컴포넌트",
+  "Search field": "검색 필드",
+  "Search content or tags": "콘텐츠 또는 태그 검색",
+  "Content title": "콘텐츠 제목",
+  "Editing": "편집",
+  "Hugu mascot": "후구 마스코트",
+  "I found a reuse opportunity.": "재활용 기회를 찾았어요.",
+  "Brand mood": "브랜드 무드",
+  "Structured enough to trust. Friendly enough to return.":
+    "신뢰할 만큼 구조적이고, 다시 찾고 싶을 만큼 친근하게.",
+  Clear: "명확함",
+  Warm: "따뜻함",
+  "Creator-friendly": "크리에이터 친화",
+  Encouraging: "응원하는",
+  "Color palette": "컬러 팔레트",
+  "Navy builds operational trust; coral and blush make guidance feel supportive.":
+    "네이비는 운영 도구의 신뢰를 만들고, 코랄과 블러시는 안내를 지지적인 경험으로 바꿉니다.",
+  "Deep Navy": "딥 네이비",
+  "Hugu Coral": "후구 코랄",
+  "Soft Blush": "소프트 블러시",
+  "Cloud White": "클라우드 화이트",
+  "Signal Blue": "시그널 블루",
+  "Confident structure": "신뢰를 주는 구조",
+  "Dense operations stay legible through restrained color and clear hierarchy.":
+    "절제된 색과 명확한 위계로 복잡한 운영 정보도 빠르게 읽히게 합니다.",
+  "Warm guidance": "부담 없는 안내",
+  "Alerts and next actions guide without making the user feel blamed.":
+    "알림과 다음 행동이 사용자를 재촉하거나 탓하는 느낌 없이 방향을 제시합니다.",
+  "Playful recognition": "기억에 남는 개성",
+  "The wordmark and Hugu turn a complex workspace into a memorable product.":
+    "워드마크와 후구가 복잡한 워크스페이스를 기억에 남는 제품으로 만듭니다.",
+  "FUGUDIO Wordmark": "후구디오 워드마크",
+  "The deployed wordmark balances playful personality with a compact product signature.": "실제 서비스에 적용된 워드마크는 위트 있는 개성과 간결한 제품 시그니처의 균형을 잡습니다.",
+  "Hugu Mascot": "후구 마스코트",
+  "Hugu turns operational guidance into a recognizable and friendly interaction layer.": "후구는 운영 안내를 식별 가능하고 친근한 인터랙션 레이어로 바꿉니다.",
+  "Mapped the complete content lifecycle from master asset and production stage to channel-specific distribution, performance, and reuse.": "마스터 자산과 제작 단계에서 채널별 배포, 성과, 재활용까지 전체 콘텐츠 라이프사이클을 설계했습니다.",
+  "Structured ten connected product capabilities across operational visibility, planning, production, asset management, distribution, analytics, configuration, collaboration, and assistance.": "운영 가시화, 기획, 제작, 자산 관리, 배포, 분석, 설정, 협업, 보조 전반의 10개 제품 기능을 하나의 구조로 연결했습니다.",
+  "Connected information architecture, interaction principles, brand identity, and the Hugu assistant into one creator-friendly operating system.": "정보구조, 인터랙션 원칙, 브랜드 아이덴티티, 후구 어시스턴트를 하나의 크리에이터 친화적 운영 시스템으로 연결했습니다.",
 
+  Attember: "Attember",
+  "AI agent product planning & UI/UX": "AI 에이전트 제품 기획 & UI/UX",
+  "OpenAI Hackathon · 2026": "OpenAI 해커톤 · 2026",
+  "From scattered context to an executable AI work pipeline.":
+    "흩어진 맥락을 실행 가능한 AI 업무 파이프라인으로 전환합니다.",
+  "Attember began with a simple question: why do people lose important work when their task list gets crowded? I planned a macOS AI work hub that collects scattered context, determines priority, researches relevant opportunities, and carries approved tasks through to execution.":
+    "Attember는 '할 일이 몰릴수록 왜 중요한 일부터 놓치게 될까?'라는 질문에서 시작했습니다. 흩어진 맥락을 수집하고 우선순위를 판단하며, 필요한 기회를 조사하고 승인된 업무를 실제 실행까지 이어주는 macOS AI 워크 허브를 기획했습니다.",
+  "Attember began with a simple question: why do people lose important work when their task list gets crowded? I designed a macOS AI work hub that turns scattered context into prioritized tasks, verified research, and approved execution.":
+    "Attember는 '할 일이 몰릴수록 왜 중요한 일부터 놓치게 될까?'라는 질문에서 시작했습니다. 흩어진 맥락을 우선순위가 정리된 Task, 검증된 리서치, 사용자가 승인한 실행으로 전환하는 macOS AI 워크 허브를 설계했습니다.",
+  "As PM and UI/UX Designer, I led problem definition, interview and community research synthesis, product strategy, information architecture, end-to-end agent workflow, desktop UI/UX design, prototype direction, and demo storytelling.":
+    "PM 및 UI/UX 디자이너로서 문제 정의, 인터뷰·커뮤니티 리서치 종합, 제품 전략, 정보구조, 엔드투엔드 에이전트 워크플로우, 데스크톱 UI/UX 설계, 프로토타입 방향과 데모 스토리텔링을 리드했습니다.",
+  "Built and demonstrated a connected product experience that turns conversation and profile context into structured tasks, personalized research, priority placement, and Codex SDK-powered execution rather than stopping at recommendations.":
+    "대화와 프로필 맥락을 구조화된 Task, 개인화 리서치, 우선순위 배치, Codex SDK 기반 실행으로 연결해 단순 추천에서 멈추지 않는 실제 제품 경험을 구현하고 시연했습니다.",
+  "Watch Product Demo": "제품 데모 보기",
+  "View GitHub Repository": "GitHub 저장소 보기",
+  "Why This Product": "왜 이 제품을 기획했는가",
+  "Interview and community research revealed four recurring barriers: priority confusion, putting team obligations ahead of personal work, perfectionism around important tasks, and burnout-driven avoidance. The opportunity was not another to-do list, but a system that reduces the judgment and coordination cost before execution.":
+    "인터뷰와 커뮤니티 리서치에서 우선순위 혼란, 팀 업무 우선으로 인한 개인 업무 지연, 중요한 일에 대한 완벽주의, 번아웃 기반 회피라는 네 가지 장벽을 발견했습니다. 필요한 것은 또 하나의 할 일 목록이 아니라 실행 전에 발생하는 판단과 조율 비용을 줄이는 시스템이었습니다.",
+  "User Problem Patterns": "사용자 문제 패턴",
+  "Four behavioral patterns synthesized from interview and community research.":
+    "인터뷰와 커뮤니티 리서치에서 종합한 네 가지 행동 패턴입니다.",
+  "Work Overload Evidence": "업무 과부하 근거",
+  "External research connected overload, fragmented focus, and coordination cost to delayed execution.":
+    "외부 조사 자료를 통해 과부하, 집중 분산, 조율 비용이 실행 지연으로 이어지는 구조를 확인했습니다.",
+  "From Overload to an Agent Workflow": "과부하를 에이전트 워크플로우로 전환",
+  "I reframed the product from a planning tool into an agent that collects approved context, turns it into tasks, places work by importance and urgency, retrieves past information, explores relevant opportunities, and executes work within a safe workspace.":
+    "제품을 단순한 계획 도구가 아니라, 사용자가 승인한 맥락을 수집해 Task로 전환하고 중요도·긴급도에 따라 배치하며 과거 정보를 검색하고 관련 기회를 탐색해 안전한 워크스페이스에서 업무를 실행하는 에이전트로 재정의했습니다.",
+  "Before and After": "기존 방식과 제품의 변화",
+  "Each recurring user burden was translated into a concrete product response.":
+    "반복되는 사용자 부담을 각각 구체적인 제품 기능으로 전환했습니다.",
+  "Understand · Decide · Execute · Complete": "이해 · 판단 · 실행 · 완료",
+  "The agent loop connects context understanding to follow-up instead of presenting disconnected AI features.":
+    "분리된 AI 기능을 나열하지 않고 맥락 이해부터 후속 행동까지 하나의 에이전트 루프로 연결했습니다.",
+  "The Agent Pipeline I Designed": "내가 설계한 에이전트 파이프라인",
+  "I organized the end-to-end experience around four clear stages so users can understand what the agent knows, why it prioritizes an item, what it is doing, and what should happen next.":
+    "사용자가 에이전트가 무엇을 알고 있는지, 왜 특정 일을 우선하는지, 현재 무엇을 수행하는지, 다음에는 무엇이 이어지는지를 이해할 수 있도록 전체 경험을 네 단계로 구조화했습니다.",
+  Understand: "이해",
+  "Collect approved schedules, conversations, profile data, and goals to recover the user's working context.":
+    "승인된 일정, 대화, 프로필 데이터와 목표를 수집해 사용자의 업무 맥락을 복원합니다.",
+  "Context & intent": "맥락 & 의도",
+  Decide: "판단",
+  "Evaluate importance, urgency, role, fit, and evidence to determine a personalized order of action.":
+    "중요도, 긴급도, 역할, 적합도와 근거를 평가해 개인화된 실행 순서를 결정합니다.",
+  "Priority & rationale": "우선순위 & 근거",
+  Execute: "실행",
+  "Research, structure tasks, prepare a safe project workspace, and call Codex SDK for approved work.":
+    "리서치와 Task 구조화를 진행하고 안전한 프로젝트 워크스페이스를 준비해 승인된 업무에 Codex SDK를 호출합니다.",
+  "Agent action": "에이전트 실행",
+  Complete: "완료",
+  "Track progress, preserve the generated context, and return a clear result with the next recommended action.":
+    "진행 상황과 생성된 맥락을 보존하고 명확한 결과와 다음 권장 행동을 반환합니다.",
+  "Result & follow-up": "결과 & 후속 행동",
+  "Working Product Interface": "실제 제품 인터페이스",
+  "The macOS interface connects Inbox, Tasks, Sources, Automations, Memory, and Auto Research around a Task Map. Users can see incoming context, the reason behind a recommendation, and where each task sits by importance and urgency.":
+    "macOS 인터페이스는 Task Map을 중심으로 Inbox, Tasks, Sources, Automations, Memory, Auto Research를 연결합니다. 사용자는 들어온 맥락과 추천 근거, 각 Task의 중요도·긴급도 위치를 한눈에 확인할 수 있습니다.",
+  "Attember Product Overview": "Attember 제품 개요",
+  "Task Map, Auto Research, and context tools brought together in one desktop work hub.":
+    "Task Map, Auto Research와 맥락 도구를 하나의 데스크톱 워크 허브에 통합했습니다.",
+  "Live Demo: Context to Execution": "라이브 데모: 맥락에서 실행까지",
+  "The working demo shows the complete product flow: connected conversations become structured work, profile context guides research, evidence is scored and filtered, tasks are positioned on the Task Map, and the agent begins execution in a dedicated workspace.":
+    "실제 데모는 연결된 대화가 구조화된 업무가 되고, 프로필 맥락이 리서치를 안내하며, 근거가 평가·필터링되고, Task가 Task Map에 배치된 뒤 전용 워크스페이스에서 에이전트가 실행을 시작하는 전체 흐름을 보여줍니다.",
+  "The working product connects four critical moments: seeing priorities, researching opportunities with evidence, managing generated tasks, and carrying conversation context into an actionable response.":
+    "실제 제품은 우선순위 확인, 근거 기반 기회 탐색, 생성된 Task 관리, 대화 맥락을 활용한 실행 가능한 응답이라는 네 가지 핵심 순간을 연결합니다.",
+  "Priority Home & Task Map": "우선순위 홈 & Task Map",
+  "Brings today's schedule and importance–urgency placement into one operational view.":
+    "오늘의 일정과 중요도·긴급도 배치를 하나의 운영 화면에서 확인합니다.",
+  "Evidence-based Auto Research": "근거 기반 Auto Research",
+  "Matches profile context to opportunities, cross-checks sources, and explains each recommendation.":
+    "프로필 맥락과 기회를 매칭하고 출처를 교차 검증해 각 추천의 이유를 설명합니다.",
+  "Generated Task Workspace": "생성된 Task 워크스페이스",
+  "Turns recovered context into editable tasks with deadlines, priority, and linked evidence.":
+    "복원한 맥락을 마감, 우선순위, 연결 근거가 포함된 편집 가능한 Task로 전환합니다.",
+  "Context-aware Agent Chat": "맥락 기반 에이전트 Chat",
+  "Uses connected context, sources, and next actions to produce a useful response instead of a generic answer.":
+    "연결된 맥락, 출처, 다음 행동을 활용해 일반적인 답변이 아닌 실제로 쓸 수 있는 응답을 만듭니다.",
+  "Connected Context": "연결된 맥락 수집",
+  "Collects actionable information from connected conversations.":
+    "연결된 대화에서 실행 가능한 정보를 수집합니다.",
+  "Personalized Research Profile": "개인화 리서치 프로필",
+  "Uses portfolio and profile context to guide opportunity research.":
+    "포트폴리오와 프로필 맥락을 활용해 기회 탐색 방향을 설정합니다.",
+  "Evidence-based Research": "근거 기반 리서치",
+  "Cross-checks multiple sources and records the evidence trail.":
+    "여러 출처를 교차 검증하고 근거의 흐름을 기록합니다.",
+  "Task Map Prioritization": "Task Map 우선순위 배치",
+  "Places generated tasks by importance and urgency.":
+    "생성된 Task를 중요도와 긴급도 기준으로 배치합니다.",
+  "One-command Handoff": "한 번의 명령으로 실행 전환",
+  "Starts approved work directly from the task interface.":
+    "Task 인터페이스에서 승인된 업무를 바로 시작합니다.",
+  "Agent Execution": "에이전트 실행",
+  "Uses preserved context to plan and carry out work step by step.":
+    "보존된 맥락을 활용해 업무를 계획하고 단계적으로 수행합니다.",
+  "Synthesized interview and community research into four behavioral barriers behind delayed execution.":
+    "인터뷰와 커뮤니티 리서치를 종합해 실행 지연의 네 가지 행동 장벽을 정의했습니다.",
+  "Translated the problem into an agent product strategy spanning context collection, task creation, research, prioritization, and execution.":
+    "문제를 맥락 수집, Task 생성, 리서치, 우선순위 배치, 실행을 아우르는 에이전트 제품 전략으로 전환했습니다.",
+  "Designed the desktop information architecture and interaction flow across Inbox, Tasks, Sources, Automations, Memory, Auto Research, and Task Map.":
+    "Inbox, Tasks, Sources, Automations, Memory, Auto Research, Task Map 전반의 데스크톱 정보구조와 인터랙션 흐름을 설계했습니다.",
+  "Structured the working demo and pitch narrative to make a complex AI pipeline understandable through visible user actions and outcomes.":
+    "복잡한 AI 파이프라인이 사용자의 행동과 결과를 통해 이해되도록 실제 데모와 피치 내러티브를 구조화했습니다.",
+  "Prototype Direction": "프로토타입 방향 설계",
+  "Product Storytelling": "제품 스토리텔링",
   Atember: "Atember",
   "AI-powered work memory & productivity system": "AI 기반 업무 기억 & 생산성 시스템",
   "Attends. Remembers. Keeps you moving.": "Attends. Remembers. Keeps you moving.",
@@ -478,39 +1038,144 @@ const ko: Record<string, string> = {
   "Interaction Design": "인터랙션 디자인",
 
   Colortelier: "Colortelier",
-  "Turning travel memories into color": "여행의 기억을 색으로 기록하기",
-  "Colortelier is a service and brand concept that extracts colors from travel photos, turning memories of places into palettes, names, and a personal visual archive.":
-    "Colortelier는 여행 사진에서 색을 추출해 장소의 기억을 팔레트, 이름, 개인 비주얼 아카이브로 바꾸는 서비스·브랜드 콘셉트입니다.",
-  "Concept planner responsible for service concept, brand concept, experience planning, visual direction, and product expansion strategy.":
-    "서비스 콘셉트, 브랜드 콘셉트, 경험 기획, 비주얼 디렉션, 제품 확장 전략을 담당한 콘셉트 기획자였습니다.",
-  "Built an editorial service concept around the flow Travel Photo → Color Extraction → Palette → Naming → Personal Archive, keeping the emotional nature of travel memory central to the product idea.":
-    "Travel Photo → Color Extraction → Palette → Naming → Personal Archive 흐름을 중심으로 여행 기억의 감정성을 제품 아이디어의 중심에 둔 에디토리얼 서비스 콘셉트를 만들었습니다.",
-  "Colortelier palette and travel assets can be added here": "Colortelier 팔레트와 여행 에셋을 이 영역에 추가할 수 있습니다",
-  Inspiration: "영감",
-  "The idea started from the relationship between colors discovered while traveling and the memories attached to those places. Colortelier treats color as a way to keep travel emotion vivid after the trip ends.":
-    "아이디어는 여행 중 발견한 색과 그 장소에 붙어 있는 기억 사이의 관계에서 시작되었습니다. Colortelier는 여행이 끝난 뒤에도 감정을 선명하게 보관하는 방식으로 색을 다룹니다.",
-  Concept: "콘셉트",
-  "The core service flow is Upload Photo → Extract Colors → Build Palette → Name Colors → Save Travel Memory, transforming an image into a personal archive of color and place.":
-    "핵심 서비스 흐름은 Upload Photo → Extract Colors → Build Palette → Name Colors → Save Travel Memory로, 이미지를 색과 장소의 개인 아카이브로 전환합니다.",
-  "Experience Flow": "경험 흐름",
-  "The emotional experience moves through Capture, Discover, Name, Collect, and Remember, so users can revisit travel memories through color rather than only through photos.":
-    "감정적 경험은 Capture, Discover, Name, Collect, Remember로 이어지며, 사용자가 사진뿐 아니라 색을 통해 여행 기억을 다시 만날 수 있도록 합니다.",
-  "Visual System": "비주얼 시스템",
-  "The visual system connects travel places and palettes through editorial naming examples such as Tokyo Rain, Mojiko Sunset, and Yufuin Mist. These are concept examples rather than confirmed project color data.":
-    "비주얼 시스템은 Tokyo Rain, Mojiko Sunset, Yufuin Mist 같은 에디토리얼 네이밍 예시를 통해 여행 장소와 팔레트를 연결합니다. 이는 확정된 프로젝트 컬러 데이터가 아닌 콘셉트 예시입니다.",
-  Expansion: "확장",
-  "The concept can expand into color books, postcards, bookmarks, and a travel color archive, allowing the brand to move from digital memory keeping into physical keepsakes.":
-    "이 콘셉트는 컬러북, 엽서, 북마크, 여행 컬러 아카이브로 확장될 수 있으며, 디지털 기억 보관을 물리적 기념품으로 넓힐 수 있습니다.",
-  "Translated travel photography and place memory into a color-based service concept.":
-    "여행 사진과 장소의 기억을 색 기반 서비스 콘셉트로 전환했습니다.",
-  "Defined the experience flow from photo upload and color extraction to palette naming and personal archive.":
-    "사진 업로드와 색 추출부터 팔레트 네이밍, 개인 아카이브까지 이어지는 경험 흐름을 정의했습니다.",
-  "Explored expansion into color books, postcards, bookmarks, and a travel color archive.":
-    "컬러북, 엽서, 북마크, 여행 컬러 아카이브로의 확장 가능성을 탐색했습니다.",
-  "Brand Concept": "브랜드 콘셉트",
-  "Visual Storytelling": "비주얼 스토리텔링",
-  "Experience Design": "경험 디자인",
-  "Product Expansion": "제품 확장",
+  "Travel Color Archive & Creator Commerce": "여행 컬러 아카이브 & 크리에이터 커머스",
+  "One photo, translated into a color record of place.": "사진 한 장을 장소의 컬러 기록으로.",
+  "Colortelier turns a travel photo into an editorial colorboard that preserves the light, color, place, and atmosphere behind it—then connects that record to sharing, brand application, personal archiving, and creator commerce.":
+    "Colortelier는 여행 사진 한 장에 담긴 빛·색·장소·분위기를 에디토리얼 컬러보드로 보존하고, 그 기록을 공유·브랜드 활용·개인 아카이브·크리에이터 커머스로 연결합니다.",
+  "Service Planning · UX/UI Direction · AI-assisted Prototyping across problem framing, product architecture, responsive interaction design, visual direction, and the end-to-end working prototype.":
+    "문제 정의, 제품 구조, 반응형 인터랙션 설계, 비주얼 디렉션, 엔드투엔드 작동 프로토타입 전반의 Service Planning · UX/UI Direction · AI-assisted Prototyping을 수행했습니다.",
+  "Built a responsive product system that moves beyond HEX extraction: photo context becomes an editable artifact, reusable design output, community archive, brand guide, and a foundation for digital goods and creator participation.":
+    "HEX 추출을 넘어 사진의 맥락을 편집 가능한 결과물, 재사용 가능한 디자인 출력물, 커뮤니티 아카이브, 브랜드 가이드, 디지털 상품과 크리에이터 참여 기반으로 확장하는 반응형 제품 시스템을 구현했습니다.",
+  "Opportunity: Color Needs Context": "기회: 색에는 맥락이 필요하다",
+  "Travel photos accumulate, but the light, color, and atmosphere of a place are difficult to retrieve and reuse. Existing color extractors usually stop at a palette and HEX values, leaving users to rebuild the story, format, and application on their own.":
+    "여행 사진은 쌓이지만 장소의 빛·색·분위기를 다시 꺼내 활용하기는 어렵습니다. 기존 컬러 추출기는 팔레트와 HEX 값에서 멈추기 때문에 사용자가 스토리, 형식, 활용 방식을 다시 만들어야 합니다.",
+  "01 · Accumulation": "01 · 축적",
+  "Photos Without Recall": "다시 꺼내기 어려운 사진",
+  "Images remain in camera rolls while the sensory context that made the place memorable fades.":
+    "이미지는 카메라롤에 남지만 장소를 기억하게 만든 감각적 맥락은 점차 흐려집니다.",
+  "Place context is lost": "장소의 맥락 소실",
+  "02 · Extraction": "02 · 추출",
+  "HEX Without Meaning": "의미 없는 HEX",
+  "A palette alone does not explain when, where, or why a color should be remembered or reused.":
+    "팔레트만으로는 색을 언제, 어디서, 왜 기억하고 재사용해야 하는지 설명할 수 없습니다.",
+  "Utility stops at codes": "코드에서 끝나는 활용",
+  "03 · Application": "03 · 활용",
+  "Manual Design Burden": "수동 디자인 부담",
+  "Turning a discovered color into social or brand assets requires separate tools and design knowledge.":
+    "발견한 색을 소셜 또는 브랜드 자산으로 바꾸려면 별도의 도구와 디자인 지식이 필요합니다.",
+  "Inspiration becomes extra work": "영감이 추가 작업으로 전환",
+  "04 · Creation": "04 · 창작",
+  "No Contextual Market": "맥락 있는 시장의 부재",
+  "Travel creators lack a focused space to package and sell presets, reports, and color-led assets.":
+    "여행 크리에이터에게 프리셋, 리포트, 컬러 기반 자산을 패키징하고 판매할 집중된 공간이 부족합니다.",
+  "Creation lacks a pathway": "창작물의 확장 경로 부족",
+  "Product Ecosystem: From Photo to Reusable Asset": "제품 생태계: 사진에서 재사용 자산까지",
+  "I designed one connected journey in which automation accelerates interpretation while the user keeps control over place data, color decisions, format, and publication.":
+    "자동화는 해석을 빠르게 돕고 사용자는 장소 데이터, 컬러 결정, 형식, 공개 여부의 통제권을 유지하는 하나의 연결된 여정을 설계했습니다.",
+  Upload: "업로드",
+  "Begin with the travel photo rather than an isolated color code.": "고립된 컬러 코드가 아니라 여행 사진에서 시작합니다.",
+  "Source image": "원본 이미지",
+  Interpret: "해석",
+  "Estimate representative colors and EXIF or location context with manual fallback.":
+    "대표 색과 EXIF·장소 맥락을 추정하고 수동 입력 대안을 제공합니다.",
+  "Palette + metadata": "팔레트 + 메타데이터",
+  Edit: "보정",
+  "Confirm the place, season, weather, time, mood, and intended use before generation.":
+    "생성 전에 장소, 계절, 날씨, 시간, 무드, 사용처를 확인하고 보정합니다.",
+  "User-controlled record": "사용자 통제 기록",
+  "Create & Export": "생성 & 내보내기",
+  "Generate newspaper, collage, or loyalty-card layouts for social and design workflows.":
+    "신문, 콜라주, 로열티 카드 레이아웃을 생성해 소셜·디자인 작업에 활용합니다.",
+  "Images + design tokens": "이미지 + 디자인 토큰",
+  "Archive & Extend": "아카이브 & 확장",
+  "Publish to the Board and Atlas, apply the palette to brands, or connect it to creator goods.":
+    "게시판과 Atlas에 공개하고 팔레트를 브랜드에 적용하거나 크리에이터 상품으로 연결합니다.",
+  "Community + commerce": "커뮤니티 + 커머스",
+  "Core Experience: Create Studio": "핵심 경험: Create Studio",
+  "Create Studio keeps input, generated artifact, palette, and export actions in one workspace. A SAMPLE preview explains the destination before upload; the real result appears only after explicit generation, so example content and user output never blur together.":
+    "Create Studio는 입력, 생성 결과물, 팔레트, 내보내기 동작을 하나의 작업 공간에 배치합니다. 업로드 전 SAMPLE 미리보기로 완성 형태를 설명하고 실제 결과는 명시적 생성 후에만 표시해 예시와 사용자 결과를 구분했습니다.",
+  "Create Studio Working Interface": "Create Studio 작동 인터페이스",
+  "The primary product screen combines photo and context input, a sticky editorial preview, palette details, image exports, social ratios, and design tokens without distorting the generated artifact.":
+    "핵심 제품 화면에서 사진·맥락 입력, 고정형 에디토리얼 미리보기, 팔레트 정보, 이미지 저장, 소셜 비율, 디자인 토큰을 결과물 비율 왜곡 없이 함께 제공합니다.",
+  "UX Decisions for Trust and Momentum": "신뢰와 흐름을 위한 UX 의사결정",
+  "The experience had to make automation legible without removing user agency. I designed state, fallback, and responsive behavior around the moments where users are most likely to hesitate or lose their work.":
+    "자동화를 이해할 수 있게 만들면서도 사용자의 주도권은 유지해야 했습니다. 사용자가 망설이거나 작업을 잃기 쉬운 지점을 중심으로 상태, 대안 흐름, 반응형 동작을 설계했습니다.",
+  Expectation: "예측",
+  "SAMPLE vs Empty State": "SAMPLE과 빈 상태 구분",
+  "A labeled sample shows the finished form, while the empty state clearly states that no personal result exists yet.":
+    "라벨이 있는 샘플은 완성 형태를 보여주고, 빈 상태는 아직 개인 결과가 없음을 명확히 알립니다.",
+  "Metadata Fallback": "메타데이터 대안 입력",
+  "If EXIF, GPS, or image inference fails, users can confirm and edit location, date, season, weather, time, and use case manually.":
+    "EXIF, GPS, 이미지 추정이 실패해도 장소, 날짜, 계절, 날씨, 시간, 사용처를 직접 확인하고 수정할 수 있습니다.",
+  Desktop: "데스크톱",
+  "Sticky Comparative Preview": "고정형 비교 미리보기",
+  "On larger screens the result and its information remain visible while users refine the input form.":
+    "큰 화면에서는 사용자가 입력 폼을 보정하는 동안 결과물과 결과 정보가 함께 고정됩니다.",
+  Mobile: "모바일",
+  "Short Guided Movement": "짧고 명확한 이동",
+  "Template selection, upload, generation, and result review are connected through quick movement rather than a compressed desktop layout.":
+    "데스크톱 화면을 축소하는 대신 템플릿 선택, 업로드, 생성, 결과 확인을 빠른 이동으로 연결합니다.",
+  Continuity: "연속성",
+  "Persistent Inputs": "입력값 유지",
+  "Switching templates preserves uploaded photos and place information, preventing unnecessary re-entry.":
+    "템플릿을 바꿔도 업로드한 사진과 장소 정보를 유지해 불필요한 재입력을 방지합니다.",
+  "Explore & Community: Records Become Discovery": "탐색 & 커뮤니티: 기록이 발견으로",
+  "The Atlas organizes colors by place and context, while the Color Board archives finished newspaper, collage, and loyalty-card outputs with their palettes. Personal records therefore become discoverable service assets rather than isolated exports.":
+    "Atlas는 색을 장소와 맥락별로 정리하고 컬러 게시판은 완성된 신문·콜라주·로열티 카드와 팔레트를 함께 아카이빙합니다. 개인 기록은 고립된 출력물이 아니라 탐색 가능한 서비스 자산이 됩니다.",
+  "Travel Color Atlas": "여행 컬러 Atlas",
+  "Image-led place collections support discovery by city, atmosphere, and use, with a direct path to request a missing city or create a new record.":
+    "이미지 중심 장소 컬렉션으로 도시, 분위기, 사용처를 탐색하고 없는 도시 요청 또는 새 기록 생성으로 바로 이어집니다.",
+  "Community Color Board": "커뮤니티 컬러 게시판",
+  "Generated artifacts and circular palettes are stored together so users can browse, react, comment, and move between inspiration and creation.":
+    "생성 결과물과 원형 팔레트를 함께 저장해 탐색, 공감, 댓글, 새 창작으로 이어지게 했습니다.",
+  "Brand Application: Color Becomes a System": "브랜드 적용: 색이 시스템으로",
+  "A representative color can move into contrast checks, supporting colors, logo marks, typography, emoji, and real brand touchpoints. This closes the gap between finding a color and knowing how to use it.":
+    "대표 색을 대비 점검, 보조색, 로고 마크, 타이포그래피, 이모지, 실제 브랜드 접점으로 확장해 색을 찾는 것과 활용하는 것 사이의 간극을 줄였습니다.",
+  "Paris Rose Application Guide": "Paris Rose 브랜드 적용 가이드",
+  "A dusty rose and mauve palette drawn from Paris becomes the “window atelier.” logo system, signature mark, type hierarchy, and applied brand assets while the Eiffel Tower source image remains visible.":
+    "파리에서 추출한 더스티 로즈·모브 팔레트를 에펠탑 원본 이미지와 함께 ‘window atelier.’ 로고 시스템, 시그니처 마크, 타이포 위계, 브랜드 응용 자산으로 확장했습니다.",
+  "Business Model: Value Grows With Use": "비즈니스 모델: 사용할수록 확장되는 가치",
+  "The model starts with a free colorboard experience and expands only when users need richer ownership or repeated use: single digital goods, a travel pass, annual archive membership, and a creator marketplace for presets, templates, reports, and color products.":
+    "무료 컬러보드 경험에서 시작해 더 깊은 소장과 반복 사용이 필요할 때 단건 디지털 상품, 여행 패스, 연간 아카이브 멤버십, 프리셋·템플릿·리포트·컬러 상품 크리에이터 마켓으로 확장합니다.",
+  "Shop & Creator Commerce": "Shop & 크리에이터 커머스",
+  "The shop makes the value ladder visible through Travel Roll, Travel Color Report, Archive Plus Annual, and creator-made presets rather than relying on an abstract pricing diagram.":
+    "추상적인 가격표 대신 Travel Roll, Travel Color Report, Archive Plus Annual, 크리에이터 프리셋을 통해 단계별 가치를 실제 상품으로 보여줍니다.",
+  Entry: "진입",
+  "Free Experience": "무료 경험",
+  "Basic extraction and colorboard creation establish the product habit and the value of a contextual color record.":
+    "기본 색 추출과 컬러보드 생성으로 제품 사용 습관과 맥락 있는 컬러 기록의 가치를 형성합니다.",
+  "One-off": "단건",
+  "Digital Goods": "디지털 상품",
+  "Travel Color Reports and Travel Rolls serve users who want a specific finished artifact without a subscription.":
+    "Travel Color Report와 Travel Roll은 구독 없이 특정 완성 결과물을 원하는 사용자를 위한 상품입니다.",
+  Journey: "여정",
+  "Travel Pass": "여행 패스",
+  "A pass supports a deeper set of outputs around one trip or collection.":
+    "하나의 여행 또는 컬렉션을 중심으로 더 풍부한 결과물 묶음을 제공합니다.",
+  "Annual Membership": "연간 멤버십",
+  "Archive Plus supports repeated creation, storage, and long-term access across travel records.":
+    "Archive Plus는 여행 기록의 반복 생성, 저장, 장기 접근을 지원합니다.",
+  Ecosystem: "생태계",
+  "Creator Market": "크리에이터 마켓",
+  "Presets, templates, color reports, and digital products create a path from personal practice to creator commerce.":
+    "프리셋, 템플릿, 컬러 리포트, 디지털 상품이 개인 작업을 크리에이터 커머스로 연결합니다.",
+  "Reflection: Prioritizing the Core Action": "회고: 핵심 행동을 선명하게 만들기",
+  "Designing a broad platform made one lesson clear: feature breadth is useful only when the path from photo to finished color record stays unmistakable. I repeatedly refined CTA hierarchy, state language, and responsive movement so Atlas, community, brand tools, and commerce extend the Create experience instead of competing with it.":
+    "기능 범위가 넓은 플랫폼을 설계하며 한 가지를 분명히 배웠습니다. 사진에서 완성된 컬러 기록까지의 경로가 선명할 때만 기능 확장이 의미가 있습니다. Atlas, 커뮤니티, 브랜드 도구, 커머스가 Create 경험과 경쟁하지 않고 확장하도록 CTA 위계, 상태 문구, 반응형 이동을 반복 조정했습니다.",
+  "Framed the gap between travel-photo accumulation and context-poor HEX extraction as an opportunity for a reusable color record.":
+    "여행 사진의 축적과 맥락이 부족한 HEX 추출 사이의 간극을 재사용 가능한 컬러 기록의 기회로 정의했습니다.",
+  "Designed the service architecture from upload, metadata estimation, manual correction, and template generation to export, archive, discovery, and commerce.":
+    "업로드, 메타데이터 추정, 수동 보정, 템플릿 생성부터 내보내기, 아카이브, 탐색, 커머스까지 서비스 구조를 설계했습니다.",
+  "Built responsive UX decisions for sample and empty states, metadata fallback, sticky desktop comparison, and guided mobile movement.":
+    "샘플·빈 상태, 메타데이터 대안 입력, 데스크톱 고정 비교, 모바일 이동 안내를 위한 반응형 UX 의사결정을 구현했습니다.",
+  "Connected the core Create Studio to Atlas, community, brand application, and a staged creator-commerce model without overstating the implemented scope.":
+    "구현 범위를 과장하지 않고 핵심 Create Studio를 Atlas, 커뮤니티, 브랜드 적용, 단계형 크리에이터 커머스 모델에 연결했습니다.",
+  "Service Planning": "서비스 기획",
+  "UX/UI Direction": "UX/UI 디렉션",
+  "AI-assisted Prototyping": "AI 보조 프로토타이핑",
+  "Product Architecture": "제품 구조 설계",
+  "Responsive UX": "반응형 UX",
+  "Brand Application": "브랜드 적용",
 
   "Began Project": "Began 프로젝트",
   "Dietary-accessible discovery service": "식이 제한 친화 맛집 탐색 서비스",
@@ -600,7 +1265,7 @@ const ko: Record<string, string> = {
     "문제 인식에서 솔루션의 이점, 기능 설명, 행동 유도로 이어지는 흐름을 설계해 사용자가 서비스의 필요성을 자연스럽게 이해하도록 했습니다.",
   "I designed the page narrative to move from problem awareness to solution benefits, feature explanation, and action, helping users grasp why the service matters.":
     "문제 인식에서 솔루션의 이점, 기능 설명, 행동 유도로 이어지는 페이지 내러티브를 설계해 사용자가 서비스의 필요성을 자연스럽게 이해하도록 했습니다.",
-  "Systems Thinking": "UI 디자인 시스템",
+  "Systems Thinking": "시스템 사고",
   "UI Design System": "UI 디자인 시스템",
   "I ensured deep integration with Cafe24 API data structures, bridging the gap between technical constraints and user needs, and developed a scalable UI component system for the SaaS environment.":
     "B2B CRM 제품을 설명하기에 적합한 재사용 가능한 섹션, 명확한 시각 위계, SaaS 스타일의 UI 컴포넌트 방향을 설계했습니다.",
