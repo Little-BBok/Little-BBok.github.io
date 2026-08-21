@@ -1,18 +1,30 @@
 import {
   ArrowUpRight,
+  Bell,
   BriefcaseBusiness,
+  CalendarDays,
   Camera,
   ChartNoAxesCombined,
+  Check,
   ChevronRight,
+  CircleAlert,
+  CircleCheck,
   CircleUserRound,
   FileText,
   FolderKanban,
   GraduationCap,
+  HelpCircle,
   Linkedin,
+  LoaderCircle,
   Mail,
   MapPin,
   Menu,
+  PanelLeft,
+  Search,
+  Smartphone,
   Sparkles,
+  Trash2,
+  Upload,
   X,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
@@ -192,6 +204,28 @@ const emphasisPhrases = [
   "doubled official e-commerce traffic",
   "reduced manufacturing unit cost by 24%",
   "21,000+ short-form content views",
+  "content context break",
+  "full 0→1 process",
+  "problem definition and product strategy",
+  "brand, UI/UX, usability testing, and iteration",
+  "Sole product owner and designer",
+  "deployed, testable product",
+  "the loss of context between making, publishing, learning, and deciding what to do next",
+  "one continuous decision-making process",
+  "scenario-based usability tests",
+  "not a feature checklist",
+  "the master-to-variant relationship the core product model",
+  "four principles",
+  "product hypothesis, target workflow, scope, and priorities",
+  "service architecture, brand, UI system, and working interface",
+  "usability tests",
+  "macOS AI work hub",
+  "turns scattered context into prioritized tasks, verified research, and approved execution",
+  "PM and UI/UX Designer",
+  "problem definition, interview and community research synthesis, product strategy, information architecture, end-to-end agent workflow",
+  "connected product experience",
+  "four clear stages",
+  "seeing priorities, researching opportunities with evidence, managing generated tasks, and carrying conversation context into an actionable response",
   "전체 브랜드 경험",
   "풀사이클 브랜드 매니지먼트",
   "제품 기획과 브랜드 경험",
@@ -213,6 +247,28 @@ const emphasisPhrases = [
   "공식 이커머스 트래픽 2배 성장",
   "제조 단가 24% 절감",
   "숏폼 콘텐츠 2.1만+ 조회수",
+  "콘텐츠 맥락이 끊기는 문제",
+  "0→1 전 과정을 직접 수행했습니다",
+  "문제 정의와 제품 전략",
+  "브랜드·UI/UX 설계, 사용성 테스트와 반복 개선",
+  "0→1 전 과정을 단독으로 이끈 제품 오너이자 디자이너",
+  "배포된 검증 가능 제품",
+  "제작, 발행, 학습, 다음 의사결정 사이에서 맥락이 끊기는 것",
+  "하나의 연속된 의사결정 과정",
+  "시나리오 기반 사용성 테스트",
+  "기능 목록이 아니라",
+  "마스터와 파생 결과물의 관계를 핵심 제품 모델로 정했습니다",
+  "네 가지 원칙",
+  "제품 가설, 타깃 워크플로, 범위, 우선순위",
+  "서비스 구조, 브랜드, UI 시스템, 실제 동작 인터페이스",
+  "사용성 테스트",
+  "macOS AI 워크 허브",
+  "흩어진 맥락을 우선순위가 정리된 Task, 검증된 리서치, 사용자가 승인한 실행으로 전환",
+  "PM 및 UI/UX 디자이너",
+  "문제 정의, 인터뷰·커뮤니티 리서치 종합, 제품 전략, 정보구조, 엔드투엔드 에이전트 워크플로우",
+  "실제 제품 경험",
+  "네 단계",
+  "우선순위 확인, 근거 기반 기회 탐색, 생성된 Task 관리, 대화 맥락을 활용한 실행 가능한 응답",
 ].sort((a, b) => b.length - a.length);
 
 const emphasisPattern = new RegExp(
@@ -223,6 +279,274 @@ const emphasisPattern = new RegExp(
 function EmphasizedText({ children }: { children: string }) {
   return children.split(emphasisPattern).map((part, index) =>
     emphasisPhrases.includes(part) ? <strong key={`${part}-${index}`}>{part}</strong> : part,
+  );
+}
+
+type FugudioFeatureItem = NonNullable<
+  NonNullable<Project["sections"]>[number]["featureItems"]
+>[number];
+
+function FugudioSystemMap({
+  items,
+  t,
+}: {
+  items: FugudioFeatureItem[];
+  t: Translator;
+}) {
+  const layers = [
+    {
+      label: "01 · Operations layer",
+      title: "See & prioritize",
+      groups: ["Visibility", "Plan"],
+    },
+    {
+      label: "02 · Content core",
+      title: "Create & distribute",
+      groups: ["Produce", "Asset", "Distribute"],
+    },
+    {
+      label: "03 · Learning loop",
+      title: "Measure & extend",
+      groups: ["Learn", "Extend"],
+    },
+    {
+      label: "04 · Workspace foundation",
+      title: "Configure & collaborate",
+      groups: ["Configure", "Collaborate", "Assist"],
+    },
+  ];
+
+  return (
+    <div className="fugudio-system-map">
+      <div className="fugudio-system-hub">
+        <header>
+          <div>
+            <span>{t("Core data model")}</span>
+            <h4>{t("Master Content Model")}</h4>
+          </div>
+          <strong>{t("One shared source")}</strong>
+        </header>
+        <div className="fugudio-system-schema" aria-label={t("Master content data structure")}>
+          <b>{t("Idea")}</b>
+          <i aria-hidden="true">→</i>
+          <b>{t("Master asset")}</b>
+          <i aria-hidden="true">→</i>
+          <b>{t("Channel variant")}</b>
+        </div>
+        <footer>
+          <span>{t("State")}</span>
+          <span>{t("Schedule")}</span>
+          <span>{t("Performance")}</span>
+        </footer>
+      </div>
+      <div className="fugudio-system-layers">
+        {layers.map((layer) => (
+          <section key={layer.label}>
+            <header>
+              <span>{t(layer.label)}</span>
+              <h4>{t(layer.title)}</h4>
+            </header>
+            <div>
+              {items
+                .filter((item) => layer.groups.includes(item.group))
+                .map((item) => (
+                  <article key={item.title} title={t(item.text)}>
+                    <small>{t(item.group)}</small>
+                    <strong>{t(item.title)}</strong>
+                  </article>
+                ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function FugudioBrandSystem({ t }: { t: Translator }) {
+  const colors = [
+    { name: "Primary Navy", hex: "#2E4060", use: "Text · CTA · active" },
+    { name: "Brand Pink", hex: "#DD8C96", use: "Brand · selected" },
+    { name: "Soft Pink", hex: "#F4DAD4", use: "Highlight · support" },
+    { name: "Paper", hex: "#FFF8F6", use: "Cards · content" },
+    { name: "Canvas", hex: "#F5E8E6", use: "App background" },
+    { name: "Secondary Text", hex: "#66738B", use: "Descriptions" },
+    { name: "Muted Text", hex: "#758096", use: "Metadata · disabled" },
+    { name: "Divider", hex: "#EAD6D6", use: "Borders · dividers" },
+    { name: "Success", hex: "#3F8B68", use: "Published · normal" },
+    { name: "Warning", hex: "#C56F7B", use: "Deadline · attention" },
+  ];
+  const platforms = [
+    { name: "Instagram", color: "#DD4E91" },
+    { name: "YouTube", color: "#F04450" },
+    { name: "TikTok", color: "#171717" },
+    { name: "Naver", color: "#20A85A" },
+    { name: "Tistory", color: "#F56B22" },
+    { name: "WordPress", color: "#287AA9" },
+  ];
+  const componentGroups = [
+    { title: "Form control", items: ["Text input", "Search", "Date picker", "File upload", "Bubble select"] },
+    { title: "Cards", items: ["KPI", "Content", "Calendar block", "Kanban", "Distribution"] },
+    { title: "Chip & badge", items: ["Platform", "Production", "Publish state", "Pillar", "Role"] },
+    { title: "Feedback", items: ["Tooltip", "Toast", "Alert", "Empty state", "Confirm dialog"] },
+    { title: "Navigation", items: ["Sidebar", "Header", "Mobile tabs", "Active indicator", "Transition"] },
+    { title: "Domain-specific", items: ["Calendar block", "Kanban card", "Master panel", "SNS preset", "Hugu insight"] },
+  ];
+
+  return (
+    <div className="fugudio-brand-system">
+      <header className="fugudio-kit-header">
+        <div>
+          <span>FUGUDIO</span>
+          <h4>UI KIT<br />& SYSTEM</h4>
+        </div>
+        <p>{t("A professional content workspace softened by dusty pink, translucent layers, and a disciplined radius system.")}</p>
+        <small>v1.0 · PRODUCT SYSTEM</small>
+      </header>
+      <section className="fugudio-kit-foundation">
+        <div className="fugudio-kit-section-heading"><span>01</span><strong>{t("Design direction")}</strong></div>
+        <div className="fugudio-foundation-grid">
+          <article><strong>{t("Professional foundation")}</strong><p>{t("Navy, clear hierarchy, and restrained decoration support dense content operations.")}</p></article>
+          <article><strong>{t("Friendly brand layer")}</strong><p>{t("Dusty pink, Hugu, and soft surfaces make repeated operational work feel approachable.")}</p></article>
+          <article><strong>{t("Translucent, not fragile")}</strong><p>{t("iOS-inspired glass stays 80–94% opaque so depth never compromises readability.")}</p></article>
+        </div>
+      </section>
+      <section className="fugudio-kit-type">
+        <div className="fugudio-kit-section-heading"><span>02</span><strong>{t("Typography")}</strong></div>
+        <div className="fugudio-type-samples fugudio-type-samples-detailed">
+          <article><b>Ag</b><span>Inter · Apple SD Gothic Neo · Segoe UI</span><small>{t("Body · buttons · inputs · system sans-serif fallback")}</small></article>
+          <article><b>후구</b><span>{t("Momoment Kkukkuk")}</span><small>{t("Limited brand headlines · local only by license policy")}</small></article>
+          <article><b>01</b><span>Mona12 · OFL 1.1</span><small>{t("Eyebrow · labels · status data")}</small></article>
+          <article><b>38%</b><span>HiKR ExtraBold</span><small>{t("KPI · metrics · table headers")}</small></article>
+        </div>
+        <p className="fugudio-kit-note">{t("System font fallbacks preserve legibility without external webfonts; expressive type is used only where it carries meaning.")}</p>
+      </section>
+      <section className="fugudio-kit-colors">
+        <div className="fugudio-kit-section-heading"><span>03</span><strong>{t("Color system")}</strong></div>
+        <ul>
+          {colors.map((color) => (
+            <li key={color.hex} style={{ "--brand-color": color.hex } as CSSProperties}>
+              <i />
+              <strong>{t(color.name)}</strong>
+              <small>{color.hex}</small>
+              <em>{t(color.use)}</em>
+            </li>
+          ))}
+        </ul>
+        <div className="fugudio-platform-colors">
+          <strong>{t("Platform colors")}</strong>
+          {platforms.map((platform) => <span key={platform.name}><i style={{ "--platform-color": platform.color } as CSSProperties} />{platform.name}</span>)}
+          <p>{t("Platform color identifies the channel; a separate badge communicates publishing state.")}</p>
+        </div>
+      </section>
+      <section className="fugudio-kit-surface">
+        <div className="fugudio-kit-section-heading"><span>04</span><strong>{t("Component sizing & layers")}</strong></div>
+        <div className="fugudio-surface-examples">
+          <article><span className="surface-control">{t("Input · button")}</span><strong>15px</strong><small>{t("Controls")}</small></article>
+          <article><span className="surface-card"><i /><i /></span><strong>24px</strong><small>{t("Content cards")}</small></article>
+          <article><span className="surface-panel"><i /></span><strong>30px</strong><small>{t("Panels · modals")}</small></article>
+          <article><span className="surface-badge">{t("Published")}</span><strong>Pill</strong><small>{t("Chips · status")}</small></article>
+        </div>
+        <div className="fugudio-layer-map">
+          <span><small>01</small>{t("Canvas")}</span><i>→</i><span><small>02</small>{t("Translucent panel")}</span><i>→</i><span><small>03</small>{t("Action card")}</span>
+          <p>{t("80–94% opacity and 18–30px blur create depth while preserving text contrast.")}</p>
+        </div>
+      </section>
+      <section className="fugudio-kit-icons">
+        <div className="fugudio-kit-section-heading"><span>05</span><strong>{t("Icon system")}</strong></div>
+        <div className="fugudio-icon-samples" aria-label={t("Lucide React icon samples")}>
+          <Search /><Bell /><HelpCircle /><CalendarDays /><Upload /><Trash2 /><CircleCheck /><CircleAlert /><LoaderCircle />
+        </div>
+        <p className="fugudio-kit-note">{t("Lucide React · 14–18px · 1.8px stroke · labels remain visible beside icons.")}</p>
+      </section>
+      <section className="fugudio-kit-controls">
+        <div className="fugudio-kit-section-heading"><span>06</span><strong>{t("Buttons & interaction states")}</strong></div>
+        <div className="fugudio-kit-button-row">
+          <button type="button">{t("Primary action")} <span>＋</span></button>
+          <button type="button">{t("Secondary")} <span>↗</span></button>
+          <button type="button" className="is-ghost"><Bell size={14} />{t("Ghost")}</button>
+          <button type="button" className="is-danger"><Trash2 size={14} />{t("Danger")}</button>
+          <button type="button" disabled>{t("Completed")}</button>
+        </div>
+        <div className="fugudio-kit-status-row">
+          <span>{t("Idea")}</span><span>{t("In production")}</span><span>{t("Needs review")}</span><span>{t("Published")}</span>
+        </div>
+      </section>
+      <section className="fugudio-kit-forms">
+        <div className="fugudio-kit-section-heading"><span>07</span><strong>{t("Form controls")}</strong></div>
+        <div className="fugudio-form-preview">
+          <label><small>{t("Text input")}</small><span>{t("Content title")}</span></label>
+          <label><small>{t("Search input")}</small><span><Search size={13} />{t("Search content or tags")}</span></label>
+          <label><small>{t("Bubble select")}</small><span>{t("Instagram Reels")}<Check size={13} /></span></label>
+          <label><small>{t("File upload")}</small><span><Upload size={13} />{t("Choose file")}</span></label>
+        </div>
+      </section>
+      <section className="fugudio-kit-components">
+        <div className="fugudio-kit-section-heading"><span>08</span><strong>{t("Component architecture")}</strong></div>
+        <div className="fugudio-component-groups">
+          {componentGroups.map((group) => <article key={group.title}><strong>{t(group.title)}</strong><div>{group.items.map((item) => <span key={item}>{t(item)}</span>)}</div></article>)}
+        </div>
+        <article className="fugudio-kit-assistant">
+          <img src="/projects/fugudio/hugu-mascot.jpg" alt={t("Hugu mascot")} />
+          <div><small>FUGUDIO AGENT</small><strong>{t("I found a reuse opportunity.")}</strong><span>{t("Domain guidance combines status, explanation, and a direct next action.")}</span></div>
+          <button type="button">↗</button>
+        </article>
+      </section>
+      <section className="fugudio-kit-responsive">
+        <div className="fugudio-kit-section-heading"><span>09</span><strong>{t("Responsive navigation")}</strong></div>
+        <div><span><PanelLeft />{t("Desktop sidebar + header")}</span><i>→</i><span><Smartphone />{t("Mobile top bar + bottom tabs")}</span></div>
+      </section>
+      <section className="fugudio-kit-motion">
+        <div className="fugudio-kit-section-heading"><span>10</span><strong>{t("Interaction & motion")}</strong></div>
+        <div><span>{t("Fade · Slide")}</span><span>{t("Hover lift")}</span><span>{t("Tooltip · Toast")}</span><span>{t("Bottom sheet")}</span><span>prefers-reduced-motion</span></div>
+        <p className="fugudio-kit-note">{t("Motion explains page changes, selection results, and layer relationships instead of decorating the interface.")}</p>
+      </section>
+    </div>
+  );
+}
+
+function FugudioGuidanceGallery({ t }: { t: Translator }) {
+  const alerts = [
+    { src: "/projects/fugudio/product-reuse-alert.png", alt: "Reuse opportunity alert" },
+    { src: "/projects/fugudio/alert-overdue-priority.png", alt: "Overdue priority alert" },
+    { src: "/projects/fugudio/alert-upcoming-schedule.png", alt: "Upcoming schedule alert" },
+    { src: "/projects/fugudio/alert-delayed-task.png", alt: "Delayed task alert" },
+    { src: "/projects/fugudio/alert-pillar-target.png", alt: "Content pillar target alert" },
+  ];
+
+  return (
+    <div className="fugudio-guidance-gallery">
+      <figure className="fugudio-guidance-agent">
+        <div><img src="/projects/fugudio/product-agent-panel.png" alt={t("Hugu Agent Panel")} /></div>
+        <figcaption>
+          <strong>{t("Hugu Agent Panel")}</strong>
+          <span>{t("Brings today's work, personalized alerts, reuse opportunities, and content creation into one contextual action panel.")}</span>
+        </figcaption>
+      </figure>
+      <figure className="fugudio-guidance-alerts">
+        <div className="fugudio-alert-stack">
+          {alerts.map((alert) => <img key={alert.src} src={alert.src} alt={t(alert.alt)} />)}
+        </div>
+        <figcaption>
+          <strong>{t("Personalized Operations Alerts")}</strong>
+          <span>{t("Hugu adapts its message and direct action to reuse opportunities, overdue work, upcoming publishing, delayed production, and content-pillar balance.")}</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <div><img src="/projects/fugudio/product-repurpose-suggestions.png" alt={t("Channel-specific Repurpose Suggestions")} /></div>
+        <figcaption>
+          <strong>{t("Channel-specific Repurpose Suggestions")}</strong>
+          <span>{t("Turns the alert into executable options by recommending Naver Clip, YouTube Shorts, and TikTok adaptations from the same published Reel.")}</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <div><img src="/projects/fugudio/product-reuse-library-states.png" alt={t("Reuse States in the Content Library")} /></div>
+        <figcaption>
+          <strong>{t("Reuse States in the Content Library")}</strong>
+          <span>{t("Shows reuse-ready, reviewed, and newly created derivative content in the master library so the recommendation becomes a traceable operating workflow.")}</span>
+        </figcaption>
+      </figure>
+    </div>
   );
 }
 
@@ -524,17 +848,17 @@ function Timeline({
                 <p className="timeline-description">{t(item.description)}</p>
               ) : null}
               <p>{t(item.role)}</p>
+              {item.projectId ? (
+                <a className="timeline-case-link" href={`#/project/${item.projectId}`}>
+                  {t(item.projectLabel ?? "View Brand Case")} <ArrowUpRight size={15} />
+                </a>
+              ) : null}
             </div>
             <ul>
               {item.highlights.map((highlight) => (
                 <li key={highlight}>{t(highlight)}</li>
               ))}
             </ul>
-            {item.projectId ? (
-              <a className="timeline-case-link" href={`#/project/${item.projectId}`}>
-                {t("View Brand Case")} <ArrowUpRight size={15} />
-              </a>
-            ) : null}
           </article>
         ))}
       </div>
@@ -586,6 +910,10 @@ function ProjectCard({ project, index, t }: { project: Project; index: number; t
       <div
         className={`project-media ${project.id === "nft-camera" ? "project-media-contain" : ""} ${
           project.id === "sephora-guide" ? "project-media-document" : ""
+        } ${
+          project.id === "atember" ? "project-media-atember" : ""
+        } ${
+          project.id === "colortelier" ? "project-media-colortelier" : ""
         }`}
       >
         {project.image ? (
@@ -621,7 +949,11 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
   return (
     <PageFrame eyebrow={project.eyebrow} title={project.title} t={t}>
       <section
-        className="case-hero"
+        className={`case-hero ${project.id === "fugudio" ? "case-hero-fugudio" : ""} ${
+          project.id === "atember" ? "case-hero-atember" : ""
+        } ${
+          project.id === "colortelier" ? "case-hero-colortelier" : ""
+        }`}
         style={{ "--accent": project.accent } as React.CSSProperties}
       >
         <div>
@@ -647,7 +979,13 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
         <div
           className={`case-image ${project.id === "nft-camera" ? "case-image-contain" : ""} ${
             project.id === "sephora-guide" ? "case-image-document" : ""
-          } ${project.id === "leviosa" ? "case-image-leviosa" : ""}`}
+          } ${project.id === "leviosa" ? "case-image-leviosa" : ""} ${
+            project.id === "fugudio" ? "case-image-fugudio" : ""
+          } ${
+            project.id === "atember" ? "case-image-atember" : ""
+          } ${
+            project.id === "colortelier" ? "case-image-colortelier" : ""
+          }`}
         >
           {project.image ? (
             <img src={project.image} alt={t(project.title)} />
@@ -740,12 +1078,82 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                 project.id === "sephora-guide" && section.title === "Guidebook Structure"
                   ? "guidebook-toc-card"
                   : ""
+              } ${
+                project.id === "fugudio" && section.title === "Live Product Interface"
+                  ? "fugudio-product-ui-card"
+                  : ""
+              } ${
+                project.id === "fugudio" && section.title === "My 0→1 Product Process"
+                  ? "fugudio-process-card"
+                  : ""
+              } ${
+                project.id === "fugudio" && section.title === "The Problem Behind the Product"
+                  ? "fugudio-problem-card"
+                  : ""
+              } ${
+                project.id === "fugudio" &&
+                section.title === "How My Decisions Became a Product System"
+                  ? "fugudio-system-card"
+                  : ""
+              } ${
+                project.id === "fugudio" && section.title === "UX Decisions I Made"
+                  ? "fugudio-ux-card"
+                  : ""
+              } ${
+                project.id === "fugudio" && section.title === "UI Kit & Design System"
+                  ? "fugudio-brand-card"
+                  : ""
+              } ${
+                project.id === "fugudio" && section.title === "Context-aware Guidance & Reuse"
+                  ? "fugudio-guidance-card"
+                  : ""
+              } ${
+                project.id === "atember" ? "atember-story-card" : ""
+              } ${
+                project.id === "colortelier" ? "colortelier-story-card" : ""
+              } ${
+                project.id === "colortelier" &&
+                section.title === "Product Ecosystem: From Photo to Reusable Asset"
+                  ? "colortelier-journey-card"
+                  : ""
+              } ${
+                project.id === "colortelier" && section.title === "Core Experience: Create Studio"
+                  ? "colortelier-create-card"
+                  : ""
+              } ${
+                project.id === "colortelier" &&
+                section.title === "UX Decisions for Trust and Momentum"
+                  ? "colortelier-ux-card"
+                  : ""
+              } ${
+                project.id === "colortelier" &&
+                section.title === "Explore & Community: Records Become Discovery"
+                  ? "colortelier-explore-card"
+                  : ""
+              } ${
+                project.id === "colortelier" &&
+                section.title === "Brand Application: Color Becomes a System"
+                  ? "colortelier-brand-card"
+                  : ""
+              } ${
+                project.id === "colortelier" &&
+                section.title === "Business Model: Value Grows With Use"
+                  ? "colortelier-business-card"
+                  : ""
+              } ${
+                project.id === "atember" && section.title === "Live Demo: Context to Execution"
+                  ? "atember-product-gallery"
+                  : ""
               } ${section.gallery?.length ? "case-story-card-gallery" : ""} ${
                 section.layout === "sequence" ? "case-story-card-sequence" : ""
               } ${
                 section.layout === "impact" ? "case-story-card-impact" : ""
               } ${
                 section.layout === "performance" ? "case-story-card-performance" : ""
+              } ${
+                section.layout === "workflow" ? "case-story-card-workflow" : ""
+              } ${
+                section.layout === "feature-system" ? "case-story-card-feature-system" : ""
               }`}
               key={section.title}
             >
@@ -797,7 +1205,55 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                   ))}
                 </div>
               ) : null}
-              {section.gallery?.length ? (
+              {section.layout === "workflow" && section.workflowItems?.length ? (
+                <div className="case-workflow-loop">
+                  {section.workflowItems.map((item, index) => (
+                    <article key={item.step}>
+                      <div className="case-workflow-heading">
+                        <span>{item.step}</span>
+                        <i aria-hidden="true" />
+                      </div>
+                      <h4>{t(item.title)}</h4>
+                      <p>{t(item.text)}</p>
+                      <strong>{t(item.output)}</strong>
+                      {index < section.workflowItems!.length - 1 ? (
+                        <b aria-hidden="true">→</b>
+                      ) : (
+                        <b className="case-workflow-return" aria-hidden="true">
+                          ↻
+                        </b>
+                      )}
+                    </article>
+                  ))}
+                </div>
+              ) : null}
+              {section.layout === "feature-system" && section.featureItems?.length ? (
+                project.id === "fugudio" &&
+                section.title === "How My Decisions Became a Product System" ? (
+                  <FugudioSystemMap items={section.featureItems} t={t} />
+                ) : (
+                  <div className="case-feature-system">
+                    {section.featureItems.map((item, index) => (
+                      <article key={item.title}>
+                        <div>
+                          <span>{String(index + 1).padStart(2, "0")}</span>
+                          <small>{t(item.group)}</small>
+                        </div>
+                        <h4>{t(item.title)}</h4>
+                        <p>{t(item.text)}</p>
+                      </article>
+                    ))}
+                  </div>
+                )
+              ) : null}
+              {project.id === "fugudio" && section.title === "UI Kit & Design System" ? (
+                <FugudioBrandSystem t={t} />
+              ) : null}
+              {project.id === "fugudio" && section.title === "Context-aware Guidance & Reuse" ? (
+                <FugudioGuidanceGallery t={t} />
+              ) : null}
+              {section.gallery?.length &&
+              !(project.id === "fugudio" && section.title === "Context-aware Guidance & Reuse") ? (
                 <>
                   <div
                     className={`case-story-gallery ${
@@ -823,9 +1279,14 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                             src={item.image}
                             alt={`${t(project.title)} ${t(item.title)}`}
                             loading={
-                              section.layout === "sequence" || itemIndex > 3 ? "lazy" : "eager"
+                              project.id === "colortelier"
+                                ? "eager"
+                                : section.layout === "sequence" || itemIndex > 3
+                                  ? "lazy"
+                                  : "eager"
                             }
-                            decoding="async"
+                            decoding={project.id === "colortelier" ? "sync" : "async"}
+                            fetchPriority={project.id === "colortelier" ? "high" : "auto"}
                           />
                           {section.layout !== "sequence" ? (
                             <figcaption>

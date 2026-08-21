@@ -30,7 +30,14 @@ export type Project = {
     title: string;
     text: string;
     image?: string;
-    layout?: "gallery" | "sequence" | "wide" | "performance" | "impact";
+    layout?:
+      | "gallery"
+      | "sequence"
+      | "wide"
+      | "workflow"
+      | "feature-system"
+      | "performance"
+      | "impact";
     gallery?: Array<{
       title: string;
       image: string;
@@ -57,6 +64,17 @@ export type Project = {
         ratio: number;
       }>;
     }>;
+    workflowItems?: Array<{
+      step: string;
+      title: string;
+      text: string;
+      output: string;
+    }>;
+    featureItems?: Array<{
+      group: string;
+      title: string;
+      text: string;
+    }>;
   }>;
   gallery?: Array<{
     title: string;
@@ -74,6 +92,7 @@ export type Experience = {
   category: "Work" | "Association";
   description?: string;
   projectId?: string;
+  projectLabel?: string;
   highlights: string[];
 };
 
@@ -241,6 +260,8 @@ export const experiences: Experience[] = [
     period: "Mar 2025 - Jun 2026",
     category: "Association",
     description: "HCI/UX Society",
+    projectId: "began",
+    projectLabel: "View Service UX Case",
     highlights: [
       "Led Began product planning through user interviews, IA, user flows, and business model definition.",
       "Won 1st place at the UXIM x YCC Final Project Showcase.",
@@ -266,6 +287,8 @@ export const experiences: Experience[] = [
     period: "Mar 2024 - Dec 2024",
     category: "Association",
     description: "Commerce & Strategy Society",
+    projectId: "nft-camera",
+    projectLabel: "View B2C Strategy Case",
     highlights: [
       "Strategized B2C market expansion for a B2B NFT business through a location-based camera app concept and UI/UX framework.",
       "Won 1st place in the final idea pitching, contributing to commercialization and launch by the partnering corporation.",
@@ -661,60 +684,279 @@ export const projects: Project[] = [
   {
     id: "fugudio",
     title: "FUGUDIO",
-    eyebrow: "Multi-channel content operations workspace",
+    eyebrow: "Independent 0→1 product case study",
     category: "Product & UX",
+    tagline: "From a recurring operational problem to a tested working product",
     summary:
-      "FUGUDIO is a content operations management service for individual creators and small marketing teams, designed to help them see what to post, where to post it, and when to publish it in one workspace.",
+      "I started FUGUDIO after seeing content context break across notes, calendars, spreadsheets, and platform dashboards. I owned the full 0→1 process—from problem definition and product strategy to brand, UI/UX, usability testing, and iteration.",
     role:
-      "Product planner responsible for service concept, product planning, information architecture, UX flow, UI planning, brand naming, brand identity, character and mascot direction, and the content operations framework.",
+      "Sole product owner and designer across the full 0→1 process: problem framing, user and workflow research, product strategy, requirements, information architecture, interaction flows, UI design, brand naming and identity, prototyping, usability testing, and iterative refinement.",
     outcome:
-      "Defined a service concept that connects idea, production, schedule, publishing, and performance into one content operations workspace without inventing unsupported launch metrics.",
+      "Turned a self-defined operational problem into a deployed, testable product. The result demonstrates my ability to connect strategic judgment, system design, visual craft, and user evidence throughout an end-to-end product cycle—not just design isolated screens.",
     accent: "#8d93cb",
-    placeholderLabel: "FUGUDIO workspace assets can be added here",
+    external: "https://fugudio.vercel.app/calendar",
+    image: "/projects/fugudio/product-calendar-latest.png",
+    actions: [
+      { label: "FUGUDIO Website", href: "https://fugudio.vercel.app/calendar" },
+      { label: "Product Introduction", href: "https://fugudio.vercel.app/welcome" },
+    ],
     sections: [
       {
-        title: "The Problem",
+        title: "Why I Built FUGUDIO",
         text:
-          "Creator workflows are fragmented across separate tools and channels. Ideas, production status, schedules, publishing destinations, and performance results often live in different places, making weekly content operations harder to manage.",
+          "While planning and operating content across several social channels, I kept seeing the same friction: ideas lived in notes, schedules in calendars, production status in spreadsheets or chat, and results inside separate platform dashboards. The real problem was not a lack of tools. It was the loss of context between making, publishing, learning, and deciding what to do next. I turned that recurring operational frustration into the starting hypothesis for FUGUDIO.",
       },
       {
-        title: "Service Concept",
+        title: "The Problem Behind the Product",
         text:
-          "FUGUDIO connects the fragmented workflow into one workspace for individual creators and small marketing teams, helping users understand what to create this week, where it should go, and when it should be published.",
+          "I translated the observed workflow into four connected problem areas. These became design requirements and a basis for deciding what the product should—and should not—solve.",
+        layout: "impact",
+        impactItems: [
+          {
+            step: "01 · Fragmented",
+            title: "Context Scattered Across Tools",
+            text: "The idea, latest file, owner, deadline, publishing state, and result were stored in different places.",
+            proof: "Repeated context switching",
+          },
+          {
+            step: "02 · Invisible",
+            title: "Production State Was Hard to Read",
+            text: "Delays and bottlenecks depended on someone remembering and reconstructing the whole picture.",
+            proof: "Operational uncertainty",
+          },
+          {
+            step: "03 · Disposable",
+            title: "Content Ended After Publishing",
+            text: "The relationship between an original asset and its channel variants disappeared after each post went live.",
+            proof: "Lost reuse opportunities",
+          },
+          {
+            step: "04 · Disconnected",
+            title: "Performance Did Not Guide Action",
+            text: "Platform metrics showed what happened, but did not connect the evidence to a concrete next content decision.",
+            proof: "Insight without follow-up",
+          },
+        ],
       },
       {
-        title: "Information Architecture",
+        title: "My 0→1 Product Process",
         text:
-          "The service structure is organized around Calendar, Pipeline, Content, Performance, and Channels so content planning can move from scattered tasks into a coherent operating system.",
+          "I owned the project as one continuous decision-making process. Each phase produced an artifact or testable assumption that informed the next, so strategy, UX, visual design, and validation stayed connected.",
+        layout: "workflow",
+        workflowItems: [
+          {
+            step: "01",
+            title: "Discover",
+            text: "Mapped recurring content-operations friction and the complete journey from idea to reuse.",
+            output: "Problem framing",
+          },
+          {
+            step: "02",
+            title: "Define",
+            text: "Set target users, core jobs, product hypothesis, requirements, priorities, and MVP boundaries.",
+            output: "Product strategy",
+          },
+          {
+            step: "03",
+            title: "Structure",
+            text: "Designed the information architecture, content model, states, permissions, and end-to-end UX flows.",
+            output: "IA + UX flow",
+          },
+          {
+            step: "04",
+            title: "Design & Build",
+            text: "Created the naming, identity, Hugu assistant, design system, interaction details, and working interface.",
+            output: "UI + product",
+          },
+          {
+            step: "05",
+            title: "Test & Iterate",
+            text: "Ran scenario-based usability tests, observed friction, and refined hierarchy, copy, states, and task flows.",
+            output: "Validated iterations",
+          },
+        ],
       },
       {
-        title: "Core Experience",
+        title: "How My Decisions Became a Product System",
         text:
-          "The core experience centers on Content Calendar, Production Pipeline, Multi-channel Management, and Performance Tracking, keeping weekly decisions visible and actionable.",
+          "I converted the problem framing into one shared information model and ten connected capabilities. The dashboard, calendar, pipeline, library, distribution, analytics, settings, studios, and Hugu assistant are not a feature checklist; each is a response to a specific breakdown in the original workflow.",
+        layout: "feature-system",
+        featureItems: [
+          {
+            group: "Visibility",
+            title: "Operations Dashboard",
+            text: "Surfaces urgent deadlines, publishing status, today's work, and channel balance in one view.",
+          },
+          {
+            group: "Plan",
+            title: "Multi-channel Calendar",
+            text: "Color-codes Instagram, YouTube, TikTok, Naver Blog, and Clip schedules with independent reservation and publishing states.",
+          },
+          {
+            group: "Produce",
+            title: "Kanban Production Pipeline",
+            text: "Moves content through idea, planning, filming, editing, review, scheduled, and published stages.",
+          },
+          {
+            group: "Asset",
+            title: "Content Library",
+            text: "Stores ideas, scripts, and videos as master assets with every derived output and publishing record attached.",
+          },
+          {
+            group: "Distribute",
+            title: "Channel Variants",
+            text: "Transforms one source into Reels, Shorts, Naver Clip, Blog, and other channel-specific formats.",
+          },
+          {
+            group: "Learn",
+            title: "Performance Analytics",
+            text: "Compares views, interactions, and engagement across channels, content, topics, and formats.",
+          },
+          {
+            group: "Extend",
+            title: "Follow-up Suggestions",
+            text: "Uses content state and undistributed channels to turn one-off posts into concrete reuse opportunities for Naver Clip, YouTube Shorts, and other platforms.",
+          },
+          {
+            group: "Configure",
+            title: "Custom Operating Presets",
+            text: "Adapts channel, format, category, and target-mix presets to each user's operating style.",
+          },
+          {
+            group: "Collaborate",
+            title: "Personal & Team Studios",
+            text: "Supports independent creator workspaces and shared studios with member roles and permissions.",
+          },
+          {
+            group: "Assist",
+            title: "Hugu Operations Co-pilot",
+            text: "Delivers context-aware alerts for delays, next tasks, and reuse opportunities, then links users directly to the relevant work or recommended channel adaptation.",
+          },
+        ],
       },
       {
-        title: "UX Flow",
+        title: "Live Product Interface",
         text:
-          "The workflow moves from Create Content to Set Production Stage, Schedule, Select Channel, Publish, and Track Performance, turning content operations into a repeatable loop.",
+          "These screens are captured from the latest authenticated production deployment. Together they show scheduling, production control, asset management, operational visibility, and workspace configuration inside one connected content workflow.",
+        layout: "gallery",
+        gallery: [
+          {
+            title: "Multi-channel Publishing Calendar",
+            image: "/projects/fugudio/product-calendar-latest.png",
+            note:
+              "Maps platform, format, production state, reservation state, and publishing state onto color-coded calendar blocks so one topic can move on different channel schedules.",
+          },
+          {
+            title: "Operations Dashboard",
+            image: "/projects/fugudio/product-dashboard-latest.png",
+            note:
+              "Prioritizes overdue work, today's tasks, upcoming publishing, content-pillar balance, and channel distribution while Hugu surfaces the most urgent next action.",
+          },
+          {
+            title: "Kanban Production Pipeline",
+            image: "/projects/fugudio/product-pipeline-latest.png",
+            note:
+              "Makes production bottlenecks visible across idea, planning, filming, editing, review, scheduling, and completion, with stage changes controlled directly from each card.",
+          },
+          {
+            title: "Master Content Library",
+            image: "/projects/fugudio/product-library-latest.png",
+            note:
+              "Provides a searchable master-asset view across pillars, platforms, production states, distribution blocks, publishing dates, and accumulated performance.",
+          },
+          {
+            title: "Workspace, Presets & Permissions",
+            image: "/projects/fugudio/product-settings.jpg",
+            note:
+              "Brings plan permissions, SNS-format presets, workspace settings, member roles, and target content-pillar ratios into one operating configuration surface.",
+          },
+        ],
       },
       {
-        title: "Brand Identity",
+        title: "Context-aware Guidance & Reuse",
         text:
-          "FUGUDIO also includes brand naming, wordmark direction, mascot and character direction, icon system thinking, visual identity, and UI tone so the workspace can feel approachable rather than purely operational.",
+          "Hugu reads the user's current deadlines, production states, and channel distribution context to surface personalized alerts and next tasks. It also finds content that has not yet been distributed to other platforms, so a one-off post can become a concrete channel-specific reuse opportunity.",
+        layout: "gallery",
+        gallery: [
+          {
+            title: "Hugu Agent Panel",
+            image: "/projects/fugudio/product-agent-panel.png",
+            note:
+              "Brings today's work, personalized alerts, reuse opportunities, and content creation into one contextual action panel.",
+          },
+          {
+            title: "Personalized Reuse Opportunity Alert",
+            image: "/projects/fugudio/product-reuse-alert.png",
+            note:
+              "Identifies a published asset that can be adapted for another channel and takes the user directly to the recommended reuse action.",
+          },
+          {
+            title: "Channel-specific Repurpose Suggestions",
+            image: "/projects/fugudio/product-repurpose-suggestions.png",
+            note:
+              "Turns the alert into executable options by recommending Naver Clip, YouTube Shorts, and TikTok adaptations from the same published Reel.",
+          },
+          {
+            title: "Reuse States in the Content Library",
+            image: "/projects/fugudio/product-reuse-library-states.png",
+            note:
+              "Shows reuse-ready, reviewed, and newly created derivative content in the master library so the recommendation becomes a traceable operating workflow.",
+          },
+        ],
+      },
+      {
+        title: "UX Decisions I Made",
+        text:
+          "I used four principles to keep a complex operational product understandable: make state immediately legible, preserve the relationship between original and distributed content, let each channel move independently, and place analysis close to the next decision.",
+        layout: "impact",
+        impactItems: [
+          {
+            step: "01 · See",
+            title: "Visible Operational State",
+            text: "Deadlines, blockers, owners, publishing states, and channel balance stay visible without rebuilding the picture across tools.",
+            proof: "Dashboard + calendar + pipeline",
+          },
+          {
+            step: "02 · Connect",
+            title: "Master-to-Variant Model",
+            text: "Original ideas, scripts, and videos remain connected to every channel adaptation and publishing history.",
+            proof: "One asset → many outputs",
+          },
+          {
+            step: "03 · Control",
+            title: "Channel Independence",
+            text: "Each platform output keeps its own format, schedule, reservation state, publishing state, and performance record.",
+            proof: "Shared topic, independent delivery",
+          },
+          {
+            step: "04 · Learn",
+            title: "Data into Next Action",
+            text: "Performance is not an endpoint; strong topics, formats, and unused channels become actionable reuse suggestions.",
+            proof: "Measure → recommend → extend",
+          },
+        ],
+      },
+      {
+        title: "UI Kit & Design System",
+        text:
+          "FUGUDIO balances the professionalism of a content operations tool with the warmth of its brand. I built a reusable system around primary navy, dusty pink, iOS-inspired translucent surfaces, disciplined radii, legible system typography, Lucide icons, and domain-specific components—keeping information priority clear across desktop and mobile.",
       },
     ],
     details: [
-      "Mapped fragmented creator work from Idea to Production, Schedule, Publish, and Performance.",
-      "Structured the service around calendar, pipeline, content, performance, and channel management.",
-      "Connected product planning with brand identity so the service could feel usable, memorable, and creator-friendly.",
+      "Framed the recurring multi-channel operations problem, target users, product hypothesis, scope, and priorities.",
+      "Designed the shared content model, information architecture, permissions, states, and end-to-end task flows.",
+      "Built the brand and UI system, tested the working interface, and refined core flows with usability-test evidence.",
     ],
     capabilities: [
+      "End-to-End Product Ownership",
       "Product Planning",
+      "User Research",
       "Information Architecture",
       "UX Design",
-      "Content Operations",
+      "UI Design",
+      "Prototyping",
+      "Usability Testing",
       "Brand Identity",
-      "Service Design",
     ],
   },
   {
@@ -767,110 +1009,368 @@ export const projects: Project[] = [
   },
   {
     id: "atember",
-    title: "Atember",
-    eyebrow: "AI-powered work memory & productivity system",
+    title: "Attember",
+    eyebrow: "AI agent product planning & UI/UX",
     category: "Product & UX",
-    tagline: "Attends. Remembers. Keeps you moving.",
+    period: "OpenAI Hackathon · 2026",
+    tagline: "From scattered context to an executable AI work pipeline.",
     summary:
-      "Atember is a productivity and memory system concept that connects multiple work contexts and AI functions into one product experience, helping users remember context and turn it back into action.",
+      "Attember began with a simple question: why do people lose important work when their task list gets crowded? I designed a macOS AI work hub that turns scattered context into prioritized tasks, verified research, and approved execution.",
     role:
-      "Product and UX planner organizing AI product vision, information architecture, workflow strategy, memory-centered product concept, and desktop interaction direction.",
+      "As PM and UI/UX Designer, I led problem definition, interview and community research synthesis, product strategy, information architecture, end-to-end agent workflow, desktop UI/UX design, prototype direction, and demo storytelling.",
     outcome:
-      "Created a product UX direction that organizes complex AI capabilities around user context, memory, retrieval, and follow-up rather than presenting features as a disconnected list.",
-    accent: "#8d93cb",
-    placeholderLabel: "Atember desktop UX assets can be added here",
+      "Built and demonstrated a connected product experience that turns conversation and profile context into structured tasks, personalized research, priority placement, and Codex SDK-powered execution rather than stopping at recommendations.",
+    accent: "#2478ff",
+    image: "/projects/atember/pitch-cover.png",
+    actions: [
+      { label: "Watch Product Demo", href: "https://youtu.be/eoN4IL5sM10" },
+      { label: "View GitHub Repository", href: "https://github.com/Dindb-dong/Attember_Release" },
+    ],
     sections: [
       {
-        title: "Product Vision",
+        title: "Why This Product",
         text:
-          "Atember begins from the problem that meetings, documents, tasks, research, and follow-ups often require users to manually remember and reconnect context. The product direction focuses on remembering work context and turning it into the next action.",
+          "Interview and community research revealed four recurring barriers: priority confusion, putting team obligations ahead of personal work, perfectionism around important tasks, and burnout-driven avoidance. The opportunity was not another to-do list, but a system that reduces the judgment and coordination cost before execution.",
+        gallery: [
+          {
+            title: "User Problem Patterns",
+            image: "/projects/atember/pitch-problem.png",
+            note: "Four behavioral patterns synthesized from interview and community research.",
+          },
+          {
+            title: "Work Overload Evidence",
+            image: "/projects/atember/pitch-evidence.png",
+            note: "External research connected overload, fragmented focus, and coordination cost to delayed execution.",
+          },
+        ],
       },
       {
-        title: "Information Architecture",
+        title: "From Overload to an Agent Workflow",
         text:
-          "The IA organizes complex AI functions through a user-centered structure: Today, Dashboard, Search, Chat, Research, Inbox, Tasks, Sources, Automations, and Memory.",
+          "I reframed the product from a planning tool into an agent that collects approved context, turns it into tasks, places work by importance and urgency, retrieves past information, explores relevant opportunities, and executes work within a safe workspace.",
+        gallery: [
+          {
+            title: "Before and After",
+            image: "/projects/atember/pitch-solution.png",
+            note: "Each recurring user burden was translated into a concrete product response.",
+          },
+          {
+            title: "Understand · Decide · Execute · Complete",
+            image: "/projects/atember/pitch-agent-pipeline.png",
+            note: "The agent loop connects context understanding to follow-up instead of presenting disconnected AI features.",
+          },
+        ],
       },
       {
-        title: "Memory Architecture",
+        title: "The Agent Pipeline I Designed",
         text:
-          "The conceptual UX flow is Activity → Context → Memory → Retrieval → Action. This is treated as a product concept diagram for how users regain context, not as a confirmed technical architecture.",
+          "I organized the end-to-end experience around four clear stages so users can understand what the agent knows, why it prioritizes an item, what it is doing, and what should happen next.",
+        layout: "workflow",
+        workflowItems: [
+          {
+            step: "01",
+            title: "Understand",
+            text: "Collect approved schedules, conversations, profile data, and goals to recover the user's working context.",
+            output: "Context & intent",
+          },
+          {
+            step: "02",
+            title: "Decide",
+            text: "Evaluate importance, urgency, role, fit, and evidence to determine a personalized order of action.",
+            output: "Priority & rationale",
+          },
+          {
+            step: "03",
+            title: "Execute",
+            text: "Research, structure tasks, prepare a safe project workspace, and call Codex SDK for approved work.",
+            output: "Agent action",
+          },
+          {
+            step: "04",
+            title: "Complete",
+            text: "Track progress, preserve the generated context, and return a clear result with the next recommended action.",
+            output: "Result & follow-up",
+          },
+        ],
       },
       {
-        title: "Core Workflows",
+        title: "Working Product Interface",
         text:
-          "Core workflows are framed around Meeting → Memory, Research → Knowledge, and Task → Follow-up, emphasizing how information becomes useful again after the original activity ends.",
+          "The macOS interface connects Inbox, Tasks, Sources, Automations, Memory, and Auto Research around a Task Map. Users can see incoming context, the reason behind a recommendation, and where each task sits by importance and urgency.",
+        layout: "wide",
+        gallery: [
+          {
+            title: "Attember Product Overview",
+            image: "/projects/atember/product-overview.png",
+            note: "Task Map, Auto Research, and context tools brought together in one desktop work hub.",
+          },
+        ],
       },
       {
-        title: "Desktop UX",
+        title: "Live Demo: Context to Execution",
         text:
-          "This section is prepared for desktop or macOS product interface assets. No fake UI mockups are inserted; actual Atember interface visuals can be added under /public/projects/atember/ when available.",
+          "The working product connects four critical moments: seeing priorities, researching opportunities with evidence, managing generated tasks, and carrying conversation context into an actionable response.",
+        gallery: [
+          {
+            title: "Priority Home & Task Map",
+            image: "/projects/atember/product-home-hq.png",
+            note: "Brings today's schedule and importance–urgency placement into one operational view.",
+          },
+          {
+            title: "Evidence-based Auto Research",
+            image: "/projects/atember/product-research-hq.png",
+            note: "Matches profile context to opportunities, cross-checks sources, and explains each recommendation.",
+          },
+          {
+            title: "Generated Task Workspace",
+            image: "/projects/atember/product-tasks-hq.png",
+            note: "Turns recovered context into editable tasks with deadlines, priority, and linked evidence.",
+          },
+          {
+            title: "Context-aware Agent Chat",
+            image: "/projects/atember/product-chat-hq.png",
+            note: "Uses connected context, sources, and next actions to produce a useful response instead of a generic answer.",
+          },
+        ],
       },
     ],
     details: [
-      "Framed AI product value around remembered work context and next actions.",
-      "Organized product IA across Today, Dashboard, Search, Chat, Research, Inbox, Tasks, Sources, Automations, and Memory.",
-      "Defined workflow concepts connecting meetings, research, and tasks back into usable follow-up.",
+      "Synthesized interview and community research into four behavioral barriers behind delayed execution.",
+      "Translated the problem into an agent product strategy spanning context collection, task creation, research, prioritization, and execution.",
+      "Designed the desktop information architecture and interaction flow across Inbox, Tasks, Sources, Automations, Memory, Auto Research, and Task Map.",
+      "Structured the working demo and pitch narrative to make a complex AI pipeline understandable through visible user actions and outcomes.",
     ],
     capabilities: [
       "AI Product Planning",
+      "User Research",
       "Information Architecture",
-      "UX Strategy",
+      "UI/UX Design",
       "Workflow Design",
-      "Product Systems",
-      "Interaction Design",
+      "Prototype Direction",
+      "Product Storytelling",
     ],
   },
   {
     id: "colortelier",
     title: "Colortelier",
-    eyebrow: "Turning travel memories into color",
-    category: "Brand & Growth",
+    eyebrow: "Travel Color Archive & Creator Commerce",
+    category: "Product & UX",
+    tagline: "One photo, translated into a color record of place.",
     summary:
-      "Colortelier is a service and brand concept that extracts colors from travel photos, turning memories of places into palettes, names, and a personal visual archive.",
+      "Colortelier turns a travel photo into an editorial colorboard that preserves the light, color, place, and atmosphere behind it—then connects that record to sharing, brand application, personal archiving, and creator commerce.",
     role:
-      "Concept planner responsible for service concept, brand concept, experience planning, visual direction, and product expansion strategy.",
+      "Service Planning · UX/UI Direction · AI-assisted Prototyping across problem framing, product architecture, responsive interaction design, visual direction, and the end-to-end working prototype.",
     outcome:
-      "Built an editorial service concept around the flow Travel Photo → Color Extraction → Palette → Naming → Personal Archive, keeping the emotional nature of travel memory central to the product idea.",
-    accent: "#ffdbed",
-    placeholderLabel: "Colortelier palette and travel assets can be added here",
+      "Built a responsive product system that moves beyond HEX extraction: photo context becomes an editable artifact, reusable design output, community archive, brand guide, and a foundation for digital goods and creator participation.",
+    accent: "#d7e8f1",
+    image: "/projects/colortelier/travel-color-home.jpg",
     sections: [
       {
-        title: "Inspiration",
+        title: "Opportunity: Color Needs Context",
         text:
-          "The idea started from the relationship between colors discovered while traveling and the memories attached to those places. Colortelier treats color as a way to keep travel emotion vivid after the trip ends.",
+          "Travel photos accumulate, but the light, color, and atmosphere of a place are difficult to retrieve and reuse. Existing color extractors usually stop at a palette and HEX values, leaving users to rebuild the story, format, and application on their own.",
+        layout: "impact",
+        impactItems: [
+          {
+            step: "01 · Accumulation",
+            title: "Photos Without Recall",
+            text: "Images remain in camera rolls while the sensory context that made the place memorable fades.",
+            proof: "Place context is lost",
+          },
+          {
+            step: "02 · Extraction",
+            title: "HEX Without Meaning",
+            text: "A palette alone does not explain when, where, or why a color should be remembered or reused.",
+            proof: "Utility stops at codes",
+          },
+          {
+            step: "03 · Application",
+            title: "Manual Design Burden",
+            text: "Turning a discovered color into social or brand assets requires separate tools and design knowledge.",
+            proof: "Inspiration becomes extra work",
+          },
+          {
+            step: "04 · Creation",
+            title: "No Contextual Market",
+            text: "Travel creators lack a focused space to package and sell presets, reports, and color-led assets.",
+            proof: "Creation lacks a pathway",
+          },
+        ],
       },
       {
-        title: "Concept",
+        title: "Product Ecosystem: From Photo to Reusable Asset",
         text:
-          "The core service flow is Upload Photo → Extract Colors → Build Palette → Name Colors → Save Travel Memory, transforming an image into a personal archive of color and place.",
+          "I designed one connected journey in which automation accelerates interpretation while the user keeps control over place data, color decisions, format, and publication.",
+        layout: "workflow",
+        workflowItems: [
+          {
+            step: "01",
+            title: "Upload",
+            text: "Begin with the travel photo rather than an isolated color code.",
+            output: "Source image",
+          },
+          {
+            step: "02",
+            title: "Interpret",
+            text: "Estimate representative colors and EXIF or location context with manual fallback.",
+            output: "Palette + metadata",
+          },
+          {
+            step: "03",
+            title: "Edit",
+            text: "Confirm the place, season, weather, time, mood, and intended use before generation.",
+            output: "User-controlled record",
+          },
+          {
+            step: "04",
+            title: "Create & Export",
+            text: "Generate newspaper, collage, or loyalty-card layouts for social and design workflows.",
+            output: "Images + design tokens",
+          },
+          {
+            step: "05",
+            title: "Archive & Extend",
+            text: "Publish to the Board and Atlas, apply the palette to brands, or connect it to creator goods.",
+            output: "Community + commerce",
+          },
+        ],
       },
       {
-        title: "Experience Flow",
+        title: "Core Experience: Create Studio",
         text:
-          "The emotional experience moves through Capture, Discover, Name, Collect, and Remember, so users can revisit travel memories through color rather than only through photos.",
+          "Create Studio keeps input, generated artifact, palette, and export actions in one workspace. A SAMPLE preview explains the destination before upload; the real result appears only after explicit generation, so example content and user output never blur together.",
+        layout: "wide",
+        gallery: [
+          {
+            title: "Create Studio Working Interface",
+            image: "/projects/colortelier/create-studio.jpg",
+            note: "The primary product screen combines photo and context input, a sticky editorial preview, palette details, image exports, social ratios, and design tokens without distorting the generated artifact.",
+          },
+        ],
       },
       {
-        title: "Visual System",
+        title: "UX Decisions for Trust and Momentum",
         text:
-          "The visual system connects travel places and palettes through editorial naming examples such as Tokyo Rain, Mojiko Sunset, and Yufuin Mist. These are concept examples rather than confirmed project color data.",
+          "The experience had to make automation legible without removing user agency. I designed state, fallback, and responsive behavior around the moments where users are most likely to hesitate or lose their work.",
+        layout: "feature-system",
+        featureItems: [
+          {
+            group: "Expectation",
+            title: "SAMPLE vs Empty State",
+            text: "A labeled sample shows the finished form, while the empty state clearly states that no personal result exists yet.",
+          },
+          {
+            group: "Control",
+            title: "Metadata Fallback",
+            text: "If EXIF, GPS, or image inference fails, users can confirm and edit location, date, season, weather, time, and use case manually.",
+          },
+          {
+            group: "Desktop",
+            title: "Sticky Comparative Preview",
+            text: "On larger screens the result and its information remain visible while users refine the input form.",
+          },
+          {
+            group: "Mobile",
+            title: "Short Guided Movement",
+            text: "Template selection, upload, generation, and result review are connected through quick movement rather than a compressed desktop layout.",
+          },
+          {
+            group: "Continuity",
+            title: "Persistent Inputs",
+            text: "Switching templates preserves uploaded photos and place information, preventing unnecessary re-entry.",
+          },
+        ],
       },
       {
-        title: "Expansion",
+        title: "Explore & Community: Records Become Discovery",
         text:
-          "The concept can expand into color books, postcards, bookmarks, and a travel color archive, allowing the brand to move from digital memory keeping into physical keepsakes.",
+          "The Atlas organizes colors by place and context, while the Color Board archives finished newspaper, collage, and loyalty-card outputs with their palettes. Personal records therefore become discoverable service assets rather than isolated exports.",
+        gallery: [
+          {
+            title: "Travel Color Atlas",
+            image: "/projects/colortelier/travel-color-atlas.jpg",
+            note: "Image-led place collections support discovery by city, atmosphere, and use, with a direct path to request a missing city or create a new record.",
+          },
+          {
+            title: "Community Color Board",
+            image: "/projects/colortelier/community-colorboard.jpg",
+            note: "Generated artifacts and circular palettes are stored together so users can browse, react, comment, and move between inspiration and creation.",
+          },
+        ],
+      },
+      {
+        title: "Brand Application: Color Becomes a System",
+        text:
+          "A representative color can move into contrast checks, supporting colors, logo marks, typography, emoji, and real brand touchpoints. This closes the gap between finding a color and knowing how to use it.",
+        layout: "wide",
+        gallery: [
+          {
+            title: "Paris Rose Application Guide",
+            image: "/projects/colortelier/brand-application-guide.jpg",
+            note: "A dusty rose and mauve palette drawn from Paris becomes the “window atelier.” logo system, signature mark, type hierarchy, and applied brand assets while the Eiffel Tower source image remains visible.",
+          },
+        ],
+      },
+      {
+        title: "Business Model: Value Grows With Use",
+        text:
+          "The model starts with a free colorboard experience and expands only when users need richer ownership or repeated use: single digital goods, a travel pass, annual archive membership, and a creator marketplace for presets, templates, reports, and color products.",
+        layout: "feature-system",
+        gallery: [
+          {
+            title: "Shop & Creator Commerce",
+            image: "/projects/colortelier/creator-shop.jpg",
+            note: "The shop makes the value ladder visible through Travel Roll, Travel Color Report, Archive Plus Annual, and creator-made presets rather than relying on an abstract pricing diagram.",
+          },
+        ],
+        featureItems: [
+          {
+            group: "Entry",
+            title: "Free Experience",
+            text: "Basic extraction and colorboard creation establish the product habit and the value of a contextual color record.",
+          },
+          {
+            group: "One-off",
+            title: "Digital Goods",
+            text: "Travel Color Reports and Travel Rolls serve users who want a specific finished artifact without a subscription.",
+          },
+          {
+            group: "Journey",
+            title: "Travel Pass",
+            text: "A pass supports a deeper set of outputs around one trip or collection.",
+          },
+          {
+            group: "Continuity",
+            title: "Annual Membership",
+            text: "Archive Plus supports repeated creation, storage, and long-term access across travel records.",
+          },
+          {
+            group: "Ecosystem",
+            title: "Creator Market",
+            text: "Presets, templates, color reports, and digital products create a path from personal practice to creator commerce.",
+          },
+        ],
+      },
+      {
+        title: "Reflection: Prioritizing the Core Action",
+        text:
+          "Designing a broad platform made one lesson clear: feature breadth is useful only when the path from photo to finished color record stays unmistakable. I repeatedly refined CTA hierarchy, state language, and responsive movement so Atlas, community, brand tools, and commerce extend the Create experience instead of competing with it.",
       },
     ],
     details: [
-      "Translated travel photography and place memory into a color-based service concept.",
-      "Defined the experience flow from photo upload and color extraction to palette naming and personal archive.",
-      "Explored expansion into color books, postcards, bookmarks, and a travel color archive.",
+      "Framed the gap between travel-photo accumulation and context-poor HEX extraction as an opportunity for a reusable color record.",
+      "Designed the service architecture from upload, metadata estimation, manual correction, and template generation to export, archive, discovery, and commerce.",
+      "Built responsive UX decisions for sample and empty states, metadata fallback, sticky desktop comparison, and guided mobile movement.",
+      "Connected the core Create Studio to Atlas, community, brand application, and a staged creator-commerce model without overstating the implemented scope.",
     ],
     capabilities: [
-      "Brand Concept",
-      "Service Design",
-      "Visual Storytelling",
-      "Experience Design",
-      "Product Expansion",
+      "Service Planning",
+      "UX/UI Direction",
+      "AI-assisted Prototyping",
+      "Product Architecture",
+      "Responsive UX",
+      "Brand Application",
+      "Business Model",
     ],
   },
   {
