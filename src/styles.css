@@ -3972,10 +3972,10 @@ html[lang="ko"] .landing-keywords > .kicker {
   z-index: 2;
   display: block;
   border-radius: 48% 52% 46% 54%;
-  background: rgb(239 224 230 / 30%);
-  backdrop-filter: blur(30px) saturate(0.72);
-  -webkit-backdrop-filter: blur(30px) saturate(0.72);
-  box-shadow: 0 0 16px 8px rgb(250 246 247 / 20%);
+  background: rgb(226 207 216 / 78%);
+  backdrop-filter: blur(48px) saturate(0.32);
+  -webkit-backdrop-filter: blur(48px) saturate(0.32);
+  box-shadow: 0 0 20px 10px rgb(239 225 231 / 55%);
   pointer-events: none;
 }
 
@@ -3995,9 +3995,9 @@ html[lang="ko"] .landing-keywords > .kicker {
 
 .alus-privacy-follower-evidence .alus-privacy-mask {
   border-radius: 50%;
-  background: rgb(246 241 243 / 62%);
-  backdrop-filter: blur(22px) saturate(0.6);
-  -webkit-backdrop-filter: blur(22px) saturate(0.6);
+  background: rgb(242 235 238 / 92%);
+  backdrop-filter: blur(36px) saturate(0.2);
+  -webkit-backdrop-filter: blur(36px) saturate(0.2);
 }
 
 .alus-privacy-follower-evidence .mask-follower-1 {
