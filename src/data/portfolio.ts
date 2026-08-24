@@ -699,7 +699,7 @@ export const projects: Project[] = [
   {
     id: "fugudio",
     title: "FUGUDIO",
-    eyebrow: "Independent 0→1 product case study",
+    eyebrow: "Independent 0→1 service built for market launch",
     category: "Product & UX",
     tagline: "From a recurring operational problem to a tested working product",
     summary:
