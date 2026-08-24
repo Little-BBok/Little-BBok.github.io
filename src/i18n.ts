@@ -463,7 +463,8 @@ const ko: Record<string, string> = {
   "Content Operations": "콘텐츠 운영",
   "Service Design": "서비스 디자인",
   "One workflow from content idea to the next opportunity": "콘텐츠 아이디어부터 다음 기회까지 하나의 워크플로",
-  "Independent 0→1 product case study": "개인 0→1 제품 케이스 스터디",
+  "Independent 0→1 service built for market launch":
+    "직접 기획·개발해 출시하는 0→1 서비스",
   "From a recurring operational problem to a tested working product":
     "반복되는 운영 문제에서 검증 가능한 실제 제품까지",
   "I started FUGUDIO after seeing content context break across notes, calendars, spreadsheets, and platform dashboards. I owned the full 0→1 process—from problem definition and product strategy to brand, UI/UX, usability testing, and iteration.":
