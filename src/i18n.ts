@@ -1291,6 +1291,10 @@ const ko: Record<string, string> = {
   "Ecosystem Outreach": "생태계 제안",
   "Creators, organizations, and communities contacted": "크리에이터·단체·커뮤니티 40곳 접촉",
   "1 UGC partnership secured": "첫 UGC 협업 1건 확보",
+  "Instagram Followers": "인스타그램 팔로워",
+  "Net follower growth in the first 10 days after channel opening":
+    "채널 개설 첫 10일간 순 팔로워 증가",
+  "19,220 views during the same period": "같은 기간 조회 19,220회",
   "Instagram Views": "인스타그램 조회수",
   "First 10 operating days · Aug 14–Aug 23": "운영 시작 후 첫 10일 · 8월 14일–8월 23일",
   "Account-level measured result": "계정 단위 측정 결과",

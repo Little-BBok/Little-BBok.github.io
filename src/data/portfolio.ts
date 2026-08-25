@@ -1025,6 +1025,14 @@ export const projects: Project[] = [
         baselineRatio: 0,
         resultRatio: 76,
       },
+      {
+        value: "+365",
+        label: "Instagram Followers",
+        context: "Net follower growth in the first 10 days after channel opening",
+        baseline: "19,220 views during the same period",
+        baselineRatio: 0,
+        resultRatio: 92,
+      },
     ],
     sections: [
       {
