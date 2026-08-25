@@ -226,6 +226,21 @@ const emphasisPhrases = [
   "connected product experience",
   "four clear stages",
   "seeing priorities, researching opportunities with evidence, managing generated tasks, and carrying conversation context into an actionable response",
+  "Lead Product Planner and Content Operations Lead",
+  "carousel template system, content calendar, publishing schedule, feed direction, and performance review process",
+  "19,220 Instagram views, 7,321 accounts reached, 986 interactions, and 33 new followers",
+  "defined the content pillars, designed reusable carousel templates, built and maintained the content calendar, managed publishing",
+  "19,220 views reached 7,321 accounts",
+  "88.5% of views came from non-followers",
+  "posts generated 85.0% of all interactions",
+  "location-based restaurant discovery service",
+  "reduce dining uncertainty for people with dietary restrictions",
+  "within the first 10 days of Instagram operations",
+  "editorial colorboard",
+  "R-based analysis of 8,000+ Sephora products",
+  "landing page that explains Leviosa CS",
+  "location-based camera app",
+  "career guidebook project",
   "전체 브랜드 경험",
   "풀사이클 브랜드 매니지먼트",
   "제품 기획과 브랜드 경험",
@@ -269,6 +284,30 @@ const emphasisPhrases = [
   "실제 제품 경험",
   "네 단계",
   "우선순위 확인, 근거 기반 기회 탐색, 생성된 Task 관리, 대화 맥락을 활용한 실행 가능한 응답",
+  "리드 제품 기획자이자 콘텐츠 운영 총괄",
+  "캐러셀 템플릿 시스템, 콘텐츠 캘린더, 발행 일정, 피드 방향, 성과 리뷰 프로세스",
+  "인스타그램 조회 19,220회, 도달 계정 7,321개, 반응 986회, 신규 팔로워 33명",
+  "콘텐츠 기둥을 정의하고, 재사용 가능한 캐러셀 템플릿을 설계하고, 콘텐츠 캘린더를 구축·관리하며, 발행까지 총괄",
+  "조회 19,220회로 7,321개 계정에 도달",
+  "조회수의 88.5%가 비팔로워에게서 발생",
+  "전체 반응의 85.0%를 게시물이 생성",
+  "위치 기반 맛집 탐색 서비스",
+  "식이 제한이 있는 사람들이 외식할 때 느끼는 정보 불확실성을 줄이기",
+  "인스타그램 운영 시작 후 첫 10일 이내",
+  "반복 가능한 에디토리얼 주제",
+  "캐러셀 그리드, 커버 위계, 제품 시연 프레임, 타이포그래피 규칙, CTA 엔딩",
+  "주제와 발행 순서를 기획하고 제작 마감을 조율하며",
+  "피드를 운영했습니다",
+  "근거를 다음 콘텐츠 사이클 개선에 반영",
+  "에디토리얼 컬러보드",
+  "8,000개 이상의 Sephora 제품 데이터를 바탕으로",
+  "Leviosa CS를 소개하는 랜딩페이지",
+  "위치 기반 카메라 앱",
+  "커리어 가이드북 프로젝트",
+  "repeatable editorial themes",
+  "carousel grid, cover hierarchy, product demonstration frames, typography rules, and CTA endings",
+  "Planned topics and publishing order, coordinated production deadlines, and managed the feed",
+  "used the evidence to refine the next content cycle",
   "Lightroom XMP presets I personally created",
   "personally produced Lightroom XMP presets",
   "제가 직접 만든 Lightroom XMP 프리셋",
@@ -1065,7 +1104,13 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
         <section className="case-impact-chart" aria-label={t("Measured business impact")}>
           <div className="case-impact-heading">
             <span>{t("Measured Impact")}</span>
-            <h3>{t("Brand work translated into business movement")}</h3>
+            <h3>
+              {t(
+                project.id === "began"
+                  ? "The first 10 launch days translated content operations into measurable growth"
+                  : "Brand work translated into business movement",
+              )}
+            </h3>
           </div>
           <div className="case-impact-plot">
             {project.metrics.map((metric) => (
@@ -1174,6 +1219,21 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                 project.id === "atember" ? "atember-story-card" : ""
               } ${
                 project.id === "colortelier" ? "colortelier-story-card" : ""
+              } ${
+                project.id === "began" ? "began-story-card" : ""
+              } ${
+                project.id === "began" && section.title === "Content Operations I Led"
+                  ? "began-operations-card"
+                  : ""
+              } ${
+                project.id === "began" &&
+                section.title === "Instagram Feed & Carousel Template System"
+                  ? "began-instagram-card"
+                  : ""
+              } ${
+                project.id === "began" && section.title === "Measured Instagram Performance"
+                  ? "began-performance-card"
+                  : ""
               } ${
                 project.id === "colortelier" &&
                 section.title === "Problem Definition: Travel Color Is Hard to Reuse"
@@ -1311,15 +1371,13 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                           <i aria-hidden="true" />
                         </div>
                         <h4>{t(item.title)}</h4>
-                        <p>{t(item.text)}</p>
+                        <p>
+                          <EmphasizedText>{t(item.text)}</EmphasizedText>
+                        </p>
                         <strong>{t(item.output)}</strong>
                         {index < section.workflowItems!.length - 1 ? (
                           <b aria-hidden="true">→</b>
-                        ) : (
-                          <b className="case-workflow-return" aria-hidden="true">
-                            ↻
-                          </b>
-                        )}
+                        ) : null}
                       </article>
                     ))}
                   </div>

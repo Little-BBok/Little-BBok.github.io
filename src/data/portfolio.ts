@@ -616,7 +616,7 @@ export const projects: Project[] = [
         ],
         gallery: [
           {
-            title: "30-day Professional Dashboard",
+            title: "Professional Dashboard Evidence",
             image: "/projects/alus/performance/professional-dashboard-clean.png",
             note:
               "Native channel evidence recording 334K views, 3.1K interactions, 686 new followers, and 74 published pieces during the measured period.",
@@ -977,20 +977,54 @@ export const projects: Project[] = [
   {
     id: "began",
     title: "Began Project",
-    eyebrow: "Dietary-accessible discovery service",
+    eyebrow: "Dietary-accessible product & content operations",
     category: "Product & UX",
     summary:
-      "A location-based restaurant discovery service designed to reduce dining uncertainty for people with dietary restrictions.",
+      "A location-based restaurant discovery service designed to reduce dining uncertainty for people with dietary restrictions—and carried from product planning into a structured Instagram launch and content operation.",
     role:
-      "Lead Product Planner responsible for ideation, IDI, IA, user flows, business model, and end-to-end UI/UX.",
+      "As Lead Product Planner and Content Operations Lead, I owned ideation, IDI, IA, user flows, business model, and end-to-end UI/UX, then built the carousel template system, content calendar, publishing schedule, feed direction, and performance review process.",
     outcome:
-      "Won 1st place at the UXIM x YCC Final Project Showcase for a user-centered approach to real dining accessibility challenges.",
+      "Won 1st place at the UXIM x YCC Final Project Showcase and extended the product into a measurable launch operation: within the first 10 days of Instagram operations, the channel generated 19,220 views, reached 7,321 accounts, recorded 986 interactions, and gained 33 new followers.",
     accent: "#8d93cb",
     external: "https://began-map.vercel.app/ko",
     image:
       "https://static.wixstatic.com/media/df8dea_b4166153dda44015841c8d757c843d28~mv2.png/v1/crop/x_26,y_1,w_3291,h_1803/fill/w_1906,h_1044,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2002_38_29.png",
     actions: [
       { label: "Began Website", href: "https://began-map.vercel.app/ko" },
+    ],
+    metrics: [
+      {
+        value: "19,220",
+        label: "Instagram Views",
+        context: "First 10 operating days · Aug 14–Aug 23",
+        baseline: "Account-level measured result",
+        baselineRatio: 0,
+        resultRatio: 100,
+      },
+      {
+        value: "7,321",
+        label: "Accounts Reached",
+        context: "Unique accounts reached within the first 10 operating days",
+        baseline: "Verified reach insight",
+        baselineRatio: 0,
+        resultRatio: 76,
+      },
+      {
+        value: "986",
+        label: "Content Interactions",
+        context: "Posts, Reels, and Stories combined",
+        baseline: "Verified interaction insight",
+        baselineRatio: 0,
+        resultRatio: 58,
+      },
+      {
+        value: "+33",
+        label: "New Followers",
+        context: "Net follower growth within the first 10 operating days",
+        baseline: "Verified professional dashboard",
+        baselineRatio: 0,
+        resultRatio: 42,
+      },
     ],
     sections: [
       {
@@ -1014,13 +1048,164 @@ export const projects: Project[] = [
         image:
           "https://static.wixstatic.com/media/df8dea_caa2917f6508474196b2230c15b7b792~mv2.png/v1/crop/x_0,y_310,w_712,h_1007/fill/w_712,h_1007,al_c,q_90,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2002_42_33.png",
       },
+      {
+        title: "Content Operations I Led",
+        text:
+          "I treated the launch channel as an operating system rather than a series of isolated posts. I defined the content pillars, designed reusable carousel templates, built and maintained the content calendar, managed publishing, and reviewed account-level insights to decide the next production priorities.",
+        layout: "workflow",
+        workflowItems: [
+          {
+            step: "01",
+            title: "Define Content Pillars",
+            text:
+              "Translated product value, dietary-accessibility education, restaurant discovery, and participation campaigns into repeatable editorial themes.",
+            output: "Message architecture",
+          },
+          {
+            step: "02",
+            title: "Build the Template System",
+            text:
+              "Created the carousel grid, cover hierarchy, product demonstration frames, typography rules, and CTA endings for consistent production.",
+            output: "Reusable carousel templates",
+          },
+          {
+            step: "03",
+            title: "Run the Content Calendar",
+            text:
+              "Planned topics and publishing order, coordinated production deadlines, and managed the feed so campaigns and evergreen product education stayed balanced.",
+            output: "Calendar · schedule · publishing",
+          },
+          {
+            step: "04",
+            title: "Review and Iterate",
+            text:
+              "Compared reach, audience mix, interactions, and format contribution, then used the evidence to refine the next content cycle.",
+            output: "Insight-led iteration",
+          },
+        ],
+      },
+      {
+        title: "Instagram Feed & Carousel Template System",
+        text:
+          "The visual system connects a recognizable feed with a repeatable educational carousel. I designed the templates myself so service explanation, feature guidance, and calls to action could be produced consistently without rebuilding the layout for every post.",
+        layout: "gallery",
+        gallery: [
+          {
+            title: "Live Instagram Profile",
+            image: "/projects/began/instagram/profile-overview.jpg",
+            note: "The operated profile, feed direction, follower base, and recent account activity in one view.",
+          },
+          {
+            title: "Feed Visual System",
+            image: "/projects/began/instagram/feed-grid.jpg",
+            note: "Product education, restaurant discovery, illustrations, and participation campaigns arranged as one visual system.",
+          },
+          {
+            title: "Carousel Cover",
+            image: "/projects/began/instagram/service-carousel-3.jpg",
+            note: "A direct problem-led cover built around the question of why users need Began beyond a conventional map.",
+          },
+          {
+            title: "Problem Framing",
+            image: "/projects/began/instagram/service-carousel-4.jpg",
+            note: "A familiar dining scenario turns the product need into an immediately understandable user problem.",
+          },
+          {
+            title: "Service at a Glance",
+            image: "/projects/began/instagram/service-carousel-5.jpg",
+            note: "The map, filtering, and menu-detail experience are summarized within the same reusable editorial grid.",
+          },
+          {
+            title: "Dietary Filter Guidance",
+            image: "/projects/began/instagram/service-carousel-7.jpg",
+            note: "Feature explanation stays concise through a fixed hierarchy of headline, UI proof, and supporting copy.",
+          },
+          {
+            title: "Menu-level Verification",
+            image: "/projects/began/instagram/service-carousel-8.jpg",
+            note: "The final feature frame connects restaurant discovery to the menu-level evidence that reduces dining uncertainty.",
+          },
+          {
+            title: "Consistent CTA Ending",
+            image: "/projects/began/instagram/service-carousel-9.jpg",
+            note: "A repeatable closing frame returns every educational story to the same product action and brand signature.",
+          },
+        ],
+      },
+      {
+        title: "Measured Instagram Performance",
+        text:
+          "Instagram operations began on Aug 14, so the results were achieved within the first 10 days of Instagram operations, even though the professional dashboard displays a Jul 25–Aug 23 reporting window. In that launch sprint, 19,220 views reached 7,321 accounts, while 88.5% of views came from non-followers and posts generated 85.0% of all interactions.",
+        layout: "performance",
+        performanceGroups: [
+          {
+            eyebrow: "Verified Volume",
+            title: "First 10-Day Launch Results",
+            note: "The channel started on Aug 14; these cumulative results were reached by Aug 23. Bars are normalized within this group for readability.",
+            metrics: [
+              { value: "19,220", label: "Views", ratio: 100 },
+              { value: "7,321", label: "Accounts reached", ratio: 38.1 },
+              { value: "986", label: "Interactions", ratio: 5.1 },
+              { value: "+33", label: "New followers", ratio: 3 },
+            ],
+          },
+          {
+            eyebrow: "Discovery",
+            title: "Audience Beyond Followers",
+            note: "The view audience mix shows that the channel reached well beyond its existing follower base.",
+            metrics: [
+              { value: "88.5%", label: "Non-follower views", ratio: 88.5 },
+              { value: "11.5%", label: "Follower views", ratio: 11.5 },
+            ],
+          },
+          {
+            eyebrow: "Format Contribution",
+            title: "Where Interactions Happened",
+            note: "Direct interaction-share values from the same measured period, used to guide the next production mix.",
+            metrics: [
+              { value: "85.0%", label: "Posts", ratio: 85 },
+              { value: "11.3%", label: "Reels", ratio: 11.3 },
+              { value: "3.7%", label: "Stories", ratio: 3.7 },
+            ],
+          },
+        ],
+        gallery: [
+          {
+            title: "Professional Dashboard Evidence",
+            image: "/projects/began/instagram/performance-overview.jpg",
+            note: "The dashboard window is Jul 25–Aug 23, while actual channel operations began Aug 14—placing 19K views, 986 interactions, and 33 new followers inside the first 10 operating days.",
+          },
+          {
+            title: "View & Reach Evidence",
+            image: "/projects/began/instagram/view-insights.jpg",
+            note: "19,220 views, 7,321 accounts reached, and an 88.5% non-follower audience share.",
+          },
+          {
+            title: "Interaction Evidence",
+            image: "/projects/began/instagram/interaction-insights.jpg",
+            note: "986 interactions with direct audience and format contribution breakdowns.",
+          },
+        ],
+      },
     ],
     details: [
       "Designed tailored onboarding with dietary presets and custom ingredient restrictions to reduce first-use friction.",
       "Built menu-level verification using vegan-type breakdowns and color-coded eat-or-not indicators.",
       "Added a user contribution loop for reporting vegan spots, adding menu items, and leaving ratings.",
+      "Created the Instagram carousel template system and managed the content calendar, production schedule, publishing order, and feed direction.",
+      "Reviewed account, reach, audience, and interaction insights and translated them into the next content priorities.",
     ],
-    capabilities: ["Product Planning", "User Interviews", "IA", "UI/UX", "Business Model"],
+    capabilities: [
+      "Product Planning",
+      "User Interviews",
+      "IA",
+      "UI/UX",
+      "Business Model",
+      "Content Strategy",
+      "Editorial Calendar",
+      "Template System",
+      "Performance Analysis",
+    ],
   },
   {
     id: "atember",

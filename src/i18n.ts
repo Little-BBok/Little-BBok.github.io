@@ -56,6 +56,8 @@ const ko: Record<string, string> = {
   "Measured business impact": "측정된 비즈니스 임팩트",
   "Measured Impact": "측정 성과",
   "Brand work translated into business movement": "브랜드 실행을 비즈니스 변화로 연결",
+  "The first 10 launch days translated content operations into measurable growth":
+    "론칭 첫 10일, 콘텐츠 운영을 측정 가능한 성장으로 연결",
   "Audience Growth": "오디언스 성장",
   "Instagram followers": "인스타그램 팔로워",
   "10 → 1,707": "10명 → 1,707명",
@@ -1266,13 +1268,25 @@ const ko: Record<string, string> = {
   "Creator Platform Strategy": "크리에이터 플랫폼 전략",
 
   "Began Project": "Began 프로젝트",
-  "Dietary-accessible discovery service": "식이 제한 친화 맛집 탐색 서비스",
-  "A location-based restaurant discovery service designed to reduce dining uncertainty for people with dietary restrictions.":
-    "식이 제한이 있는 사람들이 외식할 때 느끼는 정보 불확실성을 줄이기 위해 설계한 위치 기반 맛집 탐색 서비스입니다.",
-  "Lead Product Planner responsible for ideation, IDI, IA, user flows, business model, and end-to-end UI/UX.":
-    "아이데이션, IDI, IA, 유저 플로우, 비즈니스 모델, 엔드투엔드 UI/UX를 담당한 리드 제품 기획자였습니다.",
-  "Won 1st place at the UXIM x YCC Final Project Showcase for a user-centered approach to real dining accessibility challenges.":
-    "실제 외식 접근성 문제를 사용자 중심으로 풀어낸 점을 인정받아 UXIM x YCC Final Project Showcase에서 1위를 수상했습니다.",
+  "Dietary-accessible product & content operations": "식이 제한 친화 제품 & 콘텐츠 운영",
+  "A location-based restaurant discovery service designed to reduce dining uncertainty for people with dietary restrictions—and carried from product planning into a structured Instagram launch and content operation.":
+    "식이 제한이 있는 사람들이 외식할 때 느끼는 정보 불확실성을 줄이기 위해 설계하고, 제품 기획에서 구조화된 인스타그램 론칭과 콘텐츠 운영까지 직접 연결한 위치 기반 맛집 탐색 서비스입니다.",
+  "As Lead Product Planner and Content Operations Lead, I owned ideation, IDI, IA, user flows, business model, and end-to-end UI/UX, then built the carousel template system, content calendar, publishing schedule, feed direction, and performance review process.":
+    "리드 제품 기획자이자 콘텐츠 운영 총괄로서 아이데이션, IDI, IA, 유저 플로우, 비즈니스 모델, 엔드투엔드 UI/UX를 담당하고, 캐러셀 템플릿 시스템, 콘텐츠 캘린더, 발행 일정, 피드 방향, 성과 리뷰 프로세스까지 구축했습니다.",
+  "Won 1st place at the UXIM x YCC Final Project Showcase and extended the product into a measurable launch operation: within the first 10 days of Instagram operations, the channel generated 19,220 views, reached 7,321 accounts, recorded 986 interactions, and gained 33 new followers.":
+    "UXIM x YCC Final Project Showcase에서 1위를 수상하고 제품을 측정 가능한 론칭 운영으로 확장했습니다. 인스타그램 운영 시작 후 첫 10일 이내에 조회 19,220회, 도달 계정 7,321개, 반응 986회, 신규 팔로워 33명을 달성했습니다.",
+  "Instagram Views": "인스타그램 조회수",
+  "First 10 operating days · Aug 14–Aug 23": "운영 시작 후 첫 10일 · 8월 14일–8월 23일",
+  "Account-level measured result": "계정 단위 측정 결과",
+  "Accounts Reached": "도달 계정",
+  "Unique accounts reached within the first 10 operating days": "운영 시작 후 첫 10일간 도달한 고유 계정",
+  "Verified reach insight": "검증된 도달 인사이트",
+  "Content Interactions": "콘텐츠 반응",
+  "Posts, Reels, and Stories combined": "게시물·릴스·스토리 합산",
+  "Verified interaction insight": "검증된 반응 인사이트",
+  "New Followers": "신규 팔로워",
+  "Net follower growth within the first 10 operating days": "운영 시작 후 첫 10일간 순 팔로워 증가",
+  "Verified professional dashboard": "검증된 프로페셔널 대시보드",
   "Began Website": "Began 웹사이트",
   "Project Overview": "프로젝트 개요",
   "'Began' is a location-based restaurant discovery service designed to reduce information uncertainty when dining with individuals who have specific dietary restrictions. The project won 1st place at the UXIM x YCC Final Project Showcase, recognizing its user-centered approach to solving real-world dining accessibility challenges.":
@@ -1289,6 +1303,89 @@ const ko: Record<string, string> = {
     "비건 유형 분류와 색상 기반 섭취 가능 여부 표시를 활용한 메뉴 단위 검증을 구축했습니다.",
   "Added a user contribution loop for reporting vegan spots, adding menu items, and leaving ratings.":
     "비건 장소 제보, 메뉴 추가, 평점 남기기를 위한 사용자 기여 루프를 추가했습니다.",
+  "Content Operations I Led": "내가 총괄한 콘텐츠 운영 시스템",
+  "I treated the launch channel as an operating system rather than a series of isolated posts. I defined the content pillars, designed reusable carousel templates, built and maintained the content calendar, managed publishing, and reviewed account-level insights to decide the next production priorities.":
+    "론칭 채널을 개별 게시물의 집합이 아니라 하나의 운영 시스템으로 설계했습니다. 콘텐츠 기둥을 정의하고, 재사용 가능한 캐러셀 템플릿을 설계하고, 콘텐츠 캘린더를 구축·관리하며, 발행까지 총괄하고 계정 인사이트를 검토해 다음 제작 우선순위를 결정했습니다.",
+  "Define Content Pillars": "콘텐츠 기둥 정의",
+  "Translated product value, dietary-accessibility education, restaurant discovery, and participation campaigns into repeatable editorial themes.":
+    "제품 가치, 식이 접근성 교육, 맛집 탐색, 참여형 캠페인을 반복 가능한 에디토리얼 주제로 구조화했습니다.",
+  "Message architecture": "메시지 구조",
+  "Build the Template System": "템플릿 시스템 구축",
+  "Created the carousel grid, cover hierarchy, product demonstration frames, typography rules, and CTA endings for consistent production.":
+    "일관된 제작을 위해 캐러셀 그리드, 커버 위계, 제품 시연 프레임, 타이포그래피 규칙, CTA 엔딩을 직접 만들었습니다.",
+  "Reusable carousel templates": "재사용 가능한 캐러셀 템플릿",
+  "Run the Content Calendar": "콘텐츠 캘린더 운영",
+  "Planned topics and publishing order, coordinated production deadlines, and managed the feed so campaigns and evergreen product education stayed balanced.":
+    "주제와 발행 순서를 기획하고 제작 마감을 조율하며, 캠페인과 상시 제품 교육 콘텐츠가 균형을 이루도록 피드를 운영했습니다.",
+  "Calendar · schedule · publishing": "캘린더 · 일정 · 발행",
+  "Review and Iterate": "성과 리뷰와 반복 개선",
+  "Compared reach, audience mix, interactions, and format contribution, then used the evidence to refine the next content cycle.":
+    "도달, 오디언스 구성, 반응, 형식별 기여도를 비교하고 그 근거를 다음 콘텐츠 사이클 개선에 반영했습니다.",
+  "Insight-led iteration": "인사이트 기반 개선",
+  "Instagram Feed & Carousel Template System": "인스타그램 피드 & 캐러셀 템플릿 시스템",
+  "The visual system connects a recognizable feed with a repeatable educational carousel. I designed the templates myself so service explanation, feature guidance, and calls to action could be produced consistently without rebuilding the layout for every post.":
+    "인지 가능한 피드와 반복 제작 가능한 정보형 캐러셀을 하나의 비주얼 시스템으로 연결했습니다. 게시물마다 레이아웃을 새로 만들지 않아도 서비스 설명, 기능 안내, 행동 유도를 일관되게 제작할 수 있도록 템플릿을 직접 설계했습니다.",
+  "Live Instagram Profile": "실제 인스타그램 프로필",
+  "The operated profile, feed direction, follower base, and recent account activity in one view.":
+    "직접 운영한 프로필의 피드 방향, 팔로워 기반, 최근 계정 활동을 한 화면에서 보여줍니다.",
+  "Feed Visual System": "피드 비주얼 시스템",
+  "Product education, restaurant discovery, illustrations, and participation campaigns arranged as one visual system.":
+    "제품 교육, 맛집 탐색, 일러스트, 참여형 캠페인을 하나의 비주얼 시스템으로 배열했습니다.",
+  "Carousel Cover": "캐러셀 커버",
+  "A direct problem-led cover built around the question of why users need Began beyond a conventional map.":
+    "일반 지도 외에 왜 Began이 필요한지 묻는 문제 중심의 직관적인 커버입니다.",
+  "Problem Framing": "문제 상황 정의",
+  "A familiar dining scenario turns the product need into an immediately understandable user problem.":
+    "익숙한 외식 상황을 통해 제품의 필요성을 즉시 이해할 수 있는 사용자 문제로 전환했습니다.",
+  "Service at a Glance": "한눈에 보는 서비스",
+  "The map, filtering, and menu-detail experience are summarized within the same reusable editorial grid.":
+    "지도, 필터링, 메뉴 상세 경험을 동일한 재사용형 에디토리얼 그리드 안에 요약했습니다.",
+  "Dietary Filter Guidance": "식이 필터 안내",
+  "Feature explanation stays concise through a fixed hierarchy of headline, UI proof, and supporting copy.":
+    "헤드라인, UI 근거, 보조 문구의 고정 위계를 통해 기능 설명을 간결하게 유지했습니다.",
+  "Menu-level Verification": "메뉴 단위 검증",
+  "The final feature frame connects restaurant discovery to the menu-level evidence that reduces dining uncertainty.":
+    "마지막 기능 프레임에서 맛집 탐색을 외식 불확실성을 줄이는 메뉴 단위 근거와 연결했습니다.",
+  "Consistent CTA Ending": "일관된 CTA 엔딩",
+  "A repeatable closing frame returns every educational story to the same product action and brand signature.":
+    "반복 가능한 마무리 프레임을 통해 모든 정보형 콘텐츠가 동일한 제품 행동과 브랜드 시그니처로 이어지도록 했습니다.",
+  "Measured Instagram Performance": "검증된 인스타그램 성과",
+  "Instagram operations began on Aug 14, so the results were achieved within the first 10 days of Instagram operations, even though the professional dashboard displays a Jul 25–Aug 23 reporting window. In that launch sprint, 19,220 views reached 7,321 accounts, while 88.5% of views came from non-followers and posts generated 85.0% of all interactions.":
+    "인스타그램 운영은 8월 14일에 시작했기 때문에, 프로페셔널 대시보드의 표시 구간이 7월 25일–8월 23일이더라도 실제 성과는 인스타그램 운영 시작 후 첫 10일 이내에 달성한 결과입니다. 이 짧은 론칭 기간에 조회 19,220회로 7,321개 계정에 도달했고, 조회수의 88.5%가 비팔로워에게서 발생했으며, 전체 반응의 85.0%를 게시물이 생성했습니다.",
+  "Verified Volume": "검증된 규모",
+  "First 10-Day Launch Results": "론칭 첫 10일 성과",
+  "The channel started on Aug 14; these cumulative results were reached by Aug 23. Bars are normalized within this group for readability.":
+    "채널 운영을 8월 14일에 시작해 8월 23일까지 달성한 누적 성과입니다. 막대는 가독성을 위해 이 그룹 안에서 정규화했습니다.",
+  "Accounts reached": "도달 계정",
+  Discovery: "발견",
+  "Audience Beyond Followers": "팔로워 밖으로 확장된 오디언스",
+  "The view audience mix shows that the channel reached well beyond its existing follower base.":
+    "조회 오디언스 구성을 통해 채널이 기존 팔로워 기반을 넘어 확장되었음을 확인했습니다.",
+  "Non-follower views": "비팔로워 조회",
+  "Follower views": "팔로워 조회",
+  "Format Contribution": "형식별 기여도",
+  "Where Interactions Happened": "반응이 발생한 콘텐츠 형식",
+  "Direct interaction-share values from the same measured period, used to guide the next production mix.":
+    "동일 측정 기간의 직접 반응 비중을 다음 제작 형식의 배분 근거로 활용했습니다.",
+  Posts: "게시물",
+  Reels: "릴스",
+  Stories: "스토리",
+  "Professional Dashboard Evidence": "프로페셔널 대시보드 근거",
+  "The dashboard window is Jul 25–Aug 23, while actual channel operations began Aug 14—placing 19K views, 986 interactions, and 33 new followers inside the first 10 operating days.":
+    "대시보드 표시 구간은 7월 25일–8월 23일이지만 실제 채널 운영은 8월 14일에 시작했습니다. 따라서 조회 1.9만회, 반응 986회, 신규 팔로워 33명은 운영 첫 10일 이내에 달성한 성과입니다.",
+  "View & Reach Evidence": "조회·도달 근거",
+  "19,220 views, 7,321 accounts reached, and an 88.5% non-follower audience share.":
+    "조회 19,220회, 도달 계정 7,321개, 비팔로워 오디언스 비중 88.5%를 확인했습니다.",
+  "Interaction Evidence": "반응 근거",
+  "986 interactions with direct audience and format contribution breakdowns.":
+    "반응 986회와 오디언스·형식별 직접 기여도 분해 수치입니다.",
+  "Created the Instagram carousel template system and managed the content calendar, production schedule, publishing order, and feed direction.":
+    "인스타그램 캐러셀 템플릿 시스템을 직접 만들고 콘텐츠 캘린더, 제작 일정, 발행 순서, 피드 방향을 총괄했습니다.",
+  "Reviewed account, reach, audience, and interaction insights and translated them into the next content priorities.":
+    "계정, 도달, 오디언스, 반응 인사이트를 검토해 다음 콘텐츠 우선순위로 전환했습니다.",
+  "Editorial Calendar": "에디토리얼 캘린더",
+  "Template System": "템플릿 시스템",
+  "Performance Analysis": "성과 분석",
   "Product Planning": "제품 기획",
   "User Interviews": "사용자 인터뷰",
   IA: "IA",
