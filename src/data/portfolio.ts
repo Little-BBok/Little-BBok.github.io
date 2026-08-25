@@ -980,11 +980,11 @@ export const projects: Project[] = [
     eyebrow: "Dietary-accessible product & content operations",
     category: "Product & UX",
     summary:
-      "A location-based restaurant discovery service designed to reduce dining uncertainty for people with dietary restrictions—and carried from product planning into a structured Instagram launch and content operation.",
+      "A location-based restaurant discovery service designed to reduce dining uncertainty for people with dietary restrictions—and carried from product planning into a structured Instagram channel opening, content operation, product validation, and early market testing.",
     role:
       "As Lead Product Planner and Content Operations Lead, I owned ideation, IDI, IA, user flows, business model, and end-to-end UI/UX, then built the carousel template system, content calendar, publishing schedule, feed direction, and performance review process.",
     outcome:
-      "Won 1st place at the UXIM x YCC Final Project Showcase and extended the product into a measurable launch operation: within the first 10 days of Instagram operations, the channel generated 19,220 views, reached 7,321 accounts, recorded 986 interactions, and gained 33 new followers.",
+      "Won 1st place at the UXIM x YCC Final Project Showcase and extended the product into measurable product and market validation: the first 10 days of Instagram operations generated 19,220 views and 365 new followers, while one month of validation expanded restaurant data 5.3× and connected 297 of 300 database records.",
     accent: "#8d93cb",
     external: "https://began-map.vercel.app/ko",
     image:
@@ -994,36 +994,36 @@ export const projects: Project[] = [
     ],
     metrics: [
       {
-        value: "19,220",
-        label: "Instagram Views",
-        context: "First 10 operating days · Aug 14–Aug 23",
-        baseline: "Account-level measured result",
+        value: "12",
+        label: "Research Participants",
+        context: "User interviews and usability tests",
+        baseline: "Core exploration and UI iteration",
+        baselineRatio: 0,
+        resultRatio: 64,
+      },
+      {
+        value: "5.3×",
+        label: "Restaurant Data Expansion",
+        context: "67 → approximately 352 restaurants",
+        baseline: "+285 restaurants in one month",
         baselineRatio: 0,
         resultRatio: 100,
       },
       {
-        value: "7,321",
-        label: "Accounts Reached",
-        context: "Unique accounts reached within the first 10 operating days",
-        baseline: "Verified reach insight",
+        value: "99%",
+        label: "Database Connection",
+        context: "297 of 300 records connected",
+        baseline: "3 records pending",
+        baselineRatio: 0,
+        resultRatio: 99,
+      },
+      {
+        value: "40",
+        label: "Ecosystem Outreach",
+        context: "Creators, organizations, and communities contacted",
+        baseline: "1 UGC partnership secured",
         baselineRatio: 0,
         resultRatio: 76,
-      },
-      {
-        value: "986",
-        label: "Content Interactions",
-        context: "Posts, Reels, and Stories combined",
-        baseline: "Verified interaction insight",
-        baselineRatio: 0,
-        resultRatio: 58,
-      },
-      {
-        value: "+33",
-        label: "New Followers",
-        context: "Net follower growth within the first 10 operating days",
-        baseline: "Verified professional dashboard",
-        baselineRatio: 0,
-        resultRatio: 42,
       },
     ],
     sections: [
@@ -1146,7 +1146,7 @@ export const projects: Project[] = [
               { value: "19,220", label: "Views", ratio: 100 },
               { value: "7,321", label: "Accounts reached", ratio: 38.1 },
               { value: "986", label: "Interactions", ratio: 5.1 },
-              { value: "+33", label: "New followers", ratio: 3 },
+              { value: "+365", label: "New followers", ratio: 3 },
             ],
           },
           {
@@ -1173,7 +1173,7 @@ export const projects: Project[] = [
           {
             title: "Professional Dashboard Evidence",
             image: "/projects/began/instagram/performance-overview.jpg",
-            note: "The dashboard window is Jul 25–Aug 23, while actual channel operations began Aug 14—placing 19K views, 986 interactions, and 33 new followers inside the first 10 operating days.",
+            note: "The dashboard window is Jul 25–Aug 23, while actual channel operations began Aug 14—placing 19K views, 986 interactions, and 365 new followers inside the first 10 operating days.",
           },
           {
             title: "View & Reach Evidence",
@@ -1184,6 +1184,67 @@ export const projects: Project[] = [
             title: "Interaction Evidence",
             image: "/projects/began/instagram/interaction-insights.jpg",
             note: "986 interactions with direct audience and format contribution breakdowns.",
+          },
+        ],
+      },
+      {
+        title: "One-Month Product, Data & Market Validation",
+        text:
+          "I measured the service beyond social growth by connecting user research, product data, early acquisition behavior, and ecosystem outreach. In one month, 12 interviews and usability tests informed the product, restaurant data expanded from 67 to approximately 352 locations, 297 of 300 database records were connected, and outreach to 40 creators and organizations secured the first UGC partnership.",
+        layout: "performance",
+        performanceGroups: [
+          {
+            eyebrow: "User & Data Validation",
+            title: "Research into a More Reliable Product",
+            note:
+              "User evidence and data operations were treated as one product loop rather than separate research and back-office work.",
+            metrics: [
+              { value: "12", label: "Interviews & usability tests", ratio: 64 },
+              { value: "5.3×", label: "Restaurant data expansion", ratio: 100 },
+              { value: "839", label: "Menu records organized", ratio: 84 },
+              { value: "99%", label: "Database connection rate", ratio: 99 },
+            ],
+          },
+          {
+            eyebrow: "Service Behavior",
+            title: "Early Acquisition and Engagement",
+            note:
+              "Traffic was separated by acquisition source so the next validation cycle could focus on repeat visits and core-feature use, not visits alone.",
+            metrics: [
+              { value: "106", label: "Website sessions", ratio: 100 },
+              { value: "64", label: "Engaged sessions", ratio: 60.38 },
+              { value: "60.38%", label: "Engagement rate", ratio: 60.38 },
+              { value: "46 sec", label: "Average engagement time", ratio: 76.7 },
+            ],
+          },
+          {
+            eyebrow: "GTM & Ecosystem",
+            title: "From Direct Outreach to the First UGC Partnership",
+            note:
+              "Early paid reach and direct outreach were used to test a repeatable trust loop across creators, communities, and the service.",
+            metrics: [
+              { value: "40", label: "Creators & groups contacted", ratio: 100 },
+              { value: "1", label: "UGC partnership secured", ratio: 28 },
+              { value: "2", label: "Community channels identified", ratio: 42 },
+              { value: "21", label: "External link clicks from the first two-day ad", ratio: 53 },
+            ],
+          },
+        ],
+        gallery: [
+          {
+            title: "GTM & Ecosystem Evidence",
+            image: "/projects/began/validation/gtm-ecosystem.png",
+            note: "Direct outreach to 40 creators and organizations led to the first UGC partnership and two community-channel discoveries.",
+          },
+          {
+            title: "Service Behavior Evidence",
+            image: "/projects/began/validation/service-behavior.png",
+            note: "106 sessions, 64 engaged sessions, and a 60.38% engagement rate established the next measurement priorities.",
+          },
+          {
+            title: "Data Expansion Evidence",
+            image: "/projects/began/validation/data-expansion.png",
+            note: "Restaurant coverage expanded 5.3×, 839 menu records were organized, and 297 of 300 database records were connected.",
           },
         ],
       },

@@ -4369,7 +4369,38 @@ html[lang="ko"] .landing-keywords > .kicker {
 }
 
 .began-operations-card .case-workflow-loop b {
+  top: 50%;
   right: -29px;
+  display: block;
+  width: 30px;
+  height: 18px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: translateY(-50%);
+}
+
+.began-operations-card .case-workflow-loop b::after {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  left: 1px;
+  height: 1px;
+  background: rgba(102, 124, 78, 0.48);
+  content: "";
+  transform: translateY(-50%);
+}
+
+.began-operations-card .case-workflow-loop b::before {
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-50%) rotate(-45deg);
 }
 
 .began-operations-card .case-workflow-heading i {
@@ -4385,6 +4416,13 @@ html[lang="ko"] .landing-keywords > .kicker {
 .began-operations-card .case-workflow-loop strong {
   color: var(--began-green-deep);
   background: var(--began-lime);
+}
+
+.began-impact-chart .case-impact-heading h3 {
+  max-width: 780px;
+  font-size: clamp(25px, 3vw, 40px);
+  line-height: 1.04;
+  word-break: keep-all;
 }
 
 .began-instagram-card .case-story-gallery {
@@ -4467,6 +4505,13 @@ html[lang="ko"] .landing-keywords > .kicker {
   object-fit: contain;
   object-position: top center;
   background: #f2f4ed;
+}
+
+.began-validation-card .case-story-gallery-performance img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  background: #fff;
 }
 
 @media (max-width: 980px) {

@@ -56,8 +56,8 @@ const ko: Record<string, string> = {
   "Measured business impact": "측정된 비즈니스 임팩트",
   "Measured Impact": "측정 성과",
   "Brand work translated into business movement": "브랜드 실행을 비즈니스 변화로 연결",
-  "The first 10 launch days translated content operations into measurable growth":
-    "론칭 첫 10일, 콘텐츠 운영을 측정 가능한 성장으로 연결",
+  "From the first 10 days of channel growth to user, data, and early market validation":
+    "개설 첫 10일의 성장부터 사용자·데이터·초기 시장 반응 검증까지",
   "Audience Growth": "오디언스 성장",
   "Instagram followers": "인스타그램 팔로워",
   "10 → 1,707": "10명 → 1,707명",
@@ -1271,10 +1271,26 @@ const ko: Record<string, string> = {
   "Dietary-accessible product & content operations": "식이 제한 친화 제품 & 콘텐츠 운영",
   "A location-based restaurant discovery service designed to reduce dining uncertainty for people with dietary restrictions—and carried from product planning into a structured Instagram launch and content operation.":
     "식이 제한이 있는 사람들이 외식할 때 느끼는 정보 불확실성을 줄이기 위해 설계하고, 제품 기획에서 구조화된 인스타그램 론칭과 콘텐츠 운영까지 직접 연결한 위치 기반 맛집 탐색 서비스입니다.",
+  "A location-based restaurant discovery service designed to reduce dining uncertainty for people with dietary restrictions—and carried from product planning into a structured Instagram channel opening, content operation, product validation, and early market testing.":
+    "식이 제한이 있는 사람들이 외식할 때 느끼는 정보 불확실성을 줄이기 위해 설계하고, 제품 기획에서 인스타그램 채널 개설·콘텐츠 운영·제품 검증·초기 시장 테스트까지 직접 연결한 위치 기반 맛집 탐색 서비스입니다.",
   "As Lead Product Planner and Content Operations Lead, I owned ideation, IDI, IA, user flows, business model, and end-to-end UI/UX, then built the carousel template system, content calendar, publishing schedule, feed direction, and performance review process.":
     "리드 제품 기획자이자 콘텐츠 운영 총괄로서 아이데이션, IDI, IA, 유저 플로우, 비즈니스 모델, 엔드투엔드 UI/UX를 담당하고, 캐러셀 템플릿 시스템, 콘텐츠 캘린더, 발행 일정, 피드 방향, 성과 리뷰 프로세스까지 구축했습니다.",
-  "Won 1st place at the UXIM x YCC Final Project Showcase and extended the product into a measurable launch operation: within the first 10 days of Instagram operations, the channel generated 19,220 views, reached 7,321 accounts, recorded 986 interactions, and gained 33 new followers.":
-    "UXIM x YCC Final Project Showcase에서 1위를 수상하고 제품을 측정 가능한 론칭 운영으로 확장했습니다. 인스타그램 운영 시작 후 첫 10일 이내에 조회 19,220회, 도달 계정 7,321개, 반응 986회, 신규 팔로워 33명을 달성했습니다.",
+  "Won 1st place at the UXIM x YCC Final Project Showcase and extended the product into a measurable launch operation: within the first 10 days of Instagram operations, the channel generated 19,220 views, reached 7,321 accounts, recorded 986 interactions, and gained 365 new followers.":
+    "UXIM x YCC Final Project Showcase에서 1위를 수상하고 제품을 측정 가능한 론칭 운영으로 확장했습니다. 인스타그램 운영 시작 후 첫 10일 이내에 조회 19,220회, 도달 계정 7,321개, 반응 986회, 신규 팔로워 365명을 달성했습니다.",
+  "Won 1st place at the UXIM x YCC Final Project Showcase and extended the product into measurable product and market validation: the first 10 days of Instagram operations generated 19,220 views and 365 new followers, while one month of validation expanded restaurant data 5.3× and connected 297 of 300 database records.":
+    "UXIM x YCC Final Project Showcase에서 1위를 수상하고 제품을 측정 가능한 제품·시장 검증으로 확장했습니다. 인스타그램 채널 개설 첫 10일에 조회 19,220회와 신규 팔로워 365명을 달성했고, 한 달간 식당 데이터를 5.3배로 확장해 DB 300건 중 297건을 연결했습니다.",
+  "Research Participants": "리서치 참여자",
+  "User interviews and usability tests": "사용자 인터뷰·사용성 테스트",
+  "Core exploration and UI iteration": "핵심 탐색 문제와 UI 반복 개선",
+  "Restaurant Data Expansion": "식당 데이터 확장",
+  "67 → approximately 352 restaurants": "식당 67곳 → 약 352곳",
+  "+285 restaurants in one month": "한 달간 285곳 추가",
+  "Database Connection": "DB 연결",
+  "297 of 300 records connected": "300건 중 297건 연결",
+  "3 records pending": "3건 디버깅 필요",
+  "Ecosystem Outreach": "생태계 제안",
+  "Creators, organizations, and communities contacted": "크리에이터·단체·커뮤니티 40곳 접촉",
+  "1 UGC partnership secured": "첫 UGC 협업 1건 확보",
   "Instagram Views": "인스타그램 조회수",
   "First 10 operating days · Aug 14–Aug 23": "운영 시작 후 첫 10일 · 8월 14일–8월 23일",
   "Account-level measured result": "계정 단위 측정 결과",
@@ -1305,7 +1321,7 @@ const ko: Record<string, string> = {
     "비건 장소 제보, 메뉴 추가, 평점 남기기를 위한 사용자 기여 루프를 추가했습니다.",
   "Content Operations I Led": "내가 총괄한 콘텐츠 운영 시스템",
   "I treated the launch channel as an operating system rather than a series of isolated posts. I defined the content pillars, designed reusable carousel templates, built and maintained the content calendar, managed publishing, and reviewed account-level insights to decide the next production priorities.":
-    "론칭 채널을 개별 게시물의 집합이 아니라 하나의 운영 시스템으로 설계했습니다. 콘텐츠 기둥을 정의하고, 재사용 가능한 캐러셀 템플릿을 설계하고, 콘텐츠 캘린더를 구축·관리하며, 발행까지 총괄하고 계정 인사이트를 검토해 다음 제작 우선순위를 결정했습니다.",
+    "개설 채널을 개별 게시물의 집합이 아니라 하나의 운영 시스템으로 설계했습니다. 콘텐츠 기둥을 정의하고, 재사용 가능한 캐러셀 템플릿을 설계하고, 콘텐츠 캘린더를 구축·관리하며, 발행까지 총괄하고 계정 인사이트를 검토해 다음 제작 우선순위를 결정했습니다.",
   "Define Content Pillars": "콘텐츠 기둥 정의",
   "Translated product value, dietary-accessibility education, restaurant discovery, and participation campaigns into repeatable editorial themes.":
     "제품 가치, 식이 접근성 교육, 맛집 탐색, 참여형 캠페인을 반복 가능한 에디토리얼 주제로 구조화했습니다.",
@@ -1351,9 +1367,9 @@ const ko: Record<string, string> = {
     "반복 가능한 마무리 프레임을 통해 모든 정보형 콘텐츠가 동일한 제품 행동과 브랜드 시그니처로 이어지도록 했습니다.",
   "Measured Instagram Performance": "검증된 인스타그램 성과",
   "Instagram operations began on Aug 14, so the results were achieved within the first 10 days of Instagram operations, even though the professional dashboard displays a Jul 25–Aug 23 reporting window. In that launch sprint, 19,220 views reached 7,321 accounts, while 88.5% of views came from non-followers and posts generated 85.0% of all interactions.":
-    "인스타그램 운영은 8월 14일에 시작했기 때문에, 프로페셔널 대시보드의 표시 구간이 7월 25일–8월 23일이더라도 실제 성과는 인스타그램 운영 시작 후 첫 10일 이내에 달성한 결과입니다. 이 짧은 론칭 기간에 조회 19,220회로 7,321개 계정에 도달했고, 조회수의 88.5%가 비팔로워에게서 발생했으며, 전체 반응의 85.0%를 게시물이 생성했습니다.",
+    "인스타그램 운영은 8월 14일에 시작했기 때문에, 프로페셔널 대시보드의 표시 구간이 7월 25일–8월 23일이더라도 실제 성과는 채널 개설 후 첫 10일 이내에 달성한 결과입니다. 이 짧은 개설 초기 기간에 조회 19,220회로 7,321개 계정에 도달했고, 조회수의 88.5%가 비팔로워에게서 발생했으며, 전체 반응의 85.0%를 게시물이 생성했습니다.",
   "Verified Volume": "검증된 규모",
-  "First 10-Day Launch Results": "론칭 첫 10일 성과",
+  "First 10-Day Launch Results": "개설 첫 10일 성과",
   "The channel started on Aug 14; these cumulative results were reached by Aug 23. Bars are normalized within this group for readability.":
     "채널 운영을 8월 14일에 시작해 8월 23일까지 달성한 누적 성과입니다. 막대는 가독성을 위해 이 그룹 안에서 정규화했습니다.",
   "Accounts reached": "도달 계정",
@@ -1371,14 +1387,50 @@ const ko: Record<string, string> = {
   Reels: "릴스",
   Stories: "스토리",
   "Professional Dashboard Evidence": "프로페셔널 대시보드 근거",
-  "The dashboard window is Jul 25–Aug 23, while actual channel operations began Aug 14—placing 19K views, 986 interactions, and 33 new followers inside the first 10 operating days.":
-    "대시보드 표시 구간은 7월 25일–8월 23일이지만 실제 채널 운영은 8월 14일에 시작했습니다. 따라서 조회 1.9만회, 반응 986회, 신규 팔로워 33명은 운영 첫 10일 이내에 달성한 성과입니다.",
+  "The dashboard window is Jul 25–Aug 23, while actual channel operations began Aug 14—placing 19K views, 986 interactions, and 365 new followers inside the first 10 operating days.":
+    "대시보드 표시 구간은 7월 25일–8월 23일이지만 실제 채널 운영은 8월 14일에 시작했습니다. 따라서 조회 1.9만회, 반응 986회, 신규 팔로워 365명은 운영 첫 10일 이내에 달성한 성과입니다.",
   "View & Reach Evidence": "조회·도달 근거",
   "19,220 views, 7,321 accounts reached, and an 88.5% non-follower audience share.":
     "조회 19,220회, 도달 계정 7,321개, 비팔로워 오디언스 비중 88.5%를 확인했습니다.",
   "Interaction Evidence": "반응 근거",
   "986 interactions with direct audience and format contribution breakdowns.":
     "반응 986회와 오디언스·형식별 직접 기여도 분해 수치입니다.",
+  "One-Month Product, Data & Market Validation": "한 달간 제품·데이터·시장 검증",
+  "I measured the service beyond social growth by connecting user research, product data, early acquisition behavior, and ecosystem outreach. In one month, 12 interviews and usability tests informed the product, restaurant data expanded from 67 to approximately 352 locations, 297 of 300 database records were connected, and outreach to 40 creators and organizations secured the first UGC partnership.":
+    "소셜 채널 성장에만 머물지 않고 사용자 리서치, 제품 데이터, 초기 유입 행동, 생태계 제안을 하나의 검증 흐름으로 연결했습니다. 한 달 동안 인터뷰·사용성 테스트 12건을 제품에 반영하고, 식당 데이터를 67곳에서 약 352곳으로 확장했으며, DB 300건 중 297건을 연결하고 크리에이터·단체 40곳에 제안해 첫 UGC 협업을 확보했습니다.",
+  "User & Data Validation": "사용자 & 데이터 검증",
+  "Research into a More Reliable Product": "리서치를 신뢰 가능한 제품 기반으로",
+  "User evidence and data operations were treated as one product loop rather than separate research and back-office work.":
+    "사용자 근거와 데이터 운영을 분리된 조사·백오피스 업무가 아니라 하나의 제품 개선 루프로 다뤘습니다.",
+  "Interviews & usability tests": "인터뷰·사용성 테스트",
+  "Restaurant data expansion": "식당 데이터 확장",
+  "Menu records organized": "메뉴 데이터 정리",
+  "Database connection rate": "DB 연결 성공률",
+  "Service Behavior": "서비스 유입과 행동",
+  "Early Acquisition and Engagement": "초기 유입과 참여 행동 확인",
+  "Traffic was separated by acquisition source so the next validation cycle could focus on repeat visits and core-feature use, not visits alone.":
+    "유입 경로별 행동을 분리해 단순 방문 수가 아니라 재방문과 핵심 기능 이용을 다음 검증 과제로 설정했습니다.",
+  "Website sessions": "웹사이트 세션",
+  "Engaged sessions": "참여 세션",
+  "Engagement rate": "참여율",
+  "Average engagement time": "평균 참여시간",
+  "GTM & Ecosystem": "GTM & 생태계",
+  "From Direct Outreach to the First UGC Partnership": "직접 제안에서 첫 UGC 협업까지",
+  "Early paid reach and direct outreach were used to test a repeatable trust loop across creators, communities, and the service.":
+    "초기 광고 유입과 직접 제안을 통해 크리에이터·커뮤니티·서비스 사이의 반복 가능한 신뢰 유입 구조를 실험했습니다.",
+  "Creators & groups contacted": "크리에이터·단체 접촉",
+  "UGC partnership secured": "UGC 협업 확보",
+  "Community channels identified": "커뮤니티 채널 발굴",
+  "External link clicks from the first two-day ad": "첫 2일 광고 외부 링크 클릭",
+  "GTM & Ecosystem Evidence": "GTM & 생태계 근거",
+  "Direct outreach to 40 creators and organizations led to the first UGC partnership and two community-channel discoveries.":
+    "크리에이터·단체 40곳에 직접 제안해 첫 UGC 협업 1건과 비건 커뮤니티 채널 2곳을 발굴했습니다.",
+  "Service Behavior Evidence": "서비스 유입·행동 근거",
+  "106 sessions, 64 engaged sessions, and a 60.38% engagement rate established the next measurement priorities.":
+    "전체 106세션, 참여 세션 64회, 참여율 60.38%를 바탕으로 다음 측정 우선순위를 설정했습니다.",
+  "Data Expansion Evidence": "데이터 확장 근거",
+  "Restaurant coverage expanded 5.3×, 839 menu records were organized, and 297 of 300 database records were connected.":
+    "식당 데이터를 5.3배로 확장하고 메뉴 데이터 839개를 정리했으며, DB 300건 중 297건을 정상 연결했습니다.",
   "Created the Instagram carousel template system and managed the content calendar, production schedule, publishing order, and feed direction.":
     "인스타그램 캐러셀 템플릿 시스템을 직접 만들고 콘텐츠 캘린더, 제작 일정, 발행 순서, 피드 방향을 총괄했습니다.",
   "Reviewed account, reach, audience, and interaction insights and translated them into the next content priorities.":

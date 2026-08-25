@@ -228,7 +228,10 @@ const emphasisPhrases = [
   "seeing priorities, researching opportunities with evidence, managing generated tasks, and carrying conversation context into an actionable response",
   "Lead Product Planner and Content Operations Lead",
   "carousel template system, content calendar, publishing schedule, feed direction, and performance review process",
-  "19,220 Instagram views, 7,321 accounts reached, 986 interactions, and 33 new followers",
+  "Won 1st place at the UXIM x YCC Final Project Showcase",
+  "Won 1st place in the final idea pitching",
+  "one month of validation expanded restaurant data 5.3× and connected 297 of 300 database records",
+  "19,220 Instagram views, 7,321 accounts reached, 986 interactions, and 365 new followers",
   "defined the content pillars, designed reusable carousel templates, built and maintained the content calendar, managed publishing",
   "19,220 views reached 7,321 accounts",
   "88.5% of views came from non-followers",
@@ -286,7 +289,10 @@ const emphasisPhrases = [
   "우선순위 확인, 근거 기반 기회 탐색, 생성된 Task 관리, 대화 맥락을 활용한 실행 가능한 응답",
   "리드 제품 기획자이자 콘텐츠 운영 총괄",
   "캐러셀 템플릿 시스템, 콘텐츠 캘린더, 발행 일정, 피드 방향, 성과 리뷰 프로세스",
-  "인스타그램 조회 19,220회, 도달 계정 7,321개, 반응 986회, 신규 팔로워 33명",
+  "UXIM x YCC Final Project Showcase에서 1위를 수상",
+  "최종 아이디어 피칭에서 1위를 수상",
+  "한 달간 식당 데이터를 5.3배로 확장해 DB 300건 중 297건을 연결",
+  "인스타그램 조회 19,220회, 도달 계정 7,321개, 반응 986회, 신규 팔로워 365명",
   "콘텐츠 기둥을 정의하고, 재사용 가능한 캐러셀 템플릿을 설계하고, 콘텐츠 캘린더를 구축·관리하며, 발행까지 총괄",
   "조회 19,220회로 7,321개 계정에 도달",
   "조회수의 88.5%가 비팔로워에게서 발생",
@@ -1101,13 +1107,16 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
       </section>
 
       {project.metrics?.length ? (
-        <section className="case-impact-chart" aria-label={t("Measured business impact")}>
+        <section
+          className={`case-impact-chart ${project.id === "began" ? "began-impact-chart" : ""}`}
+          aria-label={t("Measured business impact")}
+        >
           <div className="case-impact-heading">
             <span>{t("Measured Impact")}</span>
             <h3>
               {t(
                 project.id === "began"
-                  ? "The first 10 launch days translated content operations into measurable growth"
+                  ? "From the first 10 days of channel growth to user, data, and early market validation"
                   : "Brand work translated into business movement",
               )}
             </h3>
@@ -1231,8 +1240,15 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                   ? "began-instagram-card"
                   : ""
               } ${
-                project.id === "began" && section.title === "Measured Instagram Performance"
+                project.id === "began" &&
+                (section.title === "Measured Instagram Performance" ||
+                  section.title === "One-Month Product, Data & Market Validation")
                   ? "began-performance-card"
+                  : ""
+              } ${
+                project.id === "began" &&
+                section.title === "One-Month Product, Data & Market Validation"
+                  ? "began-validation-card"
                   : ""
               } ${
                 project.id === "colortelier" &&
