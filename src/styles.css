@@ -4718,15 +4718,36 @@ html[lang="ko"] .landing-keywords > .kicker {
 .sephora-analysis-story-card .case-workflow-loop b {
   right: auto;
   left: calc(100% + 13px);
-  width: 22px;
-  height: 22px;
-  box-shadow: 0 5px 14px rgba(49, 70, 105, 0.1);
+  display: block;
+  width: 24px;
+  height: 18px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
   transform: translate(-50%, -50%);
 }
 
+.sephora-analysis-story-card .case-workflow-loop b::after {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  left: 0;
+  height: 1px;
+  background: rgba(214, 111, 129, 0.5);
+  content: "";
+  transform: translateY(-50%);
+}
+
 .sephora-analysis-story-card .case-workflow-loop b::before {
-  width: 6px;
-  height: 6px;
+  position: absolute;
+  top: 50%;
+  right: 1px;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-50%) rotate(-45deg);
 }
 
 .began-case-columns article:last-child p strong {
