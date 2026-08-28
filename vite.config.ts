@@ -54,7 +54,7 @@ const projectEntryPages = (): Plugin => ({
   name: "project-entry-pages",
   apply: "build" as const,
   generateBundle() {
-    projects.forEach((project) => {
+    projects.filter((project) => !project.hidden).forEach((project) => {
       this.emitFile({
         type: "asset",
         fileName: `project/${project.id}/index.html`,

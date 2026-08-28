@@ -14,6 +14,12 @@ export type Project = {
   external?: string;
   image?: string;
   placeholderLabel?: string;
+  hidden?: boolean;
+  keywords?: string[];
+  cardMetrics?: Array<{
+    value: string;
+    label: string;
+  }>;
   metrics?: Array<{
     value: string;
     label: string;
@@ -249,7 +255,6 @@ export const experiences: Experience[] = [
     highlights: [
       "Spearheaded social media revitalization, driving 24.4% follower growth through data-backed content planning and performance analysis.",
       "Single-handedly planned an offline expo booth with a cognitive mini-game, follow-to-win raffle, and personalized fNIRS reports.",
-      "Managed the official blog through search trend and keyword analysis, securing multiple sponsorships and identifying high-impact influencers.",
       "Led renewal planning for the Brain Training Game application and built the Cognitive Sports Curriculum framework through self-participation and user tests.",
       "Contributed to H2 2024 OKRs and used generative AI to create profile images and promotional videos.",
     ],
@@ -264,7 +269,8 @@ export const experiences: Experience[] = [
     projectLabel: "View Service UX Case",
     highlights: [
       "Led Began product planning through user interviews, IA, user flows, and business model definition.",
-      "Won 1st place at the UXIM x YCC Final Project Showcase.",
+      "The Began service team won 1st place at the UXIM x YCC Final Project Showcase.",
+      "The Began service team won 1st place at the 2026 Season Summer Workstation Final Showcase.",
       "Planned UX/IA for Namdong Senior Club's official website and delivered wireframes and prototypes.",
       "Co-designed an IoT water-tracking device and companion app concept for the Busan International Design Award.",
     ],
@@ -292,6 +298,8 @@ export const experiences: Experience[] = [
     highlights: [
       "Strategized B2C market expansion for a B2B NFT business through a location-based camera app concept and UI/UX framework.",
       "Won 1st place in the final idea pitching, contributing to commercialization and launch by the partnering corporation.",
+      "Participated in the Récolte brand advertising agency CTA project.",
+      "Conducted a consulting project for restaurants in university-district alley commercial areas.",
     ],
   },
 ];
@@ -984,7 +992,7 @@ export const projects: Project[] = [
     role:
       "As Lead Product Planner and Content Operations Lead, I owned ideation, IDI, IA, user flows, business model, and end-to-end UI/UX, then built the carousel template system, content calendar, publishing schedule, feed direction, and performance review process.",
     outcome:
-      "Won 1st place at the UXIM x YCC Final Project Showcase and extended the product into measurable product and market validation: the first 10 days of Instagram operations generated 19,220 views and 365 new followers, while one month of validation expanded restaurant data 5.3× and connected 297 of 300 database records.",
+      "Won 1st place at the UXIM x YCC Final Project Showcase and 1st place at the 2026 Season Summer Workstation Final Showcase, then extended the product into measurable product and market validation: the first 10 days of Instagram operations generated 19,220 views and 365 new followers, while one month of validation expanded restaurant data 5.3× and connected 297 of 300 database records.",
     accent: "#8d93cb",
     external: "https://began-map.vercel.app/ko",
     image:
@@ -1038,7 +1046,7 @@ export const projects: Project[] = [
       {
         title: "Project Overview",
         text:
-          "'Began' is a location-based restaurant discovery service designed to reduce information uncertainty when dining with individuals who have specific dietary restrictions. The project won 1st place at the UXIM x YCC Final Project Showcase, recognizing its user-centered approach to solving real-world dining accessibility challenges.",
+          "'Began' is a location-based restaurant discovery service designed to reduce information uncertainty when dining with individuals who have specific dietary restrictions. The project won 1st place at the UXIM x YCC Final Project Showcase and 1st place at the 2026 Season Summer Workstation Final Showcase, recognizing its user-centered approach to solving real-world dining accessibility challenges.",
         image:
           "https://static.wixstatic.com/media/df8dea_6faf4a86efe04d7ca1aa29d870318743~mv2.png/v1/fill/w_660,h_966,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EB%B9%84%EA%B1%B4%20%EC%98%81%EC%96%B4%20%ED%8F%AC%EC%8A%A4%ED%84%B0.png",
       },
@@ -1718,16 +1726,53 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "sephora-analysis",
-    title: "Sephora R Data Analysis",
-    eyebrow: "Premium beauty pricing research",
-    category: "Data & Strategy",
+    id: "travel-content-growth",
+    title: "Travel Media Growth & Monetization",
+    eyebrow: "Independent Media Operations",
+    category: "Brand & Growth",
+    period: "Ongoing",
+    tagline: "Content Creation → Audience Growth → Organic Traffic → Conversion → Monetization",
     summary:
-      "An R-based analysis of 8,000+ Sephora products examining when beauty product pricing is accepted in consumer ratings.",
+      "An ongoing travel media operation I independently build and run across Instagram and Naver Blog, connecting content creation and organic audience growth to search traffic, partnerships, and affiliate-attributed sales.",
     role:
-      "Data analyst testing nonlinear price effects and moderating effects of Sephora exclusivity and vegan positioning.",
+      "Independent media operator responsible for research, content planning, production, publishing, SEO, channel growth, performance analysis, optimization, partnership content, and affiliate sales conversion.",
     outcome:
-      "Found that premium beauty success depends on distribution trust and value signals that make consumers perceive price as justified.",
+      "Generated 1M+ organic Reels views during the initial operation period, achieved ~500K views on one top-performing piece of content, and generated $19.3K+ in affiliate-attributed sales.",
+    accent: "#8d93cb",
+    image: "/projects/travel-media/reels-500k-insights.png",
+    placeholderLabel: "Ongoing Travel Media Operations",
+    hidden: true,
+    keywords: ["Content Strategy", "Instagram", "Naver Blog", "SEO", "Affiliate Marketing"],
+    cardMetrics: [
+      { value: "1M+", label: "Instagram Views" },
+      { value: "$19.3K+", label: "Affiliate-attributed Sales" },
+    ],
+    details: [
+      "Operate Instagram as the discovery and audience-growth layer of the media ecosystem.",
+      "Build Naver Blog as the search, organic traffic, partnership, and affiliate-conversion layer.",
+      "Keep channel identity private while publishing verified operational performance in the public portfolio.",
+    ],
+    capabilities: [
+      "Content Strategy",
+      "Instagram",
+      "Naver Blog",
+      "SEO",
+      "Performance Analysis",
+      "Affiliate Marketing",
+    ],
+  },
+  {
+    id: "sephora-analysis",
+    title: "Sephora Beauty Pricing Analytics",
+    eyebrow: "Marketing analytics · beauty pricing strategy",
+    category: "Data & Strategy",
+    tagline: "What makes consumers accept higher prices in the beauty market?",
+    summary:
+      "A marketing analytics project using Sephora product and review data to identify the conditions under which consumers accept beauty product prices in their ratings.",
+    role:
+      "Marketing analytics researcher responsible for exploratory analysis, hypothesis refinement, regression modeling, interaction analysis, binary logistic regression, category-level heterogeneity analysis, and R-based visualization.",
+    outcome:
+      "Price showed an inverted-U relationship with ratings. Sephora exclusivity strengthened price acceptance, vegan claims improved the probability of high ratings at higher price points, and category effects varied—showing that premium pricing works only when channel trust, value signals, and category context align.",
     accent: "#8d93cb",
     image:
       "https://static.wixstatic.com/media/df8dea_b225d5375cfa445bbddbcda2cb4f0431~mv2.png/v1/crop/x_0,y_3,w_3389,h_1836/fill/w_1960,h_1060,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2003_36_58.png",
@@ -1741,16 +1786,145 @@ export const projects: Project[] = [
         href: "https://www.miricanvas.com/v2/ko/design2/v/bcbf6459-b3cc-42fb-aae0-0cdf6c58ab30",
       },
     ],
+    keywords: [
+      "Marketing Analytics",
+      "Regression Analysis",
+      "R",
+      "Beauty Pricing Strategy",
+      "Consumer Insight",
+    ],
     sections: [
       {
-        title: "Project Overview",
+        title: "Problem: Price Is a Signal Consumers Interpret",
         text:
-          "Based on data from over 8,000 Sephora products, I analyzed the conditions under which beauty product pricing is accepted in consumer ratings. I tested the nonlinear effect of price, as well as the moderating effects of Sephora exclusivity and vegan positioning, using regression analysis and a binary logit model.",
+          "Beauty pricing is not simply a question of whether a product is expensive or affordable. It is a question of whether the product, channel, value message, and category context give consumers enough evidence to accept that price. The core research question was: under what conditions do consumers perceive a beauty product's price as acceptable?",
       },
       {
-        title: "Analytical Focus",
+        title: "Data & Methods",
         text:
-          "The analysis showed that the success of premium beauty products depends not merely on price itself, but on designing distribution trust and value signals that help consumers perceive the price as justified.",
+          "The study combined product-level attributes and review-based evaluation measures from the Sephora online store, then used complementary models to test average ratings, the probability of receiving a high rating, and category-level differences.",
+        layout: "feature-system",
+        featureItems: [
+          {
+            group: "Dataset",
+            title: "2023 Sephora Online Store",
+            text: "Product and review data collected as of March 2023, with the product as the primary unit of analysis.",
+          },
+          {
+            group: "Scale",
+            title: "8,000+ Products · ~1M Reviews",
+            text: "Approximately 8,000 product records supported by roughly one million customer reviews.",
+          },
+          {
+            group: "Variables",
+            title: "Price, Rating & Market Signals",
+            text: "price, rating_bayes_50, reviews, love_count, sephora_exclusive, claim_vegan, discount_pct, online_only, limited_edition, new, and primary_category.",
+          },
+          {
+            group: "Methods",
+            title: "R-Based Statistical Modeling",
+            text: "EDA, multiple and quadratic regression, interaction effects, binary logistic regression, category heterogeneity analysis, and ggplot2 visualization.",
+          },
+        ],
+      },
+      {
+        title: "Analysis Flow",
+        text:
+          "Exploratory evidence changed the model design. Rather than forcing a simple linear conclusion, I progressively tested nonlinearity, conditional effects, high-rating probability, and category context.",
+        layout: "workflow",
+        workflowItems: [
+          {
+            step: "01",
+            title: "Exploratory Data Analysis",
+            text: "Visualized price distributions and average Bayesian-adjusted ratings across price bands.",
+            output: "Weak inverted-U pattern identified",
+          },
+          {
+            step: "02",
+            title: "Quadratic Regression",
+            text: "Added a squared price term to test the nonlinear relationship observed during exploration.",
+            output: "H1 refined beyond a linear model",
+          },
+          {
+            step: "03",
+            title: "Interaction Effects",
+            text: "Tested whether Sephora exclusivity and vegan claims changed the price-rating relationship.",
+            output: "Conditional price effects estimated",
+          },
+          {
+            step: "04",
+            title: "Binary Logistic Regression",
+            text: "Created high_rating to re-test vegan positioning through the probability of receiving a high evaluation.",
+            output: "High-rating probability explained",
+          },
+          {
+            step: "05",
+            title: "Category Heterogeneity",
+            text: "Compared price sensitivity across product categories to identify where premium signals did and did not work.",
+            output: "Category-specific strategy conditions",
+          },
+        ],
+      },
+      {
+        title: "Key Findings",
+        text:
+          "The results show that price acceptance is conditional: the same price can be interpreted differently depending on its level, distribution context, value claim, and product category.",
+        layout: "feature-system",
+        featureItems: [
+          {
+            group: "Price Level",
+            title: "An Inverted-U Relationship",
+            text: "Price can act as a premium signal up to an appropriate level, but ratings weaken after expectations exceed the value consumers perceive.",
+          },
+          {
+            group: "Channel",
+            title: "Exclusivity Strengthens Acceptance",
+            text: "Sephora exclusivity significantly strengthened the price-rating relationship, acting as a trust signal for a price premium.",
+          },
+          {
+            group: "Value Claim",
+            title: "Vegan Signals Work at Higher Prices",
+            text: "The average-rating model was inconclusive, but the binary logit model found a significant price × vegan interaction for high-rating probability.",
+          },
+          {
+            group: "Category",
+            title: "Premium Logic Is Not Universal",
+            text: "Price worked more strongly as a premium signal in Mini Size and Makeup, but higher prices did not improve evaluations in Men or Tools & Brushes.",
+          },
+        ],
+      },
+      {
+        title: "Business Implications",
+        text:
+          "Pricing decisions should be designed together with positioning, channel strategy, value communication, and category economics—not treated as an isolated number on a price tag.",
+        layout: "feature-system",
+        featureItems: [
+          {
+            group: "Brand Manager",
+            title: "Positioning & Launch Price",
+            text: "Set an appropriate premium range and ensure the product promise can support the expectations created by price.",
+          },
+          {
+            group: "MD / Channel Manager",
+            title: "Exclusivity & Distribution",
+            text: "Use trusted or exclusive distribution as part of the justification for premium pricing, not merely as a sales route.",
+          },
+          {
+            group: "Marketer",
+            title: "Price-Justifying Messages",
+            text: "Translate vegan and other value claims into credible evidence that becomes more persuasive at higher price points.",
+          },
+          {
+            group: "Strategy Team",
+            title: "Category-Specific Premium Logic",
+            text: "Evaluate price sensitivity by product category before applying a portfolio-wide premium strategy.",
+          },
+        ],
+      },
+      {
+        title: "Reflection & Next Steps",
+        text:
+          "A key strength of this project was revising the analytical design in response to exploratory evidence and re-testing an unclear average-rating result with a high-rating binary logit model. Future analysis could incorporate review text, brand fixed effects, and country- or channel-level differences to explain price acceptance more precisely.",
       },
     ],
     gallery: [
@@ -1792,11 +1966,20 @@ export const projects: Project[] = [
       },
     ],
     details: [
-      "Used regression analysis and a binary logit model on product-level beauty data.",
-      "Compared pricing, exclusivity, vegan positioning, and consumer rating acceptance.",
-      "Translated analytical findings into brand and distribution strategy implications.",
+      "Visualized the price distribution and average Bayesian-adjusted ratings by price band.",
+      "Observed a weak inverted-U pattern and refined the first hypothesis with a quadratic price term instead of relying on a simple linear model.",
+      "Built interaction models to test how Sephora exclusivity and vegan positioning changed the price-rating relationship.",
+      "Created high_rating and added a binary logit analysis when the vegan moderation effect was unclear in the average-rating model.",
+      "Compared category-level price sensitivity and translated the results into pricing, channel, communication, and portfolio strategy implications.",
     ],
-    capabilities: ["R", "Regression", "Binary Logit", "Consumer Insight", "Beauty Strategy"],
+    capabilities: [
+      "R",
+      "ggplot2",
+      "Regression Analysis",
+      "Binary Logistic Regression",
+      "Interaction Effects",
+      "Consumer Insight",
+    ],
   },
   {
     id: "leviosa",

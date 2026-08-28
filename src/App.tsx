@@ -66,6 +66,7 @@ const projectFilters = [
 ] as const;
 
 type ProjectFilter = (typeof projectFilters)[number];
+const visibleProjects = projects.filter((project) => !project.hidden);
 
 const getRoute = () => window.location.hash.replace("#/", "") || "home";
 const getSavedLanguage = (): Language => {
@@ -126,7 +127,7 @@ function App() {
 
   const activeProject = useMemo(() => {
     if (!route.startsWith("project/")) return undefined;
-    return projects.find((project) => project.id === route.split("/")[1]);
+    return visibleProjects.find((project) => project.id === route.split("/")[1]);
   }, [route]);
 
   const activeInterest = useMemo(() => {
@@ -228,7 +229,8 @@ const emphasisPhrases = [
   "seeing priorities, researching opportunities with evidence, managing generated tasks, and carrying conversation context into an actionable response",
   "Lead Product Planner and Content Operations Lead",
   "carousel template system, content calendar, publishing schedule, feed direction, and performance review process",
-  "Won 1st place at the UXIM x YCC Final Project Showcase",
+  "1st place at the UXIM x YCC Final Project Showcase",
+  "1st place at the 2026 Season Summer Workstation Final Showcase",
   "Won 1st place in the final idea pitching",
   "one month of validation expanded restaurant data 5.3× and connected 297 of 300 database records",
   "19,220 Instagram views, 7,321 accounts reached, 986 interactions, and 365 new followers",
@@ -241,6 +243,10 @@ const emphasisPhrases = [
   "within the first 10 days of Instagram operations",
   "editorial colorboard",
   "R-based analysis of 8,000+ Sephora products",
+  "an inverted-U relationship",
+  "Sephora exclusivity strengthened price acceptance",
+  "vegan claims improved the probability of high ratings at higher price points",
+  "premium pricing works only when channel trust, value signals, and category context align",
   "landing page that explains Leviosa CS",
   "location-based camera app",
   "career guidebook project",
@@ -289,7 +295,8 @@ const emphasisPhrases = [
   "우선순위 확인, 근거 기반 기회 탐색, 생성된 Task 관리, 대화 맥락을 활용한 실행 가능한 응답",
   "리드 제품 기획자이자 콘텐츠 운영 총괄",
   "캐러셀 템플릿 시스템, 콘텐츠 캘린더, 발행 일정, 피드 방향, 성과 리뷰 프로세스",
-  "UXIM x YCC Final Project Showcase에서 1위를 수상",
+  "UXIM x YCC Final Project Showcase 1위",
+  "2026 시즌 썸머 워크스테이션 최종성과발표회 1위",
   "최종 아이디어 피칭에서 1위를 수상",
   "한 달간 식당 데이터를 5.3배로 확장해 DB 300건 중 297건을 연결",
   "인스타그램 조회 19,220회, 도달 계정 7,321개, 반응 986회, 신규 팔로워 365명",
@@ -307,6 +314,10 @@ const emphasisPhrases = [
   "근거를 다음 콘텐츠 사이클 개선에 반영",
   "에디토리얼 컬러보드",
   "8,000개 이상의 Sephora 제품 데이터를 바탕으로",
+  "역U자형 관계",
+  "Sephora 독점성이 가격 수용도를 강화",
+  "비건 소구가 고가 제품에서 높은 평가 확률을 높였으며",
+  "채널 신뢰, 가치 신호, 카테고리 맥락이 맞을 때만 프리미엄 가격이 설득력을 갖습니다",
   "Leviosa CS를 소개하는 랜딩페이지",
   "위치 기반 카메라 앱",
   "커리어 가이드북 프로젝트",
@@ -837,7 +848,7 @@ function HomePage({ t }: { t: Translator }) {
           <h3>{t("Project Highlights")}</h3>
         </div>
         <div className="featured-strip">
-          {projects.slice(0, 5).map((project, index) => (
+          {visibleProjects.slice(0, 5).map((project, index) => (
             <a
               className={`project-tile ${
                 project.accent.toLowerCase() === "#ffdbed" ? "project-tile-light" : ""
@@ -978,8 +989,8 @@ function ProjectsPage({ t }: { t: Translator }) {
   const [activeFilter, setActiveFilter] = useState<ProjectFilter>("ALL");
   const filteredProjects =
     activeFilter === "ALL"
-      ? projects
-      : projects.filter((project) => project.category === activeFilter);
+      ? visibleProjects
+      : visibleProjects.filter((project) => project.category === activeFilter);
 
   return (
     <PageFrame eyebrow="Selected Work" title="Project" t={t}>
@@ -1022,6 +1033,8 @@ function ProjectCard({ project, index, t }: { project: Project; index: number; t
           project.id === "atember" ? "project-media-atember" : ""
         } ${
           project.id === "colortelier" ? "project-media-colortelier" : ""
+        } ${
+          project.id === "travel-content-growth" ? "project-media-travel" : ""
         }`}
       >
         {project.image ? (
@@ -1035,6 +1048,16 @@ function ProjectCard({ project, index, t }: { project: Project; index: number; t
           <div className="project-media-placeholder">
             <span>{t(project.category)}</span>
             <strong>{t(project.placeholderLabel ?? project.title)}</strong>
+            {project.cardMetrics?.length ? (
+              <div className="project-card-performance">
+                {project.cardMetrics.map((metric) => (
+                  <div key={metric.label}>
+                    <b>{metric.value}</b>
+                    <small>{t(metric.label)}</small>
+                  </div>
+                ))}
+              </div>
+            ) : null}
           </div>
         )}
       </div>
@@ -1042,8 +1065,15 @@ function ProjectCard({ project, index, t }: { project: Project; index: number; t
         <span className="project-category-label">{t(project.category)}</span>
         <p>{t(project.eyebrow)}</p>
         <h3>{t(project.title)}</h3>
+        {project.keywords?.length ? (
+          <div className="project-card-keywords" aria-label={t("Project keywords")}>
+            {project.keywords.map((keyword) => (
+              <small key={keyword}>{t(keyword)}</small>
+            ))}
+          </div>
+        ) : null}
         <span>
-          {t("View case")} <ArrowUpRight size={16} />
+          {t(project.id === "travel-content-growth" ? "View operation" : "View case")} <ArrowUpRight size={16} />
         </span>
       </div>
     </a>
@@ -1230,6 +1260,8 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
                 project.id === "colortelier" ? "colortelier-story-card" : ""
               } ${
                 project.id === "began" ? "began-story-card" : ""
+              } ${
+                project.id === "sephora-analysis" ? "sephora-analysis-story-card" : ""
               } ${
                 project.id === "began" && section.title === "Content Operations I Led"
                   ? "began-operations-card"
