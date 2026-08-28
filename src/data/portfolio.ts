@@ -270,7 +270,7 @@ export const experiences: Experience[] = [
     highlights: [
       "Led Began product planning through user interviews, IA, user flows, and business model definition.",
       "The Began service team won 1st place at the UXIM x YCC Final Project Showcase.",
-      "The Began service team won 1st place at the 2026 Season Summer Workstation Final Showcase.",
+      "The Began service team received an Excellence Award at the 2026 Season Summer Workstation Final Showcase.",
       "Planned UX/IA for Namdong Senior Club's official website and delivered wireframes and prototypes.",
       "Co-designed an IoT water-tracking device and companion app concept for the Busan International Design Award.",
     ],
@@ -992,7 +992,7 @@ export const projects: Project[] = [
     role:
       "As Lead Product Planner and Content Operations Lead, I owned ideation, IDI, IA, user flows, business model, and end-to-end UI/UX, then built the carousel template system, content calendar, publishing schedule, feed direction, and performance review process.",
     outcome:
-      "Won 1st place at the UXIM x YCC Final Project Showcase and 1st place at the 2026 Season Summer Workstation Final Showcase, then extended the product into measurable product and market validation: the first 10 days of Instagram operations generated 19,220 views and 365 new followers, while one month of validation expanded restaurant data 5.3× and connected 297 of 300 database records.",
+      "Won 1st place at the UXIM x YCC Final Project Showcase and received an Excellence Award at the 2026 Season Summer Workstation Final Showcase, then extended the product into measurable product and market validation: the first 10 days of Instagram operations generated 19,220 views and 365 new followers, while one month of validation expanded restaurant data 5.3× and connected 297 of 300 database records.",
     accent: "#8d93cb",
     external: "https://began-map.vercel.app/ko",
     image:
@@ -1046,7 +1046,7 @@ export const projects: Project[] = [
       {
         title: "Project Overview",
         text:
-          "'Began' is a location-based restaurant discovery service designed to reduce information uncertainty when dining with individuals who have specific dietary restrictions. The project won 1st place at the UXIM x YCC Final Project Showcase and 1st place at the 2026 Season Summer Workstation Final Showcase, recognizing its user-centered approach to solving real-world dining accessibility challenges.",
+          "'Began' is a location-based restaurant discovery service designed to reduce information uncertainty when dining with individuals who have specific dietary restrictions. The project won 1st place at the UXIM x YCC Final Project Showcase and received an Excellence Award at the 2026 Season Summer Workstation Final Showcase, recognizing its user-centered approach to solving real-world dining accessibility challenges.",
         image:
           "https://static.wixstatic.com/media/df8dea_6faf4a86efe04d7ca1aa29d870318743~mv2.png/v1/fill/w_660,h_966,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EB%B9%84%EA%B1%B4%20%EC%98%81%EC%96%B4%20%ED%8F%AC%EC%8A%A4%ED%84%B0.png",
       },
@@ -1779,11 +1779,11 @@ export const projects: Project[] = [
     actions: [
       {
         label: "English Version",
-        href: "https://www.miricanvas.com/v2/ko/design2/v/d02089ca-ef51-4e6f-ade6-11baf139db32",
+        href: "/#/project/sephora-analysis/slides/en",
       },
       {
         label: "Korean Version",
-        href: "https://www.miricanvas.com/v2/ko/design2/v/bcbf6459-b3cc-42fb-aae0-0cdf6c58ab30",
+        href: "/#/project/sephora-analysis/slides/ko",
       },
     ],
     keywords: [

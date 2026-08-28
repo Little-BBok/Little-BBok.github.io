@@ -4715,6 +4715,95 @@ html[lang="ko"] .landing-keywords > .kicker {
   min-height: 250px;
 }
 
+.sephora-analysis-story-card .case-workflow-loop b {
+  right: -24px;
+  width: 22px;
+  height: 22px;
+  box-shadow: 0 5px 14px rgba(49, 70, 105, 0.1);
+}
+
+.sephora-analysis-story-card .case-workflow-loop b::before {
+  width: 6px;
+  height: 6px;
+}
+
+.began-case-columns article:last-child p strong {
+  padding: 0 0.1em;
+  background: linear-gradient(
+    transparent 52%,
+    rgba(255, 218, 92, 0.6) 52%,
+    rgba(255, 218, 92, 0.6) 92%,
+    transparent 92%
+  );
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  font-weight: 950;
+}
+
+.project-slide-viewer {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 24px 70px rgba(49, 70, 105, 0.08);
+}
+
+.project-slide-viewer-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: end;
+  padding: clamp(22px, 4vw, 42px);
+}
+
+.project-slide-viewer-heading span {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-slide-viewer-heading h2 {
+  margin: 10px 0 8px;
+  font-size: clamp(28px, 3vw, 46px);
+  line-height: 1;
+}
+
+.project-slide-viewer-heading p {
+  max-width: 700px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.project-slide-viewer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  justify-content: flex-end;
+}
+
+.project-slide-viewer-actions .button {
+  min-height: 42px;
+  white-space: nowrap;
+}
+
+.project-slide-frame {
+  padding: 12px;
+  border-top: 1px solid var(--line);
+  background: #1f2025;
+}
+
+.project-slide-frame iframe {
+  display: block;
+  width: 100%;
+  height: clamp(560px, 76vh, 920px);
+  border: 0;
+  border-radius: 4px;
+  background: #2b2b2b;
+}
+
 .case-feature-system article {
   display: grid;
   align-content: start;
@@ -7031,4 +7120,42 @@ html[lang="ko"] .landing-keywords > .kicker {
 
 .locked-preview-grid {
   transform: none;
+}
+
+@media (max-width: 760px) {
+  .sephora-analysis-story-card .case-workflow-loop b {
+    right: 50%;
+    bottom: -17px;
+    transform: translateX(50%) rotate(90deg);
+  }
+
+  .sephora-analysis-story-card .case-workflow-loop strong {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .project-slide-viewer-heading {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .project-slide-viewer-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: stretch;
+  }
+
+  .project-slide-viewer-actions .button {
+    justify-content: center;
+  }
+
+  .project-slide-frame {
+    padding: 6px;
+  }
+
+  .project-slide-frame iframe {
+    height: 68vh;
+    min-height: 520px;
+  }
 }

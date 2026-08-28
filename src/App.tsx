@@ -141,6 +141,8 @@ function App() {
   }, [route]);
 
   const detailPageProject = route.endsWith("/detail-page") ? activeProject : undefined;
+  const slideDeckMatch = route.match(/^project\/sephora-analysis\/slides\/(ko|en)$/);
+  const activeProjectSlideLanguage = slideDeckMatch?.[1] as "ko" | "en" | undefined;
 
   if (detailPageProject) {
     return <DetailPageViewer project={detailPageProject} t={t} />;
@@ -166,7 +168,17 @@ function App() {
         {route === "documents" ? <DocumentsPage t={t} /> : null}
         {route === "interests" ? <InterestsPage t={t} /> : null}
         {route === "contact" ? <ContactPage t={t} /> : null}
-        {activeProject ? <ProjectDetail project={activeProject} t={t} /> : null}
+        {activeProject ? (
+          activeProjectSlideLanguage ? (
+            <ProjectSlideViewer
+              project={activeProject}
+              deckLanguage={activeProjectSlideLanguage}
+              t={t}
+            />
+          ) : (
+            <ProjectDetail project={activeProject} t={t} />
+          )
+        ) : null}
         {activeInterest ? <InterestDetail interest={activeInterest} t={t} /> : null}
         {activeDocument ? <DocumentDetail section={activeDocument} t={t} /> : null}
         {!routes.some((item) => item.id === route) &&
@@ -230,7 +242,7 @@ const emphasisPhrases = [
   "Lead Product Planner and Content Operations Lead",
   "carousel template system, content calendar, publishing schedule, feed direction, and performance review process",
   "1st place at the UXIM x YCC Final Project Showcase",
-  "1st place at the 2026 Season Summer Workstation Final Showcase",
+  "Excellence Award at the 2026 Season Summer Workstation Final Showcase",
   "Won 1st place in the final idea pitching",
   "one month of validation expanded restaurant data 5.3× and connected 297 of 300 database records",
   "19,220 Instagram views, 7,321 accounts reached, 986 interactions, and 365 new followers",
@@ -296,7 +308,7 @@ const emphasisPhrases = [
   "리드 제품 기획자이자 콘텐츠 운영 총괄",
   "캐러셀 템플릿 시스템, 콘텐츠 캘린더, 발행 일정, 피드 방향, 성과 리뷰 프로세스",
   "UXIM x YCC Final Project Showcase 1위",
-  "2026 시즌 썸머 워크스테이션 최종성과발표회 1위",
+  "2026 시즌 썸머 워크스테이션 최종성과발표회 우수상",
   "최종 아이디어 피칭에서 1위를 수상",
   "한 달간 식당 데이터를 5.3배로 확장해 DB 300건 중 297건을 연결",
   "인스타그램 조회 19,220회, 도달 계정 7,321개, 반응 986회, 신규 팔로워 365명",
@@ -1179,7 +1191,7 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
         </section>
       ) : null}
 
-      <section className="case-columns">
+      <section className={`case-columns ${project.id === "began" ? "began-case-columns" : ""}`}>
         <article className="role-card">
           <h3>{t("My Role")}</h3>
           <p>
@@ -1590,6 +1602,53 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
         </section>
       ) : null}
 
+    </PageFrame>
+  );
+}
+
+function ProjectSlideViewer({
+  project,
+  deckLanguage,
+  t,
+}: {
+  project: Project;
+  deckLanguage: "ko" | "en";
+  t: Translator;
+}) {
+  const pdfPath = `/documents/sephora-analysis/sephora-beauty-pricing-${deckLanguage}.pdf`;
+  const alternateLanguage = deckLanguage === "ko" ? "en" : "ko";
+
+  return (
+    <PageFrame eyebrow="Project Materials" title={project.title} t={t}>
+      <section className="project-slide-viewer">
+        <div className="project-slide-viewer-heading">
+          <div>
+            <span>{t(deckLanguage === "ko" ? "Korean Presentation" : "English Presentation")}</span>
+            <h2>{t("20-slide analysis deck")}</h2>
+            <p>{t("Use the PDF toolbar to move between slides, zoom, present, or download the original file.")}</p>
+          </div>
+          <div className="project-slide-viewer-actions">
+            <a className="button ghost" href={`#/project/${project.id}`}>
+              {t("Back to case study")}
+            </a>
+            <a
+              className="button ghost"
+              href={`#/project/${project.id}/slides/${alternateLanguage}`}
+            >
+              {t(alternateLanguage === "ko" ? "Korean Version" : "English Version")}
+            </a>
+            <a className="button primary" href={pdfPath} download>
+              {t("Download PDF")} <ArrowUpRight size={17} />
+            </a>
+          </div>
+        </div>
+        <div className="project-slide-frame">
+          <iframe
+            src={`${pdfPath}#page=1&view=FitH&toolbar=1&navpanes=0`}
+            title={t(deckLanguage === "ko" ? "Korean Presentation" : "English Presentation")}
+          />
+        </div>
+      </section>
     </PageFrame>
   );
 }

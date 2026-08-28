@@ -52,6 +52,12 @@ const ko: Record<string, string> = {
   Outcome: "성과",
   "Process Notes": "프로세스 노트",
   "Project Materials": "프로젝트 자료",
+  "Korean Presentation": "국문 프레젠테이션",
+  "English Presentation": "영문 프레젠테이션",
+  "20-slide analysis deck": "20장 분석 슬라이드",
+  "Use the PDF toolbar to move between slides, zoom, present, or download the original file.":
+    "PDF 도구 모음에서 슬라이드 이동, 확대, 프레젠테이션, 원본 다운로드 기능을 사용할 수 있습니다.",
+  "Download PDF": "PDF 다운로드",
   "Key metrics": "핵심 지표",
   "Measured business impact": "측정된 비즈니스 임팩트",
   "Measured Impact": "측정 성과",
@@ -200,8 +206,8 @@ const ko: Record<string, string> = {
     "사용자 인터뷰, IA, 유저 플로우, 비즈니스 모델 정의 기반 Began 제품 기획 리드",
   "The Began service team won 1st place at the UXIM x YCC Final Project Showcase.":
     "Began 서비스팀 UXIM x YCC Final Project Showcase 1위 수상",
-  "The Began service team won 1st place at the 2026 Season Summer Workstation Final Showcase.":
-    "Began 서비스팀 2026 시즌 썸머 워크스테이션 최종성과발표회 1위 수상",
+  "The Began service team received an Excellence Award at the 2026 Season Summer Workstation Final Showcase.":
+    "Began 서비스팀 2026 시즌 썸머 워크스테이션 최종성과발표회 우수상 수상",
   "Planned UX/IA for Namdong Senior Club's official website and delivered wireframes and prototypes.":
     "남동시니어클럽 공식 웹사이트 UX/IA 기획 및 와이어프레임·프로토타입 제작",
   "Co-designed an IoT water-tracking device and companion app concept for the Busan International Design Award.":
@@ -1279,8 +1285,8 @@ const ko: Record<string, string> = {
     "리드 제품 기획자이자 콘텐츠 운영 총괄로서 아이데이션, IDI, IA, 유저 플로우, 비즈니스 모델, 엔드투엔드 UI/UX를 담당하고, 캐러셀 템플릿 시스템, 콘텐츠 캘린더, 발행 일정, 피드 방향, 성과 리뷰 프로세스까지 구축했습니다.",
   "Won 1st place at the UXIM x YCC Final Project Showcase and extended the product into a measurable launch operation: within the first 10 days of Instagram operations, the channel generated 19,220 views, reached 7,321 accounts, recorded 986 interactions, and gained 365 new followers.":
     "UXIM x YCC Final Project Showcase에서 1위를 수상하고 제품을 측정 가능한 론칭 운영으로 확장했습니다. 인스타그램 운영 시작 후 첫 10일 이내에 조회 19,220회, 도달 계정 7,321개, 반응 986회, 신규 팔로워 365명을 달성했습니다.",
-  "Won 1st place at the UXIM x YCC Final Project Showcase and 1st place at the 2026 Season Summer Workstation Final Showcase, then extended the product into measurable product and market validation: the first 10 days of Instagram operations generated 19,220 views and 365 new followers, while one month of validation expanded restaurant data 5.3× and connected 297 of 300 database records.":
-    "UXIM x YCC Final Project Showcase 1위와 2026 시즌 썸머 워크스테이션 최종성과발표회 1위를 모두 수상하고 제품을 측정 가능한 제품·시장 검증으로 확장했습니다. 인스타그램 채널 개설 첫 10일에 조회 19,220회와 신규 팔로워 365명을 달성했고, 한 달간 식당 데이터를 5.3배로 확장해 DB 300건 중 297건을 연결했습니다.",
+  "Won 1st place at the UXIM x YCC Final Project Showcase and received an Excellence Award at the 2026 Season Summer Workstation Final Showcase, then extended the product into measurable product and market validation: the first 10 days of Instagram operations generated 19,220 views and 365 new followers, while one month of validation expanded restaurant data 5.3× and connected 297 of 300 database records.":
+    "UXIM x YCC Final Project Showcase 1위와 2026 시즌 썸머 워크스테이션 최종성과발표회 우수상을 수상하고 제품을 측정 가능한 제품·시장 검증으로 확장했습니다. 인스타그램 채널 개설 첫 10일에 조회 19,220회와 신규 팔로워 365명을 달성했고, 한 달간 식당 데이터를 5.3배로 확장해 DB 300건 중 297건을 연결했습니다.",
   "Research Participants": "리서치 참여자",
   "User interviews and usability tests": "사용자 인터뷰·사용성 테스트",
   "Core exploration and UI iteration": "핵심 탐색 문제와 UI 반복 개선",
@@ -1311,8 +1317,8 @@ const ko: Record<string, string> = {
   "Verified professional dashboard": "검증된 프로페셔널 대시보드",
   "Began Website": "Began 웹사이트",
   "Project Overview": "프로젝트 개요",
-  "'Began' is a location-based restaurant discovery service designed to reduce information uncertainty when dining with individuals who have specific dietary restrictions. The project won 1st place at the UXIM x YCC Final Project Showcase and 1st place at the 2026 Season Summer Workstation Final Showcase, recognizing its user-centered approach to solving real-world dining accessibility challenges.":
-    "'Began'은 특정 식이 제한이 있는 사람들과 함께 외식할 때 발생하는 정보 불확실성을 줄이기 위해 설계한 위치 기반 맛집 탐색 서비스입니다. 실제 외식 접근성 문제를 사용자 중심으로 해결한 접근을 인정받아 UXIM x YCC Final Project Showcase 1위와 2026 시즌 썸머 워크스테이션 최종성과발표회 1위를 모두 수상했습니다.",
+  "'Began' is a location-based restaurant discovery service designed to reduce information uncertainty when dining with individuals who have specific dietary restrictions. The project won 1st place at the UXIM x YCC Final Project Showcase and received an Excellence Award at the 2026 Season Summer Workstation Final Showcase, recognizing its user-centered approach to solving real-world dining accessibility challenges.":
+    "'Began'은 특정 식이 제한이 있는 사람들과 함께 외식할 때 발생하는 정보 불확실성을 줄이기 위해 설계한 위치 기반 맛집 탐색 서비스입니다. 실제 외식 접근성 문제를 사용자 중심으로 해결한 접근을 인정받아 UXIM x YCC Final Project Showcase 1위와 2026 시즌 썸머 워크스테이션 최종성과발표회 우수상을 수상했습니다.",
   "Tailored Onboarding": "맞춤형 온보딩",
   "To solve the fragmented nature of dietary preferences, I designed an intuitive onboarding experience featuring dietary preference presets. Users can quickly select their baseline dietary type or customize specific ingredient restrictions, including allergies and fine-tuned choices, from the very beginning. By minimizing initial user friction and mapping precise user profiles early on, this feature eliminates unnecessary search steps and delivers highly personalized restaurant curation from the first interaction.":
     "식이 선호가 파편화되어 있는 문제를 해결하기 위해 식이 선호 프리셋을 제공하는 직관적인 온보딩 경험을 설계했습니다. 사용자는 첫 단계에서 기본 식이 유형을 빠르게 선택하거나 알레르기와 세부 제한 식재료까지 직접 설정할 수 있습니다. 초기 사용 마찰을 줄이고 정확한 사용자 프로필을 초기에 매핑함으로써 불필요한 검색 단계를 없애고 첫 사용부터 개인화된 맛집 큐레이션을 제공합니다.",
