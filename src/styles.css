@@ -4715,6 +4715,13 @@ html[lang="ko"] .landing-keywords > .kicker {
   min-height: 250px;
 }
 
+.sephora-analysis-story-card .case-workflow-loop h4 {
+  font-size: clamp(20px, 1.7vw, 24px);
+  line-height: 1.12;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
 .sephora-analysis-story-card .case-workflow-loop b {
   right: auto;
   left: calc(100% + 13px);
