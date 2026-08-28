@@ -4716,10 +4716,12 @@ html[lang="ko"] .landing-keywords > .kicker {
 }
 
 .sephora-analysis-story-card .case-workflow-loop b {
-  right: -24px;
+  right: auto;
+  left: calc(100% + 13px);
   width: 22px;
   height: 22px;
   box-shadow: 0 5px 14px rgba(49, 70, 105, 0.1);
+  transform: translate(-50%, -50%);
 }
 
 .sephora-analysis-story-card .case-workflow-loop b::before {
@@ -7124,9 +7126,11 @@ html[lang="ko"] .landing-keywords > .kicker {
 
 @media (max-width: 760px) {
   .sephora-analysis-story-card .case-workflow-loop b {
-    right: 50%;
-    bottom: -17px;
-    transform: translateX(50%) rotate(90deg);
+    top: calc(100% + 12px);
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
   }
 
   .sephora-analysis-story-card .case-workflow-loop strong {
