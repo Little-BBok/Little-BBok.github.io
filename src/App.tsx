@@ -1275,6 +1275,8 @@ function ProjectDetail({ project, t }: { project: Project; t: Translator }) {
               } ${
                 project.id === "sephora-analysis" ? "sephora-analysis-story-card" : ""
               } ${
+                project.id === "sephora-guide" ? "sephora-guide-story-card" : ""
+              } ${
                 project.id === "began" && section.title === "Content Operations I Led"
                   ? "began-operations-card"
                   : ""

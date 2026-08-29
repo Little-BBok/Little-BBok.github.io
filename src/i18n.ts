@@ -1694,6 +1694,121 @@ const ko: Record<string, string> = {
   "Career Strategy": "커리어 전략",
   "Luxury Beauty": "럭셔리 뷰티",
   "Interview Insight": "인터뷰 인사이트",
+  "Sephora Career Guidebook": "Sephora 커리어 가이드북",
+  "Beauty & luxury career research · Europe": "뷰티·럭셔리 커리어 리서치 · 유럽",
+  "A 57-page career guidebook that turns fragmented information about Sephora and LVMH careers in Europe into practical entry strategies grounded in desk research and five professional interviews.":
+    "유럽 Sephora·LVMH 커리어에 관한 파편화된 정보를 데스크 리서치와 5명의 실무자 인터뷰를 바탕으로 실질적인 진입 전략으로 정리한 57페이지 가이드북입니다.",
+  "Co-author and researcher who contributed to industry research, information synthesis, interview-based insight structuring, and the development of the guidebook and presentation.":
+    "산업 리서치, 정보 종합, 인터뷰 기반 인사이트 구조화, 가이드북·발표자료 개발에 참여한 공동 저자이자 리서처입니다.",
+  "Co-produced a 57-page guidebook and a 10-slide presentation that map eight functional areas, three career pathways, the recruitment process, and field-tested preparation advice.":
+    "8개 직무군, 3개 커리어 경로, 채용 프로세스와 현장 기반 준비 조언을 체계화한 57페이지 가이드북과 10장 발표자료를 공동 제작했습니다.",
+  "Career Research": "커리어 리서치",
+  "Interview Synthesis": "인터뷰 종합",
+  "Editorial Strategy": "에디토리얼 전략",
+  "View Presentation": "발표자료 보기",
+  "The project began with a gap: information about European beauty and luxury careers is fragmented by language, informal networks, and limited visibility into actual work. The team narrowed its focus from LVMH to Sephora, a multi-brand retailer and brand owner that offers entry points across retail, marketing, merchandising, digital, operations, and strategy.":
+    "프로젝트는 유럽 뷰티·럭셔리 커리어 정보가 언어, 비공식 네트워크, 실제 업무에 대한 낮은 가시성 때문에 파편화되어 있다는 문제에서 출발했습니다. 팀은 LVMH 전반에서 멀티브랜드 리테일러이자 자체 브랜드를 보유하고, 리테일·마케팅·머천다이징·디지털·운영·전략 전반의 진입점을 제공하는 Sephora로 범위를 좁혔습니다.",
+  "Research at a Glance": "리서치 한눈에 보기",
+  "The guidebook combines market and role research with first-hand perspectives so that students can compare routes, requirements, and working realities instead of relying on surface-level employer information.":
+    "가이드북은 시장·직무 리서치와 현장 관점을 결합해 학생들이 피상적인 기업 정보에 의존하지 않고 경로, 요구 역량, 실제 업무 환경을 비교할 수 있도록 구성했습니다.",
+  DELIVERABLE: "결과물",
+  "57-page Guidebook": "57페이지 가이드북",
+  "A structured reference covering business context, career paths, recruitment, preparation, and professional interviews.":
+    "비즈니스 맥락, 커리어 경로, 채용, 준비 전략, 실무자 인터뷰를 담은 구조화된 자료입니다.",
+  "PRIMARY RESEARCH": "1차 리서치",
+  "5 Professional Interviews": "실무자 인터뷰 5건",
+  "Perspectives from Sephora Korea and Italy, Thélios France, and Louis Vuitton Monaco.":
+    "Sephora 한국·이탈리아, Thélios 프랑스, Louis Vuitton 모나코 실무자의 관점을 반영했습니다.",
+  "ROLE MAPPING": "직무 매핑",
+  "8 Functional Areas": "8개 직무 영역",
+  "Retail, marketing, sales, HR, supply chain, IT, finance, and merchandising roles were compared.":
+    "리테일, 마케팅, 세일즈, HR, 공급망, IT, 재무, 머천다이징 직무를 비교했습니다.",
+  "CAREER DESIGN": "커리어 설계",
+  "3 Progression Pathways": "3개 성장 경로",
+  "Store-based growth, corporate cross-functional movement, and regional or LVMH mobility.":
+    "매장 기반 성장, 본사 직무 간 이동, 지역·LVMH 네트워크 이동 경로를 구조화했습니다.",
+  "Business Model & European Advantage": "비즈니스 모델과 유럽 시장의 강점",
+  "The research frames Sephora as more than a beauty store: its hybrid model combines curated retail, experience, and brand partnerships. Europe is strategically important because France hosts Sephora and LVMH headquarters, while local markets require differentiated assortments, language capabilities, and informal network access.":
+    "Sephora를 단순한 뷰티 매장이 아니라 큐레이션 리테일, 고객 경험, 브랜드 파트너십을 결합한 하이브리드 모델로 분석했습니다. 프랑스에 Sephora와 LVMH 본사가 위치한 만큼 유럽은 전략적으로 중요하지만, 현지 시장별 상품 구성, 언어 역량, 비공식 네트워크에 대한 이해도 필요합니다.",
+  "01 · COMMERCE": "01 · 커머스",
+  "Product Sales": "제품 판매",
+  "Multi-brand curation, brand exclusives, and Sephora Collection create discovery and margin opportunities.":
+    "멀티브랜드 큐레이션, 독점 브랜드, Sephora Collection이 발견 경험과 수익 기회를 만듭니다.",
+  "02 · EXPERIENCE": "02 · 경험",
+  "Services & Experiences": "서비스와 경험",
+  "Consultations, classes, open-sell testing, loyalty, and omnichannel services strengthen customer relationships.":
+    "상담, 클래스, 오픈셀 테스트, 로열티, 옴니채널 서비스가 고객 관계를 강화합니다.",
+  "03 · PARTNERSHIPS": "03 · 파트너십",
+  "Advertising & Partnerships": "광고와 파트너십",
+  "Retail media, co-marketing, and exclusive brand relationships extend Sephora's platform value.":
+    "리테일 미디어, 공동 마케팅, 독점 브랜드 관계가 Sephora 플랫폼의 가치를 확장합니다.",
+  "Three Career Pathways": "세 가지 커리어 경로",
+  "The guidebook avoids presenting a single ideal route. It distinguishes the most accessible store entry path from expertise-led corporate mobility and the longer-term possibility of moving across regions or LVMH maisons.":
+    "가이드북은 하나의 이상적인 경로를 제시하지 않습니다. 접근성이 높은 매장 진입, 전문성 기반 본사 이동, 장기적인 지역·LVMH 메종 이동 가능성을 구분해 설명합니다.",
+  "Store-based Progression": "매장 기반 성장",
+  "Build customer, product, KPI, and operational experience from Beauty Advisor to leadership or corporate operations.":
+    "Beauty Advisor부터 고객, 제품, KPI, 운영 경험을 쌓아 리더십 또는 본사 운영 직무로 확장합니다.",
+  "Most accessible entry point": "가장 접근성 높은 진입점",
+  "Corporate & Cross-functional": "본사·직무 간 이동",
+  "Move between adjacent functions by proving role-specific expertise and using a staged internal transition.":
+    "직무 전문성을 증명하고 단계적인 내부 전환을 거쳐 인접 기능으로 이동합니다.",
+  "Expertise-led mobility": "전문성 기반 이동",
+  "Regional & LVMH Mobility": "지역·LVMH 이동",
+  "Use performance, internal visibility, and networking to pursue movement across countries, regions, or maisons.":
+    "성과, 내부 가시성, 네트워킹을 바탕으로 국가, 지역, 메종 간 이동을 모색합니다.",
+  "Long-term global pathway": "장기 글로벌 경로",
+  "Recruitment & Preparation Strategy": "채용·준비 전략",
+  "European entry is often internship- and apprenticeship-driven, especially in France. The guidebook translates the formal recruitment process and interview themes into four preparation priorities for students.":
+    "유럽, 특히 프랑스의 초기 진입은 인턴십과 견습 과정 중심으로 이루어지는 경우가 많습니다. 가이드북은 공식 채용 절차와 인터뷰 주제를 학생을 위한 네 가지 준비 우선순위로 전환했습니다.",
+  "Understand the Process": "프로세스 이해",
+  "Map document screening, HR interviews, hiring-team interviews, role-specific tasks, and final decisions.":
+    "서류 심사, HR 인터뷰, 실무진 인터뷰, 직무 과제, 최종 결정 과정을 파악합니다.",
+  "Recruitment map": "채용 프로세스 맵",
+  "Build Your Edge": "나만의 경쟁력 구축",
+  "Develop customer awareness, analytical skills, role expertise, relevant experience, and beauty-industry literacy.":
+    "고객 이해, 분석 역량, 직무 전문성, 관련 경험, 뷰티 산업 리터러시를 개발합니다.",
+  "Transferable evidence": "전이 가능한 경험 증거",
+  "Show Your Story": "나의 스토리 제시",
+  "Use a focused portfolio and examples with context, approach, and outcomes to demonstrate genuine fit.":
+    "맥락, 접근 방식, 결과가 담긴 선별된 포트폴리오와 사례로 적합성을 보여줍니다.",
+  "Application narrative": "지원 서사",
+  "Prepare to Impact": "기여할 준비",
+  "Practice behavioral examples around service, teamwork, initiative, KPIs, leadership, and cultural adaptability.":
+    "서비스, 협업, 주도성, KPI, 리더십, 문화적 적응력에 관한 행동 사례를 준비합니다.",
+  "Interview readiness": "인터뷰 준비도",
+  "Professional Interview Synthesis": "실무자 인터뷰 종합",
+  "Five professionals across Sephora and the broader LVMH ecosystem were interviewed to surface the realities behind job descriptions: specialization, networking, language barriers, customer psychology, and cross-functional execution.":
+    "Sephora와 LVMH 생태계의 실무자 5명을 인터뷰해 직무 설명서만으로 알기 어려운 전문성, 네트워킹, 언어 장벽, 고객 심리, 직무 간 실행의 현실을 정리했습니다.",
+  "SEPHORA KOREA": "SEPHORA 한국",
+  "Global-local execution requires deep functional expertise, beauty literacy, and collaboration across merchandising, CS, logistics, and CRM.":
+    "글로벌·로컬 실행에는 깊은 직무 전문성, 뷰티 리터러시, 머천다이징·CS·물류·CRM 협업이 필요합니다.",
+  "THÉLIOS FRANCE": "THÉLIOS 프랑스",
+  "Relevant internships, analytical ability, informal relationships, and the right manager strongly shape early career growth.":
+    "관련 인턴 경험, 분석력, 비공식 관계, 좋은 매니저가 초기 커리어 성장에 큰 영향을 줍니다.",
+  "SEPHORA ITALY": "SEPHORA 이탈리아",
+  "Retail success depends on product knowledge, proactive service, and adapting communication to each customer's needs.":
+    "리테일 성과는 제품 지식, 능동적 서비스, 고객별 요구에 맞춘 커뮤니케이션에 달려 있습니다.",
+  "Networking and demonstrable capability can sometimes overcome formal language requirements in European recruiting.":
+    "유럽 채용에서는 네트워킹과 증명 가능한 역량이 때로 공식 언어 요건을 넘어설 수 있습니다.",
+  "LOUIS VUITTON MONACO": "LOUIS VUITTON 모나코",
+  "Luxury retail combines client psychology, multicultural teamwork, performance, and alignment with brand values.":
+    "럭셔리 리테일은 고객 심리, 다문화 협업, 성과, 브랜드 가치와의 정합성을 결합합니다.",
+  "The final guidebook delivers three forms of value: uncommon retail insight that is difficult to find through search, a realistic gateway into Sephora and the wider LVMH ecosystem, and honest, actionable guidance about hiring, networking, and what actually works.":
+    "최종 가이드북은 검색만으로 찾기 어려운 리테일 인사이트, Sephora와 더 넓은 LVMH 생태계로 향하는 현실적인 진입 경로, 채용·네트워킹·실제 효과적인 방법에 관한 솔직하고 실행 가능한 조언을 제공합니다.",
+  "The 57-page narrative moves from business and European market context to functions, progression, recruiting, student preparation, and detailed interviews. This sequence helps readers understand the industry before choosing and preparing for a route into it.":
+    "57페이지 구성은 비즈니스와 유럽 시장 맥락에서 시작해 직무, 성장 경로, 채용, 학생 준비, 상세 인터뷰로 이어집니다. 독자가 진입 경로를 선택하고 준비하기 전에 산업을 먼저 이해하도록 설계했습니다.",
+  "Narrowed the research scope from LVMH broadly to Sephora as a practical gateway into European beauty and luxury careers.":
+    "LVMH 전반에서 유럽 뷰티·럭셔리 커리어의 실질적인 관문인 Sephora로 리서치 범위를 좁혔습니다.",
+  "Mapped Sephora's hybrid business model, European market context, benefits, and eight functional job families.":
+    "Sephora의 하이브리드 비즈니스 모델, 유럽 시장 맥락, 복지, 8개 직무군을 매핑했습니다.",
+  "Structured three progression pathways and compared internship-driven European entry with more formal early-career programs.":
+    "3개 성장 경로를 구조화하고 인턴십 중심의 유럽 진입 방식과 공식 초기 커리어 프로그램을 비교했습니다.",
+  "Synthesized five professional interviews into recurring themes around expertise, networking, language, customer mindset, and mobility.":
+    "실무자 인터뷰 5건을 전문성, 네트워킹, 언어, 고객 관점, 이동성이라는 공통 주제로 종합했습니다.",
+  "Translated the full research into a 57-page editorial guidebook and a concise 10-slide presentation narrative.":
+    "전체 리서치를 57페이지 에디토리얼 가이드북과 10장 분량의 간결한 발표 서사로 전환했습니다.",
+  "Information Synthesis": "정보 종합",
+  "Presentation Design": "프레젠테이션 디자인",
   "Growth Marketing": "그로스 마케팅",
   "UI/UX Design": "UI/UX 디자인",
   "User Research": "사용자 리서치",

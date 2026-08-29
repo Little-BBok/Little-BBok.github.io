@@ -2075,51 +2075,209 @@ export const projects: Project[] = [
   },
   {
     id: "sephora-guide",
-    title: "Sephora Guide Book",
-    eyebrow: "LVMH Europe career guide",
+    title: "Sephora Career Guidebook",
+    eyebrow: "Beauty & luxury career research · Europe",
     category: "Data & Strategy",
     summary:
-      "A career guidebook project focused on entry strategies into Sephora and LVMH in Europe.",
+      "A 57-page career guidebook that turns fragmented information about Sephora and LVMH careers in Europe into practical entry strategies grounded in desk research and five professional interviews.",
     role:
-      "Researcher mapping industry structure, business model, market position, job functions, recruitment, and career progression.",
+      "Co-author and researcher who contributed to industry research, information synthesis, interview-based insight structuring, and the development of the guidebook and presentation.",
     outcome:
-      "Developed an actionable guidebook for students exploring practical career paths in Sephora and the LVMH network.",
+      "Co-produced a 57-page guidebook and a 10-slide presentation that map eight functional areas, three career pathways, the recruitment process, and field-tested preparation advice.",
     accent: "#ffdbed",
-    image:
-      "https://static.wixstatic.com/media/df8dea_b6fafbd4c98342908d236927c1147c52~mv2.png/v1/crop/x_0,y_88,w_1200,h_1576/fill/w_540,h_710,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2002_03_04.png",
+    image: "/projects/sephora-guide/cover.jpg",
+    keywords: ["Career Research", "Luxury Beauty", "Interview Synthesis", "Editorial Strategy"],
     actions: [
       {
         label: "View Guidebook",
-        href: "https://50e217fb-c32f-4fb0-a6a1-228397b343ae.filesusr.com/ugd/df8dea_7e881145adb148dc978708f53a532950.pdf",
+        href: "/documents/sephora-guide/sephora-career-guidebook.pdf",
+      },
+      {
+        label: "View Presentation",
+        href: "/documents/sephora-guide/sephora-guidebook-pitch.pdf",
       },
     ],
     sections: [
       {
         title: "Project Overview",
         text:
-          "Created a career guidebook project focused on entry strategies into Sephora/LVMH in Europe by analyzing the beauty and luxury industry structure and Sephora's business model. I researched Sephora's European market position, job functions, recruitment process, and career progression pathways, while incorporating insights from interviews with industry professionals.",
-        image:
-          "https://static.wixstatic.com/media/df8dea_b6fafbd4c98342908d236927c1147c52~mv2.png/v1/crop/x_0,y_88,w_1200,h_1576/fill/w_540,h_710,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2002_03_04.png",
+          "The project began with a gap: information about European beauty and luxury careers is fragmented by language, informal networks, and limited visibility into actual work. The team narrowed its focus from LVMH to Sephora, a multi-brand retailer and brand owner that offers entry points across retail, marketing, merchandising, digital, operations, and strategy.",
+        image: "/projects/sephora-guide/cover.jpg",
+      },
+      {
+        title: "Research at a Glance",
+        text:
+          "The guidebook combines market and role research with first-hand perspectives so that students can compare routes, requirements, and working realities instead of relying on surface-level employer information.",
+        layout: "feature-system",
+        featureItems: [
+          {
+            group: "DELIVERABLE",
+            title: "57-page Guidebook",
+            text: "A structured reference covering business context, career paths, recruitment, preparation, and professional interviews.",
+          },
+          {
+            group: "PRIMARY RESEARCH",
+            title: "5 Professional Interviews",
+            text: "Perspectives from Sephora Korea and Italy, Thélios France, and Louis Vuitton Monaco.",
+          },
+          {
+            group: "ROLE MAPPING",
+            title: "8 Functional Areas",
+            text: "Retail, marketing, sales, HR, supply chain, IT, finance, and merchandising roles were compared.",
+          },
+          {
+            group: "CAREER DESIGN",
+            title: "3 Progression Pathways",
+            text: "Store-based growth, corporate cross-functional movement, and regional or LVMH mobility.",
+          },
+        ],
+      },
+      {
+        title: "Business Model & European Advantage",
+        text:
+          "The research frames Sephora as more than a beauty store: its hybrid model combines curated retail, experience, and brand partnerships. Europe is strategically important because France hosts Sephora and LVMH headquarters, while local markets require differentiated assortments, language capabilities, and informal network access.",
+        image: "/projects/sephora-guide/business-model.jpg",
+        layout: "feature-system",
+        featureItems: [
+          {
+            group: "01 · COMMERCE",
+            title: "Product Sales",
+            text: "Multi-brand curation, brand exclusives, and Sephora Collection create discovery and margin opportunities.",
+          },
+          {
+            group: "02 · EXPERIENCE",
+            title: "Services & Experiences",
+            text: "Consultations, classes, open-sell testing, loyalty, and omnichannel services strengthen customer relationships.",
+          },
+          {
+            group: "03 · PARTNERSHIPS",
+            title: "Advertising & Partnerships",
+            text: "Retail media, co-marketing, and exclusive brand relationships extend Sephora's platform value.",
+          },
+        ],
+      },
+      {
+        title: "Three Career Pathways",
+        text:
+          "The guidebook avoids presenting a single ideal route. It distinguishes the most accessible store entry path from expertise-led corporate mobility and the longer-term possibility of moving across regions or LVMH maisons.",
+        image: "/projects/sephora-guide/career-pathways.jpg",
+        layout: "workflow",
+        workflowItems: [
+          {
+            step: "01",
+            title: "Store-based Progression",
+            text: "Build customer, product, KPI, and operational experience from Beauty Advisor to leadership or corporate operations.",
+            output: "Most accessible entry point",
+          },
+          {
+            step: "02",
+            title: "Corporate & Cross-functional",
+            text: "Move between adjacent functions by proving role-specific expertise and using a staged internal transition.",
+            output: "Expertise-led mobility",
+          },
+          {
+            step: "03",
+            title: "Regional & LVMH Mobility",
+            text: "Use performance, internal visibility, and networking to pursue movement across countries, regions, or maisons.",
+            output: "Long-term global pathway",
+          },
+        ],
+      },
+      {
+        title: "Recruitment & Preparation Strategy",
+        text:
+          "European entry is often internship- and apprenticeship-driven, especially in France. The guidebook translates the formal recruitment process and interview themes into four preparation priorities for students.",
+        image: "/projects/sephora-guide/recruitment-strategy.jpg",
+        layout: "workflow",
+        workflowItems: [
+          {
+            step: "01",
+            title: "Understand the Process",
+            text: "Map document screening, HR interviews, hiring-team interviews, role-specific tasks, and final decisions.",
+            output: "Recruitment map",
+          },
+          {
+            step: "02",
+            title: "Build Your Edge",
+            text: "Develop customer awareness, analytical skills, role expertise, relevant experience, and beauty-industry literacy.",
+            output: "Transferable evidence",
+          },
+          {
+            step: "03",
+            title: "Show Your Story",
+            text: "Use a focused portfolio and examples with context, approach, and outcomes to demonstrate genuine fit.",
+            output: "Application narrative",
+          },
+          {
+            step: "04",
+            title: "Prepare to Impact",
+            text: "Practice behavioral examples around service, teamwork, initiative, KPIs, leadership, and cultural adaptability.",
+            output: "Interview readiness",
+          },
+        ],
+      },
+      {
+        title: "Professional Interview Synthesis",
+        text:
+          "Five professionals across Sephora and the broader LVMH ecosystem were interviewed to surface the realities behind job descriptions: specialization, networking, language barriers, customer psychology, and cross-functional execution.",
+        image: "/projects/sephora-guide/interview-insights.jpg",
+        layout: "feature-system",
+        featureItems: [
+          {
+            group: "SEPHORA KOREA",
+            title: "Jay Kim",
+            text: "Global-local execution requires deep functional expertise, beauty literacy, and collaboration across merchandising, CS, logistics, and CRM.",
+          },
+          {
+            group: "THÉLIOS FRANCE",
+            title: "Seou Choi",
+            text: "Relevant internships, analytical ability, informal relationships, and the right manager strongly shape early career growth.",
+          },
+          {
+            group: "SEPHORA ITALY",
+            title: "Ludovica Brizio",
+            text: "Retail success depends on product knowledge, proactive service, and adapting communication to each customer's needs.",
+          },
+          {
+            group: "THÉLIOS FRANCE",
+            title: "Yelyzaveta Shtanko",
+            text: "Networking and demonstrable capability can sometimes overcome formal language requirements in European recruiting.",
+          },
+          {
+            group: "LOUIS VUITTON MONACO",
+            title: "Ilaria Brizio",
+            text: "Luxury retail combines client psychology, multicultural teamwork, performance, and alignment with brand values.",
+          },
+        ],
       },
       {
         title: "Why Our Guidebook?",
         text:
-          "The guidebook was designed to offer uncommon retail insights, a gateway into Sephora/LVMH career paths, and honest, actionable advice that students cannot easily find through surface-level online search.",
-        image: "/projects/sephora-guide/why-guidebook.png",
+          "The final guidebook delivers three forms of value: uncommon retail insight that is difficult to find through search, a realistic gateway into Sephora and the wider LVMH ecosystem, and honest, actionable guidance about hiring, networking, and what actually works.",
+        image: "/projects/sephora-guide/why-guidebook-source.jpg",
       },
       {
         title: "Guidebook Structure",
         text:
-          "The contents move from Sephora business and industry context to career paths, recruitment preparation, and interviews with professionals across Sephora and the LVMH network.",
+          "The 57-page narrative moves from business and European market context to functions, progression, recruiting, student preparation, and detailed interviews. This sequence helps readers understand the industry before choosing and preparing for a route into it.",
         image: "/projects/sephora-guide/table-of-contents.png",
       },
     ],
     details: [
-      "Analyzed the beauty and luxury industry structure and Sephora's business model.",
-      "Researched European market position, job functions, recruiting process, and career progression pathways.",
-      "Incorporated interviews with industry professionals to ground the guidebook in practical insight.",
+      "Narrowed the research scope from LVMH broadly to Sephora as a practical gateway into European beauty and luxury careers.",
+      "Mapped Sephora's hybrid business model, European market context, benefits, and eight functional job families.",
+      "Structured three progression pathways and compared internship-driven European entry with more formal early-career programs.",
+      "Synthesized five professional interviews into recurring themes around expertise, networking, language, customer mindset, and mobility.",
+      "Translated the full research into a 57-page editorial guidebook and a concise 10-slide presentation narrative.",
     ],
-    capabilities: ["Industry Research", "Career Strategy", "Luxury Beauty", "Interview Insight"],
+    capabilities: [
+      "Industry Research",
+      "Information Synthesis",
+      "Career Strategy",
+      "Interview Insight",
+      "Editorial Strategy",
+      "Presentation Design",
+    ],
   },
 ];
 
