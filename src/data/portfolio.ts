@@ -250,7 +250,7 @@ export const experiences: Experience[] = [
   {
     organization: "NOI LAB",
     role: "Marketing and Strategy Intern",
-    period: "Dec 2023 - Oct 2024",
+    period: "Dec 2023 - Nov 2024",
     category: "Work",
     highlights: [
       "Spearheaded social media revitalization, driving 24.4% follower growth through data-backed content planning and performance analysis.",

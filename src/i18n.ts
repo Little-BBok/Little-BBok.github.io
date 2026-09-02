@@ -189,7 +189,7 @@ const ko: Record<string, string> = {
     "향후 VR 개발 프로젝트를 위한 연구 결과 종합 리포트 작성",
   "NOI LAB": "NOI LAB",
   "Marketing and Strategy Intern": "마케팅·전략 인턴",
-  "Dec 2023 - Oct 2024": "2023.12 - 2024.10",
+  "Dec 2023 - Nov 2024": "2023.12 - 2024.11",
   "Spearheaded social media revitalization, driving 24.4% follower growth through data-backed content planning and performance analysis.":
     "데이터 기반 콘텐츠 기획과 성과 분석을 통한 소셜 미디어 재활성화 및 팔로워 24.4% 성장",
   "Single-handedly planned an offline expo booth with a cognitive mini-game, follow-to-win raffle, and personalized fNIRS reports.":
