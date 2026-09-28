@@ -159,7 +159,7 @@ const ko: Record<string, string> = {
   "Portfolio reviews, career conversations, student association work, and global brand experience discussions are always welcome.":
     "포트폴리오 리뷰, 커리어 대화, 학생 단체 활동, 글로벌 브랜드 경험에 관한 이야기를 언제나 환영합니다.",
 
-  BENOW: "비나우",
+  "BENOW (numbuzin · fwee · Knock)": "비나우 (넘버즈인 · 퓌 · 노크)",
   "MD Intern, Japan Business Team 1 (numbuzin)": "일본사업1팀(넘버즈인) MD 인턴",
   "Sep 2026 - Present": "2026.09 - 현재",
   "Planned storefront content for numbuzin’s October Mega Po campaign on Qoo10 Japan, including main visuals, livestream banners, and coupon banners.":
