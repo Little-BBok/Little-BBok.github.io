@@ -225,10 +225,10 @@ export const experiences: Experience[] = [
     period: "Sep 2026 - Present",
     category: "Work",
     highlights: [
-      "Planned storefront content for numbuzin’s October Mega Po campaign on Qoo10 Japan, including main visuals, livestream banners, and coupon banners.",
-      "Revamped numbuzin’s Qoo10 Japan shop, updating recommended search keywords, Q·Special tags, and campaign titles and subheadings to highlight product-line ingredients and skin concerns.",
-      "Scraped and analyzed 1,061 Japanese consumer reviews from Qoo10 and @cosme for numbuzin’s No.1 Bubble Pack, recommending time-saving morning skincare and makeup-prep messaging for the Korean market.",
-      "Manage product listings and inventory updates through Qoo10 and Cafe24 admin platforms, and maintain daily sales performance reports.",
+      "Planned storefront content for numbuzin’s October Mega Po campaign on Qoo10 Japan, including main visuals, livestream banners, and coupon banners",
+      "Revamped numbuzin’s Qoo10 Japan shop, updating recommended search keywords, Q·Special tags, and campaign titles and subheadings to highlight product-line ingredients and skin concerns",
+      "Scraped and analyzed 1,061 Japanese consumer reviews from Qoo10 and @cosme for numbuzin’s No.1 Bubble Pack, recommending time-saving morning skincare and makeup-prep messaging for the Korean market",
+      "Manage product listings and inventory updates through Qoo10 and Cafe24 admin platforms, and maintain daily sales performance reports",
     ],
   },
   {
