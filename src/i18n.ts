@@ -163,13 +163,13 @@ const ko: Record<string, string> = {
   "MD Intern, Japan Business Team 1 (numbuzin)": "일본사업1팀(넘버즈인) MD 인턴",
   "Sep 2026 - Present": "2026.09 - 현재",
   "Planned storefront content for numbuzin’s October Mega Po campaign on Qoo10 Japan, including main visuals, livestream banners, and coupon banners":
-    "큐텐 재팬 넘버즈인의 10월 메가포 샵메인 콘텐츠를 기획했으며, 도비라·라이브 배너·쿠폰 배너의 구성과 소구 문구를 설계했습니다",
+    "큐텐 재팬 넘버즈인의 10월 메가포 샵메인 콘텐츠 기획 및 도비라·라이브 배너·쿠폰 배너 구성·소구 문구 설계",
   "Revamped numbuzin’s Qoo10 Japan shop, updating recommended search keywords, Q·Special tags, and campaign titles and subheadings to highlight product-line ingredients and skin concerns":
-    "넘버즈인 큐텐 샵의 추천 검색어·Q·Special 검색 태그·라인별 기획전명과 서브테마 문구를 개편해, 주요 성분과 피부 고민 중심의 제품 소구를 정비했습니다",
+    "넘버즈인 큐텐 샵 추천 검색어·Q·Special 검색 태그·라인별 기획전명 및 서브테마 문구 개편, 주요 성분과 피부 고민 중심의 제품 소구 정비",
   "Scraped and analyzed 1,061 Japanese consumer reviews from Qoo10 and @cosme for numbuzin’s No.1 Bubble Pack, recommending time-saving morning skincare and makeup-prep messaging for the Korean market":
-    "큐텐과 앳코스메의 일본 소비자 리뷰 1,061건을 크롤링·분석하여, 1번 버블팩의 ‘아침 스킨케어 시간 단축’과 ‘메이크업 전 스킨 프렙’을 중심으로 국내 마케팅 소구 방향을 제안했습니다",
+    "큐텐·앳코스메 일본 소비자 리뷰 1,061건 크롤링·분석, 1번 버블팩의 ‘아침 스킨케어 시간 단축’과 ‘메이크업 전 스킨 프렙’ 중심 국내 마케팅 소구 방향 제안",
   "Manage product listings and inventory updates through Qoo10 and Cafe24 admin platforms, and maintain daily sales performance reports":
-    "큐텐·Cafe24 어드민을 통해 상품 정보와 재고를 관리하고, 일일 실적 데이터를 업데이트하고 있습니다",
+    "큐텐·Cafe24 어드민 기반 상품 정보·재고 관리 및 일일 실적 데이터 업데이트",
   "ALUS healthcare": "ALUS healthcare",
   "Brand Manager": "브랜드 매니저",
   "Feb 2025 - Aug 2025": "2025.02 - 2025.08",
