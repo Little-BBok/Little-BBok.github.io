@@ -160,16 +160,28 @@ const ko: Record<string, string> = {
     "포트폴리오 리뷰, 커리어 대화, 학생 단체 활동, 글로벌 브랜드 경험에 관한 이야기를 언제나 환영합니다.",
 
   "BENOW (numbuzin · fwee · Knock)": "비나우 (넘버즈인 · 퓌 · 노크)",
-  "MD Intern, Japan Business Team 1 (numbuzin)": "일본사업1팀(넘버즈인) MD 인턴",
-  "Sep 2026 - Present": "2026.09 - 현재",
-  "Planned storefront content for numbuzin’s October Mega Po campaign on Qoo10 Japan, including main visuals, livestream banners, and coupon banners":
-    "큐텐 재팬 넘버즈인의 10월 메가포 샵메인 콘텐츠 기획 및 도비라·라이브 배너·쿠폰 배너 구성·소구 문구 설계",
-  "Revamped numbuzin’s Qoo10 Japan shop, updating recommended search keywords, Q·Special tags, and campaign titles and subheadings to highlight product-line ingredients and skin concerns":
-    "넘버즈인 큐텐 샵 추천 검색어·Q·Special 검색 태그·라인별 기획전명 및 서브테마 문구 개편, 주요 성분과 피부 고민 중심의 제품 소구 정비",
-  "Scraped and analyzed 1,061 Japanese consumer reviews from Qoo10 and @cosme for numbuzin’s No.1 Bubble Pack, recommending time-saving morning skincare and makeup-prep messaging for the Korean market":
-    "큐텐·앳코스메 일본 소비자 리뷰 1,061건 크롤링·분석, 1번 버블팩의 ‘아침 스킨케어 시간 단축’과 ‘메이크업 전 스킨 프렙’ 중심 국내 마케팅 소구 방향 제안",
-  "Manage product listings and inventory updates through Qoo10 and Cafe24 admin platforms, and maintain daily sales performance reports":
-    "큐텐·Cafe24 어드민 기반 상품 정보·재고 관리 및 일일 실적 데이터 업데이트",
+  "MD Intern, Japan Business Division":
+    "일본사업본부 MD 인턴",
+  "Sep 2026 – Present":
+    "2026.09 – 현재",
+  "Japan Business Team 2 — fwee (Current)":
+    "일본사업2팀(퓌) · 현재",
+  "Japan Business Team 1 — numbuzin (Previous)":
+    "일본사업1팀(넘버즈인) · 이전",
+  "Multi-channel E-commerce Operations / Daily Sales Reporting — Collect and organize daily order and sales data across five channels: Qoo10 Japan, Rakuten, Amazon, TikTok Shop, and the official brand store; update existing daily performance files and maintain reporting materials.":
+    "다채널 이커머스 운영 / 일일실적 관리 — Qoo10 Japan·Rakuten·Amazon·TikTok Shop·브랜드 자사몰 등 5개 채널의 주문·매출·판매 실적을 수집·정리하고, 기존 일일실적 파일 업데이트 및 보고자료 관리.",
+  "Pre-campaign Product Data Validation — Check eligible product codes, listing information, and code consistency before major promotions such as Qoo10 Mega Wari to confirm sales readiness.":
+    "프로모션 전 상품 정보 점검 — Qoo10 메가와리 등 주요 행사 전 대상 상품코드·상품 등록 정보·코드 정합성을 점검하고 판매 준비사항 확인.",
+  "Inventory Verification & Updates — Review Qoo10 Q-inventory, check discrepancies against logistics inventory, and update listed quantities based on the review to maintain accurate inventory data.":
+    "재고 점검 및 업데이트 — Qoo10 Q재고를 점검하고 물류 기준 재고와 등록 재고의 차이를 확인한 뒤, 검토 결과에 따라 Q재고 수량을 업데이트하여 재고 데이터 정확성 유지.",
+  "Qoo10 Japan Shop Revamp — Restructured shop content around product benefits and consumer browsing needs, informed by competitor references and product positioning: revised recommended search keywords, configured 20 Q·Special search tags, and refined product-number campaign titles and subthemes combining key ingredients and skin concerns, considering operational priorities and key product lines.":
+    "Qoo10 Japan 샵 개편 — 경쟁사 참고와 제품별 소구 방향 분석을 바탕으로 핵심 소구·소비자 탐색 니즈를 반영한 콘텐츠 구조 개편. 추천 검색어·Q·Special 검색 태그 20개 구성, 제품 번호별 기획전 타이틀·서브테마명 및 주요 성분·피부 고민을 결합한 라인별 메시지 정비. 운영 우선순위와 주요 제품군을 고려한 검색·콘텐츠 구성.",
+  "October Mega Po Content Planning — Planned main visual (tobira), livestream banner, and coupon banner content and product/benefit messaging for Qoo10 Japan; collaborated with designers and reviewed revisions.":
+    "10월 메가포 콘텐츠 기획 — Qoo10 Japan 도비라(메인 비주얼)·라이브 배너·쿠폰 배너 콘텐츠와 제품·혜택 소구 메시지 기획, 디자인 협업 및 수정사항 검수.",
+  "Japanese Consumer Review Analysis — Collected and analyzed 1,061 Qoo10 Japan and @cosme reviews for numbuzin’s No.1 Bubble Pack, examining texture, feel, absorption, time savings, and pre-makeup use; proposed Korean-market messaging around quick morning care and makeup-prep routines based on consumer usage contexts.":
+    "일본 소비자 리뷰 분석 — 넘버즈인 1번 버블팩의 Qoo10 Japan·@cosme 리뷰 1,061건 수집·분석. 제형·사용감·흡수·시간 단축·메이크업 전 사용 반응과 소비자 사용 맥락을 바탕으로 모닝 퀵케어·메이크업 전 스킨 프렙 중심의 국내 마케팅 소구 방향 제안.",
+  "Product & Channel Operations — Managed Qoo10 and Cafe24 admin platforms, product registrations, product information edits, inventory, and daily sales performance updates.":
+    "상품·채널 운영 — Qoo10·Cafe24 어드민 관리, 상품 등록·정보 수정, 상품·재고 관리 및 일일 실적 데이터 업데이트.",
   "ALUS healthcare": "ALUS healthcare",
   "Brand Manager": "브랜드 매니저",
   "Feb 2025 - Aug 2025": "2025.02 - 2025.08",

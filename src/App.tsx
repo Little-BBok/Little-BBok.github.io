@@ -985,11 +985,26 @@ function Timeline({
                 </a>
               ) : null}
             </div>
-            <ul>
-              {item.highlights.map((highlight) => (
-                <li key={highlight}>{t(highlight)}</li>
-              ))}
-            </ul>
+            {item.teams ? (
+              <div className="timeline-teams">
+                {item.teams.map((team) => (
+                  <section className="timeline-team" key={team.title}>
+                    <h5>{t(team.title)}</h5>
+                    <ul>
+                      {team.highlights.map((highlight) => (
+                        <li key={highlight}>{t(highlight)}</li>
+                      ))}
+                    </ul>
+                  </section>
+                ))}
+              </div>
+            ) : (
+              <ul>
+                {item.highlights.map((highlight) => (
+                  <li key={highlight}>{t(highlight)}</li>
+                ))}
+              </ul>
+            )}
           </article>
         ))}
       </div>

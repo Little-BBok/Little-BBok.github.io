@@ -100,6 +100,7 @@ export type Experience = {
   projectId?: string;
   projectLabel?: string;
   highlights: string[];
+  teams?: Array<{ title: string; highlights: string[] }>;
 };
 
 export type Interest = {
@@ -221,14 +222,28 @@ export const contactHighlights = [
 export const experiences: Experience[] = [
   {
     organization: "BENOW (numbuzin · fwee · Knock)",
-    role: "MD Intern, Japan Business Team 1 (numbuzin)",
-    period: "Sep 2026 - Present",
+    role: "MD Intern, Japan Business Division",
+    period: "Sep 2026 – Present",
     category: "Work",
-    highlights: [
-      "Planned storefront content for numbuzin’s October Mega Po campaign on Qoo10 Japan, including main visuals, livestream banners, and coupon banners",
-      "Revamped numbuzin’s Qoo10 Japan shop, updating recommended search keywords, Q·Special tags, and campaign titles and subheadings to highlight product-line ingredients and skin concerns",
-      "Scraped and analyzed 1,061 Japanese consumer reviews from Qoo10 and @cosme for numbuzin’s No.1 Bubble Pack, recommending time-saving morning skincare and makeup-prep messaging for the Korean market",
-      "Manage product listings and inventory updates through Qoo10 and Cafe24 admin platforms, and maintain daily sales performance reports",
+    highlights: [],
+    teams: [
+      {
+        title: "Japan Business Team 2 — fwee (Current)",
+        highlights: [
+          "Multi-channel E-commerce Operations / Daily Sales Reporting — Collect and organize daily order and sales data across five channels: Qoo10 Japan, Rakuten, Amazon, TikTok Shop, and the official brand store; update existing daily performance files and maintain reporting materials.",
+          "Pre-campaign Product Data Validation — Check eligible product codes, listing information, and code consistency before major promotions such as Qoo10 Mega Wari to confirm sales readiness.",
+          "Inventory Verification & Updates — Review Qoo10 Q-inventory, check discrepancies against logistics inventory, and update listed quantities based on the review to maintain accurate inventory data.",
+        ],
+      },
+      {
+        title: "Japan Business Team 1 — numbuzin (Previous)",
+        highlights: [
+          "Qoo10 Japan Shop Revamp — Restructured shop content around product benefits and consumer browsing needs, informed by competitor references and product positioning: revised recommended search keywords, configured 20 Q·Special search tags, and refined product-number campaign titles and subthemes combining key ingredients and skin concerns, considering operational priorities and key product lines.",
+          "October Mega Po Content Planning — Planned main visual (tobira), livestream banner, and coupon banner content and product/benefit messaging for Qoo10 Japan; collaborated with designers and reviewed revisions.",
+          "Japanese Consumer Review Analysis — Collected and analyzed 1,061 Qoo10 Japan and @cosme reviews for numbuzin’s No.1 Bubble Pack, examining texture, feel, absorption, time savings, and pre-makeup use; proposed Korean-market messaging around quick morning care and makeup-prep routines based on consumer usage contexts.",
+          "Product & Channel Operations — Managed Qoo10 and Cafe24 admin platforms, product registrations, product information edits, inventory, and daily sales performance updates.",
+        ],
+      },
     ],
   },
   {
