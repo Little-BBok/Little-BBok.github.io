@@ -1,4 +1,4 @@
-export const MESSAGE_LIMIT = 500;
+export const MESSAGE_LIMIT = 2000;
 export const NAME_LIMIT = 40;
 
 export function validateGuestbook(input: unknown): { name: string; message: string } | null {

@@ -19,7 +19,7 @@ export function Guestbook({ t }: { t: (text: string) => string }) {
     const payload = validateGuestbook({ name, message, website });
     if (!payload) {
       setStatus("error");
-      setError(ko ? "메시지는 1~500자, 닉네임은 40자 이내로 작성해주세요." : "Use 1–500 characters for your message and up to 40 for your name.");
+      setError(ko ? `메시지는 1~${MESSAGE_LIMIT.toLocaleString()}자, 닉네임은 ${NAME_LIMIT}자 이내로 작성해주세요.` : `Use 1–${MESSAGE_LIMIT.toLocaleString()} characters for your message and up to ${NAME_LIMIT} for your name.`);
       return;
     }
     sending.current = true;
@@ -45,7 +45,7 @@ export function Guestbook({ t }: { t: (text: string) => string }) {
     <div className="guestbook-intro">
       <p className="kicker"><MessageSquare size={17} aria-hidden="true" /> {ko ? "방명록" : "GUESTBOOK"}</p>
       <h3 id="guestbook-heading">{ko ? "작은 인사도 반가워요." : "A little hello goes a long way."}</h3>
-      <p>{ko ? "둘러보신 소감이나 나누고 싶은 이야기를 남겨주세요. 짧은 한마디도 좋아요." : "Leave a thought, a kind word, or something you would like to share. A short hello is welcome, too."}</p>
+      <p>{ko ? "짧은 인사부터 나누고 싶은 긴 이야기까지, 편하게 메시지를 남겨주세요." : "From a quick hello to a longer story, feel free to share what’s on your mind."}</p>
       <p className="guestbook-privacy">{ko ? "수민에게만 전달되는 비공개 메시지입니다. 개인정보나 연락처는 적지 않아도 돼요." : "A private note for Sumin. No contact details or personal information needed."}</p>
     </div>
     <form onSubmit={submit} className="guestbook-form">
@@ -57,7 +57,7 @@ export function Guestbook({ t }: { t: (text: string) => string }) {
       <span id="guestbook-count" className="guestbook-count">{message.length} / {MESSAGE_LIMIT}</span>
       <button className="button primary" type="submit" disabled={!message.trim() || status === "sending"}>
         {status === "success" ? <Check size={17} /> : <Send size={17} />}
-        {status === "sending" ? (ko ? "전달 중…" : "Sending…") : (ko ? "한 줄 남기기" : "Leave a note")}
+        {status === "sending" ? (ko ? "전달 중…" : "Sending…") : (ko ? "메시지 보내기" : "Send message")}
       </button>
       <div id="guestbook-status" role="status" aria-live="polite">
         {status === "success" && (ko ? "메시지를 접수했어요. 따뜻한 인사 감사합니다!" : "Your note has been submitted. Thank you for saying hello!")}

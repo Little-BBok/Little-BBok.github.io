@@ -23,7 +23,7 @@ export function GuestbookWidget({ t }: { t: (text: string) => string }) {
   return <>
     <button className="guestbook-launcher" type="button" aria-label={ko ? "방명록 열기" : "Open guestbook"} aria-haspopup="dialog" aria-expanded={open} aria-controls="guestbook-dialog" onClick={() => setOpen(true)}>
       <MessageSquare size={21} aria-hidden="true" />
-      <span>{ko ? "한 줄 남기기" : "Say hello"}</span>
+      <span>{ko ? "메시지 남기기" : "Leave a message"}</span>
     </button>
     <dialog id="guestbook-dialog" className="guestbook-dialog" ref={dialog} aria-labelledby="guestbook-dialog-title" onCancel={(event) => { event.preventDefault(); setOpen(false); }} onClose={() => setOpen(false)} onKeyDown={(event) => {
       if (event.key !== "Tab") return;
@@ -39,7 +39,7 @@ export function GuestbookWidget({ t }: { t: (text: string) => string }) {
       if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) setOpen(false);
     }}>
       <div className="guestbook-dialog-header">
-        <strong id="guestbook-dialog-title">{ko ? "수민에게 한 줄" : "A note for Sumin"}</strong>
+        <strong id="guestbook-dialog-title">{ko ? "수민에게 메시지" : "A message for Sumin"}</strong>
         <button type="button" className="guestbook-close" aria-label={ko ? "방명록 닫기" : "Close guestbook"} onClick={() => setOpen(false)}><X size={20} aria-hidden="true" /></button>
       </div>
       <Guestbook t={t} />
