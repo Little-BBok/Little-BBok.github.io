@@ -221,7 +221,7 @@ export const contactHighlights = [
 
 export const experiences: Experience[] = [
   {
-    organization: "BENOW (numbuzin · fwee · Knock)",
+    organization: "BENOW (fwee · numbuzin · Knock)",
     role: "MD Intern, Japan Business Division",
     period: "Sep 2026 – Present",
     category: "Work",

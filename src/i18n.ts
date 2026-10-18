@@ -159,7 +159,7 @@ const ko: Record<string, string> = {
   "Portfolio reviews, career conversations, student association work, and global brand experience discussions are always welcome.":
     "포트폴리오 리뷰, 커리어 대화, 학생 단체 활동, 글로벌 브랜드 경험에 관한 이야기를 언제나 환영합니다.",
 
-  "BENOW (numbuzin · fwee · Knock)": "비나우 (넘버즈인 · 퓌 · 노크)",
+  "BENOW (fwee · numbuzin · Knock)": "비나우 (퓌 · 넘버즈인 · 노크)",
   "MD Intern, Japan Business Division":
     "일본사업본부 MD 인턴",
   "Sep 2026 – Present":
