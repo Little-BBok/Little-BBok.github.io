@@ -823,13 +823,6 @@ img {
   line-height: 1.45;
 }
 
-.about-education {
-  margin: 0;
-  color: var(--deep-blue);
-  font-size: 18px;
-  line-height: 1.65;
-}
-
 .hero-proof-row {
   display: flex;
   flex-wrap: wrap;
@@ -1439,6 +1432,12 @@ html[lang="ko"] .landing-keywords > .kicker {
   text-transform: uppercase;
 }
 
+.text-emphasis {
+  color: var(--ink);
+  font-weight: 750;
+}
+
+.about-education,
 .about-opening {
   max-width: 900px;
   margin: 0;

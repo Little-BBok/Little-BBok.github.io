@@ -46,6 +46,7 @@ import {
   type Project,
 } from "./data/portfolio";
 import { translateText, type Language } from "./i18n";
+import { EmphasizedText as NarrativeEmphasis } from "./components/EmphasizedText";
 
 const routes = [
   { id: "home", label: "Home" },
@@ -901,12 +902,12 @@ function AboutPage({ t }: { t: Translator }) {
         </div>
         <div className="about-main-copy">
           <h2>{t(profile.title)}</h2>
-          <p className="about-education">{t(profile.educationIntro)}</p>
-          <p className="about-opening">{t(aboutNarrative[0])}</p>
+          <p className="about-education"><NarrativeEmphasis text={t(profile.educationIntro)} variant="about" /></p>
+          <p className="about-opening"><NarrativeEmphasis text={t(aboutNarrative[0])} variant="about" /></p>
           <section className="about-story-block">
             <h3>My Story</h3>
             {aboutNarrative.slice(1).map((paragraph) => (
-              <p key={paragraph}>{t(paragraph)}</p>
+              <p key={paragraph}><NarrativeEmphasis text={t(paragraph)} variant="about" /></p>
             ))}
           </section>
           <section className="about-contact-block">
@@ -993,7 +994,7 @@ function Timeline({
                     <h5>{t(team.title)}</h5>
                     <ul>
                       {team.highlights.map((highlight) => (
-                        <li key={highlight}>{t(highlight)}</li>
+                        <li key={highlight}><NarrativeEmphasis text={t(highlight)} variant="experience" /></li>
                       ))}
                     </ul>
                   </section>
@@ -1002,7 +1003,7 @@ function Timeline({
             ) : (
               <ul>
                 {item.highlights.map((highlight) => (
-                  <li key={highlight}>{t(highlight)}</li>
+                  <li key={highlight}><NarrativeEmphasis text={t(highlight)} variant="experience" /></li>
                 ))}
               </ul>
             )}
