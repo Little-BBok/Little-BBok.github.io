@@ -47,6 +47,8 @@ import {
 } from "./data/portfolio";
 import { translateText, type Language } from "./i18n";
 import { EmphasizedText as NarrativeEmphasis } from "./components/EmphasizedText";
+import { ResumeViewer } from "./components/ResumeViewer";
+import { GuestbookWidget } from "./components/GuestbookWidget";
 
 const routes = [
   { id: "home", label: "Home" },
@@ -146,7 +148,7 @@ function App() {
   const activeProjectSlideLanguage = slideDeckMatch?.[1] as "ko" | "en" | undefined;
 
   if (detailPageProject) {
-    return <DetailPageViewer project={detailPageProject} t={t} />;
+    return <><DetailPageViewer project={detailPageProject} t={t} /><GuestbookWidget t={t} /></>;
   }
 
   return (
@@ -190,6 +192,7 @@ function App() {
         ) : null}
       </main>
       <Footer t={t} />
+      <GuestbookWidget t={t} />
     </div>
   );
 }
@@ -1823,7 +1826,7 @@ function DocumentDetail({ section, t }: { section: DocumentSection; t: Translato
         </div>
       </section>
 
-      <section className={`document-detail-gallery${section.id === "resume" ? " resume-detail-gallery" : ""}`} aria-label={`${section.title} materials`}>
+      {section.id === "resume" ? <ResumeViewer image={section.preview} t={t} /> : <section className="document-detail-gallery" aria-label={`${section.title} materials`}>
         {images.map((image, index) => (
           <figure className="document-detail-image" key={image}>
             <img
@@ -1837,7 +1840,7 @@ function DocumentDetail({ section, t }: { section: DocumentSection; t: Translato
             </figcaption>
           </figure>
         ))}
-      </section>
+      </section>}
     </PageFrame>
   );
 }
