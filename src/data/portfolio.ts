@@ -139,9 +139,11 @@ export const profile = {
   name: "Sumin (Chloe) Lee",
   shortName: "Sumin Lee",
   school: "Department of Business, Yonsei University, Seoul",
+  educationIntro:
+    "I study Business Administration at Yonsei University, connecting my interest in brands and consumer behavior with data analysis and experience planning.",
   title: "Full-Cycle Brand Manager & Strategist",
   tagline:
-    "An experience planner who explores global insights to design seamless, user-centered solutions.",
+    "I study Business Administration at Yonsei University and plan human-centered experiences through brand strategy and data insights.",
   landingIntro:
     "Hello, I'm Sumin Lee. I craft joyful and heartwarming experiences that linger in people's memories. Explore this website to discover my journey and work!",
   intro:
@@ -2383,10 +2385,10 @@ export const documentSections: DocumentSection[] = [
     eyebrow: "Career snapshot",
     text:
       "A concise overview of academic background, professional experiences, and project-based achievements across brand strategy, marketing planning, data analysis, and collaboration.",
-    href: "https://50e217fb-c32f-4fb0-a6a1-228397b343ae.filesusr.com/ugd/df8dea_f28ccd40b1564612b437039aba384d6f.pdf",
-    action: "Download Resume",
+    href: "#/document/resume",
+    action: "View Resume",
     preview:
-      "https://static.wixstatic.com/media/df8dea_02c9d4f1949a476191cb60a6e93826d8~mv2.png/v1/crop/x_5,y_0,w_1233,h_1747/fill/w_980,h_1390,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202026-06-07%2018_22_27.png",
+      "/documents/resume/sumin-lee-resume-preview.png",
     highlights: ["Brand strategy", "Marketing planning", "Data-driven analysis"],
   },
   {

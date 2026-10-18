@@ -901,6 +901,7 @@ function AboutPage({ t }: { t: Translator }) {
         </div>
         <div className="about-main-copy">
           <h2>{t(profile.title)}</h2>
+          <p className="about-education">{t(profile.educationIntro)}</p>
           <p className="about-opening">{t(aboutNarrative[0])}</p>
           <section className="about-story-block">
             <h3>My Story</h3>
@@ -944,7 +945,7 @@ function ExperiencePage({ t }: { t: Translator }) {
   return (
     <PageFrame eyebrow="Career" title="Experience" t={t}>
       <p className="page-lede">
-        {t("My experience spans brand management, growth marketing, product planning, UI/UX design, and user research across startups, labs, and student associations.")}
+        {t("My experience spans brand management, growth marketing, product planning, UI/UX design, and user research across startups, global beauty brands, labs, and student associations.")}
       </p>
       <Timeline title="Work Experience" items={work} icon={<BriefcaseBusiness />} t={t} />
       <Timeline title="Association Experience" items={associations} icon={<GraduationCap />} t={t} />
@@ -1762,7 +1763,6 @@ function DocumentsPage({ t }: { t: Translator }) {
 
 function DocumentCard({ section, t }: { section: DocumentSection; t: Translator }) {
   const isExternal = !section.href.startsWith("#/");
-  const showDocumentAction = section.id !== "resume";
 
   return (
     <article className="document-card">
@@ -1785,16 +1785,15 @@ function DocumentCard({ section, t }: { section: DocumentSection; t: Translator 
             </span>
           ))}
         </div>
-        {showDocumentAction ? (
-          <a
-            className={`button ${isExternal ? "ghost" : "primary"}`}
-            href={section.href}
-            target={isExternal ? "_blank" : undefined}
-          >
-            {t(section.action)}
-            <FileText size={18} />
-          </a>
-        ) : null}
+        <a
+          className={`button ${isExternal ? "ghost" : "primary"}`}
+          href={section.href}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+        >
+          {t(section.action)}
+          <FileText size={18} />
+        </a>
       </div>
     </article>
   );
@@ -1823,7 +1822,7 @@ function DocumentDetail({ section, t }: { section: DocumentSection; t: Translato
         </div>
       </section>
 
-      <section className="document-detail-gallery" aria-label={`${section.title} materials`}>
+      <section className={`document-detail-gallery${section.id === "resume" ? " resume-detail-gallery" : ""}`} aria-label={`${section.title} materials`}>
         {images.map((image, index) => (
           <figure className="document-detail-image" key={image}>
             <img

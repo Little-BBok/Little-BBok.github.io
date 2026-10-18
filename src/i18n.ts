@@ -30,8 +30,8 @@ const ko: Record<string, string> = {
     "새로운 기회와 흥미로운 대화를 언제나 환영합니다. 편하게 연락해 주세요.",
   "Three Keywords": "세 가지 키워드",
   Career: "커리어",
-  "My experience spans brand management, growth marketing, product planning, UI/UX design, and user research across startups, labs, and student associations.":
-    "저의 경험은 스타트업, 연구실, 학생 단체를 넘나들며 브랜드 매니지먼트, 그로스 마케팅, 제품 기획, UI/UX 디자인, 사용자 리서치로 확장되어 왔습니다.",
+  "My experience spans brand management, growth marketing, product planning, UI/UX design, and user research across startups, global beauty brands, labs, and student associations.":
+    "스타트업부터 글로벌 뷰티 브랜드, 연구실, 학생 단체까지 다양한 환경에서 브랜드 매니지먼트, 그로스 마케팅, 제품 기획, UI/UX 디자인, 사용자 리서치 경험을 쌓아왔습니다.",
   "Work Experience": "실무 경험",
   "Association Experience": "학회 및 단체 경험",
   Work: "실무",
@@ -88,6 +88,7 @@ const ko: Record<string, string> = {
   Archive: "아카이브",
   "Back to Documents": "문서 목록으로",
   "Download Resume": "이력서 다운로드",
+  "View Resume": "이력서 보기",
   "Personal Archive": "개인 아카이브",
   "View works": "작업 보기",
   "Back to Interests": "관심사 목록으로",
@@ -114,9 +115,11 @@ const ko: Record<string, string> = {
   "Sumin (Chloe) Lee": "이수민 (Chloe Lee)",
   "Sumin Lee": "Sumin Lee",
   "Department of Business, Yonsei University, Seoul": "연세대학교 경영학과, 서울",
+  "I study Business Administration at Yonsei University, connecting my interest in brands and consumer behavior with data analysis and experience planning.":
+    "연세대학교에서 경영학을 전공하며, 브랜드와 소비자 행동에 대한 관심을 데이터 분석과 경험 기획으로 연결하고 있습니다.",
   "Full-Cycle Brand Manager & Strategist": "풀사이클 브랜드 매니저 & 전략 기획자",
-  "An experience planner who explores global insights to design seamless, user-centered solutions.":
-    "세계 곳곳의 영감과 데이터를 바탕으로, 사람에게 자연스럽게 닿는 브랜드와 사용자 경험을 기획합니다.",
+  "I study Business Administration at Yonsei University and plan human-centered experiences through brand strategy and data insights.":
+    "연세대학교에서 경영학을 전공하며, 브랜드 전략과 데이터 인사이트를 바탕으로 사람 중심의 경험을 기획합니다.",
   "Hello, I'm Sumin Lee. I craft joyful and heartwarming experiences that linger in people's memories. Explore this website to discover my journey and work!":
     "안녕하세요, 저는 이수민입니다. 브랜드 전략과 UX, 데이터 인사이트를 연결해 사람들의 기억에 오래 남는 경험을 만들고 있습니다. 이곳에서 제가 걸어온 과정과 작업들을 천천히 살펴봐 주세요.",
   "I craft joyful and heartwarming experiences that linger in people's memories, blending data-driven insight with human-centered empathy.":
